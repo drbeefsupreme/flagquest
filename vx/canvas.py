@@ -108,8 +108,9 @@ def surface_from_array(arr):
         pad = np.zeros((h, stride // 4, 4), np.uint8)
         pad[:, :w] = bgra
         bgra = pad
-    surf = cairo.ImageSurface.create_for_data(memoryview(np.ascontiguousarray(bgra)), cairo.FORMAT_ARGB32, w, h, stride)
-    surf._keep = bgra  # keep buffer alive
+    bgra = np.ascontiguousarray(bgra)
+    # pycairo holds a reference to the buffer object for the surface's lifetime
+    surf = cairo.ImageSurface.create_for_data(bgra, cairo.FORMAT_ARGB32, w, h, stride)
     return surf
 
 
