@@ -46,7 +46,7 @@ PS = {"Flags": "flˈaɡz", "be": "bˈiː", "are": "ˈɑː", "will": "wˈɪl"}
 VOWELS = set("aæiɑɪAIOWYəɛɜɔuʊʌɐɒeoɚɯɨ")
 
 PARTS = {
-    "S": ["af_heart", "af_bella", "bf_emma", "bf_isabella", "af_aoede", "af_kore"],
+    "S": ["af_heart", "af_sky", "bf_emma", "bf_isabella", "af_aoede", "af_kore"],
     "A": ["af_sarah", "bf_alice", "bf_lily", "af_jessica", "af_nova", "af_river"],
     "T": ["am_michael", "am_eric", "am_puck", "am_liam", "bm_daniel", "am_echo"],
     "B": ["am_fenrir", "bm_george", "am_onyx", "am_adam", "em_santa", "bm_fable"],

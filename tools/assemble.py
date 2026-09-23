@@ -97,6 +97,7 @@ def main():
     ap.add_argument("--out", default=str(ROOT / "out/THE_UNBABELING.mp4"))
     ap.add_argument("--nosubs", action="store_true")
     ap.add_argument("--fast", action="store_true")
+    ap.add_argument("--share", action="store_true", help="also write a ~12 Mbps web version")
     a = ap.parse_args()
     sd = Path(a.scenes_dir)
     parts, ok = [], True
@@ -122,11 +123,14 @@ def main():
     ass = ROOT / "out/subs.ass"
     write_ass(ass)
     (ROOT / "out/subs_path.txt").write_text(str(ass))
-    preset = ["-preset", "veryfast", "-crf", "20"] if a.fast else ["-preset", "slow", "-crf", "16", "-tune", "animation"]
-    outs = [(Path(a.out), True)]
+    preset = ["-preset", "veryfast", "-crf", "20"] if a.fast else ["-preset", "slow", "-crf", "17", "-tune", "film"]
+    outs = [(Path(a.out), True, preset)]
     if a.nosubs:
-        outs.append((Path(a.out).with_name(Path(a.out).stem + "_nosubs.mp4"), False))
-    for out, subs in outs:
+        outs.append((Path(a.out).with_name(Path(a.out).stem + "_nosubs.mp4"), False, preset))
+    if a.share:
+        web = ["-preset", "slow", "-crf", "22", "-tune", "film", "-maxrate", "14M", "-bufsize", "28M"]
+        outs.append((Path(a.out).with_name(Path(a.out).stem + "_web.mp4"), True, web))
+    for out, subs, preset in outs:
         vf = ["-vf", f"ass={ass}"] if subs else []
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-stats", "-i", str(video), "-i", a.audio, "-map", "0:v:0", "-map",
                "1:a:0", *vf, "-c:v", "libx264", *preset, "-pix_fmt", "yuv420p", "-profile:v", "high",

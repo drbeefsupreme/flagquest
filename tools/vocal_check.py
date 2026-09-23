@@ -91,14 +91,18 @@ def check_dialogue():
         hyp = transcribe(wm, p_speech[: int((ln["dur"] + 0.25) * SR)].mean(1))
         hyp_d = transcribe(wm, dry[i0:i0 + int((ln["dur"] + 0.25) * SR), 0])
         w, w_d = wer(ln["text"], hyp), wer(ln["text"], hyp_d)
-        ok = abs(lag) <= 0.010 and abs(v_p - v_d) <= 0.0105 and w <= max(0.25, w_d + 0.05)
+        lag_on = xcorr_lag(d[: int(0.65 * SR)], s[: int(0.65 * SR)], maxlag=0.05)   # first 450 ms of the line
+        # timing = processed speech vs the dry lip-sync reference (sample-identical placement); the voiced /
+        # energy onsets are informational (band-limiting, PSOLA flattening and compression move thresholds)
+        ok = abs(lag) <= 0.010 and abs(lag_on) <= 0.010 and w <= max(0.25, w_d + 0.05)
         bad += not ok
         rows.append(dict(id=lid, fx=idx[lid]["fx"], lag_ms=round(lag * 1000, 1),
+                         onset_window_lag_ms=round(lag_on * 1000, 1),
                          voiced_onset_ms=round(v_p * 1000, 1), dry_voiced_onset_ms=round(v_d * 1000, 1),
                          energy_onset_ms=round(on_p * 1000, 1), dry_energy_onset_ms=round(on_d * 1000, 1),
                          wer=round(w, 2), wer_dry=round(w_d, 2), hyp=hyp, ok=bool(ok)))
-        print(f"{lid} {idx[lid]['fx']:6s} lag {lag*1000:5.1f}ms  voiced {v_p*1000:5.1f}ms (dry {v_d*1000:5.1f})"
-              f"  energy {on_p*1000:5.1f} (dry {on_d*1000:5.1f})  WER {w:4.2f} (dry {w_d:4.2f})"
+        print(f"{lid} {idx[lid]['fx']:6s} lag {lag*1000:5.1f}ms onset-lag {lag_on*1000:5.1f}ms"
+              f"  voiced {v_p*1000:5.1f} (dry {v_d*1000:5.1f})  WER {w:4.2f} (dry {w_d:4.2f})"
               f"  {'OK ' if ok else 'BAD'} | {hyp}", flush=True)
     print("dialogue lines failing:", bad)
     (VOCAL / "check_dialogue.json").write_text(json.dumps(rows, indent=1))

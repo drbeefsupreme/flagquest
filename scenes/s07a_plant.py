@@ -405,7 +405,7 @@ def dust_items(st, pr, T):
             ctx.arc(x, y, rad, 0, 2 * math.pi)
             ctx.fill()
         # pebbles thrown up
-        m = 26
+        m = 20
         ang = rng.uniform(0, 2 * math.pi, m)
         v = rng.uniform(1.5, 3.5, m)
         vz = rng.uniform(1.5, 3.8, m)
@@ -417,8 +417,8 @@ def dust_items(st, pr, T):
             x, y, z = pr.pt(*P)
             if z < 0.5:
                 continue
-            r = pr.F / z * 0.035
-            ctx.arc(x, y, max(0.6, r), 0, 2 * math.pi)
+            r = pr.F / z * 0.022 * (0.6 + 0.8 * ((q * 37) % 10) / 10.0)
+            ctx.arc(x, y, max(0.5, r), 0, 2 * math.pi)
             ctx.set_source_rgba(0.12, 0.11, 0.17, 0.9 * (1 - seg(dt, 1.4, 2.2)))
             ctx.fill()
 
@@ -568,7 +568,14 @@ def _export_foley(S, st):
     # convergence: the first individual raises (with pans from the actual render camera)
     order = wd.order
     act = wd.act
-    first = order[:16]
+    first = []
+    for i in order[:400]:                      # the first raises that are actually on screen
+        pr = Proj(camera_at(float(act[i])))
+        x, y, z = pr.pt(float(wd.x[i]), float(wd.y[i]), 2.0)
+        if z > 1 and 0 < x < W and 0 < y < H:
+            first.append(i)
+        if len(first) >= 14:
+            break
     for i in first:
         T = float(act[i])
         pr = Proj(camera_at(T))
@@ -614,3 +621,38 @@ def _export_foley(S, st):
         xs.append(foley.screen_pan(x))
     gain = 1.0
     tr.export_foley(S, "hero", pan=np.array(xs, np.float32), gain=gain)
+
+
+# ============================================================== s07b hand-off
+def export_handoff():
+    """Write out/handoff/s07a_last.png (+ _post.png) of the last s07a frame and cache/s07a/handoff.npz
+    (camera at 154.458 / 154.5 / 155.5, sun, wind, survivor & flag positions, plate lattice, palette)."""
+    import cv2
+    from types import SimpleNamespace
+    from vx.config import OUT, CACHE
+    from vx import post as vpost
+    st = handoff_state()
+    d = OUT / "handoff"
+    d.mkdir(parents=True, exist_ok=True)
+    T_last = 139.0 + 371 / 24.0
+    fc = SimpleNamespace(s=1.0, w=W, h=H, F=3336 + 371, T=T_last, f=371)
+    img = render_at(fc, T_last, st)
+    cv2.imwrite(str(d / "s07a_last.png"), cv2.cvtColor(np.clip(img * 255 + 0.5, 0, 255).astype(np.uint8), cv2.COLOR_RGB2BGR))
+    p = dict(POST)
+    p.update(post(fc, st))
+    fin = vpost.finish(img, fc, **p)
+    cv2.imwrite(str(d / "s07a_last_post.png"), cv2.cvtColor(fin, cv2.COLOR_RGB2BGR))
+    wd = st["world"]
+    cams = {f"cam_{k}": camera_at(t) for k, t in (("last", T_last), ("1545", 154.5), ("1555", 155.5))}
+    arr = {}
+    for k, c in cams.items():
+        arr[k] = np.array([*c["pos"], c["yaw"], c["pitch"], c["hfov"]], np.float64)
+    np.savez_compressed(CACHE / "s07a" / "handoff.npz",
+                        cam_fields=np.array(["x", "y", "z", "yaw_deg", "pitch_down_deg", "hfov_deg"]), **arr,
+                        sun_dir_1545=sun_dir(154.5), sun_az_deg=WD.SUN_AZ, sun_elev_1545=WD.sun_elev(154.5),
+                        wind_az_1545=wind_az(154.5),
+                        survivor_x=wd.x, survivor_y=wd.y, survivor_height=wd.height, survivor_raise_t=wd.act,
+                        survivor_kind=wd.kind, plate_cell=WD.CELL, plate_jitter=WD.JIT,
+                        hill=np.array([0.0, 0.0, WD.HILL_R, WD.HILL_H]),
+                        palette_plate_albedo=WD.PLATE_ALB, post=np.array([repr(p)]))
+    return d

@@ -147,14 +147,13 @@ def radio(x, ln):
     hot = lid == "K03"
     y = pb(x, HighpassFilter(90), Compressor(-26, 5.0, 1, 60))
     y = norm_lufs(y, -18)
-    drive = 16 if hot else 11
-    y = pb(y, HighpassFilter(380), HighpassFilter(380), LowpassFilter(3100), LowpassFilter(3100),
-           PeakFilter(1700, 5.0, 1.1), Distortion(drive), Compressor(-20, 6.0, 1, 50),
-           PeakFilter(900, 2.0, 1.5), LowpassFilter(3400))
-    # sample-rate / bit degradation (8 kHz-ish codec character, blended)
-    q = np.round(y * 96) / 96
-    y = (0.75 * y + 0.25 * q).astype(np.float32)
-    y = bandpass(y, 330, 3100, order=6)      # a real handset band: steep skirts after the grit
+    # intelligibility first (Main's full-mix whisper QA): wide 'good handset' band, light drive, a hint of codec
+    drive = 7 if hot else 4
+    y = pb(y, HighpassFilter(200), LowpassFilter(5600),
+           PeakFilter(1800, 2.5, 1.0), PeakFilter(2600, 3.0, 1.2), Distortion(drive), Compressor(-20, 4.0, 2, 60))
+    q = np.round(y * 256) / 256
+    y = (0.92 * y + 0.08 * q).astype(np.float32)
+    y = bandpass(y, 220, 5200, order=4)      # steep skirts after the grit
     y = norm_lufs(y, TARGET["radio"])
     pre, post = 0.16, 0.26
     n = int((pre + post) * SR) + len(y)
@@ -163,7 +162,7 @@ def radio(x, ln):
     out[i0:i0 + len(y)] += y
     lvl = np.sqrt(np.mean(y ** 2)) + 1e-9
     # carrier hiss while keyed
-    hiss = bandpass(r.standard_normal(n).astype(np.float32), 450, 3200, order=2) * lvl * db(-24)
+    hiss = bandpass(r.standard_normal(n).astype(np.float32), 450, 4500, order=2) * lvl * db(-30)
     env = np.zeros(n, np.float32)
     k0, k1 = int(0.005 * SR), i0 + len(y) + int(0.07 * SR)
     env[k0:k1] = 1.0
@@ -345,7 +344,15 @@ def main(only=()):
         lid = ln["id"]
         st, _ = sf.read(OUT / f"{lid}.wav", dtype="float32")
         i0 = int(ln["start"] * SR) - int(round(idx[lid]["pre"] * SR))   # same placement as dialogue_dry
-        add_at(mix, st, i0 / SR)
+        # a line's reverb/echo tail ducks ~12 dB under every later line it overlaps (e.g. X07's void under K07)
+        tg = i0 / SR + np.arange(len(st)) / SR
+        g = np.ones(len(st), np.float32)
+        for o in TL["lines"]:
+            if o["start"] > ln["end"] and o["start"] < tg[-1]:
+                a0, a1 = o["start"] - 0.25, o["end"] + 0.15
+                d = np.clip(np.minimum((tg - a0) / 0.12, (a1 - tg) / 0.3), 0, 1)
+                g = np.minimum(g, (1 - d * (1 - db(-12))).astype(np.float32))
+        add_at(mix, st * g[:, None], i0 / SR)
     # sacred silence 138.5-140.0 (nothing in dialogue should be there anyway)
     a, b = int(138.5 * SR), int(140.0 * SR)
     mix[a:b] = 0

@@ -54,7 +54,7 @@ def velcro(fc, st, u):
     ctx.line_to(front + 40, base + 30)
     ctx.line_to(-400, under(-400) - 20)
     ctx.close_path()
-    ctx.set_source(rad_grad(front - 460, base - 110, 10, 1400, [(0, "#FFF3DA"), (0.1, "#FFD088"), (0.3, "#E8943A"),
+    ctx.set_source(rad_grad(front - 460, base - 110, 10, 1400, [(0, "#FFE6CC"), (0.1, "#FFAE5C"), (0.3, "#D8682A"),
                                                                 (0.65, "#6A3414"), (1, "#1E1008")]))
     ctx.fill()
     # --- loops rising from the panel (silhouettes); near the front some are caught by hooks and stretched
@@ -238,7 +238,7 @@ def tacks(fc, st, u):
         ctx.stroke()
     px = -300.0                            # pole centre line (runs along local y)
     pw = 96.0
-    tack = (px, 30.0)
+    tack = (px - 30.0, 30.0)               # tacks go into the bare wood beside the hoist: nothing ever on the cloth
     # cast shadows of pole + cloth on the bench (lamp upper-left -> shadows fall down-right)
     set_color(ctx, (0, 0, 0), 0.45)
     ctx.rectangle(px - pw / 2 + 22, -1400, pw, 2800)
@@ -251,7 +251,10 @@ def tacks(fc, st, u):
     # tacks: one already flush, the hero tack being driven
     depth = 0.0 if u < s1 else (0.55 if u < s2 else 1.0)
     hgt = 34 * (1 - depth)
-    for (tx, ty, hh) in ((px, -400.0, 0.0), (tack[0], tack[1], hgt)):
+    ctx.save()                             # everything below is clipped to the bench/pole side of the hoist
+    ctx.rectangle(-1700, -1500, (px - 3) + 1700, 3000)
+    ctx.clip()
+    for (tx, ty, hh) in ((px - 30.0, -400.0, 0.0), (tack[0], tack[1], hgt)):
         set_color(ctx, (0, 0, 0), 0.5)
         circle(ctx, tx + 6 + hh * 0.6, ty + 6 + hh * 0.9, 21)
         ctx.fill()
@@ -274,12 +277,12 @@ def tacks(fc, st, u):
         return 330 * ease_out(clamp((uu - s2) / 0.14))
     h = height(u)
     sc = 0.78 * (1.0 + h * 0.0016)
-    hx, hy = tack[0] - hgt * 0.25 + h * 0.5, tack[1] - hgt * 0.4 - h * 0.35
+    hx, hy = tack[0] - hgt * 0.25 - h * 0.5, tack[1] - hgt * 0.4 - h * 0.35
 
     def hammer_shape(c, k):
         c.save()
         c.translate(hx, hy)
-        c.rotate(0.55)
+        c.rotate(math.pi - 0.55)
         c.scale(k, k)
         rrect(c, 20, -34, 900, 68, 30)          # handle toward lower right
         rrect(c, -58, -150, 116, 300, 16)       # head (T-bar), striking face under the camera's view
@@ -291,7 +294,7 @@ def tacks(fc, st, u):
         c.restore()
 
     ctx.save()
-    ctx.translate(h * 0.1, h * 1.1)
+    ctx.translate(-h * 0.2, h * 1.1)
     hammer_shape(ctx, 0.78)
     set_color(ctx, (0, 0, 0), 0.55 * clamp(1 - h / 900))
     ctx.fill()
@@ -303,7 +306,7 @@ def tacks(fc, st, u):
     ctx.restore()
     ctx.save()
     ctx.translate(hx, hy)
-    ctx.rotate(0.55)
+    ctx.rotate(math.pi - 0.55)
     ctx.scale(sc, sc)
     rrect(ctx, -58, -150, 116, 300, 16)
     ctx.set_source(lin_grad(-58, 0, 58, 0, [(0, "#C9D0DB"), (0.35, "#8A93A2"), (1, "#2A2E36")]))
@@ -331,6 +334,7 @@ def tacks(fc, st, u):
             set_color(ctx, mix("pole", "#FFFFFF", hash01(i, 53) * 0.5), 0.9 * e ** 0.4)
             circle(ctx, hx + math.cos(a) * r, hy + math.sin(a) * r, 2 + 3 * hash01(i, 54))
             ctx.fill()
+    ctx.restore()
     img = cv.rgb()
     img = _amber_sweep(fc, img, u - 0.04, 0.3, ang=-0.4, width=160, k=0.16)
     return img

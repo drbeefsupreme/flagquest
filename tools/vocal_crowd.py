@@ -24,7 +24,7 @@ from pedalboard import Compressor, HighpassFilter, HighShelfFilter, Pedalboard, 
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from vocal_corpus import BABEL_TX, CRACKPOTS, FAITHS, LORE, NATIONS, SLOP
-from vocal_lib import (ALL_VOICES, CACHE, NS, SR, VOICES, VSR, add_at, bandpass, convolve, db, echo, fade, key,
+from vocal_lib import (ALL_VOICES, CACHE, NS, SR, TL, VOICES, VSR, add_at, bandpass, convolve, db, echo, fade, key,
                        kokoro, lufs, make_ir, pan, psola, resample, rng_for, smoothstep, up48, warp_sp,
                        trim, whisperize, world_analyze, world_stretch, world_synth, write_stem)
 
@@ -218,6 +218,13 @@ def murmurs():
     buf += reverb_add(sec, void, -4)
     t = np.arange(NS) / SR
     buf *= (np.clip((t - 100.5) / 0.4, 0, 1) * np.clip((126.2 - t) / 0.7, 0, 1))[:, None].astype(np.float32)
+    # keep the leads clear: -7 dB under every s05b line (K07 especially sits on the densifying swirl)
+    g = np.ones(NS, np.float32)
+    for ln in TL["lines"]:
+        if ln["scene"] == "s05b":
+            d = np.clip(np.minimum((t - ln["start"] + 0.2) / 0.15, (ln["end"] + 0.2 - t) / 0.3), 0, 1)
+            g = np.minimum(g, (1 - d * (1 - db(-7))).astype(np.float32))
+    buf *= g[:, None]
     return buf
 
 

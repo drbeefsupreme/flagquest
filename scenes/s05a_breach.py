@@ -1,7 +1,7 @@
 """s05a - The Schismmancers (90.0-100.5). A tactical-breach sequence whose breaching tools are plain yellow flags.
 
 Shots (global seconds; cut frames derived from the locked timeline in setup):
-  90.00 gear_up montage: velcro -> tacks -> telescoping poles -> NVG flip -> boot stomp   (s05a_gear)
+  90.00 gear_up montage: velcro -> tacks -> telescoping poles -> NVG flip (held to 91.2)    (s05a_gear)
   91.21 K01 wide: slow-motion hero walk down the pentagonal basalt tunnel, backlit gold     (s05a_tunnel)
   93.29 K01 MCU: the Commander on the radio (lip-sync), furled flag on his shoulder        (s05a_tunnel)
   96.08 K02 holographic HUD globe, a region balkanizing recursively (spherical Voronoi)     (s05a_hud)
@@ -33,7 +33,7 @@ def setup(S):
     tl = S.tl
     b = [_lf(S, tl.word("K03", "Breach", k)[0]) for k in range(3)]
     boom = _lf(S, tl.cue("breach"))
-    cuts = [("velcro", 0), ("tacks", 6), ("poles", 13), ("nvg", 19), ("boots", 25),
+    cuts = [("velcro", 0), ("tacks", 6), ("poles", 13), ("nvg", 19),
             ("walk", _lf(S, tl.line("K01")["start"])), ("mcu", _lf(S, tl.word("K01", "Target")[0])),
             ("hud", _lf(S, tl.line("K02")["start"])), ("beat1", b[0]), ("beat2", b[1]), ("beat3", b[2]),
             ("breach", boom)]
@@ -90,7 +90,7 @@ def post(fc, st):
     if tb >= 0:
         p["letterbox"] = 0.16 * (1 - ease_out(clamp(tb / 0.22), 2.5))
         p["ca"] = 2.2 * math.exp(-tb * 5)
-        end = smoothstep(0.56, 0.75, tb)
+        end = smoothstep(0.54, 0.75, tb)
         p["vignette"] = 0.3 * (1 - end)
         p["bloom"] = 0.36 * (1 - end)
         p["grain"] = 0.035 * (1 - end) + 0.008 * end
@@ -115,8 +115,7 @@ def _export_hits(S, st):
           dict(t=T("poles", 4), kind="click", strength=1.0, pan=0.3, desc="telescoping pole click 3"),
           dict(t=T("nvg", 0), kind="whoosh", strength=0.4, pan=0.0, desc="quad-tube NVG swings down on its hinge"),
           dict(t=T("nvg", 2), kind="click", strength=0.9, pan=0.0, desc="NVG mount locks down (mechanical snap)"),
-          dict(t=T("nvg", 2) + 0.01, kind="power_on", strength=0.6, pan=0.0, desc="NVG tubes power on: high whine + green glow (flicker)"),
-          dict(t=T("boots", 1), kind="stomp", strength=1.0, pan=-0.45, desc="boot stomps onto wet stone, backlit dust + splash")]
+          dict(t=T("nvg", 2) + 0.01, kind="power_on", strength=0.6, pan=0.0, desc="NVG tubes power on: high whine + green glow (flicker)")]
     # slow-motion footsteps of the five walkers (heavy, reverberant tunnel)
     for t, kind, i, dx in tunnel.footfalls(st["walk_T0"], sh["hud"]["T0"], 4.9):
         ev.append(dict(t=t, kind="footstep_slowmo", strength=0.8 if kind == "commander" else 0.5,

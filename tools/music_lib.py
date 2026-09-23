@@ -300,7 +300,8 @@ def stereo_place(y, pan=0.0, width=1.0):
     return np.stack([(mid + side) * gl, (mid - side) * gr], 1).astype(np.float32)
 
 
-def oneshot(buf, bus, t, rel_path, gain=1.0, pan=0.0, width=1.0, rate=1.0, trim=True, rev=False, dur=None):
+def oneshot(buf, bus, t, rel_path, gain=1.0, pan=0.0, width=1.0, rate=1.0, trim=True, rev=False, dur=None,
+            align="auto"):
     """Unpitched one-shot sample from vsco2 (path relative to assets/sf2/vsco2). Onset-aligned to t
     (rev=True: reversed so its *end* (the original attack) lands on t)."""
     x, sr = load_wav(os.path.join("assets", "sf2", "vsco2", rel_path))
@@ -318,7 +319,11 @@ def oneshot(buf, bus, t, rel_path, gain=1.0, pan=0.0, width=1.0, rate=1.0, trim=
         y = y[::-1].copy()
         buf.add(bus, y, i0=S(t) - len(y), gain=gain)
     else:
-        buf.add(bus, y, i0=S(t) - min(flux_shift(y, 0.05), attack_shift(y, 0.03, -20.0)), gain=gain)
+        if align == "peak":  # cymbals bloom 15–50 ms after the stick: put the bloom (not the tick) on the beat
+            sh = max(0, int(np.argmax(np.abs(y[: S(0.1)]).max(1))) - S(0.004))
+        else:
+            sh = min(flux_shift(y, 0.05), attack_shift(y, 0.03, -20.0))
+        buf.add(bus, y, i0=S(t) - sh, gain=gain)
     return y
 
 

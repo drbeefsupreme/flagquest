@@ -182,11 +182,12 @@ def perc(b, t, f, gain=1.0, pan=0.0, width=0.8, bus="perc", **kw):
 
 
 def crash(b, t, level="ff", gain=1.0, pan=0.15, dur=None):
-    f = {"ff": V1P + "varMetal/Cymbals/clash/crash_hit_ff_loose.wav",
-         "fff": V1P + "varMetal/Cymbals/clash/crash_hit_fff_loose.wav",
-         "mp": V1P + "varMetal/Cymbals/clash/crash_hit_mp_loose.wav",
-         "pp": V1P + "varMetal/Cymbals/clash/crash_hit_pp_loose.wav"}[level]
-    perc(b, t, f, gain * 0.28, pan, dur=dur)
+    # clash pairs chosen for tight (flam-free) attacks: the main crash lands within ~8 ms of t
+    f, g = {"ff": (V1P + "varMetal/Cymbals/clash/crash_hit_fff_loose_2.wav", 0.8),
+            "fff": (V1P + "varMetal/Cymbals/clash/crash_hit_fff_loose_2.wav", 1.0),
+            "mp": (PERC + "cymbal-crash1_mp_rr1.wav", 1.0),
+            "pp": (PERC + "cymbal-crash1_pp_rr1.wav", 1.0)}[level]
+    perc(b, t, f, gain * 0.28 * g, pan, dur=dur, align="peak")
 
 
 DYN_ORDER = ["ppp", "pp", "p", "mp", "mf", "f", "ff", "fff"]
@@ -359,7 +360,7 @@ def s01(b):
     b.add("fx", rs[-L:] * np.linspace(0, 1, L)[:, None] ** 1.5, i0=S(ts_) - L, gain=db(-18))
     swell_to(b, ts_, PERC + "susCymb1-cresc-Short_v1.wav", gain=0.3, after=0.02)
     # ---- 16.0 TITLE SLAM (tonal tutti; Foley owns the sub/noise)
-    tutti(b, ts_, "D", 0.8, sus=0.0)
+    tutti(b, ts_, "D", 0.7, sus=0.0)
     hit(ts_, "title_slam", "D major tutti hit")
     I("glock").note(b, "keys", ts_, "D6", None, 0.9, 0.3, gain=0.12)
     strings(b, ts_, 4.3, vel=0.7, dyn=[(0, 0.8), (0.6, 0.45), (3.0, 0.4), (4.3, 0.55)], att=0.0, rel=0.4,
@@ -491,18 +492,20 @@ def s02(b):
                 I("vln_solo").note(b, "str", tj, n + 12, 0.38, 0.5, -0.2, gain=0.35,
                                    bend=lambda x, w=wob: -0.4 * x + 0.3 * np.sin(2 * np.pi * 5.0 * x), att=0.02, rel=0.2)
     # surge: tremolo cluster crescendo rising, Shepard rise, noise riser, timpani roll, reverse cymbal
-    dur = crash_t - 35.0
-    strings(b, 35.0, dur, "trem", dyn=[(0, 0.05), (dur * 0.6, 0.45), (dur, 1.0)], att=0.3, rel=0.02,
+    suck = 0.045  # the surge stops a hair before the impact: a micro-silence that makes the crash punch
+    dur = crash_t - 35.0 - suck
+    strings(b, 35.0, dur, "trem", dyn=[(0, 0.05), (dur * 0.6, 0.45), (dur, 1.0)], att=0.3, rel=0.01,
             v1=["D5", "Eb5", "E5", "F5"], v2=["A4", "Bb4"], va=["D4", "Eb4", "F4"], vc=["D3", "A3", "Eb3"],
             bend=lambda x: 2.5 * (x / 4.2) ** 2, gain=0.85)
-    amp = envelope([(0, 0), (2.0, 0.3), (4.4, 1.0)], S(4.4))
+    amp = envelope([(0, 0), (2.0, 0.3), (4.4 - suck - 0.01, 1.0), (4.4 - suck, 0.0), (4.4, 0.0)], S(4.4))
     y = shepard(4.4, fbase=hz(m("D1")), n_oct=9, center_oct=4.5, width_oct=1.4, amp=amp,
                 rate_fn=lambda x: 0.15 + 0.5 * (x / 4.4) ** 2)
     b.add("fx", y, t=crash_t - 4.4, gain=db(-12))
     r = riser(3.0, 250, 9000, q=1.5, curve=2.2, seed=3, tonal=(m("D3"), m("D5")))
-    b.add("fx", r, i0=S(crash_t) - len(r), gain=db(-15))
-    timp_roll(b, 37.0, crash_t - 37.0, "D2", [(0, 0.1), (crash_t - 37.0, 1.0)], gain=0.9)
-    swell_to(b, crash_t, PERC + "susCymb1-cresc-Median_v1.wav", gain=0.35, after=0.01)
+    r[-S(0.008):] *= np.linspace(1, 0, S(0.008))[:, None]
+    b.add("fx", r, i0=S(crash_t - suck) - len(r), gain=db(-15))
+    timp_roll(b, 37.0, crash_t - 37.0 - suck - 0.02, "D2", [(0, 0.1), (crash_t - 37.0 - suck, 1.0)], gain=0.9)
+    swell_to(b, crash_t - suck, PERC + "susCymb1-cresc-Median_v1.wav", gain=0.35, after=0.005)
     # glitch stutters of the corrupted theme 37.6 -> 39.1
     for q in range(10):
         tq = 37.6 + q * 0.15
@@ -513,10 +516,14 @@ def s02(b):
     # ---- 39.2 MASSIVE IMPACT (tonal braam, sinks)
     sink = lambda x: -3.0 * np.clip((x - 0.35) / 1.6, 0, 1) ** 1.3
     brass(b, crash_t, 1.7, dyn=[(0, 1.0), (0.3, 0.75), (1.7, 0.4)], att=0.0, rel=0.8, tbn=["D2", "A2", "D3"],
-          tuba=["D2"], hn=["A3", "D4", "Eb4"], bend=sink, gain=1.0)
+          tuba=["D2"], hn=["A3", "D4", "Eb4"], bend=sink, gain=0.42)
     strings(b, crash_t, 1.7, dyn=[(0, 1.0), (0.3, 0.7), (1.7, 0.35)], att=0.0, rel=0.8, v1=["D5", "Eb5"],
-            va=["A3", "D4"], vc=["D3", "A2"], cb=["D2"], bend=sink, gain=0.9)
-    tutti(b, crash_t, "Dm", 1.0, tpt=True, gong=True)
+            va=["A3", "D4"], vc=["D3", "A2"], cb=["D2"], bend=sink, gain=0.42)
+    tutti(b, crash_t, "Dm", 0.6, tpt=True, perc_on=False)
+    # sharp-attack percussion only (Foley's crash carries the weight): timpani, giant drum with sticks, crash
+    timp(b, crash_t, "D2", 1.0)
+    taiko(b, crash_t, "fff", gain=0.6, sticks=True)
+    perc(b, crash_t, PERC + "susCymb1-hitstick_f_rr1.wav", 0.45, -0.2)  # instant metal edge (Foley has the crash noise)
     hit(crash_t, "slop_crash", "D-minor braam + cluster, sinks")
     # ---- 40.6 N07: slow waves under the narration + feeds multiplying
     for (a, lv) in [(40.3, 0.3), (42.8, 0.27), (45.3, 0.25)]:
@@ -651,7 +658,8 @@ def s03(b):
     wob = _resample(np.ascontiguousarray(x), float(i0), steps.astype(np.float64), n)
     narrow = eq(wob, ("hp", 700), ("lp", 2600))
     w = np.clip(1 - tl_ / (lock - t0), 0, 1)[:, None]
-    x[i0:i1] = narrow * w + wob * (1 - w)
+    back = np.clip((tl_ - (lock - t0)) / 0.08, 0, 1)[:, None]  # glide back onto the un-warbled signal
+    x[i0:i1] = (narrow * w + wob * (1 - w)) * (1 - back) + x[i0:i1] * back
     mid = x.mean(1, keepdims=True)
     x = 0.8 * mid + 0.2 * x
     x = x + 0.22 * conv_stereo(x, IR("room"))[: len(x)]
@@ -791,6 +799,8 @@ def s04(b):
     strings(b, tbm, 0.6, dyn=[(0, 1.0), (0.6, 0.7)], att=0.0, rel=0.02, v1=["D5", "A5"], va=["F4", "D4"],
             vc=["D3", "A2"], cb=["D2"], gain=0.9)
     tutti(b, tbm, "Dm", 0.9, crash_on=False)
+    taiko(b, tbm, "fff", gain=0.5, sticks=True)
+    perc(b, tbm, PERC + "susCymb1-hitstick_f_rr2.wav", 0.35, 0.2)
     hit(tbm, "schismmancers", "D-minor braam (push-in flash)")
     swell_to(b, 90.0, PERC + "susCymb1-cresc-Short_v1.wav", gain=0.3, after=0.0)
     # everything s04 is hard-cut at 90.0 (the cut); applied to this section's buses
@@ -875,11 +885,11 @@ def s05a(b):
     b.add("fx", r, i0=S(tb_) - len(r), gain=db(-20))
     # BREACH: D major blaze (the flag light)
     sus = CUE["nation_fracture"] - tb_ - 0.06
-    tutti(b, tb_, "D", 1.0, gong=False, crash_dur=0.8)
+    tutti(b, tb_, "D", 0.8, gong=False, crash_dur=0.8)
     brass(b, tb_, sus, dyn=[(0, 1.0), (0.3, 0.75), (sus, 0.3)], att=0.0, rel=0.1, tpt=["D5", "F#5", "A5"],
-          hn=["D4", "F#4", "A4", "D5"], tbn=["D3", "A3"], tuba=["D2"], gain=0.9)
+          hn=["D4", "F#4", "A4", "D5"], tbn=["D3", "A3"], tuba=["D2"], gain=0.65)
     strings(b, tb_, sus, dyn=[(0, 1.0), (0.4, 0.7), (sus, 0.3)], att=0.0, rel=0.1, v1=["A5", "D6"], v2=["F#5", "D5"],
-            va=["A4", "F#4"], vc=["D3", "A3"], cb=["D2"], gain=0.9)
+            va=["A4", "F#4"], vc=["D3", "A3"], cb=["D2"], gain=0.7)
     cho = sf2part(SF_MS, 0, 52, gain=1.6)
     for n in ["D4", "A4", "D5", "F#5", "A5"]:
         cho.note(tb_, m(n), sus, 0.9)
@@ -1039,8 +1049,10 @@ def s06(b):
     # dialogue windows → chaos dips
     dips = [(LINES["L03"]["start"] - 0.1, LINES["L03"]["end"] + 0.1), (LINES["C03"]["start"] - 0.1, LINES["C03"]["end"] + 0.1)]
 
-    def dip(t):
-        return 0.45 if any(a <= t <= z for (a, z) in dips) else 1.0
+    def dip(t):  # Lutie shouts OVER the chaos (−4 dB); for calm Crocus it recedes further (−7 dB)
+        if dips[0][0] <= t <= dips[0][1]:
+            return 0.6
+        return 0.45 if dips[1][0] <= t <= dips[1][1] else 1.0
 
     # synth Shepard rise, accelerating
     dur = t_end - ts0
@@ -1133,13 +1145,13 @@ def s06(b):
     b.add("space", np.stack([y, y], 1), t=a, gain=db(-24))
     I("organ_softped").note(b, "org", a, "D2", z - a, 0.8, 0.0, gain=0.4, att=0.4, rel=0.1)
     # 136.0 babel_crack: cluster hit, then everything bends upward
-    tutti(b, tc, "Dm", 1.0, gong=True)
-    brass(b, tc, None, "stac", 1.0, hn=["D4", "Eb4", "E4", "F4"], tbn=["C#3", "D3", "Eb3"], gain=0.9)
+    tutti(b, tc, "Dm", 0.75, gong=True)
+    brass(b, tc, None, "stac", 1.0, hn=["D4", "Eb4", "E4", "F4"], tbn=["C#3", "D3", "Eb3"], gain=0.55)
     hit(tc, "babel_crack", "cluster hit; max chaos")
-    strings(b, tc, t_end - tc, "trem", dyn=[(0, 0.6), (t_end - tc, 1.0)], att=0.0, rel=0.01,
+    strings(b, tc + 0.08, t_end - tc - 0.08, "trem", dyn=[(0, 0.6), (t_end - tc - 0.08, 1.0)], att=0.05, rel=0.01,
             v1=["D5", "Eb5", "E5", "F5", "F#5"], va=["A3", "Bb3", "B3"], vc=["D3", "Eb3"],
             bend=lambda x: 5.0 * (x / 2.5) ** 1.6, gain=0.6)
-    brass(b, tc, t_end - tc, dyn=[(0, 0.6), (t_end - tc, 1.0)], att=0.0, rel=0.01, hn=["A3", "Bb3", "D4"],
+    brass(b, tc + 0.08, t_end - tc - 0.08, dyn=[(0, 0.6), (t_end - tc - 0.08, 1.0)], att=0.05, rel=0.01, hn=["A3", "Bb3", "D4"],
           tbn=["D2", "Eb2"], bend=lambda x: 4.0 * (x / 2.5) ** 1.6, gain=0.7)
     r = riser(t_end - tc, 300, 12000, q=1.2, curve=1.6, seed=13, tonal=(m("D3"), m("D6")))
     b.add("fx", r, t=tc, gain=db(-17))
@@ -1333,7 +1345,7 @@ def s07b(b):
     # ---- 166.3 GATELESS GATE climax
     tg = CUE["gateless_gate"]
     tcomp = W("N10", "completed")
-    tutti(b, tg, "D", 1.0, gong=True)
+    tutti(b, tg, "D", 0.85, gong=True)
     for n in ["D6", "A6", "D7"]:
         I("glock").note(b, "keys", tg, n, None, 0.8, 0.25, gain=0.08)
     for n in ["D3", "A3", "D4", "F#4", "A4", "D5"]:
@@ -1349,7 +1361,7 @@ def s07b(b):
         d = z - a
         lv = 0.9 if j < 7 else (0.75 if j < 9 else 0.8)
         fin = [(0, lv), (d, lv)] if j < 9 else [(0, 0.85), (0.6, 0.6), (d, 0.25)]
-        brass(b, a, d + 0.03, dyn=fin, att=0.03, rel=0.35, tpt=[mel[j]], hn=[mel[j] - 12], gain=1.0)
+        brass(b, a, d + 0.03, dyn=fin, att=0.03, rel=0.35, tpt=[mel[j]], hn=[mel[j] - 12], gain=0.85)
         brass(b, a, d + 0.03, dyn=[(0, lv * 0.7), (d, lv * 0.7)] if j < 9 else [(0, 0.6), (d, 0.15)], att=0.05, rel=0.35,
               tbn=[root(harm[j], "C3")], tuba=[m(bass[j])] if m(bass[j]) >= 34 else [m(bass[j]) + 12], gain=0.6)
         top = mel[j] + 12
@@ -1366,6 +1378,9 @@ def s07b(b):
     for (a, n, v) in [(170.05, "D2", 0.8), (LINES["N10"]["start"], "Bb2", 0.8), (171.35, "C3", 0.85), (tcomp, "D2", 1.0)]:
         timp(b, a, n, v, gain=0.7 if a < tcomp else 1.1)
     hit(tcomp, "survey_completed", "bVI-bVII-I lands on D ('completed')")
+    for n in ["D3", "A3", "D4", "F#4", "A4", "D5"]:
+        I("harp").note(b, "keys", tcomp, n, None, 0.75, PAN["harp"], gain=0.2)
+    I("glock").note(b, "keys", tcomp, "F#6", None, 0.6, 0.3, gain=0.06)
     cho = sf2part(SF_MS, 0, 52, gain=1.3)
     for n in ["D5", "F#5", "A5"]:
         cho.note(tg, m(n), 170.9 - tg, 0.7)
@@ -1468,7 +1483,7 @@ def s08(b):
     timp_roll(b, 187.3, tg - 187.3, "A2", [(0, 0.1), (tg - 187.3, 0.85)], gain=0.7)
     swell_to(b, tg, V1P + "varMetal/Cymbals/susp/susp_hit_softmall_roll2_cresc.wav", gain=0.3, after=0.1)
     # 188.3 GLORIOUS! tutti + rippling salute (fanfare triplets, harp gliss)
-    tutti(b, tg, "D", 1.0, sus=1.15)
+    tutti(b, tg, "D", 0.75, sus=1.15)
     hit(tg, "glorious", "final tutti")
     for j, n in enumerate(["D5", "F#5", "A5"]):
         brass(b, tg + 0.3 + j * 0.1, None, "stac", 0.85, tpt=[n], gain=0.7)
@@ -1569,8 +1584,19 @@ def limiter(x, ceiling_db=-1.2, look=0.004, rel=0.12):
     for i in range(len(need)):
         s = need[i] if need[i] < s else ar * s + (1 - ar) * need[i]
         g[i] = s
-    g = np.convolve(g, np.ones(la) / la, "same")
+    g = np.convolve(np.pad(g, (la, la), mode="edge"), np.ones(la) / la, "same")[la:-la]
     g = np.minimum(g, need)
+    # report where the limiter works hardest (>3 dB), so hits can be re-balanced at the source
+    red = np.flatnonzero(g < db(-3))
+    if len(red):
+        spans, st = [], red[0]
+        for p_, q_ in zip(red[:-1], red[1:]):
+            if q_ - p_ > SR // 10:
+                spans.append((st, p_))
+                st = q_
+        spans.append((st, red[-1]))
+        print("  limiter >3 dB at: " + ", ".join(f"{a_ / SR:.2f}s({20 * np.log10(g[a_:b_ + 1].min()):.1f}dB)"
+                                                 for a_, b_ in spans[:20]), flush=True)
     return (x * g[:, None]).astype(np.float32), float(g.min())
 
 

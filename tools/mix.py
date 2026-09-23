@@ -34,16 +34,33 @@ SR = 48000
 DUR = json.loads((ROOT / "timeline.json").read_text())["duration"]
 N = int(round(DUR * SR))
 
-# stem -> gain dB (tuned by ear-proxy: loudness report below)
+# stem -> static gain dB (balance measured per scene/line with pyloudnorm; see git history for the report)
 STEMS = {
     "dialogue": 0.0,
     "crowd": -2.0,
-    "choir": -1.0,
+    "choir": 1.0,      # the sung hymn + convergence must sit on top of the orchestra
     "music": -5.0,
     "sfx": -3.0,
     "ambience": -7.0,
 }
-DUCK = {"music": 7.0, "ambience": 4.0, "sfx": 2.0, "crowd": 4.0}   # max dB reduction under dialogue
+DUCK = {"music": 7.0, "ambience": 4.0, "sfx": 5.0, "crowd": 5.0}   # max dB reduction under dialogue
+# timed automation: (stem, t0, t1, dB, fade_s)
+AUTOMATION = [
+    ("music", 188.22, 189.35, -3.5, 0.06),   # let the crowd's GLORIOUS! punch through the tutti
+    ("crowd", 188.22, 190.2, 2.0, 0.06),
+    ("music", 154.5, 165.93, -1.5, 0.4),     # hymn: orchestra supports the voices
+]
+
+
+def automation(name):
+    t = np.arange(N, dtype=np.float32) / SR
+    db = np.zeros(N, np.float32)
+    for stem, t0, t1, g, fd in AUTOMATION:
+        if stem != name:
+            continue
+        w = np.clip(np.minimum((t - t0) / fd + 1, (t1 - t) / fd + 1), 0, 1)
+        db += g * w
+    return 10 ** (db / 20)
 
 
 def load(name):
@@ -91,9 +108,11 @@ def main():
             print(f"  {k:9s} MISSING")
             continue
         lufs = meter.integrated_loudness(s) if np.abs(s).max() > 1e-6 else -99
-        gain = 10 ** (g / 20)
+        gain = np.full((N, 1), 10 ** (g / 20), np.float32)
         if k in DUCK:
             gain = gain * 10 ** (-DUCK[k] * env / 20)[:, None]
+        if any(a_[0] == k for a_ in AUTOMATION):
+            gain = gain * automation(k)[:, None]
         mix += s * gain
         print(f"  {k:9s} {lufs:6.1f} LUFS  peak {20*np.log10(np.abs(s).max()+1e-9):6.1f} dBFS  gain {g:+.1f} dB")
     # sacred silence 138.5 -> 139.5 (fade back in by 140.0)

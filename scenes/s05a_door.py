@@ -576,7 +576,7 @@ def beat3(fc, st, u):
     R = crack_radius(T, st)
     sp = cam.p(STRIKE[0], STRIKE[1], 0)
     img += radial_img(fc, sp[0], sp[1], 120 + 160 * k, FLAGC, 2.2) * (0.04 + 0.12 * k * k)
-    img += crack_layer(fc, cam, st["cracks"], R, heat, width_k=0.45) * 0.8
+    img += crack_layer(fc, cam, st["cracks"], R, heat, width_k=0.35) * 0.55
     r = beat_ring(fc, cam, T, b2, k=0.6)
     if r is not None:
         img += r
@@ -584,8 +584,9 @@ def beat3(fc, st, u):
     ch = st["dchars"][STACK[0]]
     pole = ram_pole(T, st, lean=0.05)
     layers, a = draw_member(fc, ch, cam, STRIKE[0] + 1.25, -0.62, T, "ram", facing=-1, pole_world=pole,
-                            rim_col=mix(FLAG_L, (1, 1, 1), 0.3), rim_k=1.4 + 0.8 * k, rim_dir=(-1.0, 0.1),
-                            tint=(SIL, 0.72), furl_light=(-0.8, 0.0, 0.4))
+                            rim_col=mix(FLAG_L, (1, 1, 1), 0.5), rim_k=0.7 + 0.4 * k, rim_dir=(-1.0, 0.1),
+                            tint=(SIL, 0.93), furl_light=(-0.8, 0.0, 0.4),
+                            extra=dict(shape_r="grip", shape_l="grip"))
     for l in layers:
         img = comp(img, l)
     # dust sifting out of the cracks
@@ -627,7 +628,7 @@ LEAP = [  # (kind, seed, start x, end x, peak y, facing(screen), delay, dz)
 
 def breach_cam(tb):
     push = ease_in_out(clamp((tb - 0.04) / 0.72), 2.0)
-    return Pin(x=1.0 - 0.4 * push, y=1.35 + 0.45 * push, z=13.5 - 7.0 * push, f=950 + 150 * push,
+    return Pin(x=1.0 - 0.3 * push, y=1.35 + 0.35 * push, z=13.5 - 2.5 * push, f=950 + 350 * push,
                hor=600, cx=960, yaw=math.pi, pitch=0.12)
 
 
@@ -635,9 +636,9 @@ def leap_state(i, tb):
     kind, seed, x0, x1, yp, facing, dl, dz = LEAP[i]
     ts = tb_to_ts(tb) - dl * 0.3
     k = clamp(ts / 0.16)
-    x = lerp(x0, x1, ease_out(k, 1.5))
-    y = 0.3 + yp * math.sin(min(1.0, k * 1.2) * math.pi * 0.6)
-    z = 0.4 + 8.0 * ease_out(k, 1.3) + dz * k
+    x = lerp(x0, x1 * 0.45 + x0 * 0.2, ease_out(k, 1.5))
+    y = 0.25 + 0.5 * yp * math.sin(min(1.0, k * 1.2) * math.pi * 0.6)
+    z = 0.4 + 6.3 * ease_out(k, 1.3) + 0.3 * dz * k
     return x, y, z, k, facing
 
 
@@ -655,7 +656,7 @@ def build_leap_flags(S, st):
 
         def wind_fn(j, facing=facing):
             tb = j / S.fps
-            g = 1400 * math.exp(-tb * 1.5) + 800
+            g = 1800 * math.exp(-tb * 1.5) + 1100
             return (facing * g, -0.3 * g, 250.0)
 
         def furl_fn(j, dl=dl):
@@ -831,7 +832,7 @@ def breach(fc, st, u):
     flash = math.exp(-max(0.0, tb) / 0.018) * 0.8
     img = img * (1 - flash) + np.asarray(mix(GLOW, (1, 1, 1), 0.5), np.float32) * flash
     # swallowed by the light: flat flag_glow on the last frame (hand-off to s05b)
-    wk = smoothstep(0.56, 0.75, tb) ** 1.6
+    wk = smoothstep(0.54, 0.75, tb) ** 1.6
     if fc.f >= fc.n - 1:
         wk = 1.0
     img = img * (1 - wk) + FLAGGLOW * wk

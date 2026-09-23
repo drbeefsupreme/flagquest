@@ -28,6 +28,11 @@ from scenes import s07b_hyper as HY
 from scenes import s07b_planet as PL
 from scenes import s07b_sky as SK
 
+try:                                    # s07a's pure world renderer for the seamless hand-off
+    from scenes.s07a_plant import render_at as _S07A
+except Exception:                       # pragma: no cover - fall back to the planet renderer alone
+    _S07A = None
+H07A = (155.3, 156.1)                   # s07a world -> planet dissolve window
 # ------------------------------------------------------------------ timing (global seconds)
 BEAT = 60.0 / 84.0
 PH = [154.5 + 4 * BEAT * k for k in range(4)]      # 154.50, 157.357, 160.214, 163.071
@@ -105,14 +110,17 @@ def plane_homography(cam, z0, w, h):
 
 # ------------------------------------------------------------------ cameras
 def planet_cam(T):
-    """rise from s07a's aerial (170 m, 62 deg down, looking north) to the whole globe (19000 km, straight down)"""
-    alt = _pchip(T, [(154.5, 0.17), (155.3, 0.34), (156.0, 1.1), (156.6, 4.5), (157.36, 38.0), (158.0, 380.0),
-                     (158.6, 2300.0), (159.0, 6800.0), (159.35, 14000.0), (159.62, 19000.0), (161.0, 19000.0)],
-                 log=True)
-    pitch = _pchip(T, [(154.5, 62.0), (155.3, 63.2), (156.0, 63.5), (156.6, 61.5), (157.36, 57.0), (158.0, 52.0),
-                       (158.6, 50.0), (158.9, 57.0), (159.2, 74.0), (159.5, 88.5), (159.62, 90.0), (161.0, 90.0)])
-    y = -0.04 * (1 - seg(T, 154.5, 158.5, ease_in_out))
-    return cam_vec((0.0, y, alt), 0.0, math.radians(min(pitch, 89.999))), alt
+    """rise from s07a's aerial (s07a_world.camera_at: 140 m, 53.5 deg down, looking north; matched exactly until
+    156.3) to the whole globe (19000 km, straight down)"""
+    alt = _pchip(T, [(154.5, 0.140), (155.3, 0.2086), (155.9, 0.2814), (156.3, 0.3435), (156.8, 2.6),
+                     (157.36, 38.0), (158.0, 380.0), (158.6, 2300.0), (159.0, 6800.0), (159.35, 14000.0),
+                     (159.62, 19000.0), (161.0, 19000.0)], log=True)
+    pitch = _pchip(T, [(154.5, 53.53), (155.3, 59.72), (155.9, 63.67), (156.3, 66.0), (156.8, 64.0),
+                       (157.36, 58.0), (158.0, 52.0), (158.6, 50.0), (158.9, 57.0), (159.2, 74.0), (159.5, 88.5),
+                       (159.62, 90.0), (161.0, 90.0)])
+    y = -0.06 * (1 - seg(T, 156.3, 158.5, ease_in_out))
+    hfov = 48.0 + 2.0 * seg(T, 156.3, 157.2)
+    return cam_vec((0.0, y, alt), 0.0, math.radians(min(pitch, 89.999)), hfov), alt
 
 
 def heaven_cam(T):
@@ -320,8 +328,9 @@ def _render_planet(fc, st, T, flat=0.0):
     ring_km, ring_s = _planet_ring(T)
     el, az = math.radians(6.0), math.radians(-72.0)
     sun = np.array([math.sin(az) * math.cos(el), math.cos(az) * math.cos(el), math.sin(el)])
-    bgl = 0.6 * seg(T, 154.8, 156.4, ease_in_out)
-    prm = np.array([*sun, T, _front_km(T), ring_km, ring_s, 1.0, 1.0, 1.6, flat, 0.45, bgl], np.float64)
+    bgl = 0.6 * seg(T, 155.9, 157.0, ease_in_out)
+    fg = 1.0 + 0.8 * (1 - seg(T, 155.8, 156.8))          # s07a's dense gold speckle carries through the dissolve
+    prm = np.array([*sun, T, _front_km(T), ring_km, ring_s, fg, 1.0, 1.6, flat, 0.45, bgl], np.float64)
     out = np.zeros((fc.h, fc.w, 3), np.float32)
     PL.render_planet(out, cam, prm, _rgb(PLATES), _rgb(PCOLS))
     return out, cam, alt
@@ -606,7 +615,6 @@ def _gate_parts():
     lift = 0.62 * (np.abs(xs) / 6.9) ** 2.4
     parts.append([(x, y, 6.84 + l) for x, l in zip(xs, lift)] +
                  [(x, y, 6.52 + 0.9 * l) for x, l in zip(xs[::-1], lift[::-1])])   # kasagi, upswept
-    parts.append(box(-0.1, 0.1, 5.08, 6.26))            # plain centre strut
     return parts
 
 
@@ -663,7 +671,7 @@ def _orbit_flags(st, T, cam):
     return scr[ok, 0], scr[ok, 1], pole[ok], o["seed"][ok], d[ok], (y > c[1])[ok]
 
 
-def _render_heaven(fc, st, T, cam, include_disk=None):
+def _render_heaven(fc, st, T, cam, include_disk=None, aux=None):
     """golden sky + sea of clouds + gate + colossal flag + orbiting ember-flags + god rays.
     include_disk: callable(img)->img inserting the Flagistan disk and its flags at their depth."""
     sd, sun_xy, sun_z = _sun_screen(cam)
@@ -679,39 +687,39 @@ def _render_heaven(fc, st, T, cam, include_disk=None):
     img = np.ascontiguousarray(img, dtype=np.float64)
     s = fc.s
     if show_gate:
+        # THE ONE RULE: nothing is ever composited over the colossal Flag's cloth. Draw order: far clouds, the gate
+        # of light (masked out of the Flag's silhouette so no bar or its glow can cross the cloth), the nearer
+        # clouds, the orbiting ember-flags (all behind), and the Flag itself last: it passes in front of / through
+        # the gate's opening, never cut by a bar.
         _draw_puffs(img, pv, s, dmin=d_flag)
-        # the colossal Flag with its orbiting ember-flags
-        cvf = Canvas(fc)
-        xs, ys, pl, sds, dd, behind = _orbit_flags(st, T, cam)
-        glow_f = 0.35 + 0.5 * seg(T, N10, T_WHITE)
-        if behind.any():
-            draw_flag_field(cvf.ctx, xs[behind], ys[behind], pl[behind], T, seeds=sds[behind], wind=0.9,
-                            glow=0.8, light=(-0.1, -0.3, -0.9), bright=0.5)
-        _draw_colossal(cvf.ctx, st, cam, T, glow=glow_f)
-        fl = cvf.rgba()
+        cvc = Canvas(fc)
+        _draw_colossal(cvc.ctx, st, cam, T, glow=0.35 + 0.5 * seg(T, N10, T_WHITE))
+        fl = cvc.rgba()
         # the pole's foot disappears into the sea of clouds
         cut, _ = project(cam, np.array([[FLAG_X, FLAG_Y, -1.1]]))
         ycut = cut[0, 1] * s
         rows = np.arange(fc.h, dtype=np.float32)[:, None, None]
         fl = fl * np.clip((ycut - rows) / (30 * s) + 0.3, 0, 1)
-        img = over(img, fl)
         occl = fl[..., 3:4]
-        img = np.ascontiguousarray(img, dtype=np.float64)
-        _draw_puffs(img, pv, s, dmin=d_gate, dmax=d_flag)
-        front = ~behind
-        if front.any():
-            cv = Canvas(fc)
-            draw_flag_field(cv.ctx, xs[front], ys[front], pl[front], T, seeds=sds[front], wind=0.9, glow=0.8,
-                            light=(-0.1, -0.3, -0.9), bright=0.5)
-            img = cv.over(img)
-        # the Gateless Gate: pure light
+        # a generous silhouette (dilated + feathered) that keeps every light source off the cloth
+        rad = max(3, int(round(24 * s)))
+        shield = cv2.dilate(np.ascontiguousarray(occl[..., 0]), np.ones((rad, rad), np.uint8))
+        shield = np.clip(cv2.GaussianBlur(shield, (0, 0), 10 * s) * 1.5, 0, 1)[..., None]
         gk = seg(T, GATE - 0.3, GATE + 0.45, ease_out) * (1 + 0.4 * pulse(T, GATE + 0.08, 0.2))
         if gk > 0 and d_gate > 0.3:
             g = _gate_layer(fc, cam)[..., :3] * gk
             gl = blur(g, 1.6 * s) * 0.35 + blur(g, 7 * s) * 0.2 + blur(g, 28 * s) * 0.12
-            img = img * (1 - np.clip(g, 0, 1) * 0.6) + g * 0.95 + gl * np.array([1.0, 0.84, 0.62], np.float32)
+            light = (g * 0.95 + gl * np.array([1.0, 0.84, 0.62], np.float32)) * (1 - shield)
+            img = img * (1 - np.clip(g, 0, 1) * 0.6 * (1 - shield)) + light
         img = np.ascontiguousarray(img, dtype=np.float64)
-        _draw_puffs(img, pv, s, dmax=d_gate)
+        _draw_puffs(img, pv, s, dmax=d_flag)
+        xs, ys, pl, sds, dd, behind = _orbit_flags(st, T, cam)
+        if len(xs):
+            cvo = Canvas(fc)
+            draw_flag_field(cvo.ctx, xs, ys, pl, T, seeds=sds, wind=0.9, glow=0.8, light=(-0.1, -0.3, -0.9),
+                            bright=0.5)
+            img = over(img, cvo.rgba() * (1 - shield))
+        img = over(img, fl)
     else:
         d_near = 0.0
         if include_disk is not None:
@@ -722,8 +730,10 @@ def _render_heaven(fc, st, T, cam, include_disk=None):
         if include_disk is not None:
             img = np.ascontiguousarray(include_disk(img), dtype=np.float64)
             _draw_puffs(img, pv, s, dmax=d_near)
+    shield_ = shield if show_gate else None
     if include_disk is not None and show_gate:
-        img = include_disk(img)
+        lay = include_disk(img)
+        img = lay * (1 - shield_) + img * shield_
     img = img.astype(np.float32)
     # god rays: the sun behind the Flag scattered through the air, occluded by the Flag (crepuscular fans)
     if sun_z > 0 and T > 165.0:
@@ -738,7 +748,11 @@ def _render_heaven(fc, st, T, cam, include_disk=None):
             src = src * (1 - cv2.resize(occl, (wq, hq), interpolation=cv2.INTER_AREA)[..., None])
         rays = SK.god_rays(src.astype(np.float32), sx, sy, passes=7, step=0.03, decay=0.985)
         rays = cv2.resize(rays, (fc.w, fc.h), interpolation=cv2.INTER_LINEAR)
+        if shield_ is not None:
+            rays = rays * (1 - shield_)
         img = img + rays * 0.3 * seg(T, 165.5, 166.8)
+    if aux is not None:
+        aux["shield"] = shield_
     return img
 
 
@@ -749,7 +763,11 @@ def render(fc, st):
         return np.ones((fc.h, fc.w, 3), np.float32) * np.array(C["flag_glow"], np.float32)
     # ---------------------------------------------------------------- planet phase
     if T < T_DISK1:
-        warm = 0.0
+        # hand-off: s07a's own world renderer (pixel-exact continuation of its crane), dissolving into the
+        # ray-traced planet while the plates shrink below a pixel
+        k07 = 1.0 - seg(T, H07A[0], H07A[1], ease_in_out) if _S07A is not None else 0.0
+        if k07 >= 1.0:
+            return _S07A(fc, T).astype(np.float32)
         flat = seg(T, T_DISK0 - 0.2, T_DISK1, ease_in_out)
         img, pcam, alt = _render_planet(fc, st, T, flat=flat * 0.85)
         cv = Canvas(fc)
@@ -757,6 +775,8 @@ def render(fc, st):
         if fa > 0:
             _map_flags(cv.ctx, pcam, alt, T, fc, alpha=fa, ring=_planet_ring(T))
         img = cv.over(img)
+        if k07 > 0.0:
+            img = img * (1 - k07) + _S07A(fc, T).astype(np.float32) * k07
         if T >= T_DISK0:
             hcam = heaven_cam(T)
             Sm = flag_mobius(T)
@@ -792,11 +812,15 @@ def render(fc, st):
             bg = bg + np.array([1.0, 0.9, 0.74], np.float32) * ringk * np.exp(-((dist - wave_r) / 34.0) ** 2)
         img = disk_and_flags(bg)
     else:
-        img = _render_heaven(fc, st, T, hcam, include_disk=disk_and_flags if T < LIFT + 1.7 else None)
+        aux = {}
+        img = _render_heaven(fc, st, T, hcam, include_disk=disk_and_flags if T < LIFT + 1.7 else None, aux=aux)
         if T >= LIFT + 1.7 and T < LIFT + 4.0:
             cv = Canvas(fc)
             _vertex_flags(cv.ctx, st, T, hcam, Sm)
-            img = cv.over(img)
+            lay = cv.rgba()
+            if aux.get("shield") is not None:
+                lay = lay * (1 - aux["shield"])       # never over the colossal cloth
+            img = over(img, lay)
     # "Flags." biggest bloom: a white-gold flash washing from the disk
     fl = 0.32 * pulse(T, PH[3] + 0.12, 0.3) + 0.12 * pulse(T, PH[2] + 0.05, 0.18)
     if fl > 0.01:
@@ -814,6 +838,13 @@ def post(fc, st):
     p["bloom"] = b
     p["bloom_thresh"] = 0.7 + 0.18 * hv - 0.35 * seg(T, N10, T_WHITE, ease_in)
     p["exposure"] = 1.0 + 0.9 * seg(T, N10 + 0.3, T_WHITE, ease_in)
+    # at the cut, s07a's film look (bloom 0.67 / thresh 0.8 / radius 24 / vignette 0.3), easing into ours
+    k = 1.0 - seg(T, H07A[0], H07A[1])
+    if k > 0:
+        p["bloom"] = p["bloom"] * (1 - k) + (0.67 + 0.3 * pulse(T, PH[0] + 0.1, 0.4)) * k
+        p["bloom_thresh"] = p["bloom_thresh"] * (1 - k) + 0.8 * k
+        p["bloom_radius"] = 22.0 * (1 - k) + 24.0 * k
+        p["vignette"] = 0.22 * (1 - k) + 0.3 * k
     fade = seg(T, N10 + 0.7, T_WHITE, ease_in)
     if fade > 0:
         p["fade"] = fade

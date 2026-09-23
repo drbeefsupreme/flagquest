@@ -116,13 +116,13 @@ CAM_KEYS = [
     (140.10, -26.0, 19.5, HILL_TOP + 1.7, 31.0, 0.575 * W, 0.775 * H),
     (141.45, -26.0, 19.5, HILL_TOP - 0.55, 31.0, 0.575 * W, 0.665 * H),
     (142.30, -26.0, 19.5, HILL_TOP - 0.55, 31.0, 0.575 * W, 0.665 * H),
-    (146.50, -25.5, 18.8, HILL_TOP - 0.45, 23.5, 0.535 * W, 0.73 * H),
+    (146.60, -25.5, 18.8, HILL_TOP - 0.45, 20.5, 0.545 * W, 0.75 * H),
     (148.00, -31.0, 21.5, HILL_TOP + 2.8, 25.0, 0.51 * W, 0.80 * H),
     (149.50, -40.0, 26.0, HILL_TOP + 7.0, 30.0, 0.50 * W, 0.90 * H),
     (151.00, -54.0, 36.0, 18.7, 40.0, 0.50 * W, 0.96 * H),
     (152.00, -66.0, 44.0, 38.0, 44.0, 0.50 * W, 0.95 * H),
-    (153.40, -80.0, 54.0, 80.0, 46.0, 0.50 * W, 0.90 * H),
-    (154.50, -90.0, 60.0, 140.0, 48.0, 0.50 * W, 0.845 * H),
+    (153.40, -80.0, 54.0, 80.0, 46.0, 0.50 * W, 0.92 * H),
+    (154.50, -90.0, 60.0, 140.0, 48.0, 0.50 * W, 0.93 * H),
 ]
 T_CRANE1 = 154.5
 _PCHIP = None
@@ -362,7 +362,7 @@ def _first_raiser(x, y):
 
 
 _WORLD = {}
-WORLD_VERSION = 17
+WORLD_VERSION = 20
 
 
 def get_world(S=None):
@@ -599,8 +599,8 @@ def shade(out_a, out_s, out_d, P, SE, SF, SN, ALB, GRID, g0, GLI, LOOK, ACT, GC)
                             ta = T - ACT[sid]
                             if ta > 0:
                                 pk = min(1.0, ta / 0.25)
-                                fl = 0.30 + 1.1 * math.exp(-ta / 0.22)
-                                ff = 4.5 / (d2 + 4.5)
+                                fl = 0.36 + 1.1 * math.exp(-ta / 0.22)
+                                ff = 4.2 / (d2 + 4.2)
                                 ff = ff * ff * pk * fl
                                 plr += 1.00 * ff
                                 plg += 0.76 * ff
@@ -667,7 +667,16 @@ def shade(out_a, out_s, out_d, P, SE, SF, SN, ALB, GRID, g0, GLI, LOOK, ACT, GC)
             e0 = 0.35
             hr, hg, hb = _sky(e0, near, dawn, SE, SF, SN)
             hz = 0.62 + 0.38 * near
-            pf = (1 - fog) * pool_k * (1.0 - 0.5 * cov)
+            # the plant's pulse: a ring of warm light racing out across the plates from the hill (142.0)
+            pdt = T - P[30]
+            if pdt > 0.0 and pdt < 3.0:
+                rr_ = math.sqrt(X * X + Y * Y)
+                wq = (rr_ - 22.0 - 75.0 * pdt) / (3.0 + 7.0 * pdt)
+                ring = math.exp(-wq * wq) * math.exp(-pdt / 0.9) * 0.55 * (1.0 - cov)
+                plr += 1.00 * ring
+                plg += 0.70 * ring
+                plb += 0.40 * ring
+            pf = (1 - fog) * max(pool_k, 1.0 if pdt > 0.0 and pdt < 3.0 else 0.0) * (1.0 - 0.5 * cov)
             out_a[py, px, 0] = (ar * amb_r * la * (1 - fog) + fog * hr * hz) * sky_k + ar * plr * pf * 1.6
             out_a[py, px, 1] = (ag * amb_g * la * (1 - fog) + fog * hg * hz) * sky_k + ag * plg * pf * 1.6
             out_a[py, px, 2] = (ab * amb_b * la * (1 - fog) + fog * hb * hz) * sky_k + ab * plb * pf * 1.6
@@ -685,7 +694,7 @@ def shade_world(fc, cam, T):
     sd = sun_dir(T)
     P = np.array([*Cp, *r, *u, *f, F * s, (W / 2 + sh[0]) * s, (H / 2 + sh[1]) * s, *sd,
                   L["sky"], L["line"], L["dawn"], L["sun"], L["amb"],
-                  CELL, JIT, T, 1700.0, 0.62, L["glow"], L["stars"]], np.float64)
+                  CELL, JIT, T, 1700.0, 0.62, L["glow"], L["stars"], T_PLANT], np.float64)
     a = np.empty((fc.h, fc.w, 3), np.float32)
     b = np.empty((fc.h, fc.w, 3), np.float32)
     d = np.empty((fc.h, fc.w), np.float32)
@@ -892,18 +901,6 @@ def build_ruins(seed=12):
     the marble philosopher's fallen column, a dead Egregore screen"""
     rng = np.random.default_rng(seed)
     m = Mesh()
-    # dome shard (the Faith): a spherical cap wedge lying on its side
-    dx, dy, Rd = -78.0, 150.0, 14.0
-    m.new_obj()
-    for i in range(6):
-        for j in range(5):
-            th0, th1 = math.radians(i * 12), math.radians((i + 1) * 12)
-            ph0, ph1 = math.radians(j * 16), math.radians((j + 1) * 16)
-            def sp(th, ph):
-                return (dx + Rd * math.sin(th) * math.cos(ph) - 4, dy + Rd * math.sin(th) * math.sin(ph) * 0.9,
-                        max(0.0, Rd * math.cos(th) * 0.55 - 1.0))
-            alb = tuple(c * (0.95 + 0.1 * rng.random()) for c in (0.62, 0.60, 0.68))
-            m.add([sp(th0, ph0), sp(th1, ph0), sp(th1, ph1), sp(th0, ph1)], alb, two_sided=True, grp=3)
     # fallen colossal column (the Philosophy)
     for s0, s1 in ((0.0, 7.0), (7.6, 12.5), (13.4, 21.0)):
         az = math.radians(64)
@@ -933,7 +930,7 @@ def build_ruins(seed=12):
     return m.finalize()
 
 
-RUIN_KEEPOUT = [(-82.0, 150.0, 15.0), (-33.0, 60.0, 5.0), (-37.0, 65.0, 5.0), (-31.0, 69.0, 5.0)]
+RUIN_KEEPOUT = [(-33.0, 60.0, 5.0), (-37.0, 65.0, 5.0), (-31.0, 69.0, 5.0)]
 
 
 # far horizon silhouettes (km away): drawn in 2D at the horizon, parallax-free
@@ -947,12 +944,13 @@ FAR_RUINS = [  # azimuth deg, distance m, kind, scale — the fallen memeplexes 
 
 
 def _far_shape(ctx, kind, x, y, s, t):
-    """silhouette at horizon point (x, y) with metres->px scale s (paths only; caller fills)"""
+    """fill the silhouette of a fallen memeplex at horizon point (x, y) with metres->px scale s"""
     def P(pts):
         ctx.move_to(x + pts[0][0] * s, y + pts[0][1] * s)
         for px_, py_ in pts[1:]:
             ctx.line_to(x + px_ * s, y + py_ * s)
         ctx.close_path()
+        ctx.fill()
     if kind in ("babel", "babel2"):
         # a leaning, spiralling stump with broken ledges
         pts = [(-95, 0)]
@@ -971,23 +969,40 @@ def _far_shape(ctx, kind, x, y, s, t):
         pts.append((100, 0))
         P([(px_ + 0.08 * -py_, py_) for px_, py_ in pts])
     elif kind == "dome":
-        pts = [(-190, 0), (-176, -40)]
-        for a in np.linspace(math.pi * 0.98, math.pi * 0.42, 14):
-            pts.append((150 * math.cos(a) - 10, -40 - 150 * math.sin(a) * 0.95))
-        pts += [(40, -150), (58, -95), (70, -118), (96, -70), (112, -84), (136, -40), (190, 0)]
+        # drum + great dome, broken open on the right, the lantern still standing
+        pts = [(-190, 0), (-180, -60), (-160, -60), (-160, -80)]
+        for a in np.linspace(math.pi, math.pi * 0.52, 12):
+            pts.append((160 * math.cos(a), -80 - 150 * math.sin(a)))
+        pts += [(-14, -228), (-14, -262), (0, -280), (14, -262), (14, -226)]
+        for a in np.linspace(math.pi * 0.44, math.pi * 0.36, 3):
+            pts.append((160 * math.cos(a), -80 - 150 * math.sin(a)))
+        pts += [(66, -186), (58, -150), (84, -158), (78, -120), (110, -128), (104, -96), (140, -92), (150, -60),
+                (186, -58), (196, 0)]
         P(pts)
-        # drum windows (cut outs are drawn as darker by the caller's second pass)
     elif kind == "head":
-        # a colossal face lying on its back, profile along the top: brow, nose, lips, chin
-        pts = [(-260, 0), (-262, -60), (-240, -120), (-190, -160), (-120, -176), (-60, -180), (-20, -172),
-               (6, -188), (12, -214), (30, -226), (44, -196), (58, -186), (66, -176), (80, -182), (92, -170),
-               (86, -160), (98, -150), (110, -140), (124, -148), (138, -130), (150, -100), (170, -80),
-               (200, -60), (230, -30), (250, 0)]
-        P(pts)
-    else:  # crown on its side
-        pts = [(-150, 0), (-160, -70), (-140, -150), (-112, -95), (-80, -185), (-48, -105), (-10, -200),
-               (22, -110), (60, -180), (84, -96), (120, -150), (132, -60), (150, 0)]
-        P([(px_ * math.cos(0.25) - py_ * math.sin(0.25) * 0.4, py_ * math.cos(0.25)) for px_, py_ in pts])
+        # a colossal marble head lying on its back: the face in profile along the top
+        P([(-270, 0), (-266, -52), (-244, -96), (-196, -124), (-124, -134), (-62, -140), (-36, -156), (-18, -140),
+           (8, -146), (44, -222), (58, -152), (72, -148), (84, -164), (96, -150), (108, -162), (124, -142),
+           (146, -138), (164, -152), (180, -124), (206, -84), (222, -44), (246, -16), (272, 0)])
+    else:
+        # the Nation's crown, tipped on its side: band + five points tipped with balls
+        ang = -0.28
+        c_, s_ = math.cos(ang), math.sin(ang)
+        R = lambda px_, py_: (px_ * c_ - py_ * s_, px_ * s_ + py_ * c_)
+        band = [(-150, 0), (-150, -60), (150, -60), (150, 0)]
+        tips = [(-150, -190), (-75, -160), (0, -205), (75, -160), (150, -190)]
+        pts = [R(*band[0]), R(*band[1])]
+        for k_, (tx, ty) in enumerate(tips):
+            pts.append(R(tx, ty))
+            if k_ < 4:
+                pts.append(R(tx + 37, -95))
+        pts += [R(*band[2]), R(*band[3])]
+        low = max(py_ for _, py_ in pts) - 12.0            # sunk a little into the plain
+        P([(px_, py_ - low) for px_, py_ in pts])
+        for tx, ty in tips:
+            bx, by = R(tx, ty - 16)
+            ctx.arc(x + bx * s, y + (by - low) * s, 18 * s, 0, 2 * math.pi)
+            ctx.fill()
 
 
 # ============================================================== survivors: far splats (numba)
@@ -1743,7 +1758,6 @@ def _draw_far_ruins(ctx, pr, T, L):
         c = hz * (0.55 - 0.15 * near) + np.array([0.06, 0.05, 0.10]) * L["sky"]
         ctx.set_source_rgb(*c)
         _far_shape(ctx, kind, x, y + 1.5, s, T)
-        ctx.fill()
 
 
 _RIG_BROKEN = []
