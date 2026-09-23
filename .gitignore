@@ -1,0 +1,10 @@
+.venv/
+out/
+cache/
+__pycache__/
+*.pyc
+ref/*.pdf
+ref/pages/
+audio/**/*.wav
+audio/**/*.npz
+assets/sf2/
