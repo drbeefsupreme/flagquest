@@ -166,17 +166,18 @@ def flutter_from_energy(energy, fps, pan=0.0, gain=1.0, events=(), flap_hz=None,
             if a + m < n:
                 whips[a:a + m] += w * s
         x = flap * (0.9 * np.clip(e, 0, 1.5) ** 1.1) + rust * e ** 1.35 * 0.55 + crinkle + whips * 0.8
-        # --- low air push of big flaps (huge cloth => felt more than heard)
+        # --- huge cloth: a continuous deep air-roar that follows the energy, billowing slowly with each flap
         if size > 1.5:
-            lo = L.svf(L.brown(n, r), 90 / size ** 0.3 + 30, 0.9, "lp") * pulse * np.clip(e, 0, 1.2) * 1.6
-            x = x * 0.6 + lo
+            bill = 0.55 + 0.45 * pulse / (pulse.max() + 1e-9)
+            lo = L.svf(L.brown(n, r), 60 + 80 * np.clip(e, 0, 1.2), 0.8, "lp") * bill * np.clip(e, 0, 1.2)
+            x = x * 0.5 * bill + lo * 0.35
         # --- snaps from the simulation
         for (te, st, sp) in events:
             a = ns(te - t0)
             if 0 <= a < n:
                 c = snap_crack(r, float(np.clip(st, 0.05, 1.0)), 1.0 / size ** 0.3)
                 b = min(n, a + len(c))
-                x[a:b] += c[: b - a] * (0.5 if field else 1.1)
+                x[a:b] += c[: b - a] * (0.4 if field else 0.7)
         return L.f32(x)
 
     if field:

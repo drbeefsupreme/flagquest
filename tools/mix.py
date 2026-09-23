@@ -107,7 +107,7 @@ def main():
     mix = board(mix.T, SR).T.astype(np.float32)
     gain_db = a.target - meter.integrated_loudness(mix)
     for _ in range(6):   # limit -> re-measure -> correct (limiting eats loudness)
-        out_mix = limit(mix * 10 ** (gain_db / 20), ceiling_db=-1.5)
+        out_mix = limit(mix * 10 ** (gain_db / 20), ceiling_db=-2.4)
         lufs = meter.integrated_loudness(out_mix)
         if abs(lufs - a.target) < 0.1:
             break

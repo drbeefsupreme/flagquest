@@ -547,56 +547,83 @@ def rain(r, dur, density=800.0, level=1.0):
 
 
 def thunder(r, closeness=0.5, dur=None):
-    """physically-motivated thunder: 3-D tortuous lightning channel (random walk, ~10 m segments,
-    ~16° mean direction change); every segment radiates an N-wave that arrives at d/343 s with 1/d
-    spreading and distance-dependent air absorption; dipole-ish radiation strongest broadside.
-    sync = first arrival (the crack), time-compressed for cinema."""
+    """physically-motivated thunder: a 3-D tortuous lightning channel (persistent random walk, ~9 m
+    segments) plus 3-7 branches; every segment radiates an N-wave (lognormal length/strength) that arrives at
+    d/343 s with 1/d spreading, broadside-weighted radiation and distance-binned air absorption.
+    sync = first arrival (the crack); the rolling is time-compressed for cinema."""
     dist = 250 + (1 - closeness) * 4200
     top = 2500 + r.uniform(0, 1500)
     seg = 9.0
-    p = np.array([dist * r.uniform(0.7, 1.1), r.uniform(-400, 400), top])
-    pts = [p.copy()]
-    d = np.array([0.0, 0.0, -1.0])
-    while p[2] > 0 and len(pts) < 900:
-        d = d + r.normal(0, 0.28, 3)
-        d[2] = min(d[2], -0.25)
-        d /= np.linalg.norm(d)
-        p = p + d * seg
-        pts.append(p.copy())
-    pts = np.array(pts)
-    mid = 0.5 * (pts[1:] + pts[:-1])
-    seg_v = pts[1:] - pts[:-1]
+
+    def walk(p, d, nmax, down=True):
+        pts = [p.copy()]
+        for _ in range(nmax):
+            d = 0.8 * d + r.normal(0, 0.45, 3)
+            if down:
+                d[2] = min(d[2], -0.2)
+            d /= np.linalg.norm(d)
+            p = p + d * seg
+            pts.append(p.copy())
+            if p[2] <= 0:
+                break
+        return np.array(pts)
+
+    main = walk(np.array([dist * r.uniform(0.7, 1.1), r.uniform(-400, 400), top]), np.array([0.0, 0.0, -1.0]), 1200)
+    chans = [(main, 1.0)]
+    for _ in range(r.integers(3, 8)):
+        k = r.integers(0, max(1, len(main) - 20))
+        dv = r.normal(0, 1, 3)
+        dv[2] = -abs(dv[2]) * 0.4
+        chans.append((walk(main[k].copy(), dv / np.linalg.norm(dv), r.integers(30, 140), down=False),
+                      r.uniform(0.3, 0.7)))
+    mids, vecs, amps = [], [], []
+    for pts, w in chans:
+        mids.append(0.5 * (pts[1:] + pts[:-1]))
+        vecs.append(pts[1:] - pts[:-1])
+        amps.append(np.full(len(pts) - 1, w))
+    mid, seg_v, wch = np.concatenate(mids), np.concatenate(vecs), np.concatenate(amps)
     dd = np.linalg.norm(mid, axis=1)
     los = mid / dd[:, None]
-    broad = np.sqrt(1 - np.clip(np.abs((seg_v / seg * los).sum(1)), 0, 1) ** 2) + 0.15
+    broad = np.sqrt(1 - np.clip(np.abs((seg_v / seg * los).sum(1)), 0, 1) ** 2) + 0.12
     tarr = dd / C_SOUND
-    t0 = tarr.min()
-    # cinematic compression of the rolling (keep shape, shorten far strikes)
-    comp = 0.55 + 0.45 * closeness
-    rel = (tarr - t0) * comp
-    total = rel.max() + 3.5
+    rel = (tarr - tarr.min()) * (0.55 + 0.45 * closeness)
+    total = rel.max() + 4.5
     n = ns(dur or total)
     bins = [(0, 600, 16000), (600, 1500, 5000), (1500, 3000, 2200), (3000, 1e9, 900)]
     out = np.zeros(n, np.float64)
+    lg = r.lognormal(0.0, 0.6, len(dd))
     for lo_d, hi_d, fc in bins:
-        m = (dd >= lo_d) & (dd < hi_d)
-        if not m.any():
+        m = np.nonzero((dd >= lo_d) & (dd < hi_d))[0]
+        if not len(m):
             continue
         buf = np.zeros(n)
-        for tr, a, dist_i in zip(rel[m], broad[m], dd[m]):
-            T = r.uniform(0.004, 0.012) * (1 + dist_i / 2000)
+        for j in m:
+            T = 0.007 * r.lognormal(0.0, 0.4) * (1 + dd[j] / 2000)
             nw = nwave(T)
-            i = ns(tr)
+            i = ns(rel[j])
             if i + len(nw) < n:
-                buf[i:i + len(nw)] += a * 180.0 / dist_i * nw
+                buf[i:i + len(nw)] += wch[j] * broad[j] * lg[j] * 180.0 / dd[j] * nw
         out += lp(buf, fc, 2)
-    rumble = svf(brown(n, r), 90 + 60 * closeness, 0.7, "lp") * env_ad(n, 0.25, 3.5 + 2 * (1 - closeness)) * 0.2
-    x = out / (np.abs(out).max() + 1e-9) + rumble * (0.5 + 0.5 * (1 - closeness))
+    te = rel.max() + 1e-3
+    tn = tt(n)
+    out *= np.exp(-tn / (1.5 + 2.0 * closeness)) * np.clip((te - tn) / (0.35 * te), 0, 1) ** 0.8
+    out /= np.abs(out).max() + 1e-9
+    # rolling rumble: low-passed turbulence whose envelope follows the density of arrivals (+ reverberant tail)
+    dens = np.zeros(n)
+    np.add.at(dens, np.minimum(n - 1, (rel * SR).astype(int)), broad * wch / dd)
+    dens = sps.fftconvolve(dens, np.hanning(ns(0.35)), "same")
+    dens = dens / (dens.max() + 1e-12) * np.exp(-tn / (2.5 + 2.0 * closeness))
+    dens /= dens.max() + 1e-12
+    tail = np.exp(-np.maximum(tn - rel.max() * 0.5, 0) / (1.2 + 1.5 * (1 - closeness)))
+    env = np.maximum(dens, 0.35 * tail) * np.clip((n / SR - tn) / 1.5, 0, 1)
+    rumble = svf(brown(n, r), 70 + 90 * closeness, 0.7, "lp") * env
+    rumble /= np.abs(rumble).max() + 1e-9
+    x = out * (0.6 + 0.4 * closeness) + rumble * (0.45 + 0.35 * (1 - closeness))
     if closeness > 0.6:  # the tearing electrical crackle of a very near strike
         cr = hp(poisson_clicks(r, ns(0.25), 6000), 2500) * env_ad(ns(0.25), 0.002, 0.2)
-        x[: len(cr)] += cr * 1.5 * (closeness - 0.6) / 0.4
+        x[: len(cr)] += cr * 1.2 * (closeness - 0.6) / 0.4
     x = sat(x * 1.2, 1.3)
-    return Snd(fade(norm(x, 0.95), 0.001, 0.5), 0.0)
+    return Snd(fade(norm(x, 0.95), 0.001, 1.5), 0.0)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -653,9 +680,15 @@ def stone_crack(r, dur=0.8, intensity=1.0, material="stone", bright=1.0, final_b
     exc = poisson_clicks(r, n, rate, amp=np.clip(0.3 + t / dur, 0, 1))
     exc = hp(exc, 400)
     ratios, (d0, d1), (f0, f1), _ = MATERIALS[material]
-    fr = np.exp(r.uniform(np.log(f0 * 0.5), np.log(f1 * bright), 10))
-    x = resonators(exc, fr, r.uniform(d0, d1, 10), r.uniform(0.3, 1.0, 10))
-    x += hp(exc, 3000) * 0.6
+    # the fracture front travels through different grains/fragments: each zone rings with its own modes
+    x = np.zeros(n, np.float32)
+    zones = 5
+    for z in range(zones):
+        c = (z + 0.5) / zones * dur
+        w = np.exp(-0.5 * ((t - c) / (dur / zones * 0.7)) ** 2)
+        fr = np.exp(r.uniform(np.log(f0 * 0.5), np.log(f1 * bright), 6))
+        x += resonators(exc * w, fr, r.uniform(d0, d1, 6) * 0.6, r.uniform(0.3, 1.0, 6))
+    x += hp(exc, 2500) * 1.2
     grind = svf(brown(n, r), 180, 3, "bp") * env_pts(n, [(0, 0), (dur * 0.6, 0.6), (dur, 1)]) * 0.5
     x = x * 0.6 + grind * 0.4
     if final_bang:
@@ -959,7 +992,7 @@ def velcro(r, dur=0.3):
     pull = env_pts(n, [(0, 0), (0.02, 1), (dur * 0.7, 0.8), (dur, 0)])
     rows = 0.55 + 0.45 * np.abs(np.sin(TAU * 22 * t * (1 + 0.5 * t / dur)))
     exc = poisson_clicks(r, n, 5000 * pull * rows, pull * rows)
-    x = bp(exc, 1200, 9000) + resonators(exc, [850, 1900, 3100], [0.01] * 3, [0.3] * 3)
+    x = bp(exc, 1200, 9000) + resonators(exc, r.uniform(700, 3500, 6), [0.004] * 6, [0.08] * 6)
     return Snd(fade(norm(x, 0.9), 0.001, 0.01), 0.02)
 
 
@@ -1039,9 +1072,9 @@ def pen_scratch(r, dur=0.8, strokes=5):
         v += np.exp(-((t - c) / (dur / strokes * 0.35)) ** 2) * r.uniform(0.6, 1.0)
     v = np.clip(v, 0, 1)
     fr = bp(white(n, r), 2200, 7500) * v ** 1.3
-    ss = stick_slip(r, dur, 250 + 900 * v, 0.2, v)
-    ss = resonators(ss, [1800, 3300, 5200], [0.004] * 3, [1, 0.6, 0.4])
-    x = fr * 0.6 + ss * 0.8
+    ss = stick_slip(r, dur, 250 + 900 * v, 0.7, v)
+    ss = resonators(ss, r.uniform(1500, 6000, 5), [0.002] * 5, [1, 0.6, 0.4, 0.3, 0.2])
+    x = fr * 0.8 + ss * 0.35
     m = min(n, ns(0.08))
     x[:m] *= np.linspace(0.3, 1.0, m)                    # the stroke gathers speed after touchdown
     nib = impact(r, "wood", 0.25, 1.0, 0.05)          # the nib touches down: the sync point
@@ -1264,3 +1297,36 @@ def plasma_buzz(r, dur, f=110.0, level=1.0):
     x = svf(f32(saw), 1800 + 600 * smooth_noise(n, r, 6, 2), 2, "lp") * 0.5
     x += hp(poisson_clicks(r, n, 300), 2500) * 0.3
     return norm(x, 0.9) * level
+
+
+@njit(cache=True)
+def _feedback_loop(noise, delay, gain, b0, a1, a2):
+    """mic -> amp -> horn -> air (delay) -> mic loop with a resonant horn band-pass and a soft-clipping amp."""
+    n = noise.shape[0]
+    y = np.zeros(n)
+    z1 = 0.0
+    z2 = 0.0
+    for i in range(n):
+        back = y[i - delay] if i >= delay else 0.0
+        u = noise[i] + gain[i] * back
+        v = b0 * u - a1 * z1 - a2 * z2        # two-pole resonator (horn)
+        z2 = z1
+        z1 = v
+        y[i] = np.tanh(v * 1.5)
+    return y
+
+
+def feedback_howl(r, dur=1.4, f0=None, dist=None):
+    """megaphone acoustic feedback: a real closed loop (delay = mic-horn distance / c) whose loop gain creeps
+    above 1 — the loop's resonance nearest the horn peak grows exponentially until the amp saturates (howl)."""
+    n = ns(dur)
+    f0 = f0 or r.uniform(900, 3200)
+    dist = dist or r.uniform(1.0, 3.0)
+    delay = max(8, int(SR * dist / C_SOUND))       # mic <-> horn acoustic path (m): loop modes every c/dist Hz
+    w = TAU * f0 / SR
+    rad = 0.995
+    b0, a1, a2 = (1 - rad) * 2 * np.sin(w), -2 * rad * np.cos(w), rad * rad   # unity gain at the horn peak
+    gain = np.interp(tt(n), [0, dur * 0.35, dur * 0.8, dur], [0.9, 1.25, 1.35, 0.0]) * (1 + 0.02 * smooth_noise(n, r, 4, 2))
+    x = _feedback_loop(white(n, r).astype(np.float64) * 0.02, delay, gain, b0, a1, a2)
+    x = hp(f32(x), 300) * env_pts(n, [(0, 0), (0.05, 1), (dur * 0.85, 1), (dur, 0)])
+    return Snd(fade(norm(x, 0.8), 0.01, 0.05), 0.0)

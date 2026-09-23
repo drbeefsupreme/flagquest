@@ -23,10 +23,9 @@ from vocal_lib import (NS, ROOT, SR, TL, VOCAL, add_at, bandpass, convolve, db, 
 
 OUT = VOCAL / "dialogue_lines"
 
-# on-screen x of the speaker (-1 left .. +1 right), from the scene owners; applied at PAN_AMT (gentle)
-PAN = {"J01": 0.08, "J02": 0.0, "L01": -0.3, "C01": 0.3, "L02": -0.35, "C02": 0.15,
-       "K02": -0.35, "K03": 0.25, "K07": -0.4,
-       "X01": -0.25, "X02": 0.4, "X03": -0.35, "X04": 0.35, "X05": 0.05, "X06": -0.2, "X07": 0.25,
+PAN = {"J01": 0.08, "J02": 0.0, "L01": -0.3, "C01": 0.3, "L02": -0.35, "C02": 0.1,
+       "K02": -0.35, "K03": 0.25, "K07": -0.55,
+       "X01": -0.17, "X02": 0.36, "X03": -0.44, "X04": 0.48, "X05": 0.0, "X06": -0.21, "X07": 0.22,
        "L03": -0.35, "C03": 0.2, "C04": -0.3, "L04": -0.3, "C05": 0.3, "L05": -0.3, "C06": 0.3}
 PAN_AMT = 0.6
 
@@ -41,8 +40,8 @@ ROOMS = {
                      seed=12), -24.0),                   # drier narration
     "dawn":    (dict(rt60=1.6, predelay=0.03, lo_mult=0.9, hi_mult=0.5, er_n=4, er_gain=0.2, width=1.0,
                      seed=13), -21.0),                   # s07a open plain at dawn
-    "stone":   (dict(rt60=2.6, predelay=0.028, lo_mult=1.25, hi_mult=0.5, er_n=16, er_span=0.09,
-                     er_gain=0.55, width=1.0, seed=14), -14.0),  # s04 Flagartha stone chamber
+    "stone":   (dict(rt60=3.2, predelay=0.045, lo_mult=1.2, hi_mult=0.42, er_n=16, er_span=0.14,
+                     er_gain=0.5, width=1.0, seed=14), -15.0),  # s04 Flagartha: 110 m basalt pentagon, long & dark
     "cavern":  (dict(rt60=6.0, predelay=0.075, lo_mult=0.9, hi_mult=0.6, er_n=10, er_span=0.14,
                      er_gain=0.35, width=1.0, build=0.09, seed=15), -10.0),   # Hypermind (huge overhead)
     "storm":   (dict(rt60=0.9, predelay=0.02, lo_mult=0.7, hi_mult=0.5, er_n=3, er_gain=0.25, width=1.0,

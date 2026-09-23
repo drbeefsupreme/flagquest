@@ -211,6 +211,7 @@ def check_levels():
 
 def spec_img(x, sr=SR, fmax=8000, h=180, px_per_s=60, title=""):
     import cv2
+    cv2.setNumThreads(1)
     from scipy.signal import stft
     hop = max(64, int(sr / px_per_s))
     f, t, Z = stft(x, sr, nperseg=2048, noverlap=2048 - hop if hop < 2048 else 0)

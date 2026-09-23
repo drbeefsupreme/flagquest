@@ -15,6 +15,10 @@ Every section writes into named buses of a Buf (global time). Sections are cache
 audio/music/cache/sec_<id>.npz so iteration on one section does not re-render the rest.
 Hits placed on picture are logged to audio/music/cues.json (used by tools/music_verify.py).
 """
+import os as _os
+
+for _k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMBA_NUM_THREADS"):
+    _os.environ.setdefault(_k, "4")  # shared machine: stay polite
 import argparse
 import json
 import os
@@ -36,6 +40,20 @@ TLJ = json.load(open(os.path.join(ROOT, "timeline.json")))
 CUE = {c["id"]: c["t"] for c in TLJ["cues"]}
 LINES = {l["id"]: l for l in TLJ["lines"]}
 HITS = []  # (t, id, desc) — logged per section
+
+
+def scene_events(scene, kind=None, contains=None, fallback=()):
+    """times of visual hits exported by a scene owner (cache/foley/<scene>_hits_events.json), so the score
+    follows the picture; `fallback` is used when the export is missing or empty."""
+    p = os.path.join(ROOT, "cache", "foley", f"{scene}_hits_events.json")
+    try:
+        d = json.load(open(p))
+        ev = d["events"] if isinstance(d, dict) else d
+        ts = sorted(e["t"] for e in ev if (kind is None or e.get("kind") == kind)
+                    and (contains is None or contains in str(e.get("desc", ""))))
+    except Exception:
+        ts = []
+    return ts if ts else list(fallback)
 
 
 def W(lid, word, k=0):
@@ -168,7 +186,7 @@ def crash(b, t, level="ff", gain=1.0, pan=0.15, dur=None):
          "fff": V1P + "varMetal/Cymbals/clash/crash_hit_fff_loose.wav",
          "mp": V1P + "varMetal/Cymbals/clash/crash_hit_mp_loose.wav",
          "pp": V1P + "varMetal/Cymbals/clash/crash_hit_pp_loose.wav"}[level]
-    perc(b, t, f, gain * 0.35, pan, dur=dur)
+    perc(b, t, f, gain * 0.28, pan, dur=dur)
 
 
 DYN_ORDER = ["ppp", "pp", "p", "mp", "mf", "f", "ff", "fff"]
@@ -240,7 +258,7 @@ def tutti(b, t, ch, level=1.0, perc_on=True, sus=0.0, crash_on=True, tpt=True, g
     if perc_on:
         r = root(ch, "C2")
         timp(b, t, r if r >= 38 else r + 12, 0.95 * level + 0.05, gain=g)
-        taiko(b, t, "ff" if level > 0.7 else "f", gain=g * 0.8)
+        taiko(b, t, "ff" if level > 0.7 else "f", gain=g * 0.55)
         if crash_on:
             crash(b, t, "ff" if level > 0.6 else "mp", gain=g, dur=crash_dur)
         if gong:
@@ -273,7 +291,7 @@ def s01(b):
     # 2.6 the Crystal condenses: reverse shimmer into 2.6
     shim = sum(glass(hz(m(n)), 2.5, att=0.002, decay=1.5) for n in ["D6", "A6", "E7"])
     rs = reverse_swell(np.stack([shim, shim], 1), IR("void"))
-    b.add("space", rs[-S(2.2):], i0=S(2.6) - S(2.2), gain=db(-22))
+    b.add("space", fade(rs[-S(2.2):], fin=0.3), i0=S(2.6) - S(2.2), gain=db(-22))
     # rotating crystal arpeggio: 4 notes (tesseract), accelerating from 5.9 (W-plane turn), pans in a circle
     t, k = 3.0, 0
     fig = ["D5", "A5", "E6", "F#6"]
@@ -347,16 +365,24 @@ def s01(b):
     strings(b, ts_, 4.3, vel=0.7, dyn=[(0, 0.8), (0.6, 0.45), (3.0, 0.4), (4.3, 0.55)], att=0.0, rel=0.4,
             v1=["A5", "D6"], v2=["F#5", "D5"], va=["A4", "F#4"], vc=["D3", "A3"], cb=["D2"], gain=0.75)
     brass(b, ts_, 4.3, dyn=[(0, 0.7), (0.6, 0.3), (4.3, 0.35)], att=0.0, hn=["D4", "F#4", "A4"], gain=0.6)
-    # the Swiss grid: theme in crisp 8ths — celesta+marimba, then an octave higher on glock+pizz
+    # THE UNBABELING drops letter by letter (Scene01's letter landings): one pluck per letter —
+    # T-H-E = the D major triad, U-N-B-A-B-E-L = the Flag theme, I-N-G = the triad an octave up
     cel2 = sf2part(SF_MS, 0, 8, gain=2.0)
-    e8 = 0.19
-    for rep, (t0, oc) in enumerate([(16.55, 1), (18.0, 2)]):
-        for j, n in enumerate(th("maj", oc)):
-            tj = t0 + j * e8 + (0.12 if j == 6 else 0)
-            cel2.note(tj, n, 0.3 if j < 6 else 0.9, 0.6)
-            I("marimba").note(b, "keys", tj, n - 12, None, 0.6, 0.35, gain=0.1, seed=j)
-            if rep == 1:
-                I("vln_pizz").note(b, "str", tj, n - 12, None, 0.55, PAN["vln"], gain=0.45, seed=j)
+    letters = scene_events("s01", "thunk", "title letter",
+                           [16.46, 16.534, 16.608, 16.646, 16.72, 16.794, 16.832, 16.906, 16.98, 17.018, 17.092, 17.166, 17.204])
+    lp = [m("D5"), m("F#5"), m("A5")] + th("maj", 1) + [m("F#6"), m("A6"), m("D7")]
+    for j, (tj, n) in enumerate(zip(letters, lp)):
+        cel2.note(tj, n, 0.25 if j < len(lp) - 1 else 1.0, 0.55)
+        I("marimba").note(b, "keys", tj, n - 12, None, 0.65, 0.35 - 0.05 * (j % 3), gain=0.11, seed=j)
+        I("vln_pizz").note(b, "str", tj, min(n - 12, 86), None, 0.5, PAN["vln"] + 0.04 * (j % 4), gain=0.35, seed=j)
+        hit(tj, f"title_letter_{j + 1}", "pluck on title letter landing")
+    sw = scene_events("s01", "swipe", None, [17.02])[0]
+    harp_gliss(b, sw, sw + 0.5, "A5", "A6", vel=0.35, gain=0.6)
+    for j, n in enumerate(th("maj", 2)):
+        tj = 18.0 + j * 0.19 + (0.12 if j == 6 else 0)
+        cel2.note(tj, n, 0.3 if j < 6 else 0.9, 0.5)
+        I("glock").note(b, "keys", tj, n if n >= 79 else n + 12, None, 0.45, 0.3, gain=0.05, seed=j)
+        I("vln_pizz").note(b, "str", tj, n - 24, None, 0.5, PAN["vln"], gain=0.4, seed=j)
     cel2.to(b, "keys", pan=PAN["cel"])
     # 20.3 page slides up: harmony darkens D -> Dm, low swell into s02 downbeat 21.0
     strings(b, 20.3, 0.9, vel=0.5, dyn=[(0, 0.35), (0.7, 0.6)], att=0.2, rel=0.3, va=["F4", "A4"], vc=["D3"], gain=0.7)
@@ -416,6 +442,7 @@ def s02(b):
               tuba=[root(ch, "C2")], gain=0.45)
         rr = root(ch, "D2")
         timp(b, tw, rr if rr <= 50 else rr - 12, 0.65, gain=0.55)
+        taiko(b, tw, "mp", gain=0.45, sticks=True)
         strings(b, tw, 1.0, dyn=[(0, 0.6), (0.3, 0.35), (1.0, 0.3)], att=0.0, rel=0.4, v1=tones(ch, "A5", 2),
                 va=tones(ch, "D4", 2), gain=0.35)
         hit(tw, name, f"{ch} stab: monolith lights up")
@@ -426,10 +453,12 @@ def s02(b):
         prog = (t - 28.56) / 5.04
         if k % 2 == 1:
             perc(b, t, V1P + "drums/snare/drum3_marching/snare3_p_%d.wav" % (1 + k % 4), 0.12 + 0.12 * prog, 0.1)
-        bell_note(b, t, "A6" if k % 4 else "D7", 1.2, gain=db(-34 + 6 * prog), pan=(-0.6, 0.6)[k % 2], bus="syn",
-                  ratio=1.0, index=0.3, decay=0.25)
         t += B2
         k += 1
+    for k, tp_ in enumerate(scene_events("s02", "pulse", None, [28.56 + B2 * i for i in range(8)])):
+        prog = (tp_ - 28.4) / 5.2
+        bell_note(b, tp_, "A6" if k % 3 else "D7", 1.2, gain=db(-34 + 6 * prog), pan=(-0.6, 0.6)[k % 2], bus="syn",
+                  ratio=1.0, index=0.3, decay=0.25)
     # 31.08 -> 33.6: crescendo (tremolo strings + horn swell) that is CUT at 33.6 ("Then came the slop.")
     strings(b, 31.08, 2.52, "trem", dyn=[(0, 0.2), (2.5, 0.85)], att=0.1, rel=0.02, v1=["D5", "F5"], va=["A3", "D4"],
             vc=["D3"], gain=0.6)
@@ -493,8 +522,9 @@ def s02(b):
     for (a, lv) in [(40.3, 0.3), (42.8, 0.27), (45.3, 0.25)]:
         strings(b, a, 2.6 if a < 45 else 1.6, dyn=[(0, 0.08), (1.2, lv), (2.6, 0.05)], att=0.4, rel=0.5, vc=["D3", "A3"], cb=["D2"],
                 gain=0.75)
-    marks = [(W("N07", "different"), 1), (W("N07", "every"), 2), (W("N07", "face"), 4), (W("N07", "until"), 8),
-             (W("N07", "two"), 16), (W("N07", "lived"), 32), (W("N07", "same"), 64)]
+    sp = scene_events("s02", "split", None, [43.493, 43.843, 44.58, 45.168])
+    first = scene_events("s02", "hit", "feed", [42.45])[0]
+    marks = [(first, 1)] + list(zip(sp, [4, 16, 48, 96]))
     feeds = []
     for (tm, cnt) in marks:
         while len(feeds) < cnt:
@@ -546,11 +576,14 @@ def s03(b):
     'amen' on 'sacrament', ka-ching ta-da button 60.9, tape-stop when the CRT dies (61.0→61.45)."""
     tv = Buf()
     t0 = CUE["tv_on"]
-    # fanfare: triplet pickups into a D major chord
-    for j, dt in enumerate([0.0, 0.11, 0.22]):
+    lock = scene_events("s03", "click", "vertical hold", [48.02])[0]
+    # fanfare tuning in through the static: triplet pickups warble, the D major chord lands as the picture locks
+    for j in range(3):
+        dt = j * (lock - t0) / 3
         brass(tv, t0 + dt, None, "stac", 0.9, tpt=["A4", "D5"], hn=["F#4"], gain=0.9)
         perc(tv, t0 + dt, V1P + "drums/snare/drum3_marching/snare3_f_%d.wav" % (1 + j % 2), 0.35, 0.0)
-    ta = t0 + 0.33
+    ta = lock
+    hit(lock, "tv_lock", "fanfare chord as the picture locks")
     brass(tv, ta, 0.55, dyn=[(0, 0.95), (0.55, 0.7)], att=0.0, rel=0.35, tpt=["D5", "F#5", "A5"], hn=["D4", "A4"],
           tbn=["D3", "A3"], tuba=["D2"], gain=0.9)
     timp(tv, ta, "D2", 0.9)
@@ -609,6 +642,16 @@ def s03(b):
     x = sum(tv.b[k][a:z] for k in tv.b)
     x = eq(x, ("hp", 220), ("hp", 180), ("lp", 5200), ("lp", 6500), ("pk", 1900, 4.0, 0.9), ("pk", 400, -3, 0.8))
     x = np.tanh(x * 2.2) / 2.2
+    # tuning in: pitch warble + narrower band until the vertical hold locks
+    i0, i1 = S(t0 - 47.3), S(lock + 0.08 - 47.3)
+    n = i1 - i0
+    tl_ = np.arange(n) / SR
+    depth = 0.018 * np.clip(1 - tl_ / (lock - t0), 0, 1) ** 1.5
+    steps = 1 + depth * np.sin(2 * np.pi * 6.5 * tl_)
+    wob = _resample(np.ascontiguousarray(x), float(i0), steps.astype(np.float64), n)
+    narrow = eq(wob, ("hp", 700), ("lp", 2600))
+    w = np.clip(1 - tl_ / (lock - t0), 0, 1)[:, None]
+    x[i0:i1] = narrow * w + wob * (1 - w)
     mid = x.mean(1, keepdims=True)
     x = 0.8 * mid + 0.2 * x
     x = x + 0.22 * conv_stereo(x, IR("room"))[: len(x)]
@@ -684,15 +727,16 @@ def s04(b):
     for n in ["D6", "F#6", "A6"]:
         glass_note(b, tt_, n, 1.8, gain=db(-28), pan=0.1, decay=0.8)
     # H02: energy steps down the six plates 71.25 -> 72.30; beam 72.35; swell into the hush
-    for j, n in enumerate(["D7", "A6", "F#6", "D6", "A5", "D5"]):
-        tj = 71.25 + j * 0.21
+    plates = scene_events("s04", "energy", None, [71.3 + 0.17 * i for i in range(6)])
+    for j, n in enumerate(["D7", "A6", "F#6", "D6", "A5", "D5"][:len(plates)]):
+        tj = plates[j]
         bell_note(b, tj, n, 1.2, gain=db(-24 + j), pan=0.4 - 0.16 * j, bus="keys", ratio=1.41, index=2.2, decay=0.35)
     I("organ_soft").note(b, "org", 71.2, "D5", th_ - 71.2 - 0.04, 0.8, 0.0, gain=0.18, att=0.4, rel=0.02)
     r = riser(th_ - 72.3, 400, 7000, q=2.0, curve=2.0, seed=4)
-    b.add("fx", r * 0.6, i0=S(th_ - 0.03) - len(r), gain=db(-22))
+    b.add("fx", r * 0.6, i0=S(th_) - len(r), gain=db(-22))
     # ---- 72.7 HUSH: the room holds its breath (cut-off), then the theme on glass, pp, over high harmonics
     ch_.to(b, "org", pan=0.0, width=1.0, gain=0.8)
-    cut_after(b, th_, 0.03)
+    cut_after(b, th_, 0.012)
     e = 2.0 / 9
     ts = [th_ + e * k for k in (0, 2, 3, 5, 6, 8, 9)]
     cel = sf2part(SF_MS, 0, 8, gain=1.6)
@@ -730,12 +774,10 @@ def s04(b):
     taiko(b, strike, "f", gain=0.8)
     strings(b, strike, 89.4 - strike, "trem", dyn=[(0, 0.3), (89.4 - strike, 1.0)], att=0.05, rel=0.05,
             v1=["D5", "F5", "A5"], va=["A3", "D4", "F4"], vc=["D3", "A3"], cb=["D2"], gain=0.6)
-    for j in range(5):  # klaxon: A-Bb semitone horn swells from 88.4
-        tj = 88.4 + j * 0.2
-        if tj > 89.35:
-            break
-        brass(b, tj, 0.19, dyn=[(0, 0.5 + 0.1 * j), (0.19, 0.6 + 0.1 * j)], att=0.01, rel=0.05,
-              hn=["A4" if j % 2 == 0 else "Bb4", "D4"], gain=0.55)
+    for j, tj in enumerate([x for x in scene_events("s04", "klaxon", None, [88.4, 88.85, 89.3]) if x < 89.35]):
+        # klaxon: each gold sweep = a horn 'wee-oo' (A -> Bb -> A)
+        brass(b, tj, 0.42, dyn=[(0, 0.45 + 0.1 * j), (0.2, 0.7 + 0.1 * j), (0.42, 0.4)], att=0.02, rel=0.06,
+              hn=["A4", "D4"], bend=lambda x: np.sin(np.pi * np.clip(x / 0.42, 0, 1)) * 1.0, gain=0.55)
     timp_roll(b, 88.15, 89.4 - 88.15, "D2", [(0, 0.2), (89.4 - 88.15, 1.0)], gain=0.9)
     tk = [88.35, 88.75, 89.0, 89.18, 89.3]
     for j, tj in enumerate(tk):
@@ -799,8 +841,9 @@ def s05a(b):
     # gear-up downbeat
     timp(b, t0, "D2", 0.9)
     taiko(b, t0, "ff", gain=1.0)
+    perc(b, t0, V1P + "drums/snare/drum3_marching/snare3_rimshot_ff_1.wav", 0.35, 0.1)
     brass(b, t0, None, "stac", 0.8, tbn=["D2", "A2"], tuba=["D2"], hn=["D3", "A3"], gain=0.8)
-    hit(t0, "gear_up", "taiko + low brass downbeat")
+    hit(t0, "gear_up", "taiko + rimshot + low brass downbeat")
     # the Flag theme in D Dorian, low brass (2 beats per note)
     ts = [t0 + 2 * B5 * j for j in range(7)]
     for j, (tj, n) in enumerate(zip(ts, th("dor", -1))):
@@ -818,6 +861,8 @@ def s05a(b):
     for j, ch in enumerate(["Gm", "A", "Bb"]):
         tj = W("K03", "Breach", j)
         tutti(b, tj, ch, 0.6 + 0.07 * j, crash_on=j == 2)
+        taiko(b, tj, "f", gain=0.5, sticks=True)
+        perc(b, tj, V1P + "drums/snare/drum3_marching/snare3_rimshot_f_1.wav", 0.25, 0.1)
         hit(tj, f"K03_breach_{j + 1}", f"{ch} stab")
     tb_ = CUE["breach"]
     t3 = W("K03", "Breach", 2)
@@ -860,11 +905,14 @@ def s05b(b):
     hit(tn, "nation_fracture", "D minor stinger")
     pent = [2, 5, 7, 9, 0]  # D minor pentatonic
     insts = ["vln_pizz", "vla_pizz", "marimba", "xylo", "harp", "vln_pizz", "glock"]
-    for L in range(7):
-        tL = tn + 0.25 + 0.35 * L
+    gens = scene_events("s05b", "crack", "generation", [tn + 0.17 + 0.2625 * i for i in range(7)])
+    gens = [g for g in gens if g < tf][:7]
+    for L in range(len(gens)):
+        tL = gens[L]
+        span = (gens[L + 1] - tL) if L + 1 < len(gens) else 0.35
         cnt = 2 ** L
         for q in range(cnt):
-            tq = tL + 0.35 * (q + rng.uniform(0, 0.6)) / cnt
+            tq = tL + span * (q + rng.uniform(0, 0.6)) / cnt
             lo_oct = max(3, 5 - L // 2)
             hi_oct = min(7, 5 + (L + 1) // 2)
             n = 12 * (int(rng.integers(lo_oct, hi_oct + 1)) + 1) + int(rng.choice(pent))
@@ -905,13 +953,16 @@ def s05b(b):
     # ---- FAITH (F#m): organ chord that splits like the congregation
     tutti(b, tf, "F#m", 0.55, crash_on=False, tpt=False)
     hit(tf, "faith_fracture", "F# minor stinger + organ")
-    spreads = [-1.1, -0.35, 0.35, 1.1]
+    # the congregation splits 1 -> 4 -> 16 -> 64: every organ voice splits into a fractal cluster of detuned voices
+    fg = scene_events("s05b", "crack", "floor schism", [107.9, 108.25, 108.73])[:3]
+    sm = lambda x, a: np.clip((x - a) / 0.18, 0, 1) ** 2 * (3 - 2 * np.clip((x - a) / 0.18, 0, 1))
     for j, n in enumerate(["F#2", "C#3", "F#3", "A3", "C#4"]):
-        I("organ_loud").note(b, "org", tf, n, 0.3, 0.8, 0.0, gain=0.35, att=0.0, rel=0.1)
-        for q, sp in enumerate(spreads):
-            I("organ_loud").note(b, "org", tf + 0.28, n, 1.7, 0.8, sp * 0.5, gain=0.12,
-                                 bend=lambda x, sp=sp: sp * np.clip((x - 0.1) / 1.3, 0, 1) ** 1.2,
-                                 dyn=[(0, 0.8), (1.2, 0.5), (1.7, 0.0)], att=0.03, rel=0.2, seed=q)
+        for q in range(8):
+            sg = [1 if (q >> k) & 1 else -1 for k in range(3)]
+            bend = (lambda x, sg=sg: 0.6 * sg[0] * sm(x + tf, fg[0]) + 0.3 * sg[1] * sm(x + tf, fg[1])
+                    + 0.15 * sg[2] * sm(x + tf, fg[2]))
+            I("organ_loud").note(b, "org", tf, n, 2.0, 0.8, 0.7 * (q / 7 - 0.5), gain=0.35 / 8 * 1.6, bend=bend,
+                                 dyn=[(0, 0.9), (1.3, 0.6), (2.0, 0.0)], att=0.0, rel=0.2, seed=q)
     for (tq, ch, vo, bs, name) in [(LINES["X03"]["end"] + 0.02, "Cm", ["C3", "Eb3", "G3", "C4"], "C3", "X03_heretic"),
                                    (LINES["X04"]["end"] + 0.02, "F#m", ["F#3", "A3", "C#4", "F#4"], "F#2", "X04_heretic")]:
         for n in vo:
@@ -928,20 +979,26 @@ def s05b(b):
     ro.to(b, "keys", pan=0.15)
     hit(ta, "X05_amen", "harmonium plagal amen")
     # ---- PHILOSOPHY (Bbm): marble shatters into glass fragments drifting into the void
+    tplant = scene_events("s05b", "thunk", "marble head", [tp - 0.3])[0]
+    if tplant < tp - 0.05:
+        timp(b, tplant, "Bb2", 0.5, gain=0.6)
+        I("vc_pizz").note(b, "str", tplant, "Bb2", None, 0.6, PAN["vc"], gain=0.4)
     tutti(b, tp, "Bbm", 0.6, crash_on=False)
     hit(tp, "philo_shatter", "Bb minor stinger + glass shatter")
     bpent = [10, 1, 3, 5, 8]
-    t = tp
+    burst = scene_events("s05b", "shatter", "fragments", [tp + 0.25])[0]
+    t = burst
     for q in range(170):
         n = 12 * (int(rng.integers(5, 8)) + 1) + int(rng.choice(bpent))
-        age = (t - tp) / 1.6
+        age = (t - burst) / 1.6
         glass_note(b, t, n, 1.6, gain=db(-24 - 12 * age) * rng.uniform(0.5, 1), pan=float(np.clip(rng.normal(0, 0.2 + 0.8 * age), -1, 1)),
                    decay=0.5 + 0.8 * age, bus="space")
         t += rng.exponential(0.004 + 0.02 * age)
-        if t > tp + 2.2:
+        if t > burst + 2.2:
             break
+    hit(burst, "philo_burst", "head bursts: glass cascade")
     for q in range(5):
-        I("marimba").note(b, "keys", tp + 0.01 * q, 12 * 4 + int(rng.choice(bpent)), None, 0.8, rng.uniform(-0.5, 0.5),
+        I("marimba").note(b, "keys", burst + 0.01 * q, 12 * 4 + int(rng.choice(bpent)), None, 0.8, rng.uniform(-0.5, 0.5),
                           gain=0.08, seed=q)
     # the void: dark Bb minor pad + slowly FALLING Shepard + glints
     vd = 123.3 - tp
@@ -1021,8 +1078,12 @@ def s06(b):
            "bsn_sus": "ww", "vln_solo": "str", "organ_loud": "org", "xylo": "keys", "marimba": "keys", "glock": "keys"}
     gains = {"hn_sus": 0.5, "tpt_mute": 0.45, "ob_sus": 0.4, "cl_sus": 0.4, "vln_solo": 0.35, "organ_loud": 0.18,
              "xylo": 0.07, "tbn_sus": 0.45, "fl_sus": 0.4, "marimba": 0.09, "bsn_sus": 0.45, "glock": 0.05}
+    tiers = scene_events("s06", "thunk", "tier", [])
+    first = scene_events("s06", "stack", None, [125.95])[0]
+    ent = ([first] + tiers)[:12] if len(tiers) >= 6 else [125.5 + 0.85 * i for i in range(12)]
+    ent = ent + [ent[-1] + 0.4 * (k + 1) for k in range(12 - len(ent))]
     for i, (key, tr) in enumerate(voices):
-        tv = 125.5 + 0.85 * i
+        tv = ent[i]
         nl = 0.3 + 0.13 * rng.random()
         lo, hi = rngs[key]
         notes = [x + tr - (12 if tr > 5 else 0) for x in th("maj")]
@@ -1057,6 +1118,13 @@ def s06(b):
         I("cb_spic").note(b, "str", t, "D2" if k % 4 else "Ab1", None, 0.7, PAN["cb"], gain=0.45 * lv, seed=k)
         t += B2 / 2
         k += 1
+    # lightning wakes Lord Egregore (screens power on): a cold low cluster swell
+    tw_ = scene_events("s06", "power_on", "Egregore", [129.0])[0]
+    brass(b, tw_, 1.05, dyn=[(0, 0.95), (0.25, 0.6), (1.05, 0.25)], att=0.0, rel=0.3, tbn=["D2", "Eb2", "A2"],
+          tuba=["D2"], hn=["D3", "Eb3", "Ab3", "A3"], gain=0.8)
+    timp(b, tw_, "D2", 0.9, gain=0.9)
+    taiko(b, tw_, "ff", gain=0.7)
+    hit(tw_, "egregore_wakes", "low brass cluster as Egregore's screens power on")
     # C03: Crocus' flag = the one steady, glowing thing: a pure D over the chaos
     a, z = LINES["C03"]["start"] - 0.2, tc + 0.1
     tn = tt(z - a)
@@ -1136,10 +1204,14 @@ def s07a(b):
     I("cb_pizz").note(b, "str", tp, "D2", None, 0.7, PAN["cb"], gain=0.5)
     I("vc_pizz").note(b, "str", tp, "D3", None, 0.7, PAN["vc"], gain=0.5)
     hit(tp, "flag_planted", "soft low D (harp/timp/pizz) under the thunk")
+    snap = scene_events("s07a", "snap", "first sunlight", [tp + 0.25])[0]
     for j, n in enumerate(["D3", "A3", "D4", "F#4", "A4", "D5", "E5", "F#5", "A5"]):
-        I("harp").note(b, "keys", tp + 0.08 + j * 0.095, n, None, 0.45 + 0.03 * j, -0.5 + 0.1 * j, gain=0.22, seed=j)
+        I("harp").note(b, "keys", tp + 0.02 + j * (snap - tp - 0.02) / 8, n, None, 0.45 + 0.03 * j, -0.5 + 0.1 * j,
+                       gain=0.22, seed=j)
     cel = sf2part(SF_MS, 0, 8, gain=1.6)
-    cel.note(tp + 0.95, m("A5"), 0.8, 0.45)
+    cel.note(snap, m("A5"), 0.8, 0.5)
+    cel.note(snap, m("D6"), 0.8, 0.4)
+    I("glock").note(b, "keys", snap, "A6", None, 0.4, 0.2, gain=0.05)
     strings(b, tp + 0.3, 7.3, dyn=[(0, 0.08), (2.5, 0.22), (7.3, 0.25)], att=1.5, rel=0.6, v1=["D5", "A5"], vc=["D3"],
             gain=0.5)
     strings(b, tp + 0.3, 3.2, dyn=[(0, 0.08), (2.5, 0.2), (3.2, 0.2)], att=1.5, rel=0.5, va=["F#4"], gain=0.5)
@@ -1233,8 +1305,12 @@ def s07b(b):
                 gain=0.9)
         if b0 >= 8:
             strings(b, a, dd, dyn=dyn, att=0.06, rel=0.45, va=[te + 12], gain=0.45)
-        harp_roll(b, a, [bs, te + 12, al + 12, s_ + 12], 0.45 + 0.2 * lv, 0.012, gain=0.9)
+        if b0 > 0:
+            harp_roll(b, a, [bs, te + 12, al + 12, s_ + 12], 0.45 + 0.2 * lv, 0.0, gain=0.9)
     hit(t0, "hymn", "hymn downbeat (organ+strings+timpani)")
+    for n in ["D3", "A3", "D4", "F#4", "A4"]:
+        I("harp").note(b, "keys", t0, n, None, 0.7, PAN["harp"], gain=0.22)
+    I("glock").note(b, "keys", t0, "D6", None, 0.5, 0.3, gain=0.06)
     perc(b, t0, V1P + "varMetal/Cymbals/susp/susp_hit_softmall_mp.wav", 0.35, -0.1)
     for (b0, n, v) in [(0, "D2", 0.85), (4, "G2", 0.75), (8, "A2", 0.85), (12, "D2", 0.95)]:
         timp(b, t0 + b0 * bt, n, v, gain=1.3 if b0 == 0 else 1.1)
@@ -1258,6 +1334,10 @@ def s07b(b):
     tg = CUE["gateless_gate"]
     tcomp = W("N10", "completed")
     tutti(b, tg, "D", 1.0, gong=True)
+    for n in ["D6", "A6", "D7"]:
+        I("glock").note(b, "keys", tg, n, None, 0.8, 0.25, gain=0.08)
+    for n in ["D3", "A3", "D4", "F#4", "A4", "D5"]:
+        I("harp").note(b, "keys", tg, n, None, 0.8, PAN["harp"], gain=0.2)
     hit(tg, "gateless_gate", "tutti bloom; augmented theme")
     mel_t = [tg, 167.1, 167.55, 168.35, 168.8, 169.6, 170.05, LINES["N10"]["start"], 171.35, tcomp]
     mel = th("maj", 0) + [m("D5"), m("E5"), m("F#5")]
@@ -1330,13 +1410,33 @@ def s08(b):
     cel.note(tt_ + 0.13, m("D6"), 0.5, 0.6)
     I("vla_pizz").note(b, "str", tt_ + 0.13, "D4", None, 0.5, PAN["vla"], gain=0.3)
     hit(tt_ + 0.13, "L04_tada", "celesta ta-da")
+    # light tiptoe bed (marimba + pizz, 100 BPM, pp) under the first exchange and Lutie's protest;
+    # it stops dead for the punchlines (the strand snap, "This one is sticky.")
+    bt8 = 0.3
+    mar = [("D5", "A4"), ("F#5", "D5"), ("A5", "F#4"), ("F#5", "D5"), ("E5", "G4"), ("G5", "B4"), ("B5", "G4"), ("A5", "C#5")]
+    for (a, z, lv) in [(175.45, 178.75, 0.8), (179.35, 181.6, 1.0)]:
+        t, k = a, 0
+        while t < z - 0.05:
+            if k % 2 == 0:
+                hi_, _ = mar[(k // 2) % 8]
+                I("marimba").note(b, "keys", t, hi_, None, 0.45, 0.25, gain=0.055 * lv, seed=k)
+            else:
+                _, lo_ = mar[(k // 2) % 8]
+                I("vln_pizz").note(b, "str", t, lo_, None, 0.35, PAN["vln"], gain=0.2 * lv, seed=k)
+            if k % 4 == 0:
+                I("vc_pizz").note(b, "str", t, "D3" if (k // 8) % 2 == 0 else "A2", None, 0.4, PAN["vc"], gain=0.25 * lv, seed=k)
+            t += bt8
+            k += 1
     # sticky strand: a slow stretching glissando (solo violin, sul pont.) then a droopy pizz + bassoon blup
-    ts = LINES["C05"]["end"] + 0.04
-    I("vln_solo").note(b, "str", ts, "G5", 0.42, 0.3, 0.2, gain=0.35, bend=lambda x: 4.0 * (x / 0.42) ** 1.5,
-                       dyn=[(0, 0.15), (0.42, 0.3)], att=0.05, rel=0.05)
-    I("vc_pizz").note(b, "str", ts + 0.44, "F3", None, 0.6, PAN["vc"], gain=0.45, bend=lambda x: -2.0 * np.clip(x / 0.35, 0, 1))
-    I("bsn_stac").note(b, "ww", ts + 0.44, "F2", None, 0.6, PAN["bsn"], gain=0.5)
-    hit(ts + 0.44, "C05_sticky", "droopy pizz + bassoon blup")
+    st0 = scene_events("s08", "stretch", None, [177.45])[0]
+    st1 = scene_events("s08", "snap", "strand", [178.9])[0]
+    dd = st1 - st0
+    I("vln_solo").note(b, "str", st0, "G5", dd, 0.25, 0.2, gain=0.3, bend=lambda x: 5.0 * (x / dd) ** 1.6,
+                       dyn=[(0, 0.08), (dd * 0.8, 0.2), (dd, 0.25)], att=0.2, rel=0.02)
+    I("vln_pizz").note(b, "str", st1, "C6", None, 0.7, PAN["vln"] + 0.4, gain=0.5)
+    I("vc_pizz").note(b, "str", st1 + 0.06, "F3", None, 0.6, PAN["vc"], gain=0.45, bend=lambda x: -2.0 * np.clip(x / 0.35, 0, 1))
+    I("bsn_stac").note(b, "ww", st1 + 0.06, "F2", None, 0.6, PAN["bsn"], gain=0.5)
+    hit(st1, "C05_sticky", "sticky strand snaps: pizz plink, droopy pizz + bassoon blup")
     # 'all Flags are one Flag!' → the theme quoted, quick, on celesta + pizz
     tq = LINES["L05"]["end"] + 0.05
     for j, n in enumerate(th("maj", 1)):
@@ -1345,9 +1445,10 @@ def s08(b):
             I("vln_pizz").note(b, "str", tq + j * 0.075, n - 12, None, 0.5, PAN["vln"], gain=0.35)
     hit(tq, "L05_theme_quote", "celesta theme quote")
     # C06 → beat of silence → Lutie sniffs her hand (two questioning clarinet notes)
-    tsn = LINES["C06"]["end"] + 0.55
-    I("cl_stac").note(b, "ww", tsn, "E5", None, 0.4, PAN["cl"], gain=0.4)
-    I("cl_stac").note(b, "ww", tsn + 0.14, "F5", None, 0.45, PAN["cl"], gain=0.4)
+    sn = scene_events("s08", "sniff", None, [LINES["C06"]["end"] + 0.35, LINES["C06"]["end"] + 0.6])
+    tsn = sn[0]
+    I("cl_stac").note(b, "ww", sn[0], "E5", None, 0.4, PAN["cl"], gain=0.4)
+    I("cl_stac").note(b, "ww", sn[1] if len(sn) > 1 else sn[0] + 0.25, "F5", None, 0.45, PAN["cl"], gain=0.4)
     hit(tsn, "sniff", "clarinet sniff-sniff")
     # N11 warm swell: horns state the theme → 'Glorious!'
     tg = CUE["glorious"]
@@ -1385,12 +1486,18 @@ def s08(b):
     # under the card: soft D major + the innocent theme once more; silent by 193.0
     strings(b, te + 0.25, 193.0 - te - 0.3, dyn=[(0, 0.25), (1.0, 0.2), (193.0 - te - 0.3, 0.0)], att=0.4, rel=0.05,
             v1=["A5", "D6"], va=["F#4"], vc=["D3"], cb=["D2"], gain=0.45)
-    e = 0.24
+    fl = scene_events("s08", "slam", "end card letter", [190.1, 190.19, 190.256, 190.346, 190.412])
+    for j, (tj, n) in enumerate(zip(fl, ["D5", "F#5", "A5", "D6", "A6"])):
+        cel.note(tj, m(n), 0.3 if j < 4 else 0.8, 0.55)
+        I("marimba").note(b, "keys", tj, m(n) - 12, None, 0.6, 0.3, gain=0.1, seed=j)
+        I("vln_pizz").note(b, "str", tj, min(m(n) - 12, 86), None, 0.5, PAN["vln"], gain=0.35, seed=j)
+        hit(tj, f"endcard_letter_{j + 1}", "pluck on end-card letter")
+    e = 0.2
     for j, (k, n) in enumerate(zip((0, 2, 3, 5, 6, 8, 9), th("maj", 1))):
-        tj = 190.2 + e * k
+        tj = 190.55 + e * k
         cel.note(tj, n, 0.4 if j < 6 else 1.2, 0.45 if j < 6 else 0.5)
         glass_note(b, tj, n + 12, 1.4, gain=db(-30), pan=0.2 * np.sin(j), decay=0.9)
-    harp_roll(b, 190.2 + e * 9 - 0.04, ["D3", "A3", "D4", "F#4", "A4", "D5"], 0.35, 0.08, gain=0.6)
+    harp_roll(b, 190.55 + e * 9, ["D3", "A3", "D4", "F#4", "A4", "D5"], 0.35, 0.08, gain=0.6)
     cel.to(b, "keys", pan=0.3)
 
 
@@ -1403,7 +1510,7 @@ BUSES = {
     "str":   (0.0, "hall", 0.30, [("hp", 32), ("hs", 7000, 1.0)]),
     "brs":   (-1.0, "hall", 0.38, [("hp", 40), ("pk", 2500, -1.5, 0.8)]),
     "ww":    (-2.0, "hall", 0.33, [("hp", 80)]),
-    "perc":  (-1.0, "hall", 0.30, [("hp", 30)]),
+    "perc":  (-1.0, "hall", 0.30, [("hp", 55)]),  # Foley owns the sub (< 60 Hz)
     "keys":  (-2.0, "hall", 0.40, [("hp", 60)]),
     "org":   (-2.0, "cathedral", 0.50, [("hp", 28), ("pk", 550, -2.5, 0.7)]),
     "syn":   (-2.0, "plate", 0.28, [("hp", 25)]),
@@ -1516,7 +1623,8 @@ def master(sec_files):
     mix *= db(-19.0 - L0)
     mix, gmin = limiter(mix, -1.2)
     mix[S(138.5):S(140.0)] = 0.0
-    mix[S(192.9):] *= np.linspace(1, 0, N - S(192.9))[:, None] ** 2
+    nf = N - S(191.8)  # the picture fades to black by 193.0: so does the music (dry + reverb)
+    mix[S(191.8):] *= (np.cos(np.linspace(0, np.pi / 2, nf)) ** 2)[:, None]
     mix[-1] = 0
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     sf.write(OUT, mix.astype(np.float32), SR, subtype="FLOAT")

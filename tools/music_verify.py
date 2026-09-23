@@ -6,6 +6,10 @@
 Onset method: 1 ms hop, energy of the 80 Hz–16 kHz band in 3 ms windows; the onset of a hit is the frame of
 maximum positive log-energy slope (dB/ms) inside ±40 ms of the cue — i.e. the attack of the transient.
 """
+import os as _os
+
+for _k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMBA_NUM_THREADS"):
+    _os.environ.setdefault(_k, "4")  # shared machine: stay polite
 import argparse
 import json
 import os
@@ -137,6 +141,15 @@ def main():
         except Exception:
             L = float('nan')
         print(f"  {s['id']:5s} {s['start']:6.1f}-{s['end']:6.1f}  {L:6.1f} LUFS  peak {20 * np.log10(np.abs(seg).max() + 1e-12):6.1f} dBFS")
+    # click scan: isolated second-difference spikes far above the local (5 ms) median
+    d2 = np.abs(np.diff(x.mean(1), 2))
+    blk = SR // 200
+    nb = len(d2) // blk
+    mx = d2[:nb * blk].reshape(nb, blk).max(1)
+    med = np.median(d2[:nb * blk].reshape(nb, blk), 1) + 1e-9
+    ratio = mx / med
+    cand = np.flatnonzero((ratio > 60) & (mx > 1e-3))
+    print(f"click scan: {len(cand)} suspicious 5 ms blocks" + (": " + ", ".join(f"{c * blk / SR:.3f}s(x{ratio[c]:.0f})" for c in cand[np.argsort(-ratio[cand])][:12]) if len(cand) else ""))
     xm = band(x.mean(1))
     hits = json.load(open(os.path.join(ROOT, "audio", "music", "cues.json")))
     cues = {c["id"]: c["t"] for c in tl["cues"]}

@@ -1,6 +1,13 @@
 """vx - the Vexillomantic animation engine for THE UNBABELING.
 Scenes typically do:  from vx import *
 """
+import os as _os
+
+# 15 agents share 32 threads: keep per-process thread pools small (renders parallelise by process).
+for _k, _v in (("OMP_NUM_THREADS", "1"), ("OPENBLAS_NUM_THREADS", "1"), ("MKL_NUM_THREADS", "1"),
+               ("NUMBA_NUM_THREADS", "4")):
+    _os.environ.setdefault(_k, _v)
+
 import math
 
 import cairo

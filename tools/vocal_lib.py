@@ -75,6 +75,10 @@ class Kokoro:
     def __init__(self, threads: int = 4):
         import torch
         torch.set_num_threads(threads)
+        try:
+            torch.set_num_interop_threads(1)
+        except RuntimeError:
+            pass
         self.torch = torch
         self._model = None
         self.pipes = {}

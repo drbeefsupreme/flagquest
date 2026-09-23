@@ -5,7 +5,10 @@
 Checks: exact format/length, cue-aligned transients (±15 ms), physics-flutter correlation, sacred silence
 138.5–139.6, clipping/peaks. With --spec: audio/foley/levels.png and per-scene spectrograms spec_<scene>.png.
 """
-import argparse
+import os
+for _k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_k, "1")
+import argparse  # noqa: E402
 import json
 import sys
 from pathlib import Path

@@ -15,6 +15,8 @@ TIMELINE = ROOT / "timeline.json"
 
 def hex2rgb(h: str):
     h = h.lstrip("#")
+    if len(h) in (3, 4):
+        h = "".join(ch * 2 for ch in h[:3])
     return tuple(int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4))
 
 

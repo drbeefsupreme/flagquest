@@ -23,11 +23,10 @@ import time
 from dataclasses import dataclass, field
 from pathlib import Path
 
-os.environ.setdefault("OMP_NUM_THREADS", "1")
-os.environ.setdefault("NUMBA_NUM_THREADS", "2")
-
 import cv2
 import numpy as np
+
+cv2.setNumThreads(1)   # parallelism comes from worker processes; avoid 32-thread pools per worker
 
 from .config import W, H, FPS, OUT, CACHE, ROOT
 from .timeline import get_timeline

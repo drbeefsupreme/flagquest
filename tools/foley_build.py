@@ -10,7 +10,11 @@ Outputs
   audio/foley/CUES.md                              human-readable cue sheet (generated)
 Design: see tools/foley_lib.py (synthesis) and tools/foley_flutter.py (physics-derived flag foley).
 """
-import argparse
+import os
+for _k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_k, "1")
+os.environ.setdefault("NUMBA_NUM_THREADS", "2")
+import argparse  # noqa: E402
 import json
 import sys
 import time
@@ -301,20 +305,24 @@ def ember_rise(r, dur=2.0, count=26, pitches=L.D_MAJOR):
 
 SPECIFIC = [  # matched first against "kind + desc" (word-prefix match; trailing $ = whole word)
     (("drip",), "drip"), (("velcro",), "velcro"), (("telescop",), "telescope"), (("hammer", "tack$"), "hammer"),
-    (("lightning", "thunder"), "thunder"), (("crt thump", "screens power"), "crtcascade"),
+    (("crt thump", "screens power"), "crtcascade"), (("lightning", "thunder"), "thunder"),
     (("peel",), "peel"), (("squelch", "strand", "sticky", "stretch"), "stretch"), (("sniff",), "sniff"),
-    (("pen$", "scratch", "flourish"), "pen"), (("coin", "ching", "register"), "coin"),
+    (("pen scratch", "scratch", "flourish"), "pen"), (("coin", "ching", "register"), "coin"),
     (("klaxon", "alarm", "siren"), "klaxon"), (("wink",), "wink"), (("letter",), "letter"),
     (("grid",), "grid"), (("ember",), "embers"), (("candle", "match$"), "candle"), (("salute",), "raise"),
-    (("wipe", "swipe"), "wipe"), (("rattle", "boing"), "boing"), (("crown",), "crown"), (("skid",), "skid"),
-    (("swings the flag", "jab", "thrust"), "flagswish"), (("bird",), "birds"), (("descend", "lowers"), "descend"),
+    (("wipe", "swipe"), "wipe"), (("rattle", "boing"), "boing"), (("crowns$",), "crown"), (("skid",), "skid"),
+    (("swings the flag", "jab", "thrust"), "flagswish"), (("bird",), "birds"), (("lowers",), "descend"),
+    (("small type", "type fades"), "typeticks"), (("shutter",), "shutter"), (("bell",), "bell"),
+    (("pop up", "pops up"), "pops"), (("pinch",), "touch"), (("tumbling past", "past camera"), "whoosh"),
+    (("lit by",), "screenon"),
+    (("sunrise", "sun breaks"), "sunrise"),
 ]
 GENERIC = [
     (("explos", "blast", "breach", "boom"), "explosion"), (("shatter",), "shatter"),
-    (("crack", "fractur", "split", "subdivi"), "crack"), (("finger", "touch", "pinch"), "touch"),
+    (("crack", "fractur", "split", "subdivi"), "crack"), (("finger", "touch"), "touch"),
     (("pat$", "pats$", "slap", "strap"), "pat"), (("glitch", "static", "flicker"), "glitch"),
     (("power on", "power up"), "poweron"), (("rumble", "hum$"), "rumble"), (("sweep",), "sweep"),
-    (("swell",), "swell"),
+    (("swell", "sunrise"), "swell"), (("descend$",), "descend"),
     (("zap", "beam", "energy", "charge"), "zap"),
     (("ping", "notif", "beep", "blip", "readout", "tick$", "ticks$", "hud", "holo", "typing"), "blip"),
     (("chime", "sparkle", "glint", "shimmer", "twinkle", "absorb", "ingest", "materiali"), "chime"),
@@ -323,14 +331,15 @@ GENERIC = [
     (("raise", "unfurl", "flutter"), "raise"),
     (("footstep", "step", "boot", "stomp", "foot$", "feet$", "walk", "run$", "runs$", "climb", "scrape"), "step"),
     (("plant", "thunk", "strike"), "thunk"), (("snap",), "snap"),
-    (("slide", "slides$", "grind", "door", "seal", "open"), "slide"),
-    (("whoosh", "swish", "swing", "pass$", "passes$", "fly$", "flies$", "swirl", "gust", "descent"), "whoosh"),
+    (("whoosh", "swish", "swing", "pass$", "passes$", "fly$", "flies$", "swirl", "gust", "descent", "punch",
+      "toss"), "whoosh"),
+    (("slide", "slides$", "grind", "door", "seal"), "slide"),
     (("flash", "bloom", "glow"), "flash"),
-    (("rustle", "cloth", "robe", "turn$", "turns$", "offer", "hood", "grab", "takes$"), "rustle"),
+    (("rustle", "cloth", "robe", "turn$", "turns$", "offer", "hood", "grab", "takes$", "shuffle"), "rustle"),
     (("slam", "impact", "lands$", "land$", "hit$", "hits$", "stack", "thud", "drop$", "drops$", "fall"), "impact"),
     (("click", "lock"), "click"),
 ]
-SKIP_KINDS = {"wind", "cut", "black", "ambience", "ambient", "silence"}   # covered by beds / hard cuts
+SKIP_KINDS = {"wind", "cut", "black", "ambience", "ambient", "silence", "settle", "walla"}  # beds / cuts / voices
 
 
 def _rx(keys):
@@ -500,7 +509,7 @@ def event_sound(e, r):
     snd, stem, g, send = out
     # s03: whatever happens inside the broadcast is heard through the CRT's little speaker
     if sc == "s03" and 48.0 < e["t"] < 61.0 and not any(w in e["desc"].lower() for w in TV_WORLD_EXCLUDE) \
-            and h in ("whoosh", "impact", "pat", "pen", "click", "rustle"):
+            and h in ("whoosh", "impact", "pat", "pen", "click", "rustle", "shutter"):
         x = snd.x.mean(1) if snd.x.ndim == 2 else snd.x
         snd = Snd(L.tvify(x), snd.sync)
         send = 0.3
@@ -568,6 +577,40 @@ def _event_sound(h, e, r, sc, st, mat):
         return skid(r), "sfx", 0.16, 0.1
     if h == "flagswish":
         return flag_swish(r, st), "sfx", 0.22, 0.1
+    if h == "sunrise":     # first light: a slow air swell into a few high D-major glints (no downbeat)
+        sw = L.swell(r, 1.6, 400, 9000, 1.6).x
+        gl = [(1.4 + r.uniform(0, 1.2), L.chime(r, float(midi_hz(r.choice([74, 78, 81, 86, 90]) + 12)), 2.5, t60=1.8,
+                                                 beat=1.0, strike=0.05), r.uniform(0.3, 1.0), r.uniform(-0.8, 0.8))
+              for _ in range(8)]
+        x = L.addm(sw, L.scatter(ns(4.5), gl))
+        return Snd(L.norm(x, 0.8), 1.6), "sfx", 0.07, 0.5
+    if h == "typeticks":   # small type fading up line by line: soft tick per line
+        dd = dur_from_desc(e, 1.2)
+        k = max(3, int(dd / 0.18))
+        evs = [(dd * i / k + r.uniform(0, 0.03), L.impact(r, "tin", 0.25, 0.6, 0.05), r.uniform(0.4, 1.0),
+                r.uniform(-0.4, 0.4)) for i in range(k)]
+        return Snd(L.norm(L.scatter(ns(dd + 0.2), evs), 0.8), 0.0), "sfx", 0.03, 0.2
+    if h == "shutter":     # press camera: shutter clack + flash capacitor whine-pop
+        n = ns(0.35)
+        x = L.addm(L.impact(r, "tin", 0.4, 1.0, 0.06), np.zeros(n, np.float32))
+        x[ns(0.035):ns(0.035) + ns(0.06)] += L.impact(r, "tin", 0.45, 0.7, 0.06)[: ns(0.06)]
+        wh = np.sin(L.TAU * np.cumsum(np.linspace(6000, 9000, n)) / SR) * L.env_ad(n, 0.002, 0.25) * 0.15
+        return Snd(L.fade(L.norm(x + wh, 0.8)), 0.0), "sfx", 0.10, 0.1
+    if h == "bell":        # a tiny chapel bell
+        m = 90 if sc == "s05b" else 86
+        x = L.ring([float(midi_hz(m)) * q for q in (1.0, 2.0, 2.4, 3.0, 4.2)], [1.2, 0.8, 0.6, 0.5, 0.3],
+                   [1.0, 0.4, 0.5, 0.25, 0.2], 1.6, r)
+        x[: ns(0.004)] += L.hp(L.white(ns(0.004), r), 3000) * 0.5
+        return Snd(L.fade(L.norm(x, 0.8)), 0.0), "sfx", 0.07, 0.5
+    if h == "pops":        # many tiny figures pop into existence: a scatter of little cork/bubble pops
+        evs = [(r.exponential(0.15), L.bubble(r, r.uniform(0.6, 1.5), 1.2, 1.0, 0.6), r.uniform(0.3, 1.0),
+                r.uniform(-0.9, 0.9)) for _ in range(24)]
+        return Snd(L.norm(L.scatter(ns(1.0), evs), 0.8), 0.0), "sfx", 0.07, 0.3
+    if h == "screenon":    # cut to a face lit by a feed: the screen's electrical bloom
+        n = ns(0.8)
+        x = L.hum(r, 0.8, 60.0, (0.1, 0.3, 0.2, 0.3, 0.2), 0.4) * L.env_pts(n, [(0, 0), (0.02, 1), (0.8, 0)])
+        x = L.hp(x, 150) + L.hp(L.white(n, r), 5000) * L.env_ad(n, 0.001, 0.1) * 0.3
+        return Snd(L.fade(L.norm(x, 0.7)), 0.0), "sfx", 0.06, 0.2
     if h == "descend":   # something colossal lowers out of the storm: vast dark air + electrical static swell
         w = L.whoosh(r, 2.4, 1.6, 50, 500, 0.7, 0.0, 0.0, dark=0.85, shape=1.2)
         n = len(w.x)
@@ -1001,10 +1044,24 @@ def s02(mx, ev):
                name="recursion ping (octave per level)", scene=sc)
         mx.add("sfx", Snd(L.impact(r, "screen", 1.0 / (1 + lv), 1.0, 0.2), 0.0), t, 0.10, 0.0,
                name="panel snap", scene=sc)
-    # --- 47.0-47.5 push into the screen: static (continues into s03, resolves 48.1) --------------
-    st = L.tv_static(r, 1.3)
-    st = shaped(st, 46.85, [(46.85, 0), (47.45, 1), (47.6, 1), (48.15, 0)])
-    mx.add("sfx", st, 46.85, 0.16, name="TV static (push-in -> s03 resolve)", scene="s02")
+        # the new cells pop in centre-out over ~0.35 s: 4^(k+1) tiny screen-on blips, pitch up with depth
+        cnt = min(4 ** (k + 1), 160)
+        pops = [(0.35 * (i / cnt) ** 0.7, L.ping(r, float(midi_hz(74 + 12 * min(lv, 2) + r.choice([0, 7, 12]))),
+                                                  0.05, 2), 1.0 / np.sqrt(1 + i / 8),
+                 float(np.clip((i / cnt) * r.choice([-1, 1]), -1, 1))) for i in range(cnt)]
+        mx.add("sfx", L.norm(L.scatter(ns(0.6), pops), 0.8), t + 0.02, 0.05, send=0.2,
+               name=f"{cnt} new cells pop in (centre-out)", scene=sc)
+    # --- 47.0-47.5 push into the screen: tear -> full static (continues into s03, resolves 48.1) ------
+    et = ev.find(sc, ["tear"], near=47.2, win=0.3, claim=False)
+    ef = ev.find(sc, ["static"], near=47.35, win=0.3, claim=False)
+    ev.claim_near(sc, 47.35, 0.5, ["static", "tear", "push"])
+    t_tear = et["t"] if et else 47.0
+    t_full = ef["t"] if ef else 47.45
+    mx.add("sfx", L.whoosh(r, 0.9, 0.55, 300, 3000, 1.0, 0.0, 0.0), t_tear, 0.10, name="push into the screen",
+           scene="s02")
+    st = L.tv_static(r, 48.15 - t_tear + 0.05)
+    st = shaped(st, t_tear, [(t_tear, 0), (t_tear + 0.03, 0.5), (t_full, 1), (47.6, 1), (48.15, 0)])
+    mx.add("sfx", st, t_tear, 0.16, name="TV static (screen tears -> full static -> s03 resolve)", scene="s02")
 
 
 def s03(mx, ev):
@@ -1045,8 +1102,8 @@ def s03(mx, ev):
     mx.add("sfx", splash(r, 0.35), j["t"] if j else t_sl + 0.06, 0.12, send=0.3, name="TV jolts in the slop",
            scene=sc)
     T = CUES["pen_sign"]
-    e0 = ev.find(sc, ["pen", "flourish", "sign"], near=T, win=0.6)
-    e1 = ev.find(sc, ["pen", "flourish", "sign", "end"], near=T + 0.8, win=0.8)
+    e0 = ev.find(sc, ["pen_scratch", "flourish start"], near=T, win=0.6)
+    e1 = ev.find(sc, ["pen_scratch_end", "flourish end"], near=T + 0.8, win=0.8)
     t0 = T
     t1 = e1["t"] if e1 and e1["t"] > t0 + 0.3 else T + 0.85
     mx.add("sfx", Snd(L.tvify(L.pen_scratch(r, t1 - t0, 6).x), 0.0), t0, 0.40, name="pen flourish (via TV)",
@@ -1238,11 +1295,14 @@ def s05a(mx, ev):
     # --- K03: stack-up; each 'Breach!' arms a charge (Composer owns the stabs) -------------------------
     for k in range(3):
         t = word("K03", "Breach", k)
-        e = ev.find(sc, ["breach", "charge", "stack"], near=t, win=0.3)
-        t = e["t"] if e else t
-        mx.add("sfx", Snd(L.ping(r, float(midi_hz(98)), 0.09, 1), 0.0), t + 0.12, 0.035, 0.1,
-               name="charge arming beep", scene=sc)
-        mx.add("sfx", L.cloth_rustle(r, 0.25, 1.4), t, 0.08, -0.2, name="stack-up gear shuffle", scene=sc)
+        e = ev.find(sc, ["breach_beat", "breach!", "charge", "stack"], near=t, win=0.3)
+        t, p = (e["t"], e["pan"]) if e else (t, 0.0)
+        # the flag butt slams the steel door: door plate ring + body thud + crack tick (Composer: taiko/brass)
+        door = L.addm(L.impact(r, "metal", 3.0 + 0.4 * k, 1.0) * 0.8, L.thud(r, 70, 0.4, 1.0, 900))
+        mx.add("sfx", Snd(L.norm(door, 0.9), 0.0), t, 0.30 + 0.05 * k, p, send=0.4, name=f"'Breach!' {k + 1}: flag butt slams the steel door",
+               scene=sc)
+        mx.add("sfx", L.stone_crack(r, 0.06, 1.0, "stone", 1.2, final_bang=False).x, t + 0.02, 0.10, p, send=0.3,
+               name="door cracks", scene=sc)
     # --- 99.7 BREACH ---------------------------------------------------------------------------------
     T = CUES["breach"]
     ev.claim_near(sc, T, 0.25, ["door", "breach", "blow", "explos", "blast", "light"])
@@ -1319,10 +1379,11 @@ def s05b(mx, ev):
     sp = ev.find(sc, ["circle", "split", "cabal"], all_=True, t0=T + 0.3, t1=114.5)
     spt = [(e["t"], e["pan"]) for e in sp] or [(108.5, -0.3), (109.0, 0.3), (109.35, -0.5), (109.6, 0.5)]
     for t, p in spt:
-        mx.add("sfx", L.stone_crack(r, 0.12, 1.0, "stone", 1.1, final_bang=True), t, 0.18, p, send=0.6,
-               name="circle splits", scene=sc)
-        mx.add("sfx", L.stone_slide(r, 0.5, 0.4), t + 0.05, 0.08, p, send=0.5, name="stone circle grinds apart",
-               scene=sc)
+        mx.add("sfx", L.stone_crack(r, 0.12, 1.0, "stone", 1.1, final_bang=True), t, 0.15, p, send=0.6,
+               name="floor splits between the cabals", scene=sc)
+        for q in range(6):
+            mx.add("sfx", L.cloth_rustle(r, 0.4, 0.8, 0.8), t + r.uniform(0, 0.3), 0.04, float(np.clip(p + r.normal(0, 0.4), -1, 1)),
+                   send=0.5, name="robes rustle, feet shuffle apart", scene=sc)
     for k in range(7):
         n = ns(0.35)
         m = L.svf(L.white(n, r), 2500 * np.exp(-L.tt(n) / 0.1) + 600, 1.5, "bp") * L.env_ad(n, 0.004, 0.25)
@@ -1397,6 +1458,12 @@ def s06(mx, ev):
                send=0.4, name="tower groans", scene=sc)
     evs = [(r.uniform(0, 12.5), L.impact(r, "stone", 0.4, 1.0), r.uniform(0.2, 1.0), r.uniform(-1, 1)) for _ in range(40)]
     mx.add("amb", L.scatter(ns(13.0), evs), 125.5, 0.05, send=0.3, name="debris trickle", scene=sc)
+    # megaphones on every ring howl with acoustic feedback (a real mic->horn loop), thickening toward the crack
+    rh = R(7071)
+    for k in range(9):
+        t = 127.5 + 10.5 * (k / 9) ** 0.8 + rh.uniform(0, 0.4)
+        mx.add("sfx", L.feedback_howl(rh, rh.uniform(0.8, 1.8)), t, 0.03 + 0.03 * k / 9, rh.uniform(-0.9, 0.9),
+               send=0.5, name="megaphone feedback howl (closed-loop model)", scene=sc)
     # --- 125.5 babel_rise: fragments spiral and stack ---------------------------------------------------
     T = CUES["babel_rise"]
     ev.claim_near(sc, T, 0.3, ["swirl", "helix"])
@@ -1411,7 +1478,7 @@ def s06(mx, ev):
         mx.add("sfx", L.f32(x), t, 0.28 * (0.5 + 0.5 * s), p, send=0.4, name="fragment stacks onto the tower", scene=sc)
         mx.add("sfx", L.debris(r, 1.2, 8, "stone", 0.2), t + 0.03, 0.08, p, name="stack debris", scene=sc)
     # --- lightning (thunder physically synthesized from a tortuous channel) ------------------------------
-    lt = ev.find(sc, ["lightning", "thunder", "strike"], all_=True, t0=125.5, t1=138.5)
+    lt = ev.find(sc, ["lightning"], all_=True, t0=125.5, t1=138.5, kind_only=True)
     lts = [(e["t"], e["pan"], e["strength"]) for e in lt] or [(127.2, -0.6, 0.3), (129.9, 0.5, 0.55),
                                                               (word("C03", "Good") - 0.05, -0.2, 0.9),
                                                               (135.4, 0.6, 0.7), (137.3, -0.3, 1.0)]
@@ -1492,10 +1559,11 @@ def s07a(mx, ev):
     mx.add("sfx", L.whoosh(r, 1.3, 0.5, 200, 2200, 0.9, -0.5, 0.5, dark=0.3), tg, 0.20, send=0.3,
            name="first dawn gust", scene=sc)
     # 148.5 survivors turn
-    if not ev.find(sc, ["turn", "rustle"], all_=True, claim=False, t0=148.0, t1=150.0):
-        for k in range(18):
-            mx.add("sfx", L.cloth_rustle(r, 0.4, 0.7, 0.7), r.uniform(148.5, 149.4), 0.03, r.uniform(-0.9, 0.9),
-                   send=0.5, name="survivors turn to look", scene=sc)
+    rc = ev.find(sc, ["rustle_crowd", "turn", "look up"], all_=True, t0=148.0, t1=150.0)
+    t_rc = rc[0]["t"] if rc else 148.5
+    for k in range(22):
+        mx.add("sfx", L.cloth_rustle(r, 0.4, 0.7, 0.7), t_rc + r.uniform(0, 0.9), 0.03, r.uniform(-0.9, 0.9),
+               send=0.5, name="thousands of survivors turn to look up", scene=sc)
     # 150.0 convergence: the phase-transition wave of raised flags
     T = CUES["convergence"]
     crowd = [tr for tr in FF.load_tracks() if tr["scene"] == sc and tr["kind"] == "crowd"]
@@ -1732,7 +1800,9 @@ def physics(mx, report):
         report.append(dict(file=tr["file"], scene=tr["scene"], name=tr["name"], frames=len(tr["energy"]),
                            t0=t0, energy_max=float(tr["energy"].max()), snaps=info["n_events"],
                            flap_hz_from_sim="flap_hz" in tr, size=info["size"], corr_energy_rms=corr))
-        base = 0.3 if info.get("field") else 0.55
+        base = 0.3 if info.get("field") else 0.5
+        pk = float(np.abs(x).max()) * base
+        base *= min(1.0, 0.3 / max(pk, 1e-9))    # hero flags peak <= -10.5 dBFS (linear: correlation untouched)
         mx.add("sfx", x, t0, base, send=0.25, name=f"PHYSICS flutter <- {tr['file']} (r={corr:.3f})",
                scene=tr["scene"], src="physics:" + tr["file"])
     for sc, (t0, t1, pts, pan, gain, snaps, size) in FALLBACK_FLAGS.items():
@@ -1788,6 +1858,7 @@ def finalize(mx):
     for stem in ("sfx", "amb"):
         b = mx.bus[stem]
         np.nan_to_num(b, copy=False)
+        b[:] = L.hp(b, 18.0, 2)              # no wasted headroom below hearing (and no DC)
         i0, i1 = int(round(SIL0 * SR)), int(round(SIL1 * SR))
         b[i0:i1] = 0.0                       # sacred silence (placements are already cut at 138.5)
         if stem == "sfx":
@@ -1826,11 +1897,12 @@ CATALOGUE = """## How it is made (everything synthesized at 48 kHz — no sample
 | cloth flutter (tools/foley_flutter.py) | per-sample parameters interpolated from the scene's cloth simulation: flap pulse train at the sim's `flap_hz` (or Strouhal-rate from energy), band centre ∝ energy, rustle ∝ E^1.35, 'fwap' on every frame-resolved acceleration, whip-crack N-wave on every sim snap, pan from the cloth's screen x | every hero flag, flag fields, the colossal Flag (size-scaled: slower, lower billows) |
 | crowd flag waves | one grain per raised flag (swing-up swish + 3-5 decaying flaps + pop) placed at its own time/pan/distance (air absorption), over a bed ∝ √(flags raised) | s07a convergence, s07b tiling ripples, s08 GLORIOUS salute |
 | wind | brown+pink turbulence through a per-sample TPT state-variable low-pass tracking wind speed + edge-tone whistles (narrow band-passes, f ∝ U) with gust fbm, decorrelated L/R | every exterior bed, the impossible breeze underground |
-| thunder | 3-D tortuous lightning channel (random walk, ~9 m segments); each segment's N-wave arrives at d/343 s with 1/d spreading, broadside radiation, distance-binned air absorption | s06 lightning (closeness = scene strength) |
+| thunder | 3-D tortuous lightning channel (persistent random walk, ~9 m segments) + 3-7 branches; each segment's N-wave (lognormal length/strength) arrives at d/343 s with 1/d spreading, broadside radiation, distance-binned air absorption; rumble envelope follows the arrival density | s06 lightning (closeness = scene strength) |
 | bubbles / drips / slop | van den Doel Minnaert bubbles (f0 = 3.26/r, pitch rising as the bubble surfaces), viscous = larger/damped | drips, slop gloops, the crash splash cloud, the sticky 'plik' |
 | fracture & debris | accelerating Poisson micro-crack train through stone/marble modal bodies + final split; fragments fall and bounce with restitution (t_k, v_k = e^k v0) and ring with material modes (stone, marble, glass, metal, wood, screen) | memeplex collapse, recursive borders (pitch rises with recursion depth), temple, marble head (void: no gravity, fragments keep ringing), Babel |
 | explosion | N-wave shock + fireball roar (brown noise, closing low-pass) + sub + bouncing debris | the breach |
 | stick-slip friction | impulse train at a load-dependent slip rate through resonators | rubbed-glass voice of the rotating Crystal (4-D beating), tower/monolith groans, stone doors, pen nib, sticky strand squeak |
+| acoustic feedback | a real closed loop simulated per sample: noise → horn resonator → soft-clipping amp → air delay (mic↔horn distance / c) → back; loop gain creeps past 1 so the loop mode nearest the horn peak grows exponentially into a howl | Babel's megaphones |
 | CRT | relay tick, degauss 60 Hz field + 120 Hz rattle, HV crackle, 15.734 kHz flyback whine; collapse zap (falling chirp) + cooling ticks; TV-speaker filter for everything inside the broadcast | s02→s03 static, s03 TV, Egregore's screens |
 | modal glass / bells | inharmonic mode sets, detuned pairs (beating), pitched only to the score's key (D major; hymn-chord-aware in s07b) | crystal, glints, canon absorptions, cold stages, ka-ching |
 | others | velcro (hook-row release trains), telescoping clicks, tack hammer, boots (heel/crunch/gear), cryo pulse-tube breathing, FSK data chatter, notification pings (1/s → 1500/s, detuned D minor), paper slides/slams, klaxon (D3), squelch/peel/sniff, birds (FM song models), wing bursts, candles, crowns | per scene |

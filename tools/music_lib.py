@@ -256,19 +256,41 @@ class Sampler:
         """align=True: the perceptual attack (first -12 dB point) lands on t, not the first sample."""
         y = self.render(m(midi), dur, vel, seed=kw.pop("seed", int(t * 1000) + m(midi)), **kw)
         y = stereo_place(y, pan, self.width if width is None else width)
-        sh = attack_shift(y, 0.03, -20.0) if align else 0
+        sh = min(flux_shift(y, 0.05), attack_shift(y, 0.03, -20.0)) if align else 0  # attacks coincide on t
         buf.add(bus, y, i0=S(t) - sh, gain=gain)
         return y
 
 
-def attack_shift(y, cap=0.03, rel_db=-20.0):
-    """samples from the first sample to the perceptual attack (first point within rel_db of the peak of the
-    first 300 ms), capped. Used to put the audible attack — not the silent pre-onset — on the beat."""
-    a = np.abs(y[: S(0.3)]).max(1) if y.ndim == 2 else np.abs(y[: S(0.3)])
-    if len(a) == 0:
+def attack_shift(y, cap=0.05, rel_db=None):
+    """samples from the first sample to the note's own onset-strength peak (steepest rise of a 4 ms RMS
+    envelope within the first 150 ms), capped: the audible attack — not the silent pre-onset — lands on t.
+    rel_db (legacy) instead uses the first point within rel_db of the early peak."""
+    a = (y[: S(0.15)] ** 2).sum(1) if y.ndim == 2 else y[: S(0.15)] ** 2
+    if len(a) < S(0.01):
         return 0
-    k = int(np.argmax(a > a.max() * db(rel_db)))
-    return min(k, S(cap))
+    if rel_db is not None:
+        r = np.sqrt(a)
+        return min(int(np.argmax(r > r.max() * db(rel_db))), S(cap))
+    w = S(0.004)
+    env = np.sqrt(np.convolve(a, np.ones(w) / w, "full")[: len(a)])
+    k = S(0.003)
+    d = env[k:] - env[:-k]
+    i = int(np.argmax(d)) + k // 2
+    return min(i, S(cap))
+
+
+def flux_shift(y, cap=0.05):
+    """samples from the first sample to the note's own spectral-flux onset peak (the same measure the
+    verifier uses on the mix: librosa onset strength, n_fft 1024, hop 64, centred). Aligning every note's
+    flux peak to its beat makes ensemble hits land as one attack exactly on the picture."""
+    import librosa
+    mono = (y[: S(0.25)].mean(1) if y.ndim == 2 else y[: S(0.25)]).astype(np.float32)
+    if len(mono) < 2048 or not np.any(mono):
+        return 0
+    env = librosa.onset.onset_strength(y=np.concatenate([np.zeros(1024, np.float32), mono]), sr=SR, n_fft=1024,
+                                       hop_length=64, lag=1, max_size=1, center=True)
+    k = int(np.argmax(env)) * 64 - 1024
+    return int(np.clip(k, 0, S(cap)))
 
 
 def stereo_place(y, pan=0.0, width=1.0):
@@ -296,7 +318,7 @@ def oneshot(buf, bus, t, rel_path, gain=1.0, pan=0.0, width=1.0, rate=1.0, trim=
         y = y[::-1].copy()
         buf.add(bus, y, i0=S(t) - len(y), gain=gain)
     else:
-        buf.add(bus, y, i0=S(t) - attack_shift(y, 0.03, -20.0), gain=gain)
+        buf.add(bus, y, i0=S(t) - min(flux_shift(y, 0.05), attack_shift(y, 0.03, -20.0)), gain=gain)
     return y
 
 
@@ -345,6 +367,8 @@ class SF2:
                 syn.noteoff(0, k)
             elif typ == 2:
                 syn.control_change(0, k, v)
+        nf = min(len(out), S(0.6))
+        out[-nf:] *= np.linspace(1, 0, nf)[:, None] ** 2  # no truncated tails
         return out * np.float32(self.gain), S(t0)
 
     def to(self, buf, bus, pan=0.0, width=1.0, gain=1.0, **kw):

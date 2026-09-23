@@ -7,6 +7,10 @@ the octave convention of every folder is inferred by majority vote and every sam
 correction so the whole orchestra plays in exact A=440 equal temperament. The attack onset of each
 sample is detected too, so notes can be placed sample-accurately (hits land on picture).
 """
+import os as _os
+
+for _k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMBA_NUM_THREADS"):
+    _os.environ.setdefault(_k, "4")  # shared machine: stay polite
 import json
 import os
 import re
