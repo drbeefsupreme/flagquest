@@ -8,3 +8,7 @@ ref/pages/
 audio/**/*.wav
 audio/**/*.npz
 assets/sf2/
+films/*/out/
+films/*/cache/
+films/*/audio/**/*.wav
+films/*/audio/**/*.npz

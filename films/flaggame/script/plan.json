@@ -1,0 +1,426 @@
+{
+ "title": "THE FLAG GAME?",
+ "output_name": "THE_FLAG_GAME",
+ "scenes": [
+  [
+   "t01",
+   "scenes.t01_tract",
+   0.0,
+   18.4583,
+   "The Tract"
+  ],
+  [
+   "t02",
+   "scenes.t02_wrong",
+   18.4583,
+   43.2917,
+   "Every Word Was Wrong"
+  ],
+  [
+   "t03",
+   "scenes.t03_genesis",
+   43.2917,
+   67.4583,
+   "In the Beginning"
+  ],
+  [
+   "t04",
+   "scenes.t04_flagmaker",
+   67.4583,
+   105.6667,
+   "The Flag Maker"
+  ],
+  [
+   "t05",
+   "scenes.t05_worked",
+   105.6667,
+   122.2917,
+   "And It Worked"
+  ],
+  [
+   "t06",
+   "scenes.t06_firmament",
+   122.2917,
+   142.0417,
+   "The Firmament Opened"
+  ],
+  [
+   "t07",
+   "scenes.t07_raised",
+   142.0417,
+   159.8333,
+   "Raised Again"
+  ],
+  [
+   "t08",
+   "scenes.t08_blaspheme",
+   159.8333,
+   181.1667,
+   "Blaspheme"
+  ],
+  [
+   "t09",
+   "scenes.t09_passiton",
+   181.1667,
+   199.0,
+   "Pass It On"
+  ]
+ ],
+ "place": {
+  "R01": 7.4,
+  "S01": 11.6,
+  "S02": 15.58,
+  "P01": 18.74,
+  "P02": 21.91,
+  "S03": 23.22,
+  "P03": 25.2,
+  "P04": 27.83,
+  "D01": 31.06,
+  "S04": 33.75,
+  "P05": 36.75,
+  "P06": 40.03,
+  "P07": 44.29,
+  "S05": 49.42,
+  "P08": 50.77,
+  "P09": 56.0,
+  "F01": 61.65,
+  "G01": 64.63,
+  "P10": 67.75,
+  "M01": 70.1,
+  "P11": 74.73,
+  "X01": 76.98,
+  "P12": 78.02,
+  "M02": 82.74,
+  "M03": 92.09,
+  "V01": 97.3,
+  "V02": 102.36,
+  "P13": 106.43,
+  "H01": 108.79,
+  "H02": 110.11,
+  "P14": 111.86,
+  "P15": 113.15,
+  "P16": 118.35,
+  "P17": 122.71,
+  "P18": 127.82,
+  "P19": 132.37,
+  "P20": 136.5,
+  "P21": 142.24,
+  "P22": 149.58,
+  "P23": 154.17,
+  "P24": 160.15,
+  "P25": 164.43,
+  "S06": 167.81,
+  "P26": 169.09,
+  "P27": 170.67,
+  "S07": 172.96,
+  "P28": 174.97,
+  "S08": 177.16,
+  "P29": 179.14,
+  "S09": 180.13,
+  "P30": 181.56,
+  "R02": 192.07
+ },
+ "cues": [
+  [
+   0.0,
+   "film_start",
+   "Rain on mud. The tract lies face-down, back page up. LOOP FRAME: identical to the film's last frame."
+  ],
+  [
+   2.6,
+   "tract_flip",
+   "A gust flips the tract face-up: the cover THE FLAG GAME?"
+  ],
+  [
+   4.9,
+   "pages_riffle",
+   "Pages riffle open in the wind."
+  ],
+  [
+   6.4,
+   "dive_in",
+   "Camera dives into page 1, panel 1: the comic comes alive."
+  ],
+  [
+   10.093,
+   "flag_passes",
+   "'YELLOW FLAGS': the flag-bearer (the Preacher) passes behind them."
+  ],
+  [
+   18.46,
+   "preacher_appears",
+   "The Chick-tract witness is suddenly right there."
+  ],
+  [
+   22.117,
+   "wrong_burst",
+   "'WRONG!!': radial burst panel, shock emanata."
+  ],
+  [
+   25.2,
+   "icon",
+   "The Preacher becomes a Byzantine icon raising the Flag."
+  ],
+  [
+   29.288,
+   "essence",
+   "'ESSENCE': heavenly radiance."
+  ],
+  [
+   31.06,
+   "disclaimer",
+   "The ** footnote types on at legal speed."
+  ],
+  [
+   33.75,
+   "anime",
+   "Summer's face snaps into anime style (sparkles, sweat drop)."
+  ],
+  [
+   41.335,
+   "flashback",
+   "'Alchemy': wavy flashback ripple into the past; engraving style begins."
+  ],
+  [
+   43.29,
+   "genesis",
+   "Six plain yellow Flags on the op-art hexagon field."
+  ],
+  [
+   57.339,
+   "stench",
+   "Stink lines rise off the hippies."
+  ],
+  [
+   59.339,
+   "hurricane",
+   "The stench coalesces into a hurricane."
+  ],
+  [
+   62.951,
+   "rain_begins",
+   "'RAIN': the downpour begins."
+  ],
+  [
+   67.46,
+   "flagmaker",
+   "The Flag Maker walks amongst them (candlesticks, rain)."
+  ],
+  [
+   76.98,
+   "shut_up",
+   "'SHUT UP!' from the hooded crowd."
+  ],
+  [
+   87.153,
+   "flags_flood",
+   "His words start turning into FLAGS FLAGS FLAGS; the chant rises."
+  ],
+  [
+   95.722,
+   "flood_peak",
+   "'every': the FLAGS text flood fills the frame."
+  ],
+  [
+   97.3,
+   "devil",
+   "The Devil on his throne."
+  ],
+  [
+   102.415,
+   "devil_glitch",
+   "The Devil's speech is overwritten: 'FLAGS!'"
+  ],
+  [
+   105.67,
+   "some_listened",
+   "White card: BUT THERE WERE SOME THAT LISTENED..."
+  ],
+  [
+   108.79,
+   "found_one",
+   "A muddy hippie pulls a Flag from the mud."
+  ],
+  [
+   111.86,
+   "it_worked",
+   "'AND IT WORKED.'"
+  ],
+  [
+   116.901,
+   "flag_on_effigy",
+   "The Seraphlag sets the Flag atop the effigy."
+  ],
+  [
+   118.917,
+   "rain_freeze",
+   "'stopped': every raindrop freezes midair."
+  ],
+  [
+   119.555,
+   "firmament_reveal",
+   "'Entirely': the drops fall away; the firmament dome, propped up by the Flag, is revealed."
+  ],
+  [
+   122.29,
+   "evening",
+   "Night. The effigy burn begins."
+  ],
+  [
+   125.356,
+   "ignite",
+   "'burned': flames engulf the effigy."
+  ],
+  [
+   129.729,
+   "flames_reach_flag",
+   "'FLAG': flames reach the top; the Flag lifts free and ascends like an ember."
+  ],
+  [
+   135.575,
+   "firmament_crack",
+   "'OPENED': cracks race across the sky dome."
+  ],
+  [
+   137.118,
+   "deluge",
+   "'RETURNED': the waters above the firmament pour down."
+  ],
+  [
+   143.944,
+   "raise_1",
+   "'RAISED': first re-raising; the montage begins."
+  ],
+  [
+   146.769,
+   "raise_100",
+   "'time': the 100th raising lands."
+  ],
+  [
+   149.58,
+   "spirit",
+   "The Spirit of the Flags walks on."
+  ],
+  [
+   155.451,
+   "no_fire",
+   "'fire': a Burn without fire."
+  ],
+  [
+   157.501,
+   "no_burns",
+   "'Burns': the empty years."
+  ],
+  [
+   158.8,
+   "unmask",
+   "The walker lowers his mask: it is the Preacher. Back to the present."
+  ],
+  [
+   159.83,
+   "present",
+   "The camp, in the rain, now."
+  ],
+  [
+   166.223,
+   "blaspheme",
+   "'BLASPHEME': thunderclap and lightning."
+  ],
+  [
+   167.81,
+   "kneel",
+   "Summer falls to her knees."
+  ],
+  [
+   169.09,
+   "hymn",
+   "Altar-call hymn begins under the prayer."
+  ],
+  [
+   180.13,
+   "amen",
+   "Summer's 'Amen.': the rain stops; a sunbeam."
+  ],
+  [
+   184.427,
+   "pass_it_on",
+   "'PASS': he hands her the tract."
+  ],
+  [
+   185.4,
+   "droste_start",
+   "Into the tract: the Print Gallery spiral."
+  ],
+  [
+   191.6,
+   "droste_end",
+   "The spiral resolves into the camp, the next day."
+  ],
+  [
+   194.763,
+   "callback",
+   "'YELLOW FLAGS': it is Summer carrying the flag now."
+  ],
+  [
+   196.3,
+   "tract_toss",
+   "Raven tosses the tract."
+  ],
+  [
+   197.4,
+   "tract_lands",
+   "It lands face-down in the mud, back page up."
+  ],
+  [
+   199.0,
+   "film_end",
+   "End = the loop frame (identical to film_start)."
+  ]
+ ],
+ "extra": {
+  "chant": {
+   "start": 87.153,
+   "peak": 95.722,
+   "end": 97.7,
+   "text": "FLAGS FLAGS FLAGS FLAGS",
+   "desc": "The crowd's incomprehension: all they hear is FLAGS FLAGS FLAGS. Rising crowd chant; the Devil's V02 lands on it."
+  },
+  "hymn": {
+   "title": "Just As I Am (without one Flag)",
+   "tune": "WOODWORTH, William B. Bradbury 1849 (public domain)",
+   "start": 169.09,
+   "end": 181.0,
+   "amen": 180.13,
+   "lyrics": [
+    "Just as I am, without one Flag,",
+    "But that Thy yellow waves for me,",
+    "And that Thou bidd'st me move to Thee,",
+    "O Flag of Flags, I come, I come."
+   ],
+   "desc": "Soft altar-call choir + organ under the lorem-ipsum prayer; plagal 'A-men' lands on Summer's Amen."
+  }
+ },
+ "mix": {
+  "stems": {
+   "dialogue": 0.0,
+   "crowd": -2.0,
+   "choir": -1.0,
+   "music": -5.0,
+   "sfx": -3.0,
+   "ambience": -7.0
+  },
+  "duck": {
+   "music": 7.0,
+   "ambience": 4.0,
+   "sfx": 5.0,
+   "crowd": 5.0
+  },
+  "automation": [],
+  "silence": []
+ },
+ "subs": {
+  "burn": false,
+  "replace": {},
+  "extra": []
+ }
+}

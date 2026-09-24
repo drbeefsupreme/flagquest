@@ -1,0 +1,604 @@
+{
+  "cast": {
+    "PREACHER": {
+      "voice": "am_michael",
+      "lang": "a",
+      "speed": 1.0,
+      "fx": "preacher",
+      "desc": "Dr. Beelzebub Crow, playa evangelist and flag-bearer. Fervent Chick-tract witness; tells the whole flashback in V.O."
+    },
+    "SUMMER": {
+      "voice": "af_bella",
+      "lang": "a",
+      "speed": 1.0,
+      "fx": "none",
+      "desc": "The skeptic: sunny blonde hippie with pigtails. Cheerfully confesses her own sins; converts."
+    },
+    "RAVEN": {
+      "voice": "af_nicole",
+      "lang": "a",
+      "speed": 0.95,
+      "fx": "none",
+      "desc": "Summer's friend: glossy black hair, hoop earrings, bone-dry disdain."
+    },
+    "FLAGMAKER": {
+      "voice": "bm_george",
+      "lang": "b",
+      "speed": 0.86,
+      "fx": "divine",
+      "desc": "The Flag Maker. Robed, radiant, patient; carries the DIY flag tools."
+    },
+    "DEVIL": {
+      "voice": "am_onyx",
+      "lang": "a",
+      "speed": 0.92,
+      "fx": "demonic",
+      "desc": "The Chick-tract Devil. Tries to call the Flags a game and physically cannot."
+    },
+    "FORECAST": {
+      "voice": "af_kore",
+      "lang": "a",
+      "speed": 1.05,
+      "fx": "radio",
+      "desc": "AM-radio weather announcer on a boombox in the mud."
+    },
+    "RANGER": {
+      "voice": "am_eric",
+      "lang": "a",
+      "speed": 1.0,
+      "fx": "radio",
+      "desc": "A Ranger on the handheld radio, looking for his dirt."
+    },
+    "DISCLAIMER": {
+      "voice": "am_puck",
+      "lang": "a",
+      "speed": 1.45,
+      "fx": "legal",
+      "desc": "Pharmaceutical-ad legal voice reading the footnote at speed."
+    },
+    "PHARISEES": {
+      "voice": "am_fenrir",
+      "lang": "a",
+      "speed": 1.05,
+      "fx": "mob",
+      "desc": "Hooded elders in rain ponchos (thickened into a mob by the Vocalist)."
+    },
+    "HIPPIE1": {
+      "voice": "am_liam",
+      "lang": "a",
+      "speed": 1.1,
+      "fx": "shout",
+      "desc": "A muddy hippie who finds a Flag."
+    },
+    "HIPPIE2": {
+      "voice": "af_river",
+      "lang": "a",
+      "speed": 1.1,
+      "fx": "shout",
+      "desc": "A muddy hippie who moves it."
+    }
+  },
+  "lines": [
+    {
+      "id": "R01",
+      "scene": "t01",
+      "speaker": "RAVEN",
+      "text": "Ugh, there goes another one of those YELLOW FLAGS.",
+      "say": "[Ugh](/ˈʌɡ/). There goes another one of those yellow flags.",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "S01",
+      "scene": "t01",
+      "speaker": "SUMMER",
+      "text": "I hate that FLAG GAME because I am a LAZY and ENTITLED HIPPY",
+      "say": "I hate that flag game, because I am a lazy and entitled hippie!",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "S02",
+      "scene": "t01",
+      "speaker": "SUMMER",
+      "text": "It just doesn't FIT IN with how I think a Burn works",
+      "say": "It just doesn't fit in with how I think a burn works.",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P01",
+      "scene": "t02",
+      "speaker": "PREACHER",
+      "text": "Amazing, every word of what you just said...",
+      "say": "Amazing. Every word of what you just said...",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P02",
+      "scene": "t02",
+      "speaker": "PREACHER",
+      "text": "...WAS WRONG!!",
+      "say": "was wrong!",
+      "meta": {
+        "letter": "shout",
+        "footnote": "*1ST VEXILLIANS 11s"
+      }
+    },
+    {
+      "id": "S03",
+      "scene": "t02",
+      "speaker": "SUMMER",
+      "text": "WHAT? HOW CAN THIS BE???",
+      "say": "What? How can this be?",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P03",
+      "scene": "t02",
+      "speaker": "PREACHER",
+      "text": "For ONE THING, the FLAGS are not a GAME.",
+      "say": "For one thing, the flags are not a game.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P04",
+      "scene": "t02",
+      "speaker": "PREACHER",
+      "text": "The FLAGS are THE LIVING ESSENCE OF THE BURN ITSELF!!!",
+      "say": "The flags are the living essence of the burn itself!",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "D01",
+      "scene": "t02",
+      "speaker": "DISCLAIMER",
+      "text": "Survey FLAGS is strictly an interactive art installation",
+      "say": "[Survey](/sˈɜɹvˌA/) flags is strictly an interactive art installation.",
+      "meta": {
+        "letter": "footnote",
+        "footnote": "** “Survey FLAGS” is strictly an interactive art installation"
+      },
+      "speed": 1.35
+    },
+    {
+      "id": "S04",
+      "scene": "t02",
+      "speaker": "SUMMER",
+      "text": "Huh? What you are saying is... its so weird....",
+      "say": "Huh? What you are saying is... it's so weird...",
+      "meta": {
+        "letter": "balloon",
+        "style": "anime"
+      }
+    },
+    {
+      "id": "P05",
+      "scene": "t02",
+      "speaker": "PREACHER",
+      "text": "Here, why don't I tell you the story FROM THE BEGINNING",
+      "say": "Here. Why don't I tell you the story... from the beginning.",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P06",
+      "scene": "t02",
+      "speaker": "PREACHER",
+      "text": "It all started back at Alchemy IX...",
+      "say": "It all started back at Alchemy Nine...",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P07",
+      "scene": "t03",
+      "speaker": "PREACHER",
+      "text": "In the beginning there were 6 FLAGS, and each was a mix of Red, Blue and Yellow.",
+      "say": "In the beginning there were six flags, and each was a mix of red, blue and yellow.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "S05",
+      "scene": "t03",
+      "speaker": "SUMMER",
+      "text": "They look yellow to me.",
+      "meta": {
+        "letter": "offpanel"
+      }
+    },
+    {
+      "id": "P08",
+      "scene": "t03",
+      "speaker": "PREACHER",
+      "text": "Red and Blue are merely the ABSENCE of Yellow. II VEXILLIANS 5",
+      "say": "Red and blue are merely the absence of yellow. Second [Vexillians](/vɛksˈɪliənz/), five.",
+      "meta": {
+        "letter": "offpanel"
+      }
+    },
+    {
+      "id": "P09",
+      "scene": "t03",
+      "speaker": "PREACHER",
+      "text": "That year, the terrible STENCH of the hippies caused a great hurricane to decend on the burn.",
+      "say": "That year, the terrible stench of the hippies caused a great hurricane to descend on the burn.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "F01",
+      "scene": "t03",
+      "speaker": "FORECAST",
+      "text": "...and the forcast for Alchemy: RAIN. ALL. WEEKEND.",
+      "say": "...and the forecast for Alchemy? Rain. All. Weekend.",
+      "meta": {
+        "letter": "radio"
+      }
+    },
+    {
+      "id": "G01",
+      "scene": "t03",
+      "speaker": "RANGER",
+      "text": "Hey, over, uhmmm... does anyone know where my dirt went?",
+      "say": "Hey, over. Um... does anyone know where my dirt went?",
+      "meta": {
+        "letter": "radio"
+      }
+    },
+    {
+      "id": "P10",
+      "scene": "t04",
+      "speaker": "PREACHER",
+      "text": "The FLAG MAKER walked amongst them...",
+      "say": "The flag maker walked amongst them...",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "M01",
+      "scene": "t04",
+      "speaker": "FLAGMAKER",
+      "text": "By FINDING and MOVING the FLAGS, the rain can be stopped.",
+      "say": "By finding, and moving the flags... the rain can be stopped.",
+      "meta": {
+        "letter": "balloon",
+        "style": "divine"
+      }
+    },
+    {
+      "id": "P11",
+      "scene": "t04",
+      "speaker": "PREACHER",
+      "text": "Most people rejected His message.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "X01",
+      "scene": "t04",
+      "speaker": "PHARISEES",
+      "text": "Shut up!",
+      "meta": {
+        "letter": "shout"
+      }
+    },
+    {
+      "id": "P12",
+      "scene": "t04",
+      "speaker": "PREACHER",
+      "text": "They hated FLAGS because He told them the truth. FLAGS 4:20",
+      "say": "They hated flags, because he told them the truth. Flags, four twenty.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "M02",
+      "scene": "t04",
+      "speaker": "FLAGMAKER",
+      "text": "Each FLAG is a symbol that signifies its own referent. Therefore sign and signifier become are made one in the FLAGS.",
+      "say": "Each flag is a symbol that signifies its own referent. Therefore sign and signifier become are made one in the flags.",
+      "meta": {
+        "letter": "balloon",
+        "style": "divine"
+      }
+    },
+    {
+      "id": "M03",
+      "scene": "t04",
+      "speaker": "FLAGMAKER",
+      "text": "Each FLAG is itself a FLAG... and each FLAG is every FLAG.",
+      "say": "Each flag is itself a flag... and each flag is every flag.",
+      "meta": {
+        "letter": "balloon",
+        "style": "divine"
+      }
+    },
+    {
+      "id": "V01",
+      "scene": "t04",
+      "speaker": "DEVIL",
+      "text": "Listen, my children. The Flags are nothing but a... a... a...",
+      "say": "Listen, my children. The flags are nothing but a... a... a...",
+      "meta": {
+        "letter": "balloon",
+        "style": "devil"
+      }
+    },
+    {
+      "id": "V02",
+      "scene": "t04",
+      "speaker": "DEVIL",
+      "text": "FLAGS! FLAGS FLAGS FLAGS!",
+      "say": "Flags! Flags, flags, flags!",
+      "meta": {
+        "letter": "shout",
+        "style": "devil"
+      }
+    },
+    {
+      "id": "P13",
+      "scene": "t05",
+      "speaker": "PREACHER",
+      "text": "BUT THERE WERE SOME THAT LISTENED...",
+      "say": "But there were some... that listened.",
+      "meta": {
+        "letter": "title"
+      }
+    },
+    {
+      "id": "H01",
+      "scene": "t05",
+      "speaker": "HIPPIE1",
+      "text": "Found one!",
+      "meta": {
+        "letter": "shout"
+      }
+    },
+    {
+      "id": "H02",
+      "scene": "t05",
+      "speaker": "HIPPIE2",
+      "text": "Move it! MOVE IT!",
+      "say": "Move it! Move it!",
+      "meta": {
+        "letter": "shout"
+      }
+    },
+    {
+      "id": "P14",
+      "scene": "t05",
+      "speaker": "PREACHER",
+      "text": "AND IT WORKED.",
+      "say": "And it worked.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P15",
+      "scene": "t05",
+      "speaker": "PREACHER",
+      "text": "Saturday afternoon the ALL YELLOW FLAG was placed on top of the effigy...",
+      "say": "Saturday afternoon, the all yellow flag was placed on top of the effigy...",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P16",
+      "scene": "t05",
+      "speaker": "PREACHER",
+      "text": "...and the rain stopped entirely.",
+      "say": "and the rain stopped. Entirely.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P17",
+      "scene": "t06",
+      "speaker": "PREACHER",
+      "text": "The FLAG was still there in the evening, when the effigy was burned FOR ALL TO SEE",
+      "say": "The flag was still there in the evening, when the effigy was burned... for all to see.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P18",
+      "scene": "t06",
+      "speaker": "PREACHER",
+      "text": "But the very second the FLAMES reached the FLAG, a miracle happened.",
+      "say": "But the very second the flames reached the flag... a miracle happened.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P19",
+      "scene": "t06",
+      "speaker": "PREACHER",
+      "text": "Without the YELLOW FLAG to hold it back, the FIRMAMENT OPENED",
+      "say": "Without the yellow flag to hold it back... the firmament opened...",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P20",
+      "scene": "t06",
+      "speaker": "PREACHER",
+      "text": "and THE RAIN RETURNED.",
+      "say": "and the rain returned!",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P21",
+      "scene": "t07",
+      "speaker": "PREACHER",
+      "text": "HOWEVER, the YELLOW FLAG would be RAISED AGAIN... 50, then 100 time!",
+      "say": "However! The yellow flag would be raised again... fifty, then one-hundred time!",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P22",
+      "scene": "t07",
+      "speaker": "PREACHER",
+      "text": "The Spirit of the FLAGS would follow the Burn as it changed location",
+      "say": "The spirit of the flags would follow the burn, as it changed location.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P23",
+      "scene": "t07",
+      "speaker": "PREACHER",
+      "text": "Through a Burn without any fire And the years without any Burns",
+      "say": "Through a burn without any fire... and the years without any burns.",
+      "meta": {
+        "letter": "caption"
+      }
+    },
+    {
+      "id": "P24",
+      "scene": "t08",
+      "speaker": "PREACHER",
+      "text": "So never forget, FLAGS are the HEART and SOUL of the Burn itself,",
+      "say": "So never forget. Flags are the heart and soul of the burn itself...",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P25",
+      "scene": "t08",
+      "speaker": "PREACHER",
+      "text": "and speaking against them is BLASPHEME.",
+      "say": "and speaking against them is... blaspheme!",
+      "meta": {
+        "letter": "shout"
+      }
+    },
+    {
+      "id": "S06",
+      "scene": "t08",
+      "speaker": "SUMMER",
+      "text": "What must I do?",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P26",
+      "scene": "t08",
+      "speaker": "PREACHER",
+      "text": "Repeat after me.",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P27",
+      "scene": "t08",
+      "speaker": "PREACHER",
+      "text": "Lorem ipsum dolor sit amet...",
+      "say": "[Lorem](/lˈɔɹəm/) [ipsum](/ˈɪpsəm/) [dolor](/dˈOlɔɹ/) sit [amet](/ˈɑmɛt/)...",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "S07",
+      "scene": "t08",
+      "speaker": "SUMMER",
+      "text": "Lorem ipsum dolor sit amet...",
+      "say": "[Lorem](/lˈɔɹəm/) [ipsum](/ˈɪpsəm/) [dolor](/dˈOlɔɹ/) sit [amet](/ˈɑmɛt/)...",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P28",
+      "scene": "t08",
+      "speaker": "PREACHER",
+      "text": "consectetur adipiscing elit.",
+      "say": "[consectetur](/kˌɑnsɛktˈAtəɹ/) [adipiscing](/ˌædᵻpˈɪsɪŋ/) [elit](/ˈɛlɪt/).",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "S08",
+      "scene": "t08",
+      "speaker": "SUMMER",
+      "text": "consectetur adipiscing elit.",
+      "say": "[consectetur](/kˌɑnsɛktˈAtəɹ/) [adipiscing](/ˌædᵻpˈɪsɪŋ/) [elit](/ˈɛlɪt/).",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P29",
+      "scene": "t08",
+      "speaker": "PREACHER",
+      "text": "Amen.",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "S09",
+      "scene": "t08",
+      "speaker": "SUMMER",
+      "text": "Amen.",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "P30",
+      "scene": "t09",
+      "speaker": "PREACHER",
+      "text": "Welcome to the Survey, sister. Now go... and PASS IT ON.",
+      "say": "Welcome to the [survey](/sˈɜɹvˌA/), sister. Now go... and pass it on.",
+      "meta": {
+        "letter": "balloon"
+      }
+    },
+    {
+      "id": "R02",
+      "scene": "t09",
+      "speaker": "RAVEN",
+      "text": "Ugh, there goes another one of those YELLOW FLAGS.",
+      "say": "[Ugh](/ˈʌɡ/). There goes another one of those yellow flags.",
+      "meta": {
+        "letter": "balloon"
+      }
+    }
+  ]
+}
