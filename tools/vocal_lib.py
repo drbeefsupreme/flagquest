@@ -23,14 +23,28 @@ import soundfile as sf
 from scipy.signal import butter, oaconvolve, resample_poly, sosfilt
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _film_config():
+    """vx/config.py (film selection via VX_FILM) loaded on its own, without importing the vx package."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_vx_config_for_vocal", ROOT / "vx" / "config.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+_CFG = _film_config()
+FILM = _CFG.FILM
+FILM_ROOT = _CFG.FILM_ROOT      # == ROOT for film 1 (legacy layout)
 SR = 48000            # stem rate
 VSR = 24000           # Kokoro rate
-DUR = 193.0
-NS = int(round(DUR * SR))   # 9,264,000
-TL = json.loads((ROOT / "timeline.json").read_text())
-VOCAL = ROOT / "audio/vocal"
+TL = json.loads(_CFG.TIMELINE.read_text())
+DUR = float(TL["duration"])  # 193.0 (film 1) / 199.0 (flaggame)
+NS = int(round(DUR * SR))   # 9,264,000 / 9,552,000
+VOCAL = _CFG.AUDIO / "vocal"
 CACHE = VOCAL / "cache"
-STEMS = ROOT / "audio/stems"
+STEMS = _CFG.AUDIO / "stems"
 
 # every Kokoro-82M voice, by language code (first letter of the voice id)
 VOICES = {

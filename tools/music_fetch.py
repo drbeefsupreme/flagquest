@@ -41,6 +41,7 @@ VSCO_DIRS = [
     "Woodwinds/Bassoon/stac", "Woodwinds/Bassoon/sus",
     "Percussion/Timpani", "Percussion/Timpani/Rolls", "Percussion/Glock", "Percussion/Marimba",
     "Percussion/Xylo", "Keys/Organ/Loud", "Keys/Organ/Quiet", "Keys/Organ",
+    "Keys/Upright Nr1",
     "Miscellania Raw/Misc 2/NepaleseBells", "Miscellania Raw/Misc 2/glock_glisses",
     "VSCO 1 Percussion/drums/other/ethnic/giant", "VSCO 1 Percussion/drums/other/ethnic/giant/mallet",
     "VSCO 1 Percussion/drums/other/ethnic/giant/sticks", "VSCO 1 Percussion/drums/other/ethnic/giant/hand",

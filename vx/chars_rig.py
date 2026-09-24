@@ -125,6 +125,28 @@ SPECS = {
                    leg_r=5.8, hem_y=-38.0, hem_w=15.0, eye_w=0.17, eye_h=0.2, eye_sep=0.40, eye_y=0.1,
                    jaw=(0.9, 0.72), lid0=0.12),
 }
+# film 2: realistic Chick-tract proportions (~7.5 heads tall)
+_TRACT = dict(head_r=7.9, head_y=-92.1, sh_y=-77.2, sh_w=11.6, dep=7.4, chest_w=12.0, waist_w=10.6, hip_y=-50.0,
+              hip_w=5.6, arm_u=20.5, arm_f=18.5, hand=3.2, arm_r=3.7, leg_u=25.5, leg_l=23.0, leg_r=4.6, foot=7.4,
+              ank=2.1, hem_w=16.0, eye_w=0.21, eye_h=0.14, eye_sep=0.4, eye_y=0.04, jaw=(0.78, 0.86), nose=1.1,
+              lid0=0.12)
+SPECS["summer"] = dict(_TRACT, head_r=8.3, head_y=-91.7, sh_w=10.2, chest_w=10.6, waist_w=9.0, hip_w=5.6,
+                       dep=6.8, arm_r=3.2, leg_r=4.2, hand=2.95, jaw=(0.76, 0.8), nose=0.8, lid0=0.0, eye_w=0.23,
+                       eye_h=0.155)
+SPECS["raven"] = dict(SPECS["summer"], head_r=8.1, head_y=-91.9, jaw=(0.74, 0.84), nose=0.9, lid0=0.42)
+SPECS["crow"] = dict(_TRACT, head_r=8.0, sh_w=12.6, chest_w=13.4, waist_w=12.8, dep=8.4, arm_r=4.3, hem_y=-24.0,
+                     hem_w=15.5, jaw=(0.82, 0.9), nose=1.35, lid0=0.2)
+SPECS["flagmaker"] = dict(_TRACT, head_r=7.2, head_y=-92.8, sh_y=-78.4, sh_w=12.2, hip_y=-50.5, arm_u=21.5,
+                          arm_f=19.5, hem_w=19.5, jaw=(0.74, 0.9), nose=1.25, lid0=0.3, eye_w=0.18)
+SPECS["hippie"] = dict(_TRACT, head_r=8.0)
+SPECS["pharisee"] = dict(_TRACT, head_r=7.8, sh_w=12.5, chest_w=13.0, waist_w=12.8, dep=8.2, hem_w=20.0,
+                         nose=1.5, jaw=(0.78, 0.92), lid0=0.3)
+SPECS["devil"] = dict(_TRACT, head_r=8.6, head_y=-91.4, sh_w=12.8, chest_w=13.6, waist_w=12.0, hem_w=19.0,
+                      jaw=(0.7, 1.0), nose=1.3, eye_w=0.2, eye_h=0.13, lid0=0.15)
+SPECS["seraph"] = dict(_TRACT, head_r=7.4, head_y=-92.6, sh_y=-78.0, hem_w=19.0, jaw=(0.74, 0.84), lid0=0.3)
+for _k, _jk in (("crow", 1.5), ("flagmaker", 1.1), ("pharisee", 1.4), ("devil", 1.6), ("summer", 0.35), ("raven", 0.55),
+                ("seraph", 0.6), ("hippie", 1.0)):
+    SPECS[_k]["jawk"] = _jk
 SPECS["commander"] = dict(SPECS["schismmancer"])
 SPECS["crackpot"] = dict(SPECS["philosopher"])
 
@@ -134,7 +156,8 @@ def make_spec(kind, seed, style):
     sp.update(SPECS.get(kind, {}))
     rnd = lambda k: hash01(seed * 7919 + k, 1234)  # noqa: E731
     build = style.get("build")
-    if kind in ("citizen", "cultist", "acolyte", "schismmancer", "commander", "philosopher", "crackpot"):
+    if kind in ("citizen", "cultist", "acolyte", "schismmancer", "commander", "philosopher", "crackpot", "hippie",
+                "pharisee"):
         if build is None:
             build = 0.82 + 0.5 * rnd(1) ** 1.4 if kind != "schismmancer" else 0.95 + 0.25 * rnd(1)
         hr = 1.0 + (rnd(2) - 0.5) * 0.16
@@ -143,6 +166,19 @@ def make_spec(kind, seed, style):
         sp["sh_y"] += (rnd(3) - 0.5) * 3.0
         sp["eye_w"] *= 0.9 + 0.2 * rnd(4)
     build = 1.0 if build is None else build
+    face_ = style.get("face", {"summer": "cartoon", "raven": "cartoon"}.get(kind))
+    if (face_ == "cartoon" or (face_ == "anime" and kind in ("summer", "raven"))) and kind in SPECS \
+            and "jawk" in SPECS[kind]:
+        # film-1 cartoon construction: bigger round head, big expressive eyes, simple features
+        sp["head_r"] = sp["head_r"] * 1.32
+        sp["head_y"] = -100.0 + sp["head_r"]
+        sp["sh_y"] = sp["head_y"] + sp["head_r"] * 1.72
+        for k_, v_ in (("eye_w", 0.2), ("eye_h", 0.26), ("eye_sep", 0.42), ("eye_y", 0.02), ("jaw", (0.8, 0.7)),
+                       ("nose", 0.9), ("lid0", {"raven": 0.32, "crow": 0.2, "devil": 0.12, "flagmaker": 0.28,
+                                                "pharisee": 0.25}.get(kind, 0.06))):
+            sp[k_] = v_
+        if kind in ("summer", "raven", "seraph"):
+            sp["eye_w"], sp["eye_h"], sp["jaw"], sp["nose"] = 0.215, 0.29, (0.8, 0.66), 0.7
     for k in ("sh_w", "chest_w", "waist_w", "dep", "hip_w", "hem_w", "arm_r", "leg_r"):
         f = build if k not in ("sh_w",) else 1 + (build - 1) * 0.55
         if k in ("waist_w", "dep"):
@@ -158,7 +194,8 @@ def make_spec(kind, seed, style):
 
 # ============================================================ expressions
 EXPR_DEFAULT = dict(by=0.0, bi=0.0, ba=0.0, lt=0.0, lb=0.0, es=1.0, ps=1.0, sm=0.0, mw=1.0, mo=0.0, sk=0.0,
-                    wn=0.0, bl=0.0, th=0.0, sq=0.0)
+                    wn=0.0, bl=0.0, th=0.0, sq=0.0, tears=0.0, sweat=0.0, poss=0.0, fold=0.0, gape=0.0,
+                    wob=0.0, glow=0.0, shock=0.0)
 EXPR_TABLE = {
     "neutral": dict(),
     "happy": dict(by=0.18, sm=0.85, lb=0.38, bl=0.55, mo=0.10, th=0.5),
@@ -178,6 +215,26 @@ EXPR_TABLE = {
     "exasperated": dict(by=0.55, bi=0.65, lt=0.46, sm=-0.42, mo=0.08),
     "deadpan": dict(lt=0.5, sm=0.0, by=-0.06, mw=0.9),
     "proud": dict(lt=0.3, sm=0.5, by=0.22, lb=0.2),
+    # film 2 (Chick-tract acting)
+    "horror": dict(by=0.95, bi=0.9, es=1.28, ps=0.36, mo=0.55, mw=0.9, th=0.7, lt=-0.12, sweat=1.0, fold=0.7, sm=-0.45,
+                   gape=1.0, shock=1.0),
+    "terrified": dict(by=1.0, bi=1.0, es=1.3, ps=0.34, mo=0.45, mw=0.8, th=0.8, lt=-0.12, sweat=1.0, tears=0.5, fold=0.6,
+                      sm=-0.5, gape=0.8, shock=1.0, wob=0.6),
+    "tearful": dict(bi=1.05, by=0.3, sm=-0.5, tears=1.0, lt=0.2, mw=0.8, lb=0.3, fold=0.3, wob=0.7),
+    "crying": dict(bi=1.15, by=0.35, sm=-0.7, tears=1.0, lt=0.55, mo=0.25, mw=0.9, th=0.5, lb=0.4, fold=0.5, wob=1.0,
+                   gape=0.3),
+    "beatific": dict(by=0.35, bi=0.35, sm=0.62, lt=0.97, bl=0.3, fold=0.2, glow=1.0),
+    "sardonic": dict(ba=1.1, lt=0.55, sm=0.4, sk=1.0, by=-0.1, fold=0.3),
+    "possessed": dict(poss=1.0, es=1.3, ps=0.22, by=-0.35, bi=-1.25, sm=0.95, th=1.0, mo=0.3, mw=1.45, fold=1.0,
+                      lt=-0.1),
+    "fervent": dict(by=-0.15, bi=-0.85, es=1.12, ps=0.8, mo=0.3, th=0.85, mw=1.12, fold=0.7),
+    "grave": dict(bi=0.25, by=-0.15, lt=0.32, sm=-0.32, fold=0.45),
+    "stern": dict(by=-0.4, bi=-0.75, lt=0.25, sm=-0.4, mw=0.9, fold=0.5, sq=0.2),
+    "bewildered": dict(by=0.85, ba=0.45, es=1.12, ps=0.8, mo=0.14, sm=-0.1, sweat=0.7),
+    "rapt": dict(by=0.42, es=1.06, ps=1.12, mo=0.08, lt=0.0, bi=0.2),
+    "cheerful": dict(sm=0.95, by=0.25, lb=0.35, th=0.7, mo=0.08, bl=0.3, fold=0.3),
+    "disdain": dict(lt=0.52, by=-0.1, ba=0.35, sm=-0.2, sk=0.35, mw=0.9),
+    "shocked": dict(by=1.0, bi=0.5, es=1.2, ps=0.55, mo=0.5, mw=0.7, th=0.3, lt=-0.1, sweat=0.5),
 }
 
 
@@ -193,14 +250,14 @@ def blend_expr(expr):
 
 
 # ============================================================ pose library
-CH_LEGS = ("hip", "ff", "fb", "spread", "sit", "hem_lift")
-CH_SPINE = ("lean", "chest", "sway", "shrug", "air")
+CH_LEGS = ("hip", "ff", "fb", "spread", "sit", "hem_lift", "seat", "cross")
+CH_SPINE = ("lean", "chest", "sway", "shrug", "air", "flap")
 CH_HEAD = ("head", "yell")
 CH_ARMS = ("hf", "hb", "ef", "eb")
 
 DEFAULT = dict(
-    hip=(0.0, 0.0), ff=(3.0, 0.0, 0.0), fb=(-2.2, 0.0, 0.0), spread=1.0, sit=0.0, hem_lift=0.0,
-    lean=0.0, chest=0.0, sway=0.0, shrug=0.0, air=0.0,
+    hip=(0.0, 0.0), ff=(3.0, 0.0, 0.0), fb=(-2.2, 0.0, 0.0), spread=1.0, sit=0.0, hem_lift=0.0, seat=0.0, cross=0.0,
+    lean=0.0, chest=0.0, sway=0.0, shrug=0.0, air=0.0, flap=0.0,
     head=(0.0, 0.0), yell=0.0,
     hf=("sh", 0.10, 0.97, 0.10), hb=("sh", -0.03, 0.98, 0.10), ef=0.0, eb=0.0,
     sf="relax", sb="relax", flag=None,
@@ -490,6 +547,101 @@ def p_megaphone(t, kw, sp):
                 mask=dict(legs=0.1, spine=0.6, head=0.6))
 
 
+# ------------------------------------------------------------ film 2 (THE FLAG GAME?) poses
+def p_sit(t, kw, sp):
+    hu = -sp["hip_y"]
+    seat_u = kw.get("seat_h", 27.0)
+    d = dict(hip=(-2.5, seat_u - hu), ff=(16.0, 0.0, 0.0), fb=(14.5, 0.0, 0.0), spread=1.15, seat=1.0,
+             cross=1.0 if kw.get("legs_crossed") else 0.0, lean=-0.09, chest=-0.02, head=(0.02, 0.0),
+             hf=("hip", 12.0, -4.0, 4.5), hb=("hip", 11.0, -4.0, 5.0), sf="relax", sb="relax", sway=0.0,
+             mask=dict(arms=0.2, head=0.5))
+    return d
+
+
+def p_kneel(t, kw, sp):
+    hu = -sp["hip_y"]
+    ku = sp["leg_u"] + 2.0
+    return dict(hip=(-2.0, ku - hu), ff=(-sp["leg_l"] * 0.82, 0.5, 1.35), fb=(-sp["leg_l"] * 0.86, 0.5, 1.35),
+                spread=1.05, seat=1.0, lean=0.06, head=(-0.05, 0.0), hem_lift=0.0,
+                hf=("sh", 0.12, 0.95, 0.12), hb=("sh", 0.08, 0.95, 0.12), mask=dict(arms=0.2, head=0.5))
+
+
+def p_pray(t, kw, sp):
+    return dict(hf=("head", 1.05, 2.05, -0.02), hb=("head", 1.05, 2.05, -0.02), sf="clasp", sb="clasp", ef=-1.3,
+                eb=-1.3, head=(-0.16, 0.0), lean=0.03, mask=dict(legs=0.0, spine=0.5, head=0.8))
+
+
+def p_cheeks(t, kw, sp):
+    """Home-Alone horror: hands fly up to the cheeks"""
+    return dict(hf=("head", 0.55, 0.62, 0.92), hb=("head", 0.55, 0.62, 0.92), sf="open", sb="open", ef=-1.0, eb=-1.0,
+                head=(0.06, 0.0), lean=-0.04, shrug=2.0, mask=dict(legs=0.0, spine=0.5, head=0.4))
+
+
+def p_palms_out(t, kw, sp):
+    return dict(hf=("sh", 0.62, -0.05, 0.45), hb=("sh", 0.58, -0.02, 0.5), sf="open", sb="open", ef=-0.4, eb=-0.4,
+                lean=-0.08, head=(0.04, -0.05), shrug=2.0, mask=dict(legs=0.0, spine=0.6, head=0.4))
+
+
+def p_film(t, kw, sp):
+    """holding a phone up in front of the face, filming"""
+    return dict(hf=("head", 2.7, 0.15, 0.05), sf="pinch", ef=-0.6, head=(0.0, 0.0), lean=0.02,
+                mask=dict(legs=0.0, spine=0.4, head=0.3))
+
+
+def p_read(t, kw, sp):
+    return dict(hf=("chest", 9.5, 12.5, 3.2), hb=("chest", 9.5, 12.5, 3.2), sf="pinch", sb="pinch", ef=-0.2, eb=-0.2,
+                head=(-0.3, 0.0), lean=0.04, mask=dict(legs=0.1, spine=0.5, head=0.8))
+
+
+def p_offer_tract(t, kw, sp):
+    return dict(hf=("sh", 0.86, 0.36, -0.12), sf="pinch", lean=0.07, head=(-0.02, 0.0),
+                mask=dict(legs=0.1, spine=0.6, head=0.4))
+
+
+_TOSS = [
+    (0.0, dict(hf=("sh", 0.3, 0.55, 0.1), lean=0.0)),
+    (0.35, dict(hf=("sh", -0.45, 0.45, 0.25), lean=-0.06)),
+    (0.7, dict(hf=("sh", 0.8, -0.1, 0.1), lean=0.1)),
+    (1.0, dict(hf=("sh", 0.6, 0.35, 0.1), lean=0.05)),
+]
+
+
+def p_toss(t, kw, sp):
+    d = _kf(_TOSS, kw.get("progress", 0.7))
+    d.update(sf="pinch" if kw.get("progress", 0.7) < 0.68 else "open", mask=dict(legs=0.1, spine=0.6, head=0.3))
+    return d
+
+
+def p_preach(t, kw, sp):
+    return dict(hf=("sh", 0.32, -0.86, 0.22), sf="point", hb=("chest", 6.0, 13.0, 5.0), sb="grip", eb=-0.3,
+                lean=-0.03, chest=-0.03, head=(0.12, 0.0), mask=dict(legs=0.1, spine=0.6, head=0.5))
+
+
+def p_lean_in(t, kw, sp):
+    return dict(hf=("chest", 9.0, 15.0, 5.0), sf="open", lean=0.2, chest=0.08, head=(0.08, 0.06),
+                mask=dict(legs=0.2, arms=0.6))
+
+
+def p_fist_raise(t, kw, sp):
+    return dict(hf=("sh", 0.2, -0.96, 0.18), sf="fist", lean=-0.05, chest=-0.04, head=(0.22, 0.0), yell=0.6,
+                mask=dict(legs=0.1, spine=0.6, head=0.5))
+
+
+def p_fly(t, kw, sp):
+    sw = math.sin(t * 2.0)
+    return dict(hip=(0.0, 0.0), ff=(-9.0, 9.0 + sw, 0.9), fb=(-13.0, 6.0 - sw, 1.0), spread=0.9, lean=0.28,
+                chest=0.04, hem_lift=4.0, air=-1.4, flap=1.0, head=(0.18, 0.0),
+                hf=("sh", 0.55, 0.3, 0.45), hb=("sh", 0.5, 0.3, 0.45), sf="open", sb="open")
+
+
+def p_throne(t, kw, sp):
+    hu = -sp["hip_y"]
+    seat_u = kw.get("seat_h", 30.0)
+    return dict(hip=(-3.0, seat_u - hu), ff=(14.0, 0.0, 0.0), fb=(13.0, 0.0, 0.0), spread=1.7, seat=1.0,
+                lean=-0.05, head=(0.04, 0.0), hf=("hip", 14.0, -9.0, 2.0), sf="grip",
+                hb=("hip", 9.0, -8.5, 13.0), sb="relax", mask=dict(arms=0.4, head=0.6))
+
+
 POSE_FNS = {
     "stand": p_stand, "walk": p_walk, "run": p_run, "hold_flag": p_hold_flag, "raise_flag": p_raise_flag,
     "plant_flag": p_plant_flag, "point": p_point, "cheer": p_cheer, "shout": p_shout, "meditate": p_meditate,
@@ -499,9 +651,13 @@ POSE_FNS = {
     "one_finger": p_one_finger, "slam": p_slam, "sign": p_sign, "pat": p_pat, "touch": p_touch,
     "recoil": p_recoil, "sniff": p_sniff, "hold_hood": p_hold_hood, "gesture": p_gesture, "shrug": p_shrug,
     "wave": p_wave, "phone": p_phone, "megaphone": p_megaphone,
+    "sit": p_sit, "kneel": p_kneel, "pray": p_pray, "read": p_read, "offer_tract": p_offer_tract, "toss": p_toss,
+    "preach": p_preach, "lean_in": p_lean_in, "walk_away": p_walk, "fist_raise": p_fist_raise, "fly": p_fly,
+    "throne": p_throne, "cheeks": p_cheeks, "palms_out": p_palms_out, "film": p_film,
 }
 ALIASES = {"shout_cupped": "cup_shout", "shout_hood": {"shout": 1.0, "hold_hood": 1.0}, "carry": "hold_flag",
-           "idle": "stand", "hold": "hold_flag", "raise": "raise_flag", "plant": "plant_flag"}
+           "idle": "stand", "hold": "hold_flag", "raise": "raise_flag", "plant": "plant_flag", "seated": "sit",
+           "pray_kneel": {"kneel": 1.0, "pray": 1.0}}
 FLAG_POSES = tuple(k for k in POSE_FNS if k in ("hold_flag", "raise_flag", "plant_flag", "salute", "offer",
                                                 "shoulder_flag", "ram", "stack", "leap"))
 
@@ -559,6 +715,8 @@ def solve(sp, seed, pose, t, kw, cphi, sphi, mouth=0.0, wind=0.0):
         d = POSE_FNS[name](t, kw, sp)
         m = d.pop("mask", None) or {}
         evald.append((name, w, d, m))
+    if any(d.get("seat", 0.0) > 0 for _, _, d, _ in evald):
+        evald = [(n, w, d, (dict(m, legs=0.0) if m.get("legs", 1.0) < 0.5 else m)) for n, w, d, m in evald]
 
     def blend(keys, ch):
         tot = 0.0
@@ -735,8 +893,15 @@ def solve(sp, seed, pose, t, kw, cphi, sphi, mouth=0.0, wind=0.0):
     ank = sp["ank"]
     ank_n = (ffv[0], ffv[1] + ank, fl_n)
     ank_f = (fbv[0], fbv[1] + ank, -fl_n)
-    knee_n, ank_n, _ = ik3(hip_n, ank_n, sp["leg_u"], sp["leg_l"], (1.0, 0.15, 0.25))
     knee_f, ank_f, _ = ik3(hip_f, ank_f, sp["leg_u"], sp["leg_l"], (1.0, 0.15, -0.25))
+    cr = Lg.get("cross", 0.0)
+    if cr > 1e-3:
+        tgt = (knee_f[0] + 7.0, knee_f[1] - sp["leg_l"] * 0.72, knee_f[2] * 0.2 + 1.5)
+        ank_n = v_lerp(ank_n, tgt, min(1.0, cr))
+        hip_n = (hip_n[0], hip_n[1] + 1.5 * cr, hip_n[2] * (1 - 0.35 * cr))
+        knee_n, ank_n, _ = ik3(hip_n, ank_n, sp["leg_u"], sp["leg_l"], (0.8, 0.6, 0.35))
+    else:
+        knee_n, ank_n, _ = ik3(hip_n, ank_n, sp["leg_u"], sp["leg_l"], (1.0, 0.15, 0.25))
 
     B = dict(hip=hip, neck=N, sh_n=sh_n, sh_f=sh_f, el_n=el_f, el_f=el_b, hand_n=hand_f, hand_f=hand_b,
              head=head, hip_n=hip_n, hip_f=hip_f, knee_n=knee_n, knee_f=knee_f, ank_n=ank_n, ank_f=ank_f,
@@ -768,6 +933,8 @@ def solve(sp, seed, pose, t, kw, cphi, sphi, mouth=0.0, wind=0.0):
     rig.sway = Sp["sway"]
     rig.hem_lift = Lg["hem_lift"]
     rig.sit = Lg["sit"]
+    rig.seat = Lg.get("seat", 0.0)
+    rig.flap_on = Sp.get("flap", 0.0)
     rig.breath = breath
     rig.mouth = mouth
     rig.wind = wind

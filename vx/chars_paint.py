@@ -115,8 +115,114 @@ def p_leaf(ctx, x, y, L, w, ang):
 
 
 # ============================================================ head sphere projection
+# per-kind head construction for the tract cast:
+#   w width, back skull depth, flat face-plane, brow ridge, socket, cheek(bone), cheek_lat, hollow, jaw angle,
+#   chin, chin_w, temple, nose (length), lips (fullness)
+HEADP = {
+    "summer":    dict(w=0.8, back=1.12, flat=0.16, brow=0.5, socket=0.9, cheek=1.2, cheek_lat=-0.28, hollow=0.2,
+                      jaw=0.3, chin=0.55, chin_w=0.3, temple=0.8, nose=0.72, lips=1.35),
+    "raven":     dict(w=0.78, back=1.12, flat=0.16, brow=0.7, socket=1.1, cheek=1.35, cheek_lat=-0.2, hollow=0.8,
+                      jaw=0.5, chin=0.75, chin_w=0.3, temple=0.9, nose=0.85, lips=1.3),
+    "crow":      dict(w=0.84, back=1.1, flat=0.14, brow=1.9, socket=1.4, cheek=1.1, cheek_lat=-0.18, hollow=1.2,
+                      jaw=1.5, chin=1.0, chin_w=0.36, temple=1.0, nose=1.05, lips=0.8),
+    "flagmaker": dict(w=0.8, back=1.12, flat=0.15, brow=1.3, socket=1.2, cheek=1.1, cheek_lat=-0.18, hollow=1.1,
+                      jaw=1.0, chin=0.9, chin_w=0.34, temple=1.0, nose=1.0, lips=0.9),
+    "pharisee":  dict(w=0.85, back=1.08, flat=0.13, brow=1.8, socket=1.3, cheek=1.0, cheek_lat=-0.18, hollow=1.3,
+                      jaw=1.3, chin=1.0, chin_w=0.36, temple=1.0, nose=1.15, lips=0.75),
+    "devil":     dict(w=0.72, back=1.1, flat=0.12, brow=1.9, socket=1.5, cheek=1.6, cheek_lat=-0.12, hollow=2.2,
+                      jaw=1.1, chin=1.6, chin_w=0.22, temple=1.4, nose=1.05, lips=0.8),
+    "seraph":    dict(w=0.8, back=1.1, flat=0.15, brow=0.8, socket=1.0, cheek=1.1, cheek_lat=-0.22, hollow=0.6,
+                      jaw=0.6, chin=0.8, chin_w=0.3, temple=0.9, nose=0.9, lips=1.1),
+    "hippie":    dict(w=0.8, back=1.1, flat=0.15, brow=1.0, socket=1.0, cheek=1.1, cheek_lat=-0.2, hollow=0.8,
+                      jaw=0.9, chin=0.85, chin_w=0.32, temple=1.0, nose=0.95, lips=1.0),
+}
+_HKEYS = ("w", "back", "flat", "brow", "socket", "cheek", "cheek_lat", "hollow", "jaw", "chin", "chin_w", "temple",
+          "nose", "lips")
+
+
+def egg_of(ch, rig):
+    """sculpted head model for the film-2 tract cast: (kx, ky, headparams-tuple)"""
+    kind = getattr(ch, "kind", None)
+    hpd = HEADP.get(kind)
+    if hpd is None:
+        return None
+    f_ = ch.lk.get("face")
+    if f_ == "cartoon" or (f_ == "anime" and kind in ("summer", "raven")):
+        return None
+    jx, jy = rig.sp["jaw"]
+    drop = 0.13 * rig.mouth * (0.5 + getattr(rig, "yell", 0.0))
+    return (round(min(0.95, jx - 0.02), 3), round(0.3 + jy + drop, 3), tuple(hpd[k] for k in _HKEYS))
+
+
+def _G(x, m, s):
+    d = (x - m) / s
+    return math.exp(-d * d)
+
+
+def face_bump(lon, lat, q):
+    """landmark relief: brow ridge, eye sockets, cheekbones, cheek hollows, jaw angles, chin, temples"""
+    a = abs(lon)
+    if a > 2.3:
+        return 0.0
+    w, back, flat, brow, socket, cheek, clat, hollow, jaw, chin, chin_w, temple = q[:12]
+    return (0.05 * brow * _G(lat, 0.3, 0.12) * _G(a, 0.0, 0.6)
+            - 0.05 * socket * _G(lat, 0.04, 0.12) * _G(a, 0.42, 0.2)
+            + 0.06 * cheek * _G(lat, clat, 0.18) * _G(a, 0.9, 0.28)
+            - 0.05 * hollow * _G(lat, -0.62, 0.2) * _G(a, 0.8, 0.26)
+            + 0.05 * jaw * _G(lat, -1.02, 0.18) * _G(a, 1.08, 0.28)
+            + 0.08 * chin * _G(lat, -1.3, 0.2) * _G(a, 0.0, chin_w)
+            - 0.05 * temple * _G(lat, 0.5, 0.2) * _G(a, 1.25, 0.25))
+
+
+def _head_xyz(X, Y, Z, egg):
+    """unit-sphere direction -> sculpted head surface (head-local, before yaw/pitch)"""
+    kx, ky, q = egg
+    lon = math.atan2(X, Z)
+    lat = math.asin(max(-1.0, min(1.0, Y)))
+    b = 1.0 + face_bump(lon, lat, q)
+    X, Y, Z = X * b, Y * b, Z * b
+    w, back, flat = q[0], q[1], q[2]
+    X *= w
+    if Z < 0:
+        Z *= back
+    else:
+        Z *= 1.0 - flat * _G(abs(lon), 0.0, 0.75)
+        if Y > 0.3:
+            Z -= 0.12 * (Y - 0.3)            # forehead slopes back
+    if Y < 0:
+        u = min(1.0, -Y)
+        s = 1.0 - (1.0 - kx) * u * u * (3 - 2 * u)
+        X, Y, Z = X * s, Y * ky, Z * s + 0.1 * u * u
+    return X, Y, Z
+
+
+_SURF = {}
+
+
+def _surface(egg, n_lon=48, n_lat=36):
+    """cached (n_lat+1, n_lon, 3) grid of the sculpted head surface"""
+    S = _SURF.get(egg)
+    if S is None:
+        import numpy as np
+        if len(_SURF) > 400:
+            _SURF.clear()
+        S = np.zeros((n_lat + 1, n_lon, 3))
+        for j in range(n_lat + 1):
+            lat = math.pi / 2 - math.pi * j / n_lat
+            cl = math.cos(lat)
+            for i in range(n_lon):
+                lon = TAU * i / n_lon
+                S[j, i] = _head_xyz(math.sin(lon) * cl, math.sin(lat), math.cos(lon) * cl, egg)
+        _SURF[egg] = S
+    return S
+
+
+_OUTL = {}
+
+
 class HP:
-    def __init__(self, r, yaw, pitch):
+    def __init__(self, r, yaw, pitch, egg=None):
+        self.egg = egg
         self.r = r
         self.cy, self.sy = math.cos(yaw), math.sin(yaw)
         self.cp, self.sp = math.cos(pitch), math.sin(pitch)
@@ -127,10 +233,60 @@ class HP:
         Z1 = Z * self.cp - Y * self.sp
         return X * self.cy + Z1 * self.sy, Y1, Z1 * self.cy - X * self.sy
 
+    def eg(self, X, Y, Z):
+        if self.egg is None:
+            return X, Y, Z
+        return _head_xyz(X, Y, Z, self.egg)
+
     def pt(self, lon, lat, rad=1.0):
         cl = math.cos(lat)
-        X, Y, Z = self.rot(math.sin(lon) * cl, math.sin(lat), math.cos(lon) * cl)
+        X, Y, Z = self.rot(*self.eg(math.sin(lon) * cl, math.sin(lat), math.cos(lon) * cl))
         return (X * self.r * rad, -Y * self.r * rad, Z)
+
+    def rad_at(self, a):
+        """silhouette radius of the head along screen direction a"""
+        ol = getattr(self, "_ol", None)
+        if ol is None:
+            ol = self._ol = self.outline()
+        dx, dy = math.cos(a), math.sin(a)
+        best = self.r
+        n = len(ol)
+        for i in range(n):
+            (x0, y0), (x1, y1) = ol[i], ol[(i + 1) % n]
+            ex, ey = x1 - x0, y1 - y0
+            den = dx * ey - dy * ex
+            if abs(den) < 1e-9:
+                continue
+            tt = (x0 * ey - y0 * ex) / den
+            u = (x0 * dy - y0 * dx) / den
+            if tt > 0 and -1e-6 <= u <= 1 + 1e-6:
+                return tt
+        return best
+
+    def outline(self):
+        """one continuous silhouette through the head's landmarks (crown, temple, brow, cheekbone, jaw angle,
+        chin, under-jaw): per surface row, the extreme projected points"""
+        key = (self.egg, round(self.yaw, 3), round(self.cp, 4), round(self.sp, 4), round(self.r, 4))
+        ol = _OUTL.get(key)
+        if ol is not None:
+            return ol
+        import numpy as np
+        S = _surface(self.egg)
+        X, Y, Z = S[..., 0], S[..., 1], S[..., 2]
+        Y1 = Y * self.cp + Z * self.sp
+        Z1 = Z * self.cp - Y * self.sp
+        xs = (X * self.cy + Z1 * self.sy) * self.r
+        ys = -Y1 * self.r
+        il = np.argmin(xs, axis=1)
+        ir = np.argmax(xs, axis=1)
+        rows = np.arange(xs.shape[0])
+        Rt = list(zip(xs[rows, ir].tolist(), ys[rows, ir].tolist()))
+        L = list(zip(xs[rows, il].tolist(), ys[rows, il].tolist()))
+        ol = Rt + L[::-1]
+        if len(_OUTL) > 3000:
+            _OUTL.clear()
+        _OUTL[key] = ol
+        return ol
 
     def vec(self, v, rad=1.0):
         X, Y, Z = self.rot(*v)
@@ -150,12 +306,17 @@ class HP:
         pts, zs = [], []
         for i in range(n):
             s = TAU * i / n
-            g = gam - (jag(s) if jag else 0.0)
-            cg, sg = math.cos(g), math.sin(g)
             cs, ss = math.cos(s), math.sin(s)
+            g = gam
+            if jag:
+                cg, sg = math.cos(gam), math.sin(gam)
+                z0 = self.rot(A[0] * cg + (E1[0] * cs + E2[0] * ss) * sg, A[1] * cg + (E1[1] * cs + E2[1] * ss) * sg,
+                              A[2] * cg + (E1[2] * cs + E2[2] * ss) * sg)[2]
+                g = gam - jag(s) * (min(1.0, max(0.0, z0 * 4.0)) if self.egg is not None else 1.0)
+            cg, sg = math.cos(g), math.sin(g)
             v = (A[0] * cg + (E1[0] * cs + E2[0] * ss) * sg, A[1] * cg + (E1[1] * cs + E2[1] * ss) * sg,
                  A[2] * cg + (E1[2] * cs + E2[2] * ss) * sg)
-            X, Y, Z = self.rot(*v)
+            X, Y, Z = self.rot(*self.eg(*v))
             pts.append((X * R, -Y * R))
             zs.append(Z)
         if min(zs) >= 0:
@@ -163,9 +324,12 @@ class HP:
         # rotated axis, to test which rim arc lies inside the cap
         Ax, Ay, Az = self.rot(*A)
         Rp = R * push
+        eg = self.egg is not None
+        RA = (lambda a: self.rad_at(a) * push * rad) if eg else (lambda a: Rp)
         if max(zs) < 0:
             if Az >= cosg:  # the whole visible disc is inside the cap
-                return [(math.cos(TAU * i / n) * Rp, math.sin(TAU * i / n) * Rp) for i in range(n)]
+                return [(math.cos(TAU * i / n) * RA(TAU * i / n), math.sin(TAU * i / n) * RA(TAU * i / n))
+                        for i in range(n)]
             return []
         # one contiguous visible run; start right after a hidden sample
         k0 = next(i for i in range(n) if zs[i] >= 0 and zs[i - 1] < 0)
@@ -192,12 +356,12 @@ class HP:
         m = max(4, int(abs(sweep) / TAU * n) + 2)
         out = list(run)
         if push != 1.0:
-            out.append((math.cos(a_end) * Rp, math.sin(a_end) * Rp))
+            out.append((math.cos(a_end) * RA(a_end), math.sin(a_end) * RA(a_end)))
         for j in range(1, m):
             ang = a_end + sweep * j / m
-            out.append((math.cos(ang) * Rp, math.sin(ang) * Rp))
+            out.append((math.cos(ang) * RA(ang), math.sin(ang) * RA(ang)))
         if push != 1.0:
-            out.append((math.cos(a_start) * Rp, math.sin(a_start) * Rp))
+            out.append((math.cos(a_start) * RA(a_start), math.sin(a_start) * RA(a_start)))
         return out
 
 
@@ -228,13 +392,29 @@ class Painter:
             rl = math.hypot(*rd) or 1.0
             self.rim = (rc, rs, (rd[0] * f / rl, rd[1] / rl))
         self.shade_k = o.get("shade", 1.0)
-        self.pal = ch.pal
+        self.ink = bool(o.get("ink"))
+        self.lw = o.get("lw", 0.35)
+        self.kw = o.get("kw", {})
+        self.pal = ch.ink_pal() if self.ink else ch.pal
+        if self.ink:
+            self.rim = None
+            self.tint = None
+
+    def opt(self, name, default=None):
+        """per-draw option override, else the character's look"""
+        if name in self.kw:
+            return self.kw[name]
+        return self.ch.lk.get(name, default)
 
     # ---------------------------------------------------------------- colour
     def C(self, c):
         if self.sil is not None:
             return self.sil
         c = col(self.pal.get(c, c)) if isinstance(c, str) else c
+        if self.ink:
+            L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+            L = 0.0 if L < 0.16 else (1.0 if L > 0.985 else L)
+            return (L, L, L)
         if self.tint:
             c = mixc(c, self.tint[0], self.tint[1])
         return c
@@ -246,17 +426,21 @@ class Painter:
     def raw(self, c, a=1.0):
         """colour that ignores silhouette (glows) but honours tint"""
         c = col(self.pal.get(c, c)) if isinstance(c, str) else c
+        if self.ink:
+            c = self.C(c)
         if self.tint:
             c = mixc(c, self.tint[0], self.tint[1] * 0.5)
         self.ctx.set_source_rgba(c[0], c[1], c[2], a)
 
     # ---------------------------------------------------------------- shaded part
-    def part(self, build, base, sh=None, d=1.6, rim=1.0, a=1.0, hi=None):
+    def part(self, build, base, sh=None, d=1.6, rim=1.0, a=1.0, hi=None, line=1.0):
         ctx = self.ctx
         ctx.new_path()
         build(ctx)
         path = ctx.copy_path()
         bc = self.C(base)
+        if self.ink and self.sil is None:
+            return self._part_ink(path, bc, d, a, hi, line)
         if self.sil is not None:
             ctx.set_source_rgba(bc[0], bc[1], bc[2], a)
             ctx.fill()
@@ -295,6 +479,65 @@ class Painter:
             ctx.set_source_rgba(bc[0], bc[1], bc[2], a)
             ctx.fill()
         self._rim(path, d, rim, a)
+        return path
+
+    def _part_ink(self, path, bc, d, a, hi, line):
+        """ink: black brush contour (heavier on the shadow side, tapering at the terminator), grey two-tone
+        fill (light / shadow tone values for the halftone or engraving screen), optional white highlight"""
+        ctx = self.ctx
+        x0, y0, x1, y1 = ctx.fill_extents()
+        sz = min(x1 - x0, y1 - y0)
+        lv = self.lv
+        tone = bc[0]
+        wo = min(self.lw * 0.72, max(sz, 0.0) * 0.06) * line
+        if wo > 1e-4:
+            ctx.save()
+            ctx.new_path()
+            ctx.translate(-lv[0] * wo * 0.45, -lv[1] * wo * 0.45)
+            ctx.append_path(path)
+            ctx.set_source_rgba(0, 0, 0, a)
+            ctx.set_line_width(2 * wo)
+            ctx.stroke()
+            ctx.restore()
+        ctx.save()
+        ctx.new_path()
+        ctx.append_path(path)
+        ctx.clip()
+        wi = wo * 1.25
+        if wi > 1e-4:
+            ctx.set_source_rgba(0, 0, 0, a)
+            ctx.paint()
+            ctx.translate(lv[0] * wi, lv[1] * wi)
+        shade = self.lod >= 1 and d > 0 and self.shade_k > 0
+        if shade:
+            vs = max(0.0, tone - (0.21 if tone > 0.95 else 0.26) * self.shade_k)
+            if tone < 0.18:
+                vs = 0.0
+            ctx.new_path()
+            ctx.append_path(path)
+            ctx.set_source_rgba(vs, vs, vs, a)
+            ctx.fill()
+            ctx.translate(lv[0] * d, lv[1] * d)
+        ctx.new_path()
+        ctx.append_path(path)
+        ctx.set_source_rgba(tone, tone, tone, a)
+        ctx.fill()
+        ctx.restore()
+        if hi and self.lod >= 2:
+            w = max(d, 1.0) * (hi if isinstance(hi, float) else 0.45)
+            hv = 1.0
+            ctx.save()
+            ctx.new_path()
+            ctx.append_path(path)
+            ctx.clip()
+            ctx.new_path()
+            ctx.rectangle(-BIG, -BIG, 2 * BIG, 2 * BIG)
+            ctx.translate(-lv[0] * w - lv[0] * wo, -lv[1] * w - lv[1] * wo)
+            ctx.append_path(path)
+            ctx.set_fill_rule(cairo.FILL_RULE_EVEN_ODD)
+            ctx.set_source_rgba(hv, hv, hv, a * (0.9 if tone < 0.3 else 0.7))
+            ctx.fill()
+            ctx.restore()
         return path
 
     def _rim(self, path, d, k, a):
@@ -393,9 +636,9 @@ class Painter:
         wind = self.o["wind_x"] * 0.8
         cloth = self.pal["sleeve"]
         if kind == "bell":
-            rs = (ar * 0.82, ar * 0.86, ar * 1.38)
+            rs = (ar * 0.82, ar * 0.86, ar * 1.38) if not self.ink else (ar * 0.84, ar * 0.8, ar * 1.08)
         elif kind == "fit":
-            rs = (ar * 0.86, ar * 0.8, ar * 0.72)
+            rs = (ar * 0.86, ar * 0.8, ar * 0.72) if not self.ink else (ar * 0.92, ar * 0.8, ar * 0.56)
         elif kind == "bare":
             rs = (ar * 0.78, ar * 0.66, ar * 0.56)
             cloth = "skin"
@@ -411,7 +654,9 @@ class Painter:
                 aw = abs(wind)
                 fl = 0.4 * noise1(self.t * 2.3 + (1 if near else 4), 3) + aw * 0.9 * math.sin(self.t * (9 + 3 * aw) + (0 if near else 2))
                 W2 = (W[0] + wind * 2.6 + fl * 0.6, W[1] - aw * 0.9 + fl * 0.3)
-                rb = rs[2] * (1 + 0.22 * aw)
+                if self.ink:
+                    W2 = (W2[0] - ux * hs * 0.55, W2[1] - uy * hs * 0.55)
+                rb = rs[2] * (1 + (0.08 if self.ink else 0.22) * aw)
                 rs = (rs[0], rs[1], rb)
                 self.part(lambda c: (p_capsule(c, E, rs[1], W2, rs[2])), cloth, d=ar * 0.55)
                 # cuff opening
@@ -423,14 +668,29 @@ class Painter:
                                                   rs[2] * 0.26, rs[2] * 0.66, ang), "cuffin", d=0)
             else:
                 self.part(lambda c: p_capsule(c, E, rs[1], W, rs[2]), cloth, d=ar * 0.5)
+                if self.ink and self.lod >= 2 and kind != "bare":
+                    from .chars_ink import cuff_line
+                    cuff_line(self, W, (ux, uy), rs[2])
                 if kind == "fit" and self.lod >= 2 and self.pal.get("cuff"):
                     ang = math.atan2(uy, ux)
                     self.part(lambda c: p_ellipse(c, W[0], W[1], rs[2] * 0.45, rs[2] * 1.02, ang), "cuff", d=0.4)
+            if self.ink and self.lod >= 2 and kind != "bare":
+                from .chars_ink import elbow_folds
+                elbow_folds(self, S, E, Hh, rs[1])
             self.hand(Hh, (ux, uy), r.shape_f if near else r.shape_b, near)
 
     def hand(self, Hh, u, shape, near):
         sp = self.sp
         hs = sp["hand"]
+        if self.ink and self.lod >= 2 and hs / max(self.o.get("upx", 1.0), 1e-6) > 9.0:
+            from .chars_ink import hand_ink
+            pd = self.rig.pole[3] if (shape == "grip" and self.rig.pole is not None) else None
+            pa = self.kw.get("pole_ang")
+            if shape == "grip" and pa is not None:
+                f = self.o["facing_sign"]
+                pd = (math.sin(pa) * f, -math.cos(pa))
+            hand_ink(self, Hh, u, "fist" if (shape == "grip" and pd is None) else shape, near, pd)
+            return
         ux, uy = u
         ang = math.atan2(uy, ux)
         skin = "hand"
@@ -497,7 +757,7 @@ class Painter:
             self.flat(lambda c: p_ellipse(c, x + ux * hs * 0.28, y + uy * hs * 0.28, hs * 0.3, hs * 0.62, ang),
                       shadow_of(self.pal["hand"], 0.72), 0.85)
             return
-        # relax: mitten
+        # relax / clasp: mitten
         self.part(lambda c: p_ellipse(c, x + ux * hs * 0.1, y + uy * hs * 0.1, hs * 1.0, hs * 0.76, ang), skin, d=hs * 0.35)
         tx, ty = x + nx * hs * 0.6 - ux * hs * 0.12, y + ny * hs * 0.6 - uy * hs * 0.12
         self.part(lambda c: p_ellipse(c, tx, ty, hs * 0.48, hs * 0.3, ang + 0.5 * (1 if ny * ux - nx * uy > 0 else -1)),
@@ -515,6 +775,9 @@ class Painter:
             return
         if trouser is not None:
             self.part(lambda c: p_chain(c, [Hh, K, A], [lr * 1.1, lr * 0.85, lr * 0.62]), trouser, d=lr * 0.45)
+            if self.ink and self.lod >= 2:
+                from .chars_ink import knee_folds
+                knee_folds(self, Hh, K, A, lr * 0.8)
         if bare_below is not None:
             self.part(lambda c: p_capsule(c, K, lr * 0.62, A, lr * 0.45), bare_below, d=lr * 0.35)
         if pad is not None:
@@ -656,6 +919,12 @@ class Painter:
                 continue
             a = self.pj(top)
             b = self.pj(bot)
+            if self.ink:
+                from .chars_ink import tapered, bez
+                m_ = (a[0] + (b[0] - a[0]) * 0.35 - 0.8, a[1] + (b[1] - a[1]) * 0.5)
+                tapered(self, bez((a[0], a[1] + (b[1] - a[1]) * 0.2), m_, (b[0] - 0.5, b[1] - 1.0), 7), self.lw * 0.1,
+                        self.lw * 0.3, "lash", wmid=self.lw * 0.9)
+                continue
             w = 1.1 + 0.8 * (k % 2)
             self.flat(lambda c: (c.move_to(a[0] - 0.3, a[1]),
                                  c.curve_to(a[0] + (b[0] - a[0]) * 0.3 - w, a[1] + (b[1] - a[1]) * 0.5,
@@ -756,6 +1025,17 @@ class Painter:
         cx = R * 0.36 * math.sin(yaw) * math.cos(max(0, yaw - math.pi / 2))
         cz = math.cos(yaw)
 
+        if hp.egg is not None:
+            ol = hp.outline()
+
+            def b(c):
+                p_smooth(c, ol, True, 0.25)
+                if nose and self.lod >= 1:
+                    tip = hp.pt(0, -0.16, 1.0 + 0.12 * sp["nose"])
+                    if tip[2] > 0.05 and abs(math.sin(yaw)) > 0.25:
+                        p_circle(c, tip[0], tip[1], R * 0.1 * (0.6 + 0.5 * sp["nose"]))
+            return self.part(b, colour, d=0.0 if self.ink else R * 0.2)
+
         def b(c):
             p_circle(c, 0, 0, R)
             if cz > -0.6:
@@ -768,9 +1048,12 @@ class Painter:
                 tip = hp.pt(0, -0.14, 1.0 + 0.1 * sp["nose"])
                 if tip[2] > 0.05:
                     p_circle(c, tip[0], tip[1], R * 0.1 * (0.6 + 0.5 * sp["nose"]))
-        return self.part(b, colour, d=R * 0.2)
+        return self.part(b, colour, d=0.0 if self.ink else R * 0.2)
 
     def ear(self, hp, near, colour="skin", size=1.0):
+        if hp.egg is not None:
+            from .chars_ink import ear_ink
+            return ear_ink(self, hp, near)
         R = self.sp["head_r"]
         lon = -math.pi / 2 if near else math.pi / 2
         x, y, z = hp.pt(lon, -0.02, 0.98)
@@ -829,11 +1112,26 @@ class Painter:
             ctx.save()
             ctx.new_path()
             p_ellipse(ctx, x, y, ew, eh)
+            if self.ink:
+                # outline only the part below the lid (the lid line draws the top)
+                ctx.save()
+                ctx.rectangle(x - ew * 2, y - eh + 2 * eh * close, ew * 4, eh * 4)
+                ctx.clip()
+                ctx.new_path()
+                p_ellipse(ctx, x, y, ew, eh)
+                self.src("lash")
+                ctx.set_line_width(self.lw * 0.9)
+                ctx.stroke()
+                ctx.restore()
+                ctx.new_path()
+                p_ellipse(ctx, x, y, ew, eh)
             self.src("sclera")
             ctx.fill_preserve()
             ctx.clip()
             # iris + pupil follow look
             ir = min(ew / max(fore, 0.3), eh) * 0.68
+            if self.ink and E["ps"] < 0.7:
+                ir *= 0.35 + 0.65 * (E["ps"] / 0.7)      # Chick shock: tiny pupils in big eye whites
             ix = x + (lxl * 0.5 + 0.18 * math.sin(yaw) * 0) * ew * 0.9
             iy = y + lyl * eh * 0.35 + eh * 0.04
             self.src(pupil_c)
@@ -949,7 +1247,15 @@ class Painter:
         x = Cc[0]
         W = 0.5 * (xr - xl)
         xm = 0.5 * (xl + xr)
-        Hm = R * 0.36 * o / vw * (1 + 0.9 * yell)
+        gape = E.get("gape", 0.0)
+        Hm = R * 0.36 * o / vw * (1 + 0.9 * yell) * (1 + 1.1 * gape)
+        if gape > 0.01:
+            xl, xr = xl - (xr - xl) * 0.12 * gape, xr + (xr - xl) * 0.12 * gape
+            cyl, cyr = cyl + R * 0.06 * gape, cyr + R * 0.06 * gape
+        wob = E.get("wob", 0.0)
+        if wob > 0.01:
+            wv = math.sin(self.t * 19.0) * R * 0.03 * wob
+            cyl, cyr = cyl + wv, cyr - wv
         if self.lod == 1 or o < 0.06:
             mid = y + smile * R * 0.07 + Hm * 0.5
             self.stroke(lambda c: (c.move_to(xl, cyl), c.curve_to(xl + (x - xl) * 0.6, mid, xr + (x - xr) * 0.6, mid,
@@ -995,11 +1301,11 @@ class Painter:
                 # fringe around the back
                 pass
             return
-        big = {"messy": 1.08, "short": 1.04, "bob": 1.1, "long": 1.08, "bun": 1.05, "curly": 1.32, "pony": 1.05,
+        big = {"pigtails": 1.06, "long_glossy": 1.1, "dreads": 1.08, "messy": 1.08, "short": 1.04, "bob": 1.1, "long": 1.08, "bun": 1.05, "curly": 1.32, "pony": 1.05,
                "wild": 1.22, "buzz": 1.01, "side": 1.05}.get(style, 1.06)
-        gam = {"messy": 1.16, "short": 1.2, "bob": 1.1, "long": 1.1, "bun": 1.22, "curly": 1.06, "pony": 1.2,
+        gam = {"pigtails": 1.16, "long_glossy": 1.12, "dreads": 1.2, "messy": 1.16, "short": 1.2, "bob": 1.1, "long": 1.1, "bun": 1.22, "curly": 1.06, "pony": 1.2,
                "wild": 1.12, "buzz": 1.26, "side": 1.18}.get(style, 1.16)
-        bang = {"messy": 0.3, "short": 0.16, "bob": 0.24, "long": 0.12, "bun": 0.05, "curly": 0.12, "pony": 0.06,
+        bang = {"pigtails": 0.34, "long_glossy": 0.22, "dreads": 0.1, "messy": 0.3, "short": 0.16, "bob": 0.24, "long": 0.12, "bun": 0.05, "curly": 0.12, "pony": 0.06,
                 "wild": 0.3, "buzz": 0.0, "side": 0.3}.get(style, 0.12)
         nb = 13 if style != "side" else 5
         ph0 = hash01(seed, 55)
@@ -1013,13 +1319,34 @@ class Painter:
             side = 0.2 * math.cos(s) ** 2 * (1 if math.sin(s) > -0.3 else 0.5)
             return bang * tri * w - side
 
-        face = hp.cap(0.0, -0.3, gam, 1.0, 1.45, 120, jag)
-        cut = {"short": (-1.4, 1.12), "messy": (-1.4, 1.08), "bun": (-1.4, 1.14), "pony": (-1.4, 1.14),
+        face = hp.cap(0.0, -0.3, gam + (0.12 if hp.egg is not None else 0.0) + (0.12 if style == "long_glossy" else 0.0),
+                      1.0, 1.45, 120, jag)
+        cut = {"pigtails": (-1.4, 1.1), "long_glossy": (-1.45, 1.0), "dreads": (-1.4, 1.14), "short": (-1.4, 1.12), "messy": (-1.4, 1.08), "bun": (-1.4, 1.14), "pony": (-1.4, 1.14),
                "buzz": (-1.35, 1.2), "side": (-1.4, 1.12), "curly": (-1.5, 1.0), "wild": (-1.5, 1.02),
                "bob": (-1.6, 0.82), "long": (-1.7, 0.62)}.get(style, (-1.4, 1.12))
         jawcap = hp.cap(0.0, cut[0], cut[1], 1.0, 1.6, 30)
 
         def outer(c):
+            if hp.egg is not None:
+                # hair as VOLUME: a mass bigger than the skull with an irregular edge of clumps
+                ol = hp.outline()
+                nl, amp, spiky = {"pigtails": (11, 0.055, False), "long_glossy": (9, 0.025, True),
+                                  "long": (10, 0.045, False), "wild": (9, 0.16, True), "dreads": (12, 0.06, False),
+                                  "curly": (14, 0.1, False), "messy": (10, 0.09, True), "bun": (9, 0.04, False),
+                                  "buzz": (18, 0.015, True), "short": (12, 0.04, True), "side": (10, 0.05, True),
+                                  "bob": (10, 0.05, False)}.get(style, (10, 0.05, False))
+                cx_ = sum(q[0] for q in ol) / len(ol)
+                cy_ = sum(q[1] for q in ol) / len(ol) - R * 0.1
+                pts = []
+                for (x, y) in ol:
+                    a_ = math.atan2(y - cy_, x - cx_)
+                    ph = ((a_ + math.pi) / TAU * nl + hash01(seed, 5)) % 1.0
+                    k = hash01(int((a_ + math.pi) / TAU * nl), seed + 9)
+                    lobe = (1 - abs(2 * ph - 1)) ** 1.6 if spiky else math.sin(math.pi * ph) ** 0.6
+                    f = big + 0.02 + amp * lobe * (0.6 + 0.8 * k)
+                    pts.append((cx_ + (x - cx_) * f, cy_ + (y - cy_) * f))
+                p_smooth(c, pts, True, 0.22)
+                return
             n = 40
             pts = []
             for i in range(n):
@@ -1046,7 +1373,18 @@ class Painter:
         hpath = self.part(outer, colour, d=R * 0.18, hi=0.4)
         # sheen
         sx, sy, sz = hp.pt(-0.5, 0.75, 1.0)
-        if self.lod >= 2 and self.sil is None and sz > 0.1:
+        if self.ink:
+            from .chars_ink import strands
+            strands(self, hpath, hp, style, colour)
+            ctx.new_path()
+            ctx.append_path(hpath)
+            ctx.clip()
+            ctx.new_path()
+            p_poly(ctx, face)
+            self.src("lash")
+            ctx.set_line_width(self.lw * 1.3)
+            ctx.stroke()
+        elif self.lod >= 2 and self.sil is None and sz > 0.1:
             ctx.new_path()
             ctx.append_path(hpath)
             ctx.clip()

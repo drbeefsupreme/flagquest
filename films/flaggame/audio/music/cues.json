@@ -1,0 +1,320 @@
+[
+ {
+  "t": 0.62,
+  "id": "harmonium_motif",
+  "desc": "the leitmotif on a lone harmonium in the rain",
+  "kind": "onset"
+ },
+ {
+  "t": 2.6,
+  "id": "tract_flip",
+  "desc": "gospel-radio sting on the cover",
+  "kind": "onset"
+ },
+ {
+  "t": 6.4,
+  "id": "dive_in",
+  "desc": "harp gliss lands as the comic comes alive",
+  "kind": "onset"
+ },
+ {
+  "t": 10.093,
+  "id": "flag_passes",
+  "desc": "celesta shimmer: the flag passes",
+  "kind": "onset"
+ },
+ {
+  "t": 18.46,
+  "id": "preacher_appears",
+  "desc": "organ 'dun!'",
+  "kind": "onset"
+ },
+ {
+  "t": 22.117,
+  "id": "wrong_burst",
+  "desc": "dramatic organ stab on WRONG!!",
+  "kind": "onset"
+ },
+ {
+  "t": 25.2,
+  "id": "icon",
+  "desc": "Byzantine ison + bell",
+  "kind": "onset"
+ },
+ {
+  "t": 29.288,
+  "id": "essence",
+  "desc": "heavenly choir radiance",
+  "kind": "onset"
+ },
+ {
+  "t": 33.75,
+  "id": "anime",
+  "desc": "J-pop kira-kira sparkle sting",
+  "kind": "onset"
+ },
+ {
+  "t": 41.335,
+  "id": "flashback",
+  "desc": "harp-gliss flashback ripple",
+  "kind": "onset"
+ },
+ {
+  "t": 43.29,
+  "id": "genesis",
+  "desc": "the arpeggio machine starts",
+  "kind": "onset"
+ },
+ {
+  "t": 57.339,
+  "id": "stench",
+  "desc": "stench motif (tuba + bassoon + a muted-trumpet sneer)",
+  "kind": "onset"
+ },
+ {
+  "t": 59.339,
+  "id": "hurricane",
+  "desc": "hurricane swell arrives",
+  "kind": "onset"
+ },
+ {
+  "t": 62.951,
+  "id": "rain_begins",
+  "desc": "downpour hit on RAIN",
+  "kind": "onset"
+ },
+ {
+  "t": 67.46,
+  "id": "flagmaker",
+  "desc": "organ voluntary: the leitmotif",
+  "kind": "onset"
+ },
+ {
+  "t": 76.98,
+  "id": "shut_up",
+  "desc": "stab on 'Shut up!'",
+  "kind": "onset"
+ },
+ {
+  "t": 87.153,
+  "id": "flags_flood",
+  "desc": "chant machine starts on the crowd's grid",
+  "kind": "onset"
+ },
+ {
+  "t": 95.722,
+  "id": "flood_peak",
+  "desc": "the wall of FLAGS: tutti",
+  "kind": "onset"
+ },
+ {
+  "t": 97.3,
+  "id": "devil",
+  "desc": "Toccata in D minor (BWV 565)",
+  "kind": "onset"
+ },
+ {
+  "t": 99.803,
+  "id": "devil_a_1",
+  "desc": "organ chokes on 'a\u2026'",
+  "kind": "onset"
+ },
+ {
+  "t": 100.591,
+  "id": "devil_a_2",
+  "desc": "organ chokes on 'a\u2026'",
+  "kind": "onset"
+ },
+ {
+  "t": 101.341,
+  "id": "devil_a_3",
+  "desc": "organ chokes on 'a\u2026'",
+  "kind": "onset"
+ },
+ {
+  "t": 102.415,
+  "id": "devil_glitch",
+  "desc": "possession: diminished full organ + shriek + glitch",
+  "kind": "onset"
+ },
+ {
+  "t": 102.865,
+  "id": "devil_flags_1",
+  "desc": "organ stab on FLAGS!",
+  "kind": "onset"
+ },
+ {
+  "t": 103.315,
+  "id": "devil_flags_2",
+  "desc": "organ stab on FLAGS!",
+  "kind": "onset"
+ },
+ {
+  "t": 103.827,
+  "id": "devil_flags_3",
+  "desc": "organ stab on FLAGS!",
+  "kind": "onset"
+ },
+ {
+  "t": 105.67,
+  "id": "hard_stop",
+  "desc": "HARD STOP",
+  "kind": "cut"
+ },
+ {
+  "t": 105.67,
+  "id": "some_listened",
+  "desc": "white card: a single celesta note",
+  "kind": "onset"
+ },
+ {
+  "t": 108.79,
+  "id": "found_one",
+  "desc": "pizzicato march begins",
+  "kind": "onset"
+ },
+ {
+  "t": 111.86,
+  "id": "it_worked",
+  "desc": "triumphant fanfare",
+  "kind": "onset"
+ },
+ {
+  "t": 116.901,
+  "id": "flag_on_effigy",
+  "desc": "arrival chord",
+  "kind": "onset"
+ },
+ {
+  "t": 118.917,
+  "id": "rain_freeze",
+  "desc": "everything stops; a suspended high chord",
+  "kind": "onset"
+ },
+ {
+  "t": 119.555,
+  "id": "firmament_reveal",
+  "desc": "full choir + organ glory",
+  "kind": "onset"
+ },
+ {
+  "t": 122.4407,
+  "id": "burn_drums",
+  "desc": "burn drums begin",
+  "kind": "onset"
+ },
+ {
+  "t": 125.356,
+  "id": "ignite",
+  "desc": "fire swell lands on 'burned'",
+  "kind": "onset"
+ },
+ {
+  "t": 129.729,
+  "id": "flames_reach_flag",
+  "desc": "drums drop out; the fragile ascending line begins",
+  "kind": "onset"
+ },
+ {
+  "t": 135.575,
+  "id": "firmament_crack",
+  "desc": "apocalyptic crack",
+  "kind": "onset"
+ },
+ {
+  "t": 137.118,
+  "id": "deluge",
+  "desc": "catastrophic deluge tutti",
+  "kind": "onset"
+ },
+ {
+  "t": 142.04,
+  "id": "smash_cut",
+  "desc": "smash cut",
+  "kind": "cut"
+ },
+ {
+  "t": 142.332,
+  "id": "however",
+  "desc": "HOWEVER! stinger",
+  "kind": "onset"
+ },
+ {
+  "t": 143.944,
+  "id": "raise_1",
+  "desc": "raising (snare + cymbal)",
+  "kind": "onset"
+ },
+ {
+  "t": 145.14,
+  "id": "raise_50",
+  "desc": "raising (snare + cymbal)",
+  "kind": "onset"
+ },
+ {
+  "t": 146.769,
+  "id": "raise_100",
+  "desc": "the 100th raising: tutti",
+  "kind": "onset"
+ },
+ {
+  "t": 149.58,
+  "id": "spirit",
+  "desc": "harmonica + fiddle walk",
+  "kind": "onset"
+ },
+ {
+  "t": 158.8,
+  "id": "unmask",
+  "desc": "warm resolve",
+  "kind": "onset"
+ },
+ {
+  "t": 166.223,
+  "id": "blaspheme",
+  "desc": "thunder-organ",
+  "kind": "onset"
+ },
+ {
+  "t": 169.09,
+  "id": "hymn",
+  "desc": "organ doubles the altar-call hymn",
+  "kind": "onset"
+ },
+ {
+  "t": 180.13,
+  "id": "amen",
+  "desc": "plagal A-men lands; sunbeam",
+  "kind": "onset"
+ },
+ {
+  "t": 184.427,
+  "id": "pass_it_on",
+  "desc": "tender resolve",
+  "kind": "onset"
+ },
+ {
+  "t": 185.4,
+  "id": "droste_start",
+  "desc": "Shepard rise begins",
+  "kind": "onset"
+ },
+ {
+  "t": 191.6,
+  "id": "droste_end",
+  "desc": "morning chord",
+  "kind": "onset"
+ },
+ {
+  "t": 194.763,
+  "id": "callback",
+  "desc": "sitcom sting",
+  "kind": "onset"
+ },
+ {
+  "t": 197.4,
+  "id": "tract_lands",
+  "desc": "gospel A-men lands with the tract",
+  "kind": "onset"
+ }
+]

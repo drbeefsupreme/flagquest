@@ -1,0 +1,2031 @@
+{
+ "grid": {
+  "key": "E-flat major",
+  "meter": "3/4",
+  "bpm": 114.13,
+  "beat_s": 0.52571,
+  "pickup_at": 169.09,
+  "amen_men_at": 180.13,
+  "notes": [
+   {
+    "word": "Just",
+    "t": 169.09,
+    "beats": 1,
+    "satb": [
+     63,
+     58,
+     55,
+     51
+    ]
+   },
+   {
+    "word": "as",
+    "t": 169.6157,
+    "beats": 2,
+    "satb": [
+     67,
+     63,
+     58,
+     51
+    ]
+   },
+   {
+    "word": "I",
+    "t": 170.6671,
+    "beats": 1,
+    "satb": [
+     67,
+     63,
+     60,
+     48
+    ]
+   },
+   {
+    "word": "am",
+    "t": 171.1929,
+    "beats": 2,
+    "satb": [
+     70,
+     63,
+     58,
+     51
+    ]
+   },
+   {
+    "word": "with",
+    "t": 172.2443,
+    "beats": 1,
+    "satb": [
+     67,
+     63,
+     58,
+     55
+    ]
+   },
+   {
+    "word": "out",
+    "t": 172.77,
+    "beats": 1,
+    "satb": [
+     65,
+     62,
+     58,
+     46
+    ]
+   },
+   {
+    "word": "one",
+    "t": 173.2957,
+    "beats": 1,
+    "satb": [
+     68,
+     63,
+     60,
+     44
+    ]
+   },
+   {
+    "word": "Flag",
+    "t": 173.8214,
+    "beats": 3,
+    "satb": [
+     67,
+     63,
+     58,
+     51
+    ]
+   },
+   {
+    "word": "I",
+    "t": 175.3986,
+    "beats": 1,
+    "satb": [
+     67,
+     63,
+     58,
+     51
+    ]
+   },
+   {
+    "word": "come",
+    "t": 175.9243,
+    "beats": 2,
+    "satb": [
+     65,
+     62,
+     58,
+     46
+    ]
+   },
+   {
+    "word": "I",
+    "t": 176.9757,
+    "beats": 1,
+    "satb": [
+     70,
+     67,
+     63,
+     51
+    ]
+   },
+   {
+    "word": "come",
+    "t": 177.5014,
+    "beats": 3,
+    "satb": [
+     67,
+     63,
+     58,
+     51
+    ]
+   },
+   {
+    "word": "A",
+    "t": 179.0786,
+    "beats": 2,
+    "satb": [
+     68,
+     60,
+     56,
+     44
+    ]
+   },
+   {
+    "word": "men",
+    "t": 180.13,
+    "beats": 2,
+    "satb": [
+     67,
+     58,
+     55,
+     51
+    ]
+   }
+  ]
+ },
+ "notes": [
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "Just",
+   "midi": 63,
+   "t_on": 169.092,
+   "vowel_dur": 0.304,
+   "median_cents": -25.4,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "as",
+   "midi": 67,
+   "t_on": 169.62,
+   "vowel_dur": 0.877,
+   "median_cents": -2.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "I",
+   "midi": 67,
+   "t_on": 170.674,
+   "vowel_dur": 0.474,
+   "median_cents": -6.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "am",
+   "midi": 70,
+   "t_on": 171.192,
+   "vowel_dur": 0.857,
+   "median_cents": -2.3,
+   "voiced": 0.98,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "with",
+   "midi": 67,
+   "t_on": 172.248,
+   "vowel_dur": 0.377,
+   "median_cents": -4.5,
+   "voiced": 0.96,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "out",
+   "midi": 65,
+   "t_on": 172.776,
+   "vowel_dur": 0.324,
+   "median_cents": -13.1,
+   "voiced": 0.91,
+   "attempt": 2
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "one",
+   "midi": 68,
+   "t_on": 173.303,
+   "vowel_dur": 0.249,
+   "median_cents": -25.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "Flag",
+   "midi": 67,
+   "t_on": 173.831,
+   "vowel_dur": 1.322,
+   "median_cents": -1.5,
+   "voiced": 0.97,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "I",
+   "midi": 67,
+   "t_on": 175.395,
+   "vowel_dur": 0.385,
+   "median_cents": -15.2,
+   "voiced": 0.93,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "come",
+   "midi": 65,
+   "t_on": 175.924,
+   "vowel_dur": 0.906,
+   "median_cents": -2.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "I",
+   "midi": 70,
+   "t_on": 176.969,
+   "vowel_dur": 0.388,
+   "median_cents": -15.0,
+   "voiced": 0.87,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "come",
+   "midi": 67,
+   "t_on": 177.509,
+   "vowel_dur": 1.349,
+   "median_cents": -3.0,
+   "voiced": 0.98,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "A",
+   "midi": 68,
+   "t_on": 179.067,
+   "vowel_dur": 0.943,
+   "median_cents": -0.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_heart",
+   "word": "men",
+   "midi": 67,
+   "t_on": 180.121,
+   "vowel_dur": 0.735,
+   "median_cents": -2.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "Just",
+   "midi": 63,
+   "t_on": 169.087,
+   "vowel_dur": 0.309,
+   "median_cents": -57.0,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "as",
+   "midi": 67,
+   "t_on": 169.616,
+   "vowel_dur": 0.881,
+   "median_cents": -2.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "I",
+   "midi": 67,
+   "t_on": 170.666,
+   "vowel_dur": 0.482,
+   "median_cents": -6.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "am",
+   "midi": 70,
+   "t_on": 171.203,
+   "vowel_dur": 0.846,
+   "median_cents": -3.0,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "with",
+   "midi": 67,
+   "t_on": 172.248,
+   "vowel_dur": 0.377,
+   "median_cents": -12.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "out",
+   "midi": 65,
+   "t_on": 172.778,
+   "vowel_dur": 0.322,
+   "median_cents": -13.9,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "one",
+   "midi": 68,
+   "t_on": 173.292,
+   "vowel_dur": 0.26,
+   "median_cents": -31.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "Flag",
+   "midi": 67,
+   "t_on": 173.812,
+   "vowel_dur": 1.342,
+   "median_cents": -2.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "I",
+   "midi": 67,
+   "t_on": 175.4,
+   "vowel_dur": 0.379,
+   "median_cents": -15.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "come",
+   "midi": 65,
+   "t_on": 175.92,
+   "vowel_dur": 0.911,
+   "median_cents": -3.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "I",
+   "midi": 70,
+   "t_on": 176.973,
+   "vowel_dur": 0.383,
+   "median_cents": -16.0,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "come",
+   "midi": 67,
+   "t_on": 177.494,
+   "vowel_dur": 1.364,
+   "median_cents": -3.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "A",
+   "midi": 68,
+   "t_on": 179.069,
+   "vowel_dur": 0.941,
+   "median_cents": -5.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "af_sky",
+   "word": "men",
+   "midi": 67,
+   "t_on": 180.126,
+   "vowel_dur": 0.73,
+   "median_cents": -4.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "Just",
+   "midi": 63,
+   "t_on": 169.089,
+   "vowel_dur": 0.306,
+   "median_cents": -39.8,
+   "voiced": 0.86,
+   "attempt": 1
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "as",
+   "midi": 67,
+   "t_on": 169.627,
+   "vowel_dur": 0.87,
+   "median_cents": -6.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "I",
+   "midi": 67,
+   "t_on": 170.656,
+   "vowel_dur": 0.492,
+   "median_cents": -15.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "am",
+   "midi": 70,
+   "t_on": 171.19,
+   "vowel_dur": 0.859,
+   "median_cents": -6.0,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "with",
+   "midi": 67,
+   "t_on": 172.254,
+   "vowel_dur": 0.371,
+   "median_cents": -17.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "out",
+   "midi": 65,
+   "t_on": 172.76,
+   "vowel_dur": 0.341,
+   "median_cents": -18.0,
+   "voiced": 0.96,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "one",
+   "midi": 68,
+   "t_on": 173.299,
+   "vowel_dur": 0.253,
+   "median_cents": -24.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "Flag",
+   "midi": 67,
+   "t_on": 173.818,
+   "vowel_dur": 1.336,
+   "median_cents": -5.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "I",
+   "midi": 67,
+   "t_on": 175.403,
+   "vowel_dur": 0.401,
+   "median_cents": -20.6,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "come",
+   "midi": 65,
+   "t_on": 175.915,
+   "vowel_dur": 0.916,
+   "median_cents": -5.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "I",
+   "midi": 70,
+   "t_on": 176.967,
+   "vowel_dur": 0.414,
+   "median_cents": -23.1,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "come",
+   "midi": 67,
+   "t_on": 177.513,
+   "vowel_dur": 1.345,
+   "median_cents": -5.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "A",
+   "midi": 68,
+   "t_on": 179.087,
+   "vowel_dur": 0.923,
+   "median_cents": -6.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "S",
+   "voice": "bf_emma",
+   "word": "men",
+   "midi": 67,
+   "t_on": 180.136,
+   "vowel_dur": 0.721,
+   "median_cents": -5.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "Just",
+   "midi": 58,
+   "t_on": 169.093,
+   "vowel_dur": 0.303,
+   "median_cents": -31.9,
+   "voiced": 0.9,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "as",
+   "midi": 63,
+   "t_on": 169.62,
+   "vowel_dur": 0.877,
+   "median_cents": -3.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "I",
+   "midi": 63,
+   "t_on": 170.668,
+   "vowel_dur": 0.48,
+   "median_cents": -12.6,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "am",
+   "midi": 63,
+   "t_on": 171.201,
+   "vowel_dur": 0.848,
+   "median_cents": -4.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "with",
+   "midi": 63,
+   "t_on": 172.245,
+   "vowel_dur": 0.38,
+   "median_cents": -6.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "out",
+   "midi": 62,
+   "t_on": 172.759,
+   "vowel_dur": 0.341,
+   "median_cents": -13.7,
+   "voiced": 0.76,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "one",
+   "midi": 63,
+   "t_on": 173.305,
+   "vowel_dur": 0.221,
+   "median_cents": -15.5,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "Flag",
+   "midi": 63,
+   "t_on": 173.815,
+   "vowel_dur": 1.338,
+   "median_cents": -1.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "I",
+   "midi": 63,
+   "t_on": 175.391,
+   "vowel_dur": 0.413,
+   "median_cents": -22.1,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "come",
+   "midi": 62,
+   "t_on": 175.926,
+   "vowel_dur": 0.905,
+   "median_cents": -3.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "I",
+   "midi": 67,
+   "t_on": 176.97,
+   "vowel_dur": 0.411,
+   "median_cents": -22.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "come",
+   "midi": 63,
+   "t_on": 177.498,
+   "vowel_dur": 1.36,
+   "median_cents": -2.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "A",
+   "midi": 60,
+   "t_on": 179.085,
+   "vowel_dur": 0.925,
+   "median_cents": -2.2,
+   "voiced": 0.95,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "bf_alice",
+   "word": "men",
+   "midi": 58,
+   "t_on": 180.124,
+   "vowel_dur": 0.733,
+   "median_cents": -2.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "Just",
+   "midi": 58,
+   "t_on": 169.083,
+   "vowel_dur": 0.313,
+   "median_cents": -19.1,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "as",
+   "midi": 63,
+   "t_on": 169.61,
+   "vowel_dur": 0.887,
+   "median_cents": -0.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "I",
+   "midi": 63,
+   "t_on": 170.671,
+   "vowel_dur": 0.477,
+   "median_cents": -16.2,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "am",
+   "midi": 63,
+   "t_on": 171.189,
+   "vowel_dur": 0.861,
+   "median_cents": -2.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "with",
+   "midi": 63,
+   "t_on": 172.235,
+   "vowel_dur": 0.39,
+   "median_cents": -13.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "out",
+   "midi": 62,
+   "t_on": 172.766,
+   "vowel_dur": 0.335,
+   "median_cents": -11.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "one",
+   "midi": 63,
+   "t_on": 173.296,
+   "vowel_dur": 0.231,
+   "median_cents": -15.6,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "Flag",
+   "midi": 63,
+   "t_on": 173.826,
+   "vowel_dur": 1.328,
+   "median_cents": -1.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "I",
+   "midi": 63,
+   "t_on": 175.392,
+   "vowel_dur": 0.412,
+   "median_cents": -20.7,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "come",
+   "midi": 62,
+   "t_on": 175.933,
+   "vowel_dur": 0.898,
+   "median_cents": -1.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "I",
+   "midi": 67,
+   "t_on": 176.968,
+   "vowel_dur": 0.414,
+   "median_cents": -19.4,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "come",
+   "midi": 63,
+   "t_on": 177.509,
+   "vowel_dur": 1.35,
+   "median_cents": -0.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "A",
+   "midi": 60,
+   "t_on": 179.079,
+   "vowel_dur": 0.931,
+   "median_cents": -1.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_jessica",
+   "word": "men",
+   "midi": 58,
+   "t_on": 180.12,
+   "vowel_dur": 0.737,
+   "median_cents": -2.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "Just",
+   "midi": 58,
+   "t_on": 169.095,
+   "vowel_dur": 0.3,
+   "median_cents": -23.5,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "as",
+   "midi": 63,
+   "t_on": 169.607,
+   "vowel_dur": 0.89,
+   "median_cents": 0.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "I",
+   "midi": 63,
+   "t_on": 170.676,
+   "vowel_dur": 0.472,
+   "median_cents": -11.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "am",
+   "midi": 63,
+   "t_on": 171.192,
+   "vowel_dur": 0.857,
+   "median_cents": 0.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "with",
+   "midi": 63,
+   "t_on": 172.249,
+   "vowel_dur": 0.376,
+   "median_cents": -10.3,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "out",
+   "midi": 62,
+   "t_on": 172.765,
+   "vowel_dur": 0.335,
+   "median_cents": -12.6,
+   "voiced": 0.96,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "one",
+   "midi": 63,
+   "t_on": 173.287,
+   "vowel_dur": 0.239,
+   "median_cents": -39.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "Flag",
+   "midi": 63,
+   "t_on": 173.819,
+   "vowel_dur": 1.334,
+   "median_cents": 0.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "I",
+   "midi": 63,
+   "t_on": 175.389,
+   "vowel_dur": 0.39,
+   "median_cents": -17.3,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "come",
+   "midi": 62,
+   "t_on": 175.924,
+   "vowel_dur": 0.907,
+   "median_cents": 0.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "I",
+   "midi": 67,
+   "t_on": 176.972,
+   "vowel_dur": 0.384,
+   "median_cents": -17.3,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "come",
+   "midi": 63,
+   "t_on": 177.51,
+   "vowel_dur": 1.349,
+   "median_cents": 0.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "A",
+   "midi": 60,
+   "t_on": 179.071,
+   "vowel_dur": 0.939,
+   "median_cents": -1.0,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "A",
+   "voice": "af_nova",
+   "word": "men",
+   "midi": 58,
+   "t_on": 180.132,
+   "vowel_dur": 0.724,
+   "median_cents": -0.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "Just",
+   "midi": 55,
+   "t_on": 169.086,
+   "vowel_dur": 0.31,
+   "median_cents": -7.4,
+   "voiced": 0.95,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "as",
+   "midi": 58,
+   "t_on": 169.606,
+   "vowel_dur": 0.891,
+   "median_cents": 0.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "I",
+   "midi": 60,
+   "t_on": 170.656,
+   "vowel_dur": 0.492,
+   "median_cents": -2.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "am",
+   "midi": 58,
+   "t_on": 171.198,
+   "vowel_dur": 0.851,
+   "median_cents": 2.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "with",
+   "midi": 58,
+   "t_on": 172.256,
+   "vowel_dur": 0.369,
+   "median_cents": -8.0,
+   "voiced": 0.96,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "out",
+   "midi": 58,
+   "t_on": 172.765,
+   "vowel_dur": 0.31,
+   "median_cents": -8.7,
+   "voiced": 0.95,
+   "attempt": 1
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "one",
+   "midi": 60,
+   "t_on": 173.305,
+   "vowel_dur": 0.247,
+   "median_cents": -17.3,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "Flag",
+   "midi": 58,
+   "t_on": 173.83,
+   "vowel_dur": 1.324,
+   "median_cents": 2.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "I",
+   "midi": 58,
+   "t_on": 175.391,
+   "vowel_dur": 0.388,
+   "median_cents": -5.3,
+   "voiced": 0.97,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "come",
+   "midi": 58,
+   "t_on": 175.918,
+   "vowel_dur": 0.912,
+   "median_cents": 2.8,
+   "voiced": 0.96,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "I",
+   "midi": 63,
+   "t_on": 176.968,
+   "vowel_dur": 0.388,
+   "median_cents": -3.6,
+   "voiced": 0.93,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "come",
+   "midi": 58,
+   "t_on": 177.51,
+   "vowel_dur": 1.348,
+   "median_cents": 2.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "A",
+   "midi": 56,
+   "t_on": 179.071,
+   "vowel_dur": 0.939,
+   "median_cents": 3.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_puck",
+   "word": "men",
+   "midi": 55,
+   "t_on": 180.125,
+   "vowel_dur": 0.731,
+   "median_cents": 2.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "Just",
+   "midi": 55,
+   "t_on": 169.086,
+   "vowel_dur": 0.31,
+   "median_cents": -27.4,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "as",
+   "midi": 58,
+   "t_on": 169.616,
+   "vowel_dur": 0.881,
+   "median_cents": -5.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "I",
+   "midi": 60,
+   "t_on": 170.677,
+   "vowel_dur": 0.47,
+   "median_cents": -10.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "am",
+   "midi": 58,
+   "t_on": 171.189,
+   "vowel_dur": 0.835,
+   "median_cents": -3.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "with",
+   "midi": 58,
+   "t_on": 172.242,
+   "vowel_dur": 0.383,
+   "median_cents": -11.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "out",
+   "midi": 58,
+   "t_on": 172.758,
+   "vowel_dur": 0.342,
+   "median_cents": -18.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "one",
+   "midi": 60,
+   "t_on": 173.302,
+   "vowel_dur": 0.224,
+   "median_cents": -9.4,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "Flag",
+   "midi": 58,
+   "t_on": 173.826,
+   "vowel_dur": 1.327,
+   "median_cents": -5.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "I",
+   "midi": 58,
+   "t_on": 175.404,
+   "vowel_dur": 0.4,
+   "median_cents": -16.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "come",
+   "midi": 58,
+   "t_on": 175.921,
+   "vowel_dur": 0.91,
+   "median_cents": -4.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "I",
+   "midi": 63,
+   "t_on": 176.965,
+   "vowel_dur": 0.417,
+   "median_cents": -12.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "come",
+   "midi": 58,
+   "t_on": 177.51,
+   "vowel_dur": 1.348,
+   "median_cents": -4.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "A",
+   "midi": 56,
+   "t_on": 179.089,
+   "vowel_dur": 0.921,
+   "median_cents": -3.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "am_liam",
+   "word": "men",
+   "midi": 55,
+   "t_on": 180.126,
+   "vowel_dur": 0.73,
+   "median_cents": -5.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "Just",
+   "midi": 55,
+   "t_on": 169.09,
+   "vowel_dur": 0.306,
+   "median_cents": -28.7,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "as",
+   "midi": 58,
+   "t_on": 169.622,
+   "vowel_dur": 0.875,
+   "median_cents": -4.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "I",
+   "midi": 60,
+   "t_on": 170.672,
+   "vowel_dur": 0.476,
+   "median_cents": -11.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "am",
+   "midi": 58,
+   "t_on": 171.185,
+   "vowel_dur": 0.864,
+   "median_cents": -4.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "with",
+   "midi": 58,
+   "t_on": 172.251,
+   "vowel_dur": 0.374,
+   "median_cents": -15.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "out",
+   "midi": 58,
+   "t_on": 172.778,
+   "vowel_dur": 0.322,
+   "median_cents": -18.5,
+   "voiced": 1.0,
+   "attempt": 1
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "one",
+   "midi": 60,
+   "t_on": 173.284,
+   "vowel_dur": 0.242,
+   "median_cents": -13.1,
+   "voiced": 1.0,
+   "attempt": 2
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "Flag",
+   "midi": 58,
+   "t_on": 173.829,
+   "vowel_dur": 1.324,
+   "median_cents": -4.5,
+   "voiced": 0.99,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "I",
+   "midi": 58,
+   "t_on": 175.41,
+   "vowel_dur": 0.394,
+   "median_cents": -16.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "come",
+   "midi": 58,
+   "t_on": 175.913,
+   "vowel_dur": 0.918,
+   "median_cents": -5.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "I",
+   "midi": 63,
+   "t_on": 176.972,
+   "vowel_dur": 0.41,
+   "median_cents": -15.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "come",
+   "midi": 58,
+   "t_on": 177.49,
+   "vowel_dur": 1.369,
+   "median_cents": -3.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "A",
+   "midi": 56,
+   "t_on": 179.068,
+   "vowel_dur": 0.942,
+   "median_cents": -3.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "T",
+   "voice": "bm_daniel",
+   "word": "men",
+   "midi": 55,
+   "t_on": 180.141,
+   "vowel_dur": 0.716,
+   "median_cents": -3.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "Just",
+   "midi": 51,
+   "t_on": 169.095,
+   "vowel_dur": 0.301,
+   "median_cents": -14.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "as",
+   "midi": 51,
+   "t_on": 169.628,
+   "vowel_dur": 0.87,
+   "median_cents": -4.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "I",
+   "midi": 48,
+   "t_on": 170.657,
+   "vowel_dur": 0.491,
+   "median_cents": -3.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "am",
+   "midi": 51,
+   "t_on": 171.184,
+   "vowel_dur": 0.84,
+   "median_cents": -2.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "with",
+   "midi": 55,
+   "t_on": 172.244,
+   "vowel_dur": 0.381,
+   "median_cents": -14.3,
+   "voiced": 0.9,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "out",
+   "midi": 46,
+   "t_on": 172.769,
+   "vowel_dur": 0.307,
+   "median_cents": -9.0,
+   "voiced": 0.9,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "one",
+   "midi": 44,
+   "t_on": 173.301,
+   "vowel_dur": 0.251,
+   "median_cents": -17.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "Flag",
+   "midi": 51,
+   "t_on": 173.819,
+   "vowel_dur": 1.335,
+   "median_cents": -3.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "I",
+   "midi": 51,
+   "t_on": 175.399,
+   "vowel_dur": 0.38,
+   "median_cents": -8.0,
+   "voiced": 0.97,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "come",
+   "midi": 46,
+   "t_on": 175.925,
+   "vowel_dur": 0.906,
+   "median_cents": -2.5,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "I",
+   "midi": 51,
+   "t_on": 176.966,
+   "vowel_dur": 0.39,
+   "median_cents": -6.3,
+   "voiced": 0.93,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "come",
+   "midi": 51,
+   "t_on": 177.503,
+   "vowel_dur": 1.356,
+   "median_cents": -3.9,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "A",
+   "midi": 44,
+   "t_on": 179.072,
+   "vowel_dur": 0.938,
+   "median_cents": -1.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_fenrir",
+   "word": "men",
+   "midi": 51,
+   "t_on": 180.133,
+   "vowel_dur": 0.724,
+   "median_cents": -4.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "Just",
+   "midi": 51,
+   "t_on": 169.097,
+   "vowel_dur": 0.299,
+   "median_cents": -28.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "as",
+   "midi": 51,
+   "t_on": 169.609,
+   "vowel_dur": 0.888,
+   "median_cents": -0.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "I",
+   "midi": 48,
+   "t_on": 170.673,
+   "vowel_dur": 0.475,
+   "median_cents": -3.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "am",
+   "midi": 51,
+   "t_on": 171.199,
+   "vowel_dur": 0.85,
+   "median_cents": -2.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "with",
+   "midi": 55,
+   "t_on": 172.248,
+   "vowel_dur": 0.377,
+   "median_cents": -9.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "out",
+   "midi": 46,
+   "t_on": 172.758,
+   "vowel_dur": 0.343,
+   "median_cents": -10.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "one",
+   "midi": 44,
+   "t_on": 173.3,
+   "vowel_dur": 0.226,
+   "median_cents": -0.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "Flag",
+   "midi": 51,
+   "t_on": 173.816,
+   "vowel_dur": 1.338,
+   "median_cents": -1.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "I",
+   "midi": 51,
+   "t_on": 175.399,
+   "vowel_dur": 0.38,
+   "median_cents": -6.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "come",
+   "midi": 46,
+   "t_on": 175.934,
+   "vowel_dur": 0.897,
+   "median_cents": 2.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "I",
+   "midi": 51,
+   "t_on": 176.97,
+   "vowel_dur": 0.387,
+   "median_cents": -5.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "come",
+   "midi": 51,
+   "t_on": 177.5,
+   "vowel_dur": 1.359,
+   "median_cents": -0.0,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "A",
+   "midi": 44,
+   "t_on": 179.089,
+   "vowel_dur": 0.921,
+   "median_cents": 2.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "bm_george",
+   "word": "men",
+   "midi": 51,
+   "t_on": 180.135,
+   "vowel_dur": 0.722,
+   "median_cents": -0.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "Just",
+   "midi": 51,
+   "t_on": 169.1,
+   "vowel_dur": 0.296,
+   "median_cents": -20.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "as",
+   "midi": 51,
+   "t_on": 169.614,
+   "vowel_dur": 0.883,
+   "median_cents": 1.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "I",
+   "midi": 48,
+   "t_on": 170.665,
+   "vowel_dur": 0.483,
+   "median_cents": -6.3,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "am",
+   "midi": 51,
+   "t_on": 171.19,
+   "vowel_dur": 0.834,
+   "median_cents": 1.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "with",
+   "midi": 55,
+   "t_on": 172.249,
+   "vowel_dur": 0.376,
+   "median_cents": -15.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "out",
+   "midi": 46,
+   "t_on": 172.775,
+   "vowel_dur": 0.301,
+   "median_cents": -10.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "one",
+   "midi": 44,
+   "t_on": 173.301,
+   "vowel_dur": 0.201,
+   "median_cents": -23.2,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "Flag",
+   "midi": 51,
+   "t_on": 173.82,
+   "vowel_dur": 1.334,
+   "median_cents": 0.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "I",
+   "midi": 51,
+   "t_on": 175.391,
+   "vowel_dur": 0.388,
+   "median_cents": -4.1,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "come",
+   "midi": 46,
+   "t_on": 175.931,
+   "vowel_dur": 0.9,
+   "median_cents": -0.6,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "I",
+   "midi": 51,
+   "t_on": 176.978,
+   "vowel_dur": 0.378,
+   "median_cents": -6.8,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "come",
+   "midi": 51,
+   "t_on": 177.505,
+   "vowel_dur": 1.353,
+   "median_cents": -0.4,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "A",
+   "midi": 44,
+   "t_on": 179.071,
+   "vowel_dur": 0.939,
+   "median_cents": 0.7,
+   "voiced": 1.0,
+   "attempt": 0
+  },
+  {
+   "part": "B",
+   "voice": "am_onyx",
+   "word": "men",
+   "midi": 51,
+   "t_on": 180.127,
+   "vowel_dur": 0.73,
+   "median_cents": -0.9,
+   "voiced": 1.0,
+   "attempt": 0
+  }
+ ],
+ "notes_outside_25c": 11,
+ "mean_abs_cents": 9.1,
+ "max_abs_cents": 57.0,
+ "whisper_hymn": "Just as I did without what's right Like a, like a, a red smell",
+ "hups": {
+  "count": 100,
+  "source": "T07Raised raise events (cache/foley/t07_hits_events.json)",
+  "max_err_ms": 0.01
+ },
+ "levels": {
+  "hymn_169-181": -25.0,
+  "hups_143.9-146.8": -24.2,
+  "flags_197.4-199": -19.8
+ },
+ "stem_lufs": -24.2
+}

@@ -19,9 +19,13 @@ import numpy as np
 import soundfile as sf
 from scipy import signal
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SR = 48000
-N = 9264000
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from music_lib import DUR, FILM_ROOT, N, SR  # noqa: E402  (active film: VX_FILM)
+
+ROOT = FILM_ROOT
+# film 1's sacred silence; other films declare theirs in audio/music/silence.json ([[t0, t1], ...])
+_SIL = os.path.join(ROOT, "audio", "music", "silence.json")
+SILENCES = json.load(open(_SIL)) if os.path.exists(_SIL) else ([[138.5, 140.0]] if DUR == 193.0 else [])
 
 
 def band(x, lo=80, hi=16000):
@@ -128,8 +132,9 @@ def main():
     tl = json.load(open(os.path.join(ROOT, "timeline.json")))
     print(f"format: {info.samplerate} Hz, {info.channels} ch, {info.subtype}, {info.frames} frames "
           f"({'OK' if (info.frames == N and info.samplerate == SR and info.channels == 2 and info.subtype == 'FLOAT') else 'BAD'})")
-    sil = x[int(138.5 * SR):int(140.0 * SR)]
-    print(f"silence 138.5–140.0: max |x| = {np.abs(sil).max():.3g} ({'digital zero' if not np.any(sil) else 'NOT ZERO'})")
+    for (s0, s1) in SILENCES:
+        sil = x[int(s0 * SR):int(s1 * SR)]
+        print(f"silence {s0}–{s1}: max |x| = {np.abs(sil).max():.3g} ({'digital zero' if not np.any(sil) else 'NOT ZERO'})")
     pk = np.abs(x).max()
     tp = np.abs(signal.resample_poly(x, 4, 1, axis=0)).max()
     print(f"sample peak {20 * np.log10(pk):.2f} dBFS, true peak {20 * np.log10(tp):.2f} dBTP, clipping: {'NO' if tp < 1 else 'YES'}")
@@ -180,7 +185,7 @@ def main():
         for i in ids:
             s = sc[i]
             p = os.path.join(ROOT, "audio", "music", f"spec_{i}.png")
-            spec_png(x, max(0, s["start"] - 0.5), min(193.0, s["end"] + 0.5), p, f"music {i}")
+            spec_png(x, max(0, s["start"] - 0.5), min(DUR, s["end"] + 0.5), p, f"music {i}")
             print("wrote", p)
 
 

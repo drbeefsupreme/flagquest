@@ -66,6 +66,7 @@ INSTR = {
     "glock": ("Percussion/Glock", None, "one"),
     "marimba": ("Percussion/Marimba", None, "one"),
     "xylo": ("Percussion/Xylo", None, "one"),
+    "piano": ("Keys/Upright Nr1", None, "one"),
     "organ_loud": ("Keys/Organ/Loud", r"Man3Open", "sus"),
     "organ_pedal": ("Keys/Organ/Loud", r"Pedal", "sus"),
     "organ_soft": ("Keys/Organ/Quiet", r"Man3Quiet", "sus"),

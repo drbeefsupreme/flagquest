@@ -33,8 +33,12 @@ from scipy.signal import find_peaks
 import foley_lib as L
 from foley_lib import SR, ns, pan2, R
 
+import os as _os
+
 ROOT = Path(__file__).resolve().parents[1]
-FOLEY_CACHE = ROOT / "cache" / "foley"
+_FILM = _os.environ.get("VX_FILM", "unbabeling")
+# film-aware (vx.config layout): film 1 keeps the legacy root cache, other films use films/<name>/cache/foley
+FOLEY_CACHE = (ROOT if _FILM == "unbabeling" else ROOT / "films" / _FILM) / "cache" / "foley"
 
 
 # ------------------------------------------------------------------------------------------------

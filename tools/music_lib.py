@@ -1,4 +1,5 @@
-"""Score engine for THE UNBABELING (owned by Composer).
+"""Score engine shared by the films (owned by Composer). Film-aware: the active film (VX_FILM, see
+vx/config.py) sets DUR/N from its timeline.json; samples, soundfonts and the sample index are shared.
 
 Building blocks used by tools/music_score.py:
 - Sampler      real multisampled orchestra (VSCO2-CE, indexed by tools/music_samples.py): velocity-layer
@@ -14,6 +15,7 @@ All times are GLOBAL seconds (T=0 = film start). SR = 48 kHz. Buffers are float3
 import functools
 import json
 import os
+import sys
 
 import numpy as np
 import soundfile as sf
@@ -21,9 +23,15 @@ from numba import njit
 from scipy import signal
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+from vx import config as _vxc  # noqa: E402  (VX_FILM -> FILM_ROOT, TIMELINE)
+
 SR = 48000
-DUR = 193.0
-N = int(round(DUR * SR))  # 9,264,000
+FILM_ROOT = str(_vxc.FILM_ROOT)
+with open(_vxc.TIMELINE) as _f:
+    DUR = float(json.load(_f)["duration"])  # film 1: 193.0, film 2: 199.0
+N = int(round(DUR * SR))  # film 1: 9,264,000; film 2: 9,552,000
 INDEX_PATH = os.path.join(ROOT, "audio", "music", "cache", "sample_index.json")
 SF_GU = os.path.join(ROOT, "assets", "sf2", "GeneralUser-GS.sf2")
 SF_MS = os.path.join(ROOT, "assets", "sf2", "MuseScore_General.sf2")

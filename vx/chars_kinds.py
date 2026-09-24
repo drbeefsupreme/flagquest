@@ -7,7 +7,7 @@ import cairo
 from .canvas import col
 from .config import C
 from .ease import hash01, noise1, clamp
-from .chars_paint import (HP, p_circle, p_ellipse, p_capsule, p_smooth, p_poly, p_leaf, shadow_of, light_of, mixc,
+from .chars_paint import (HP, egg_of, p_circle, p_ellipse, p_capsule, p_smooth, p_poly, p_leaf, shadow_of, light_of, mixc,
                           BIG, TAU)
 
 COMMON = dict(
@@ -34,7 +34,11 @@ def build_palette(kind, seed, style):
     p["robe"] = C["robe"]
     look = dict(hair_style="short", garment="robe", sleeve="bell", hood=None, beard=None, crown=False, phone=False,
                 prop=None, laurel=False, helmet=False, goggles_down=False, headset=False, veil=False, eyes="std",
-                tail=False, pouch=False, blush_base=0.0)
+                tail=False, pouch=False, blush_base=0.0,
+                # film 2 accessories
+                hat=None, glasses=None, face_mask=0.0, earrings=None, collar=None, goggles_neck=False,
+                goggles_head=False, apron=False, wings=False, halo=False, horns=False, freckles=False,
+                face_paint=None, mud=0.0, lipstick=False, face=None, belt=True, chair=None, wet=False)
     if kind == "lutie":
         p.update(skin=C["skin2"], hair=_c("#33241E"), brow=_c("#33241E"), iris=_c("#5A3824"), belt=_c("#7A5427"),
                  trouser=_c("#4A3A30"), shoe=_c("#5A3A28"))
@@ -76,6 +80,54 @@ def build_palette(kind, seed, style):
                  trouser=_c("#1F2B48"), nose=_c("#6E3A3C"), iris=_c("#93BA58"), brow=_c("#3A2517"),
                  lash=_c("#2A1A12"), cuff=_c("#EEF0F3"), lid=_c("#C07E3E"))
         look.update(garment="suit", sleeve="fit", tail=True, hair_style="none", eyes="std")
+    elif kind == "summer":
+        p.update(skin=C["skin1"], hair=_c("#D8C9A6"), brow=_c("#8A7A60"), iris=_c("#5E7FA0"), robe=_c("#6C7486"),
+                 trouser=_c("#3E4A66"), shoe=_c("#4A3C34"), fur=_c("#E9E4DA"), goggle=_c("#3A3D44"), lens=_c("#9CB4C8"))
+        look.update(hair_style="pigtails", garment="jacket", sleeve="fit", collar="fur", goggles_neck=True,
+                    freckles=True, eyes="big", blush_base=0.1, face="cartoon")
+    elif kind == "raven":
+        p.update(skin=C["skin1"], hair=_c("#101014"), brow=_c("#101014"), iris=_c("#3A2E2A"), robe=_c("#18181C"),
+                 trouser=_c("#141418"), shoe=_c("#101012"), lip=_c("#3A1E2A"), hoop=_c("#B8BAC2"))
+        look.update(hair_style="long_glossy", garment="sweater", sleeve="fit", earrings="hoop", lipstick=True,
+                    face="cartoon")
+    elif kind == "crow":
+        p.update(skin=C["skin2"], hair=_c("#8C8A88"), brow=_c("#3A3432"), iris=_c("#4A3A30"), robe=_c("#3C3A40"),
+                 trouser=_c("#2E3038"), shoe=_c("#221E1E"), fur=_c("#8E8474"), cap=_c("#2A2C34"), capfront=_c("#DAD6CE"),
+                 lens=_c("#6E6A60"), beardc=_c("#9A9690"), tract=_c("#F2F0EA"))
+        look.update(hair_style="short", garment="coat", sleeve="fit", collar="fur", hat="cap", glasses="aviator",
+                    beard="goatee", prop="tracts")
+    elif kind == "flagmaker":
+        p.update(skin=C["skin2"], hair=_c("#4A3A30"), brow=_c("#3A2C24"), iris=_c("#4A3A30"), robe=_c("#D8D2C4"),
+                 apron=_c("#8A6E50"), tool=_c("#5A5A60"), wood=C["pole"], shoe=_c("#5A4636"))
+        look.update(hair_style="long", garment="robe", sleeve="bell", beard="full", apron=True)
+    elif kind == "hippie":
+        sk = SKINS[int(r(1) * 4) % 4]
+        hs = ["dreads", "wild", "long", "bun", "curly", "messy", "dreads"][int(r(4) * 7) % 7]
+        g = ["furcoat", "tutu", "shirt", "sweater", "furcoat", "jacket"][int(r(6) * 6) % 6]
+        hc = _c(HAIRS[int(r(5) * len(HAIRS)) % len(HAIRS)])
+        topc = _c(CLOTH[int(r(2) * len(CLOTH)) % len(CLOTH)])
+        p.update(skin=C[sk], hair=hc, brow=hc, robe=topc, trouser=shadow_of(_c(CLOTH[int(r(3) * 12) % 12]), 0.8),
+                 fur=_c(["#B8AE9E", "#6E6258", "#E6E0D6", "#4A423C"][int(r(7) * 4) % 4]), tutu=_c("#D6D2DA"),
+                 shoe=_c("#3A302A"), goggle=_c("#3A3D44"), lens=_c("#9CB4C8"), paint=_c("#E6E6EA"))
+        look.update(hair_style=hs, garment=g, sleeve="fit", mud=0.45 + 0.4 * r(8),
+                    face_paint=(["stripes", "dots", "bolt"][int(r(9) * 3) % 3] if r(10) < 0.5 else None),
+                    goggles_head=r(11) < 0.4, beard=("full" if r(12) < 0.25 else None))
+    elif kind == "pharisee":
+        sk = SKINS[int(r(1) * 4) % 4]
+        hc = _c(["#DAD6D0", "#8E8A86", "#3A3230"][int(r(2) * 3) % 3])
+        p.update(skin=C[sk], hair=hc, brow=hc, robe=_c(["#1E1E22", "#26262B", "#2E2E34"][int(r(3) * 3) % 3]),
+                 inner=_c("#101012"))
+        look.update(hair_style="short", garment="poncho", sleeve="bell", hood="up", beard="full", belt=False)
+    elif kind == "devil":
+        p.update(skin=_c("#8E6A66"), hair=_c("#1A1618"), brow=_c("#141012"), iris=_c("#C8C2A0"), robe=_c("#2A2428"),
+                 horn=_c("#E2DCD2"), shoe=_c("#1A1618"), wood=_c("#5A5048"), lyre=_c("#C8C4BA"))
+        look.update(hair_style="none", garment="robe", sleeve="bell", horns=True, beard="goatee_pointed",
+                    eyes="slit", belt=False)
+    elif kind == "seraph":
+        p.update(skin=C["skin1"], hair=_c("#CFC6B4"), brow=_c("#8A8070"), iris=_c("#6E7E90"), robe=_c("#EEEAE2"),
+                 wing=_c("#F2EFE8"), halo=_c("#FFFFFF"), mask=_c("#E6EAEE"))
+        look.update(hair_style="long", garment="robe", sleeve="bell", wings=True, halo=True, face_mask=1.0,
+                    belt=True)
     else:  # citizen
         sk = SKINS[int(r(1) * 4) % 4]
         top = CLOTH[int(r(2) * len(CLOTH)) % len(CLOTH)]
@@ -98,7 +150,9 @@ def build_palette(kind, seed, style):
             if k == "hair" and "brow" not in style:
                 p["brow"] = p["hair"]
     for k in ("hood", "crown", "phone", "prop", "laurel", "goggles_down", "headset", "beard", "garment", "sleeve",
-              "hair_style", "pouch", "tail", "veil"):
+              "hair_style", "pouch", "tail", "veil", "hat", "glasses", "face_mask", "earrings", "collar",
+              "goggles_neck", "goggles_head", "apron", "wings", "halo", "horns", "freckles", "face_paint", "mud",
+              "lipstick", "face", "belt", "chair", "wet"):
         if k in style:
             look[k] = style[k]
     if look.get("hood") is True:
@@ -117,6 +171,15 @@ def build_palette(kind, seed, style):
         p["sleeve"] = p["suit"]
     if look["garment"] == "crocus":
         p["sleeve"] = C["robe"]
+    if look["garment"] == "furcoat":
+        p["sleeve"] = p["fur"]
+    for k, v in (("fur", "#B8AE9E"), ("goggle", "#3A3D44"), ("lens", "#9CB4C8"), ("mask", "#E8ECEE"),
+                 ("tract", "#F2F0EA"), ("hoop", "#B8BAC2"), ("cap", "#2A2C34"), ("capfront", "#DAD6CE"),
+                 ("beardc", p.get("hair", (0.3, 0.3, 0.3))), ("apron", "#8A6E50"), ("tool", "#5A5A60"), ("wood", "#8A7054"),
+                 ("horn", "#E2DCD2"), ("lyre", "#C8C4BA"), ("wing", "#F2EFE8"), ("halo", "#FFFFFF"), ("paint", "#E6E6EA"),
+                 ("tutu", "#D6D2DA"), ("chair", "#4A4E58"), ("chairf", "#8A8E98"), ("mud", "#4A3E34")):
+        if k not in p:
+            p[k] = _c(v)
     p["blush_base"] = look["blush_base"]
     p["cuffin"] = mixc(shadow_of(p["sleeve"], 0.5), p.get("inner", p["sleeve"]), 0.35)
     p["lid"] = p.get("lid", shadow_of(p["skin"], 0.93))
@@ -127,7 +190,7 @@ def build_palette(kind, seed, style):
 # ============================================================ helpers
 def _hp(P):
     r = P.rig
-    return HP(P.sp["head_r"], P.o["head_yaw"], r.head_pitch * 0.7 + P.o["look"][1] * -0.18)
+    return HP(P.sp["head_r"], P.o["head_yaw"], r.head_pitch * 0.7 + P.o["look"][1] * -0.18, egg=egg_of(P.ch, r))
 
 
 def _hood_outer(P, hp, pointed=0.0, drop=1.55, width=1.22):
@@ -177,6 +240,9 @@ def _hood(P, hp, colour, pointed=0.0, shadow_face=0.0, open_g=0.95, lining="inne
         ctx.clip()
         ctx.set_fill_rule(cairo.FILL_RULE_WINDING)
     P.part(lambda c: p_smooth(c, outer, True, 0.42), colour, d=R * 0.22)
+    if P.ink:
+        from .chars_ink import hood_folds
+        hood_folds(P, hp, outer)
     ctx.restore()
     if opening and P.lod >= 1:
         # lining rim + hood shadow over the brow
@@ -213,7 +279,10 @@ def _beard(P, hp, length=2.4, colour="hair", full=True):
     t = P.t
     wind = P.o["wind_x"]
     sw = wind * 0.9 + 0.12 * noise1(t * 0.7 + 3, 61) + P.rig.sway * 0.03
-    cap = hp.cap(0.0, -1.2, 0.98 if full else 0.9, 1.07, 1.0, 40)
+    if hp.egg is not None:
+        cap = hp.cap(0.0, -1.38, 0.9 if full else 0.8, 1.05, 1.0, 40)
+    else:
+        cap = hp.cap(0.0, -1.2, 0.98 if full else 0.9, 1.07, 1.0, 40)
     if len(cap) < 3:
         return
     low = [q for q in cap if q[1] > R * 0.25]
@@ -235,8 +304,21 @@ def _beard(P, hp, length=2.4, colour="hair", full=True):
         p_poly(c, cap)
         if hang:
             p_smooth(c, hang, True, 0.38)
-    P.part(build, colour, d=R * 0.28)
-    if P.lod >= 2 and hang:
+    bpath = P.part(build, colour, d=R * 0.28)
+    if P.ink and P.lod >= 2:
+        from .chars_ink import tapered as _tp
+        P.ctx.save()
+        P.ctx.new_path()
+        P.ctx.append_path(bpath)
+        P.ctx.clip()
+        for k in range(22):
+            lon = -1.0 + 2.0 * hash01(k, 311)
+            q = hp.pt(lon, -0.75 - 0.6 * hash01(k, 312), 1.07)
+            if q[2] > 0.0:
+                _tp(P, [q[:2], (q[0] - lon * R * 0.05 + sw * R * 0.1, q[1] + R * (0.25 + 0.2 * hash01(k, 313)))],
+                    P.lw * 0.5, P.lw * 0.05, "lash")
+        P.ctx.restore()
+    if P.lod >= 2 and hang and not P.ink:
         tipx, tipy = hang[3]
         for k in range(4):
             x0 = (hang[0][0] + hang[6][0]) * 0.5 + (k - 1.5) * R * 0.3
@@ -248,12 +330,13 @@ def _beard(P, hp, length=2.4, colour="hair", full=True):
 
 def _mustache(P, hp, colour="hair"):
     R = P.sp["head_r"]
-    base = hp.pt(0.0, -0.33, 1.06)
+    dn = -0.2 if hp.egg is not None else 0.0
+    base = hp.pt(0.0, -0.33 + dn, 1.06)
     if base[2] < 0.05:
         return
     sw = P.o["wind_x"] * 0.2
     for side in (-1, 1):
-        tip = hp.pt(side * 0.55, -0.58, 1.02)
+        tip = hp.pt(side * 0.55, -0.58 + dn, 1.02)
         if tip[2] < 0:
             continue
         ang = math.atan2(tip[1] - base[1], tip[0] - base[0]) + sw
