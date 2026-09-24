@@ -74,11 +74,14 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                 t0 = w["s"] if t0 is None else t0
                 t1 = w["e"]
             else:
+                if t0 is None and chunks:           # punctuation after a chunk break belongs to that chunk
+                    chunks[-1][0] = fix(chunks[-1][0] + tok)
+                    continue
                 cur += tok
                 if tok in ".!?" and len(cur) > 24:
                     chunks.append([fix(cur.strip()), t0, t1])
                     cur, t0 = "", None
-        if cur.strip():
+        if cur.strip() and t0 is not None:
             chunks.append([fix(cur.strip()), t0, t1])
         for k, (s, a0, a1) in enumerate(chunks):
             end = chunks[k + 1][1] - 0.02 if k + 1 < len(chunks) else l["end"] + 0.25
