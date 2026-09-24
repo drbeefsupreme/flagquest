@@ -3,14 +3,16 @@ usage: python tools/review.py [--every 2.0] [--video out/film_video.mp4] [--scen
 import argparse
 import json
 import subprocess
-import tempfile
+import sys
 from pathlib import Path
 
 import cv2
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
-TL = json.loads((ROOT / "timeline.json").read_text())
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from vx.config import OUT, TIMELINE  # noqa: E402
+
+TL = json.loads(TIMELINE.read_text())
 
 
 def grab(video, t, w=480):
@@ -38,9 +40,9 @@ def main():
         for sc in TL["scenes"]:
             if a.scene and sc["id"] != a.scene:
                 continue
-            v = ROOT / "out/scenes" / f"{sc['id']}.mp4"
+            v = OUT / "scenes" / f"{sc['id']}.mp4"
             if not v.exists():
-                v = ROOT / "out/preview" / f"{sc['id']}.mp4"
+                v = OUT / "preview" / f"{sc['id']}.mp4"
             if not v.exists():
                 continue
             d = sc["end"] - sc["start"]
@@ -65,7 +67,7 @@ def main():
         r, c = divmod(k, a.cols)
         im = cv2.resize(im, (tw, th))
         sheet[r * th:(r + 1) * th, c * tw:(c + 1) * tw] = im
-    out = Path(a.out) if a.out else ROOT / "out" / f"review_{a.scene or 'all'}.jpg"
+    out = Path(a.out) if a.out else OUT / f"review_{a.scene or 'all'}.jpg"
     cv2.imwrite(str(out), sheet, [cv2.IMWRITE_JPEG_QUALITY, 85])
     print(out, len(tiles), "tiles")
 

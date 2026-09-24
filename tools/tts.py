@@ -1,5 +1,6 @@
-"""Render every dialogue line with Kokoro. Writes audio/voice/raw/<id>.wav (24 kHz mono)
-and audio/voice/raw/index.json (durations + word timestamps).
+"""Render every dialogue line of the selected film (VX_FILM) with Kokoro.
+Reads <film>/script/lines.json (a line's optional `say` is spoken instead of its display `text`),
+writes <film>/audio/voice/raw/<ID>.wav (24 kHz mono) and index.json (durations + word timestamps).
 usage: python tools/tts.py [ID ...]"""
 import json
 import sys
@@ -9,9 +10,11 @@ import numpy as np
 import soundfile as sf
 from kokoro import KPipeline
 
-ROOT = Path(__file__).resolve().parents[1]
-spec = json.loads((ROOT / "script/lines.json").read_text())
-out = ROOT / "audio/voice/raw"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from vx.config import SCRIPT, AUDIO  # noqa: E402
+
+spec = json.loads((SCRIPT / "lines.json").read_text())
+out = AUDIO / "voice/raw"
 out.mkdir(parents=True, exist_ok=True)
 idx_path = out / "index.json"
 index = json.loads(idx_path.read_text()) if idx_path.exists() else {}
@@ -41,8 +44,10 @@ for ln in spec["lines"]:
     cast = spec["cast"][ln["speaker"]]
     p = pipe(cast["lang"])
     speed = ln.get("speed", cast["speed"])
+    voice = ln.get("voice", cast["voice"])
+    say = ln.get("say", ln["text"])
     chunks, words, t0 = [], [], 0.0
-    for r in p(ln["text"], voice=cast["voice"], speed=speed, split_pattern=None):
+    for r in p(say, voice=voice, speed=speed, split_pattern=None):
         a = r.audio.detach().cpu().numpy().astype(np.float32)
         for tk in (r.tokens or []):
             if tk.start_ts is not None and tk.end_ts is not None:
@@ -57,8 +62,8 @@ for ln in spec["lines"]:
         w["e"] = round(max(0.0, w["e"] - shift), 3)
     sf.write(out / f"{ln['id']}.wav", a, 24000, subtype="FLOAT")
     index[ln["id"]] = {"speaker": ln["speaker"], "dur": round(len(a) / 24000, 3), "words": words,
-                       "text": ln["text"]}
-    print(f"{ln['id']:4s} {ln['speaker']:10s} {len(a)/24000:6.2f}s  {ln['text'][:70]}", flush=True)
+                       "text": ln["text"], "say": say}
+    print(f"{ln['id']:4s} {ln['speaker']:10s} {len(a)/24000:6.2f}s  {say[:70]}", flush=True)
 
 idx_path.write_text(json.dumps(index, indent=1, ensure_ascii=False))
 print("total speech", round(sum(v["dur"] for v in index.values()), 2), "s")

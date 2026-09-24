@@ -1,7 +1,9 @@
-"""Final mix: sums the department stems with sidechain ducking, bus compression, limiting and
-loudness normalisation.  usage: python tools/mix.py [--target -14] [--out audio/final_mix.wav]"""
+"""Final mix of the selected film (VX_FILM): sums the department stems with sidechain ducking, timed
+automation, sacred-silence windows, bus compression, limiting and loudness normalisation.
+Settings live in <film>/script/plan.json ["mix"].  usage: python tools/mix.py [--target -14] [--out ...]"""
 import argparse
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -29,27 +31,16 @@ def true_peak_db(x):
     tp = max(np.abs(resample_poly(x[:, c], 4, 1)).max() for c in range(x.shape[1]))
     return 20 * np.log10(tp + 1e-12)
 
-ROOT = Path(__file__).resolve().parents[1]
-SR = 48000
-DUR = json.loads((ROOT / "timeline.json").read_text())["duration"]
-N = int(round(DUR * SR))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from vx.config import SR, AUDIO, SCRIPT, TIMELINE  # noqa: E402
 
-# stem -> static gain dB (balance measured per scene/line with pyloudnorm; see git history for the report)
-STEMS = {
-    "dialogue": 0.0,
-    "crowd": -2.0,
-    "choir": 1.0,      # the sung hymn + convergence must sit on top of the orchestra
-    "music": -5.0,
-    "sfx": -3.0,
-    "ambience": -7.0,
-}
-DUCK = {"music": 7.0, "ambience": 4.0, "sfx": 5.0, "crowd": 5.0}   # max dB reduction under dialogue
-# timed automation: (stem, t0, t1, dB, fade_s)
-AUTOMATION = [
-    ("music", 188.22, 189.35, -3.5, 0.06),   # let the crowd's GLORIOUS! punch through the tutti
-    ("crowd", 188.22, 190.2, 2.0, 0.06),
-    ("music", 154.5, 165.93, -1.5, 0.4),     # hymn: orchestra supports the voices
-]
+DUR = json.loads(TIMELINE.read_text())["duration"]
+N = int(round(DUR * SR))
+MIXCFG = json.loads((SCRIPT / "plan.json").read_text())["mix"]
+STEMS = MIXCFG["stems"]              # stem -> static gain dB
+DUCK = MIXCFG["duck"]                # stem -> max dB reduction under dialogue
+AUTOMATION = MIXCFG["automation"]    # [stem, t0, t1, dB, fade_s]
+SILENCE = MIXCFG["silence"]          # [t0, t1, t_back]: digital zero t0..t1, quadratic fade back in by t_back
 
 
 def automation(name):
@@ -64,10 +55,10 @@ def automation(name):
 
 
 def load(name):
-    p = ROOT / f"audio/stems/{name}.wav"
+    p = AUDIO / f"stems/{name}.wav"
     if not p.exists():
-        if name == "dialogue" and (ROOT / "audio/stems/dialogue_dry.wav").exists():
-            p = ROOT / "audio/stems/dialogue_dry.wav"
+        if name == "dialogue" and (AUDIO / "stems/dialogue_dry.wav").exists():
+            p = AUDIO / "stems/dialogue_dry.wav"
         else:
             return None
     a, sr = sf.read(p, dtype="float32", always_2d=True)
@@ -95,7 +86,7 @@ def envelope(x, attack_ms=15, release_ms=350):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--target", type=float, default=-14.0)
-    ap.add_argument("--out", default=str(ROOT / "audio/final_mix.wav"))
+    ap.add_argument("--out", default=str(AUDIO / "final_mix.wav"))
     a = ap.parse_args()
     meter = pyln.Meter(SR)
     stems = {k: load(k) for k in STEMS}
@@ -115,12 +106,12 @@ def main():
             gain = gain * automation(k)[:, None]
         mix += s * gain
         print(f"  {k:9s} {lufs:6.1f} LUFS  peak {20*np.log10(np.abs(s).max()+1e-9):6.1f} dBFS  gain {g:+.1f} dB")
-    # sacred silence 138.5 -> 139.5 (fade back in by 140.0)
     t = np.arange(N) / SR
     sil = np.ones(N, np.float32)
-    sil[(t >= 138.5) & (t < 139.5)] = 0.0
-    ramp = (t >= 139.5) & (t < 140.0)
-    sil[ramp] = ((t[ramp] - 139.5) / 0.5) ** 2
+    for t0, t1, tb in SILENCE:
+        sil[(t >= t0) & (t < t1)] = 0.0
+        ramp = (t >= t1) & (t < tb)
+        sil[ramp] = np.minimum(sil[ramp], ((t[ramp] - t1) / (tb - t1)) ** 2)
     mix *= sil[:, None]
     board = Pedalboard([HighpassFilter(22), Compressor(threshold_db=-16, ratio=2.0, attack_ms=12, release_ms=180)])
     mix = board(mix.T, SR).T.astype(np.float32)

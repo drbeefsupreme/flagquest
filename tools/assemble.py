@@ -1,13 +1,19 @@
-"""Final assembly: verify scene renders, concatenate, burn subtitles, mux the final mix.
-usage: python tools/assemble.py [--scenes-dir out/scenes] [--audio audio/final_mix.wav] [--nosubs] [--fast]"""
+"""Final assembly of the selected film (VX_FILM): verify scene renders, concatenate, write subtitles
+(burned in when <film>/script/plan.json ["subs"]["burn"] is true, or with --subs), mux the final mix.
+usage: python tools/assemble.py [--audio <film>/audio/final_mix.wav] [--nosubs] [--subs] [--fast] [--share]"""
 import argparse
 import json
 import subprocess
+import sys
 import textwrap
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-TL = json.loads((ROOT / "timeline.json").read_text())
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from vx.config import OUT, AUDIO, SCRIPT, TIMELINE  # noqa: E402
+
+TL = json.loads(TIMELINE.read_text())
+PLAN = json.loads((SCRIPT / "plan.json").read_text())
+SUBS = PLAN.get("subs", {})
 
 
 def ts(t):
@@ -46,37 +52,39 @@ Style: Lyric,C059,50,&H00D8F4FF,&H000000FF,&H00141214,&H96000000,0,1,0,0,100,100
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = []
+    rep = SUBS.get("replace", {})
+
+    def fix(s):
+        for a, b in rep.items():
+            s = s.replace(a, b)
+        return s
+
     for l in TL["lines"]:
-        text = l["text"].replace("twenty forty-two", "2042")
+        text = fix(l["text"])
         words = l["words"]
         if len(text) <= 64 or not words:
             ev.append((l["start"], l["end"] + 0.25, "Default", split2(text)))
             continue
-        # break long lines into sentence chunks timed from the TTS word timestamps
+        # break long lines into sentence chunks timed from the TTS word timestamps (display words when mapped)
         chunks, cur, t0, t1 = [], "", None, None
         for w in words:
-            tok = w["w"].replace("twenty", "20").replace("forty-two", "42")
+            tok = w.get("d", w["w"])
             if any(ch.isalnum() for ch in tok):
-                cur = (cur + " " + tok) if cur and not cur.endswith("20") else (cur + tok)
+                cur = (cur + " " + tok) if cur else tok
                 t0 = w["s"] if t0 is None else t0
                 t1 = w["e"]
             else:
                 cur += tok
                 if tok in ".!?" and len(cur) > 24:
-                    chunks.append([cur.strip(), t0, t1])
+                    chunks.append([fix(cur.strip()), t0, t1])
                     cur, t0 = "", None
         if cur.strip():
-            chunks.append([cur.strip(), t0, t1])
+            chunks.append([fix(cur.strip()), t0, t1])
         for k, (s, a0, a1) in enumerate(chunks):
             end = chunks[k + 1][1] - 0.02 if k + 1 < len(chunks) else l["end"] + 0.25
             ev.append((a0, end, "Default", split2(s)))
-    h = TL["hymn"]
-    beat = 60.0 / h["bpm"]
-    lyr = [("Flags be.", 0, 4), ("Flags are.", 4, 8), ("Flags will.", 8, 12), ("Flags.", 12, 16)]
-    for s, b0, b1 in lyr:
-        ev.append((h["start"] + b0 * beat, h["start"] + b1 * beat + (0.6 if s == "Flags." else 0.0), "Lyric", "~ " + s + " ~"))
-    g = next(c["t"] for c in TL["cues"] if c["id"] == "glorious")
-    ev.append((g, g + 1.1, "Default", "GLORIOUS!"))
+    for a, b, st, tx in SUBS.get("extra", []):
+        ev.append((a, b, st, tx))
     ev.sort()
     body = "".join(f"Dialogue: 0,{ts(a)},{ts(b)},{st},,0,0,0,,{{\\fad(90,160)}}{tx}\n" for a, b, st, tx in ev)
     path.write_text(head + body)
@@ -92,10 +100,11 @@ def nframes(p):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--scenes-dir", default=str(ROOT / "out/scenes"))
-    ap.add_argument("--audio", default=str(ROOT / "audio/final_mix.wav"))
-    ap.add_argument("--out", default=str(ROOT / "out/THE_UNBABELING.mp4"))
-    ap.add_argument("--nosubs", action="store_true")
+    ap.add_argument("--scenes-dir", default=str(OUT / "scenes"))
+    ap.add_argument("--audio", default=str(AUDIO / "final_mix.wav"))
+    ap.add_argument("--out", default=str(OUT / f"{PLAN['output_name']}.mp4"))
+    ap.add_argument("--nosubs", action="store_true", help="also write a version without burned subtitles")
+    ap.add_argument("--subs", action="store_true", help="burn subtitles even if the plan says not to")
     ap.add_argument("--fast", action="store_true")
     ap.add_argument("--share", action="store_true", help="also write a ~12 Mbps web version")
     a = ap.parse_args()
@@ -115,21 +124,21 @@ def main():
         parts.append(p)
     if not ok:
         raise SystemExit("fix scene renders first")
-    lst = ROOT / "out/.concat.txt"
+    lst = OUT / ".concat.txt"
     lst.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
-    video = ROOT / "out/film_video.mp4"
+    video = OUT / "film_video.mp4"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy",
                     str(video)], check=True)
-    ass = ROOT / "out/subs.ass"
+    ass = OUT / "subs.ass"
     write_ass(ass)
-    (ROOT / "out/subs_path.txt").write_text(str(ass))
+    burn = a.subs or SUBS.get("burn", True)
     preset = ["-preset", "veryfast", "-crf", "20"] if a.fast else ["-preset", "slow", "-crf", "17", "-tune", "film"]
-    outs = [(Path(a.out), True, preset)]
-    if a.nosubs:
+    outs = [(Path(a.out), burn, preset)]
+    if a.nosubs and burn:
         outs.append((Path(a.out).with_name(Path(a.out).stem + "_nosubs.mp4"), False, preset))
     if a.share:
         web = ["-preset", "slow", "-crf", "22", "-tune", "film", "-maxrate", "14M", "-bufsize", "28M"]
-        outs.append((Path(a.out).with_name(Path(a.out).stem + "_web.mp4"), True, web))
+        outs.append((Path(a.out).with_name(Path(a.out).stem + "_web.mp4"), burn, web))
     for out, subs, preset in outs:
         vf = ["-vf", f"ass={ass}"] if subs else []
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-stats", "-i", str(video), "-i", a.audio, "-map", "0:v:0", "-map",

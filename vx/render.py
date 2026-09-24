@@ -28,7 +28,7 @@ import numpy as np
 
 cv2.setNumThreads(1)   # parallelism comes from worker processes; avoid 32-thread pools per worker
 
-from .config import W, H, FPS, OUT, CACHE, ROOT
+from .config import W, H, FPS, OUT, CACHE, ROOT, FILM_ROOT
 from .timeline import get_timeline
 from . import post as _post
 
@@ -139,7 +139,11 @@ def contact_sheet(paths, out, cols=4, width=1600):
 def load_scene(sid, scale=1.0, meta=None):
     tl = get_timeline()
     sc = tl.scene(sid)
-    sys.path.insert(0, str(ROOT))
+    # the film's own `scenes` package must win over any other film's (film 1 lives at ROOT/scenes)
+    for p in (str(ROOT), str(FILM_ROOT)):
+        if p in sys.path:
+            sys.path.remove(p)
+        sys.path.insert(0, p)
     mod = importlib.import_module(sc["module"])
     S = SceneInfo(id=sid, start=sc["start"], end=sc["end"], dur=sc["end"] - sc["start"],
                   n=sc["f1"] - sc["f0"], f0=sc["f0"], fps=tl.fps, s=scale,

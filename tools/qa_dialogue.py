@@ -10,8 +10,10 @@ import soundfile as sf
 from faster_whisper import WhisperModel
 from scipy.signal import resample_poly
 
-ROOT = Path(__file__).resolve().parents[1]
-TL = json.loads((ROOT / "timeline.json").read_text())
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from vx.config import AUDIO, TIMELINE  # noqa: E402
+
+TL = json.loads(TIMELINE.read_text())
 
 
 def norm(s):
@@ -31,7 +33,7 @@ def wer(ref, hyp):
 
 
 def main():
-    path = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "audio/final_mix.wav"
+    path = Path(sys.argv[1]) if len(sys.argv) > 1 else AUDIO / "final_mix.wav"
     a, sr = sf.read(path, dtype="float32", always_2d=True)
     mono = a.mean(axis=1)
     m = WhisperModel("small.en", device="cpu", compute_type="int8", cpu_threads=8)

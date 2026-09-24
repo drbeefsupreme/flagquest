@@ -7,8 +7,12 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
-TL = json.loads((ROOT / "timeline.json").read_text())
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from vx.config import OUT, TIMELINE  # noqa: E402
+
+TL = json.loads(TIMELINE.read_text())
 
 
 def frame(video, n, w=640):
@@ -20,7 +24,7 @@ def frame(video, n, w=640):
 rows = []
 sc = TL["scenes"]
 for a, b in zip(sc, sc[1:]):
-    va, vb = ROOT / f"out/scenes/{a['id']}.mp4", ROOT / f"out/scenes/{b['id']}.mp4"
+    va, vb = OUT / f"scenes/{a['id']}.mp4", OUT / f"scenes/{b['id']}.mp4"
     if not (va.exists() and vb.exists()):
         continue
     na = a["f1"] - a["f0"]
@@ -32,6 +36,6 @@ for a, b in zip(sc, sc[1:]):
     cv2.putText(row, f"{a['id']} last | {b['id']} first | {b['id']} +6f   (T={b['start']:.1f})", (8, 24),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2, cv2.LINE_AA)
     rows.append(row)
-out = ROOT / "out/cuts.jpg"
+out = OUT / "cuts.jpg"
 cv2.imwrite(str(out), np.concatenate(rows, axis=0), [cv2.IMWRITE_JPEG_QUALITY, 85])
 print(out, len(rows))

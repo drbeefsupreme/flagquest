@@ -1,4 +1,11 @@
-"""Global constants for THE UNBABELING. Design space is always 1920x1080 @ 24 fps."""
+"""Global constants. Design space is always 1920x1080 @ 24 fps.
+
+Films: the engine (vx/) is shared; each film has its own timeline, scenes, audio, cache and renders.
+Select the film with the VX_FILM environment variable (see films/<name>/env.sh):
+  VX_FILM=unbabeling (default) -> legacy layout at the repo root (THE UNBABELING, film 1)
+  VX_FILM=<name>               -> films/<name>/{timeline.json, script/, scenes/, audio/, cache/, out/}
+"""
+import os
 from pathlib import Path
 
 W, H = 1920, 1080          # design resolution (scenes always draw in these units)
@@ -6,11 +13,16 @@ FPS = 24
 SR = 48000                 # audio sample rate for every stem
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "out"
-CACHE = ROOT / "cache"
-AUDIO = ROOT / "audio"
-ASSETS = ROOT / "assets"
-TIMELINE = ROOT / "timeline.json"
+FILM = os.environ.get("VX_FILM", "unbabeling")
+FILM_ROOT = ROOT if FILM == "unbabeling" else ROOT / "films" / FILM
+if not FILM_ROOT.is_dir():
+    raise RuntimeError(f"VX_FILM={FILM!r}: no film directory at {FILM_ROOT}")
+OUT = FILM_ROOT / "out"
+CACHE = FILM_ROOT / "cache"
+AUDIO = FILM_ROOT / "audio"
+SCRIPT = FILM_ROOT / "script"
+TIMELINE = FILM_ROOT / "timeline.json"
+ASSETS = ROOT / "assets"   # shared between films (fonts, soundfonts, samples)
 
 
 def hex2rgb(h: str):
