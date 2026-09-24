@@ -46,7 +46,6 @@ draw_page_frame(ctx, page_no, panel_rects, border=BORDER)   the page stock with 
 import math
 
 import cairo
-import numpy as np
 
 from vx import W, H, FONT_SANS, Canvas, set_color
 from vx import ink, comic

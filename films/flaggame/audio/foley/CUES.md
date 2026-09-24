@@ -18,24 +18,31 @@ Limiter min gain: sfx 1.000, ambience 1.000.
 
 | track | kind | scene | frames | start | max energy | r(energy, RMS) |
 |---|---|---|---:|---:|---:|---:|
-| t04_flag_explain.npz | flag | t04 | 917 | 67.46 | 0.71 | 0.989 |
+| t01_bearer_flag.npz | flag | t01 | 443 | 0.00 | 0.87 | 0.958 |
+| t01_paper.npz | paper | t01 | 443 | 0.00 | 0.72 | 0.944 |
+| t02_flag_icon.npz | flag | t02 | 596 | 18.46 | 0.86 | 0.982 |
+| t02_flag_witness.npz | flag | t02 | 596 | 18.46 | 0.67 | 0.960 |
+| t03_flag0.npz | flag | t03 | 580 | 43.29 | 1.00 | 0.984 |
+| t03_flag1.npz | flag | t03 | 580 | 43.29 | 1.00 | 0.988 |
+| t03_flag2.npz | flag | t03 | 580 | 43.29 | 1.00 | 0.989 |
+| t03_flag3.npz | flag | t03 | 580 | 43.29 | 1.00 | 0.983 |
+| t03_flag4.npz | flag | t03 | 580 | 43.29 | 1.00 | 0.985 |
+| t03_flag5.npz | flag | t03 | 580 | 43.29 | 1.00 | 0.990 |
+| t04_flag_explain.npz | flag | t04 | 917 | 67.46 | 0.71 | 0.988 |
 | t04_flag_flood.npz | flag | t04 | 917 | 67.46 | 1.00 | 0.983 |
-| t04_flag_rejected.npz | flag | t04 | 917 | 67.46 | 0.63 | 0.985 |
-| t04_flag_walk.npz | flag | t04 | 917 | 67.46 | 0.90 | 0.985 |
-| t05_found_flag.npz | flag | t05 | 399 | 105.67 | 0.85 | 0.981 |
-| t05_hero_flag.npz | flag | t05 | 399 | 105.67 | 0.98 | 0.981 |
-| t06_fire.npz | fire | t06 | 474 | 122.29 | 1.00 | 0.865 |
-| t06_flag.npz | flag | t06 | 474 | 122.29 | 0.86 | 0.984 |
-| t08_flag_p1.npz | flag | t08 | 512 | 159.83 | 0.75 | 0.966 |
-| t08_flag_p2b.npz | flag | t08 | 512 | 159.83 | 0.26 | 0.983 |
-| t08_flag_p3.npz | flag | t08 | 512 | 159.83 | 0.51 | 0.976 |
-| t08_flag_p8.npz | flag | t08 | 512 | 159.83 | 0.49 | 0.976 |
+| t04_flag_rejected.npz | flag | t04 | 917 | 67.46 | 0.65 | 0.987 |
+| t04_flag_walk.npz | flag | t04 | 917 | 67.46 | 0.93 | 0.987 |
+| t05_found_flag.npz | flag | t05 | 399 | 105.67 | 0.88 | 0.971 |
+| t05_hero_flag.npz | flag | t05 | 399 | 105.67 | 0.94 | 0.963 |
+| t06_fire.npz | fire | t06 | 474 | 122.29 | 1.00 | 0.835 |
+| t06_flag.npz | flag | t06 | 474 | 122.29 | 0.79 | 0.985 |
+| t07_soviet_flag.npz | flag | t07 | 427 | 142.04 | 0.96 | 0.964 |
+| t08_flag_p1.npz | flag | t08 | 512 | 159.83 | 0.73 | 0.970 |
+| t08_flag_p2b.npz | flag | t08 | 512 | 159.83 | 0.25 | 0.875 |
+| t08_flag_p3.npz | flag | t08 | 512 | 159.83 | 0.49 | 0.943 |
+| t08_flag_p8.npz | flag | t08 | 512 | 159.83 | 0.39 | 0.969 |
 | t09_p2flag.npz | flag | t09 | 428 | 181.17 | 0.90 | 0.990 |
-| t09_summerflag.npz | flag | t09 | 428 | 181.17 | 0.86 | 0.959 |
-| (fallback t01 flag) | flag | t01 | 86 | 9.20 | 0.53 | 0.982 |
-| (fallback t03 flag) | flag | t03 | 336 | 43.30 | 0.20 | 0.964 |
-| (fallback t07 flag) | flag | t07 | 134 | 143.90 | 0.65 | 0.983 |
-| (fallback t01 paper) | paper | t01 | 156 | 0.00 | 0.90 | 0.973 |
+| t09_summerflag.npz | flag | t09 | 428 | 181.17 | 0.89 | 0.972 |
 
 ## Placements by scene
 
@@ -43,56 +50,81 @@ Limiter min gain: sfx 1.000, ambience 1.000.
 
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
-| 0.000 | 1 | sfx | paper (fallback energy, awaiting t01 paper track) |  | fallback-physics | -13.0 dB |
+| 0.000 | 1 | sfx | PHYSICS flutter <- t01_bearer_flag.npz (r=0.958) |  | physics:t01_bearer_flag.npz | -12.5 dB |
+| 0.000 | 1 | sfx | PHYSICS paper <- t01_paper.npz (r=0.944) |  | physics:t01_paper.npz | -13.0 dB |
 | 2.100 | 1 | amb | gust body |  | design | -19.8 dB |
 | 2.600 | 1 | sfx | the gust | tract_flip | design | -13.7 dB |
 | 2.620 | 1 | sfx | the wet tract flips (flap) | tract_flip | design | -21.4 dB |
+| 3.05…5.88 | 7 | sfx | paper |  | event:t01_hits_events.json | -22.2 dB |
+| 4.80…10.09 | 3 | sfx | whoosh |  | event:t01_hits_events.json | -19.7 dB |
 | 6.100 | 1 | amb | camp rain on the shade (comic present) |  | design | -9.4 dB |
 | 6.400 | 1 | sfx | dive into page 1 (whoosh) | dive_in | design | -14.4 dB |
 | 6.400 | 1 | sfx | the comic comes alive (air) |  | design | -24.0 dB |
-| 9.09…12.39 | 7 | sfx | the flag-bearer's steps in the mud |  | design | -24.3 dB |
-| 9.200 | 1 | sfx | flutter (fallback energy, awaiting t01 track) |  | fallback-physics | -26.4 dB |
+| 6.960 | 1 | sfx | wing beat |  | event:t01_hits_events.json | -18.7 dB |
+| 7.30…15.48 | 3 | sfx | balloon pops (paper tick) |  | event:t01_hits_events.json | -32.5 dB |
+| 9.00…13.00 | 9 | sfx | step (bearer footsteps (mud), far) |  | event:t01_hits_events.json | -29.7 dB |
+| 17.600 | 1 | sfx | panel glide |  | event:t01_hits_events.json | -31.9 dB |
 | 196.400 | 1 | amb | CLOSE RAIN on paper, mud & puddles (one signal across the loop point) |  | design | -6.8 dB |
 
 ### t02 — Every Word Was Wrong (18.46–43.29)
 
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
-| 18.46…36.55 | 4 | sfx | panel glide |  | event:t02_hits_events.json | -29.8 dB |
-| 22.117 | 1 | sfx | burst panel rushes in |  | design | -21.4 dB |
+| 18.458 | 1 | sfx | PHYSICS flutter <- t02_flag_icon.npz (r=0.982) |  | physics:t02_flag_icon.npz | -10.7 dB |
+| 18.458 | 1 | sfx | PHYSICS flutter <- t02_flag_witness.npz (r=0.960) |  | physics:t02_flag_witness.npz | -25.0 dB |
+| 18.46…36.55 | 4 | sfx | panel glide |  | event:t02_hits_events.json | -30.1 dB |
+| 22.117 | 1 | sfx | burst panel rushes in |  | design | -22.2 dB |
 | 22.117 | 1 | sfx | WRONG!! radial burst (paper boom) | wrong_burst | design | -19.3 dB |
 | 22.117 | 1 | sfx | burst sub | wrong_burst | design | -13.9 dB |
 | 22.117 | 1 | sfx | shock emanata zings |  | design | -29.9 dB |
-| 23.05…36.62 | 2 | sfx | whoosh |  | event:t02_hits_events.json | -21.2 dB |
-| 25.200 | 1 | sfx | the Preacher becomes an icon (gold glint) |  | design | -22.1 dB |
+| 23.05…36.62 | 2 | sfx | whoosh |  | event:t02_hits_events.json | -21.4 dB |
+| 25.200 | 1 | sfx | the Preacher becomes an icon (gold glint) |  | design | -23.1 dB |
 | 25.200 | 1 | sfx | the Preacher becomes an icon (gold glint) (glints) | icon | design | -26.9 dB |
 | 29.288 | 1 | sfx | ESSENCE: heavenly radiance |  | design | -21.6 dB |
 | 29.288 | 1 | sfx | ESSENCE: heavenly radiance (glints) | essence | design | -26.9 dB |
 | 31.060 | 1 | sfx | the ** footnote types at legal speed | disclaimer | design | -19.3 dB |
-| 31.060 | 1 | sfx | impact |  | event:t02_hits_events.json | -23.7 dB |
-| 33.300 | 1 | sfx | paper |  | event:t02_hits_events.json | -23.0 dB |
-| 33.750 | 1 | sfx | anime face: sparkles | anime | design | -25.4 dB |
+| 31.060 | 1 | sfx | impact |  | event:t02_hits_events.json | -22.4 dB |
+| 33.220 | 1 | sfx | paper |  | event:t02_hits_events.json | -23.0 dB |
+| 33.750 | 1 | sfx | anime face: sparkles | anime | design | -27.0 dB |
 | 34.200 | 1 | sfx | sweat-drop plip |  | design | -23.0 dB |
-| 36.470 | 1 | sfx | snap |  | event:t02_hits_events.json | -18.2 dB |
+| 36.470 | 1 | sfx | snap |  | event:t02_hits_events.json | -16.7 dB |
 | 37.100 | 1 | sfx | slide |  | event:t02_hits_events.json | -18.6 dB |
 | 41.335 | 1 | sfx | flashback ripple: harp gliss up & down (D major) | flashback | design | -20.9 dB |
-| 41.335 | 1 | sfx | wavy ripple (swept resonance) |  | design | -24.0 dB |
+| 41.335 | 1 | sfx | wavy ripple (swept resonance) |  | design | -25.2 dB |
 
 ### t03 — In the Beginning (43.29–67.46)
 
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
 | 43.290 | 1 | amb | the op-art field: still air |  | design | -21.0 dB |
-| 43.300 | 1 | sfx | flutter (fallback energy, awaiting t03 track) |  | fallback-physics | -38.9 dB |
+| 43.29…60.95 | 4 | sfx | whoosh |  | event:t03_hits_events.json | -17.8 dB |
+| 43.292 | 1 | sfx | PHYSICS flutter <- t03_flag0.npz (r=0.984) |  | physics:t03_flag0.npz | -10.5 dB |
+| 43.292 | 1 | sfx | PHYSICS flutter <- t03_flag1.npz (r=0.988) |  | physics:t03_flag1.npz | -10.5 dB |
+| 43.292 | 1 | sfx | PHYSICS flutter <- t03_flag2.npz (r=0.989) |  | physics:t03_flag2.npz | -10.5 dB |
+| 43.292 | 1 | sfx | PHYSICS flutter <- t03_flag3.npz (r=0.983) |  | physics:t03_flag3.npz | -10.5 dB |
+| 43.292 | 1 | sfx | PHYSICS flutter <- t03_flag4.npz (r=0.985) |  | physics:t03_flag4.npz | -10.5 dB |
+| 43.292 | 1 | sfx | PHYSICS flutter <- t03_flag5.npz (r=0.990) |  | physics:t03_flag5.npz | -10.5 dB |
+| 43.53…43.98 | 6 | sfx | thunk |  | event:t03_hits_events.json | -13.1 dB |
+| 45.67…46.22 | 6 | sfx | snap |  | event:t03_hits_events.json | -12.8 dB |
+| 48.950 | 1 | sfx | chime |  | event:t03_hits_events.json | -21.3 dB |
+| 49.37…50.72 | 2 | sfx | balloon pops (paper tick) |  | event:t03_hits_events.json | -31.9 dB |
+| 49.400 | 1 | sfx | flash |  | event:t03_hits_events.json | -22.3 dB |
+| 53.78…56.00 | 2 | sfx | paper |  | event:t03_hits_events.json | -25.1 dB |
+| 54.800 | 1 | sfx | impact |  | event:t03_hits_events.json | -20.4 dB |
 | 57.339 | 1 | sfx | flies find the hippies | stench | design | -26.9 dB |
 | 57.339 | 1 | sfx | stink rises (gross gloops) |  | design | -19.3 dB |
 | 57.339 | 1 | sfx | stink lines wobble up |  | design | -24.9 dB |
+| 58.25…61.65 | 5 | sfx | pulled from mud |  | event:t03_hits_events.json | -16.5 dB |
 | 59.339 | 1 | amb | the stench coalesces into a HURRICANE (swirling gale) | hurricane | design | -11.9 dB |
 | 59.639 | 1 | sfx | hurricane pressure (sub) |  | design | -17.4 dB |
+| 59.839 | 1 | sfx | wing beat |  | event:t03_hits_events.json | -21.1 dB |
 | 61.400 | 1 | sfx | boombox: play button, speaker hiss, stop |  | design | -16.2 dB |
 | 62.851 | 1 | amb | THE STORM (engraved rain) — frozen dead at 118.92 |  | design | -9.8 dB |
 | 62.951 | 1 | sfx | the sky opens | rain_begins | design | -21.2 dB |
+| 62.951 | 1 | sfx | explosion |  | event:t03_hits_events.json | -5.6 dB |
 | 64.510 | 1 | sfx | Ranger radio key-up (squelch) |  | design | -21.1 dB |
+| 64.58…67.20 | 2 | sfx | radio squelch |  | event:t03_hits_events.json | -24.4 dB |
+| 66.387 | 1 | sfx | step (Ranger shifts, boots squelch i) |  | event:t03_hits_events.json | -26.6 dB |
 | 67.083 | 1 | sfx | Ranger radio unkey (squelch tail) |  | design | -21.7 dB |
 
 ### t04 — The Flag Maker (67.46–105.67)
@@ -100,57 +132,57 @@ Limiter min gain: sfx 1.000, ambience 1.000.
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
 | 67.46…70.09 | 6 | sfx | step (Flag Maker barefoot in mud) |  | event:t04_hits_events.json | -27.4 dB |
-| 67.458 | 1 | sfx | PHYSICS flutter <- t04_flag_explain.npz (r=0.989) |  | physics:t04_flag_explain.npz | -10.9 dB |
+| 67.458 | 1 | sfx | PHYSICS flutter <- t04_flag_explain.npz (r=0.988) |  | physics:t04_flag_explain.npz | -11.1 dB |
 | 67.458 | 1 | sfx | PHYSICS flutter <- t04_flag_flood.npz (r=0.983) |  | physics:t04_flag_flood.npz | -10.5 dB |
-| 67.458 | 1 | sfx | PHYSICS flutter <- t04_flag_rejected.npz (r=0.985) |  | physics:t04_flag_rejected.npz | -14.5 dB |
-| 67.458 | 1 | sfx | PHYSICS flutter <- t04_flag_walk.npz (r=0.985) |  | physics:t04_flag_walk.npz | -10.5 dB |
+| 67.458 | 1 | sfx | PHYSICS flutter <- t04_flag_rejected.npz (r=0.987) |  | physics:t04_flag_rejected.npz | -14.1 dB |
+| 67.458 | 1 | sfx | PHYSICS flutter <- t04_flag_walk.npz (r=0.987) |  | physics:t04_flag_walk.npz | -11.4 dB |
 | 67.460 | 1 | amb | candlesticks guttering in the rain |  | design | -30.0 dB |
+| 71.73…101.95 | 5 | sfx | thunk |  | event:t04_hits_events.json | -11.3 dB |
 | 76.980 | 1 | sfx | SHUT UP! the mob lurches (camera jolt) | shut_up | design | -14.4 dB |
 | 76.98…77.28 | 5 | sfx | mob stomps | shut_up | design | -20.8 dB |
 | 77.000 | 1 | sfx | thunder |  | event:t04_hits_events.json | -9.0 dB |
 | 77.11…77.38 | 14 | sfx | ponchos rustle (the Pharisees turn) |  | design | -30.1 dB |
-| 80.756 | 1 | sfx | whoosh |  | event:t04_hits_events.json | -21.6 dB |
+| 80.756 | 1 | sfx | whoosh |  | event:t04_hits_events.json | -19.8 dB |
 | 87.153 | 1 | sfx | printing press (cycles on the chant grid, accelerating) |  | design | -19.3 dB |
 | 87.153 | 1 | sfx | typewriters: 3 -> 90 keys/s |  | design | -18.0 dB |
 | 87.153 | 1 | sfx | paper flood (rising) |  | design | -19.3 dB |
-| 87.15…95.35 | 19 | sfx | balloon pops (paper tick) |  | event:t04_hits_events.json | -31.7 dB |
-| 92.60…104.89 | 2 | sfx | impact |  | event:t04_hits_events.json | -19.1 dB |
+| 87.15…95.33 | 20 | sfx | balloon pops (paper tick) |  | event:t04_hits_events.json | -30.1 dB |
+| 92.60…104.89 | 2 | sfx | impact |  | event:t04_hits_events.json | -18.4 dB |
 | 95.722 | 1 | sfx | FLAGS fill the frame (slam) | flood_peak | design | -21.8 dB |
 | 95.872 | 1 | sfx | flood at full clatter |  | design | -18.0 dB |
 | 97.300 | 1 | amb | throne room: sulfur vents, furnace rumble, lava gloops |  | design | -25.4 dB |
 | 97.300 | 1 | sfx | the throne room (sub) | devil | design | -12.6 dB |
-| 99.52…101.95 | 4 | sfx | thunk |  | event:t04_hits_events.json | -11.3 dB |
 | 102.415 | 1 | sfx | possession glitch | devil_glitch | design | -10.7 dB |
 | 102.415 | 1 | sfx | tape-stop (the Devil's voice overwritten) |  | design | -21.5 dB |
 | 102.415 | 1 | sfx | possessed static |  | design | -28.0 dB |
-| 102.415 | 1 | sfx | snap |  | event:t04_hits_events.json | -12.3 dB |
-| 102.86…103.83 | 3 | sfx | glitch |  | event:t04_hits_events.json | -15.7 dB |
+| 102.415 | 1 | sfx | snap |  | event:t04_hits_events.json | -10.8 dB |
+| 102.86…103.83 | 3 | sfx | glitch |  | event:t04_hits_events.json | -14.5 dB |
 
 ### t05 — And It Worked (105.67–122.29)
 
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
-| 105.667 | 1 | sfx | PHYSICS flutter <- t05_found_flag.npz (r=0.981) |  | physics:t05_found_flag.npz | -12.5 dB |
-| 105.667 | 1 | sfx | PHYSICS flutter <- t05_hero_flag.npz (r=0.981) |  | physics:t05_hero_flag.npz | -10.5 dB |
+| 105.667 | 1 | sfx | PHYSICS flutter <- t05_found_flag.npz (r=0.971) |  | physics:t05_found_flag.npz | -12.5 dB |
+| 105.667 | 1 | sfx | PHYSICS flutter <- t05_hero_flag.npz (r=0.963) |  | physics:t05_hero_flag.npz | -10.5 dB |
 | 105.670 | 1 | sfx | white card (paper) | some_listened | design | -22.8 dB |
 | 106.430 | 1 | sfx | paper |  | event:t05_hits_events.json | -28.1 dB |
-| 108.44…117.25 | 3 | sfx | whoosh |  | event:t05_hits_events.json | -18.0 dB |
+| 108.44…117.25 | 3 | sfx | whoosh |  | event:t05_hits_events.json | -17.4 dB |
 | 108.790 | 1 | sfx | a Flag pulled out of the mud (suction -> pop) | found_one | design | -22.8 dB |
-| 109.040 | 1 | sfx | snap |  | event:t05_hits_events.json | -15.0 dB |
-| 110.050 | 1 | sfx | panel glide |  | event:t05_hits_events.json | -32.0 dB |
+| 109.040 | 1 | sfx | snap |  | event:t05_hits_events.json | -18.2 dB |
+| 110.050 | 1 | sfx | panel glide |  | event:t05_hits_events.json | -31.5 dB |
 | 110.20…114.16 | 12 | sfx | MOVE IT! hurried steps in mud |  | design | -24.5 dB |
-| 111.30…111.52 | 5 | sfx | thunk |  | event:t05_hits_events.json | -13.7 dB |
-| 111.50…111.84 | 2 | sfx | chime |  | event:t05_hits_events.json | -19.9 dB |
+| 111.30…111.52 | 5 | sfx | thunk |  | event:t05_hits_events.json | -13.6 dB |
+| 111.50…111.84 | 2 | sfx | chime |  | event:t05_hits_events.json | -21.6 dB |
 | 113.32…118.12 | 6 | sfx | wing beat |  | event:t05_hits_events.json | -18.0 dB |
 | 116.901 | 1 | sfx | the pole seats atop the effigy (wood) | flag_on_effigy | design | -11.4 dB |
 | 116.911 | 1 | sfx | socket knock |  | design | -14.7 dB |
 | 118.917 | 1 | sfx | bullet time: high ringing | rain_freeze | design | -68.0 dB |
-| 118.92…120.16 | 3 | sfx | impact |  | event:t05_hits_events.json | -17.7 dB |
+| 118.92…120.16 | 3 | sfx | impact |  | event:t05_hits_events.json | -17.3 dB |
 | 118.98…120.22 | 2 | sfx | slow heartbeat |  | design | -17.3 dB |
 | 119.555 | 1 | sfx | the frozen drops fall away (shimmering cascade) | firmament_reveal | design | -20.9 dB |
 | 119.555 | 1 | sfx | air opens |  | design | -26.6 dB |
 | 119.655 | 1 | sfx | the firmament revealed: vast crystalline resonance (D) |  | design | -21.7 dB |
-| 119.655 | 1 | sfx | swell |  | event:t05_hits_events.json | -74.0 dB |
+| 119.655 | 1 | sfx | swell |  | event:t05_hits_events.json | -70.5 dB |
 
 ### t06 — The Firmament Opened (122.29–142.04)
 
@@ -158,13 +190,13 @@ Limiter min gain: sfx 1.000, ambience 1.000.
 |---:|---:|---|---|---|---|---:|
 | 122.290 | 1 | amb | night: crickets |  | design | -39.3 dB |
 | 122.290 | 1 | amb | night breeze |  | design | -37.2 dB |
-| 122.292 | 1 | amb | PHYSICS fire <- t06_fire.npz (r=0.865) |  | physics:t06_fire.npz | -13.3 dB |
-| 122.292 | 1 | sfx | PHYSICS flutter <- t06_flag.npz (r=0.984) |  | physics:t06_flag.npz | -10.5 dB |
+| 122.292 | 1 | amb | PHYSICS fire <- t06_fire.npz (r=0.835) |  | physics:t06_fire.npz | -13.3 dB |
+| 122.292 | 1 | sfx | PHYSICS flutter <- t06_flag.npz (r=0.985) |  | physics:t06_flag.npz | -10.5 dB |
 | 125.356 | 1 | sfx | IGNITE: whoomph | ignite | design | -13.0 dB |
 | 125.356 | 1 | sfx | ignition (sub) | ignite | design | -15.5 dB |
 | 129.729 | 1 | sfx | the Flag lifts free and ascends | flames_reach_flag | design | -18.8 dB |
 | 129.729 | 1 | sfx | rising embers (spark crackle) |  | design | -28.7 dB |
-| 134.163 | 1 | sfx | crack |  | event:t06_hits_events.json | -29.2 dB |
+| 134.163 | 1 | sfx | crack |  | event:t06_hits_events.json | -25.2 dB |
 | 135.575 | 1 | sfx | THE FIRMAMENT CRACKS (colossal crystal) | firmament_crack | design | -19.6 dB |
 | 135.575 | 1 | sfx | crack shock | firmament_crack | design | -11.0 dB |
 | 135.575 | 1 | sfx | crack sub | firmament_crack | design | -8.6 dB |
@@ -178,47 +210,54 @@ Limiter min gain: sfx 1.000, ambience 1.000.
 | 137.168 | 1 | sfx | shatter |  | event:t06_hits_events.json | -8.4 dB |
 | 137.218 | 1 | sfx | splashes |  | design | -7.4 dB |
 | 138.300 | 1 | sfx | explosion |  | event:t06_hits_events.json | -5.6 dB |
-| 138.550 | 1 | sfx | impact |  | event:t06_hits_events.json | -17.9 dB |
+| 138.550 | 1 | sfx | impact |  | event:t06_hits_events.json | -15.6 dB |
 
 ### t07 — Raised Again (142.04–159.83)
 
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
+| 142.042 | 1 | sfx | PHYSICS flutter <- t07_soviet_flag.npz (r=0.964) |  | physics:t07_soviet_flag.npz | -10.5 dB |
 | 142.160 | 1 | sfx | a single dry drip in the silence |  | design | -28.8 dB |
 | 142.340 | 1 | amb | after the deluge: wind over the plain (fades in) |  | design | -36.6 dB |
-| 143.900 | 1 | sfx | flutter (fallback energy, awaiting t07 track) |  | fallback-physics | -27.5 dB |
 | 143.94…146.77 | 100 | sfx | a Flag RAISED (creak, thunk, snap) | raise_1, raise_100 | design | -14.4 dB |
-| 145.14…146.62 | 2 | sfx | panel glide |  | event:t07_hits_events.json | -27.5 dB |
+| 145.14…146.62 | 2 | sfx | panel glide |  | event:t07_hits_events.json | -27.6 dB |
+| 148.95…151.05 | 5 | sfx | step (walker footstep (dust)) |  | event:t07_hits_events.json | -24.9 dB |
 | 149.580 | 1 | amb | the years: wind through the seasons |  | design | -27.7 dB |
-| 149.78…151.64 | 4 | sfx | the lone walker (leaves) |  | design | -26.4 dB |
-| 152.26…155.36 | 6 | sfx | the lone walker (snow) |  | design | -26.4 dB |
-| 155.98…158.46 | 5 | sfx | the lone walker (mud) |  | design | -26.4 dB |
+| 151.35…156.38 | 4 | sfx | whoosh |  | event:t07_hits_events.json | -19.8 dB |
+| 151.58…153.16 | 4 | sfx | step (walker footstep (forest floor)) |  | event:t07_hits_events.json | -24.4 dB |
+| 153.68…154.74 | 3 | sfx | step (walker footstep (gravel)) |  | event:t07_hits_events.json | -24.9 dB |
+| 155.26…156.32 | 3 | sfx | step (walker footstep (dirt)) |  | event:t07_hits_events.json | -24.9 dB |
+| 156.842 | 1 | sfx | step (walker footstep (snow)) |  | event:t07_hits_events.json | -24.9 dB |
+| 157.37…157.89 | 2 | sfx | step (walker footstep (leaves)) |  | event:t07_hits_events.json | -24.9 dB |
+| 158.300 | 1 | sfx | thunk |  | event:t07_hits_events.json | -13.3 dB |
 | 158.800 | 1 | sfx | he lowers the mask | unmask | design | -23.4 dB |
+| 158.800 | 1 | sfx | pulled from mud |  | event:t07_hits_events.json | -18.6 dB |
+| 159.220 | 1 | sfx | impact |  | event:t07_hits_events.json | -20.4 dB |
 
 ### t08 — Blaspheme (159.83–181.17)
 
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
 | 159.700 | 1 | amb | camp rain on the shade (t08) — stops at 'Amen.' |  | design | -10.5 dB |
-| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p1.npz (r=0.966) |  | physics:t08_flag_p1.npz | -14.0 dB |
-| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p2b.npz (r=0.983) |  | physics:t08_flag_p2b.npz | -23.5 dB |
-| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p3.npz (r=0.976) |  | physics:t08_flag_p3.npz | -17.5 dB |
-| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p8.npz (r=0.976) |  | physics:t08_flag_p8.npz | -19.3 dB |
-| 160.05…168.72 | 4 | sfx | panel glide |  | event:t08_hits_events.json | -29.1 dB |
+| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p1.npz (r=0.970) |  | physics:t08_flag_p1.npz | -11.4 dB |
+| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p2b.npz (r=0.875) |  | physics:t08_flag_p2b.npz | -17.5 dB |
+| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p3.npz (r=0.943) |  | physics:t08_flag_p3.npz | -19.4 dB |
+| 159.833 | 1 | sfx | PHYSICS flutter <- t08_flag_p8.npz (r=0.969) |  | physics:t08_flag_p8.npz | -22.4 dB |
+| 160.05…168.72 | 4 | sfx | panel glide |  | event:t08_hits_events.json | -29.7 dB |
 | 160.07…180.01 | 10 | sfx | balloon pops (paper tick) |  | event:t08_hits_events.json | -35.8 dB |
 | 166.223 | 1 | sfx | lightning |  | design | -23.9 dB |
 | 166.223 | 1 | sfx | BLASPHEME: thunderclap | blaspheme | design | -10.4 dB |
 | 166.223 | 1 | sfx | thunder sub | blaspheme | design | -10.4 dB |
-| 166.681 | 1 | sfx | thunder |  | event:t08_hits_events.json | -13.2 dB |
-| 166.700 | 1 | sfx | impact |  | event:t08_hits_events.json | -18.8 dB |
-| 167.500 | 1 | sfx | creak |  | event:t08_hits_events.json | -21.7 dB |
+| 166.681 | 1 | sfx | thunder |  | event:t08_hits_events.json | -13.6 dB |
+| 166.700 | 1 | sfx | impact |  | event:t08_hits_events.json | -18.2 dB |
+| 167.500 | 1 | sfx | creak |  | event:t08_hits_events.json | -21.8 dB |
 | 167.810 | 1 | sfx | knee into mud | kneel | design | -11.3 dB |
 | 167.950 | 1 | sfx | second knee |  | design | -17.3 dB |
 | 169.340 | 1 | sfx | thunk |  | event:t08_hits_events.json | -12.4 dB |
 | 170.260 | 1 | sfx | paper |  | event:t08_hits_events.json | -23.0 dB |
 | 180.130 | 1 | sfx | the sunbeam (air) | amen | design | -26.7 dB |
 | 180.130 | 1 | amb | drip |  | event:t08_hits_events.json | -22.3 dB |
-| 180.180 | 1 | sfx | chime |  | event:t08_hits_events.json | -19.2 dB |
+| 180.180 | 1 | sfx | chime |  | event:t08_hits_events.json | -19.0 dB |
 | 180.330 | 1 | amb | the shade drips on after the rain |  | design | -26.9 dB |
 | 180.73…181.06 | 3 | amb | birds after the rain |  | design | -29.3 dB |
 | 180.730 | 1 | sfx | wing beat |  | event:t08_hits_events.json | -20.2 dB |
@@ -228,34 +267,34 @@ Limiter min gain: sfx 1.000, ambience 1.000.
 | t (s) | n | stem | sound | cue | source | peak |
 |---:|---:|---|---|---|---|---:|
 | 181.167 | 1 | sfx | PHYSICS flutter <- t09_p2flag.npz (r=0.990) |  | physics:t09_p2flag.npz | -14.8 dB |
-| 181.167 | 1 | sfx | PHYSICS flutter <- t09_summerflag.npz (r=0.959) |  | physics:t09_summerflag.npz | -13.3 dB |
-| 181.53…192.00 | 2 | sfx | balloon pops (paper tick) |  | event:t09_hits_events.json | -34.0 dB |
+| 181.167 | 1 | sfx | PHYSICS flutter <- t09_summerflag.npz (r=0.972) |  | physics:t09_summerflag.npz | -13.5 dB |
+| 181.53…192.00 | 2 | sfx | balloon pops (paper tick) |  | event:t09_hits_events.json | -32.7 dB |
 | 182.41…194.73 | 19 | amb | birds after the rain |  | design | -27.7 dB |
-| 183.55…196.78 | 4 | sfx | panel glide |  | event:t09_hits_events.json | -29.2 dB |
-| 184.02…190.30 | 5 | sfx | whoosh |  | event:t09_hits_events.json | -17.0 dB |
+| 183.55…196.92 | 4 | sfx | panel glide |  | event:t09_hits_events.json | -29.1 dB |
+| 184.02…197.00 | 6 | sfx | whoosh |  | event:t09_hits_events.json | -17.3 dB |
 | 184.427 | 1 | sfx | he hands her the tract (paper) | pass_it_on | design | -19.8 dB |
 | 184.740 | 1 | sfx | wing beat |  | event:t09_hits_events.json | -18.7 dB |
-| 185.160 | 1 | sfx | paper |  | event:t09_hits_events.json | -26.4 dB |
+| 185.16…197.80 | 2 | sfx | paper |  | event:t09_hits_events.json | -26.4 dB |
 | 185.400 | 1 | sfx | into the tract | droste_start | design | -17.9 dB |
 | 185.400 | 1 | sfx | Droste spiral: endless unpitched Shepard noise |  | design | -24.7 dB |
-| 187.40…194.90 | 4 | sfx | impact |  | event:t09_hits_events.json | -15.9 dB |
+| 187.30…194.90 | 4 | sfx | impact |  | event:t09_hits_events.json | -16.1 dB |
 | 191.600 | 1 | sfx | the spiral resolves (page) | droste_end | design | -19.5 dB |
 | 191.600 | 1 | amb | next day: breeze over the drying camp |  | design | -36.3 dB |
 | 191.600 | 1 | amb | last drips off the shades |  | design | -30.0 dB |
-| 192.63…195.79 | 4 | sfx | step (Summer step (near) on dry crac) |  | event:t09_hits_events.json | -29.0 dB |
-| 193.16…196.32 | 3 | sfx | step (Summer step (far) on dry crack) |  | event:t09_hits_events.json | -29.0 dB |
+| 192.11…196.32 | 4 | sfx | step (Summer step (far) on dry crack) |  | event:t09_hits_events.json | -29.0 dB |
+| 192.63…196.84 | 3 | sfx | step (Summer step (near) on dry crac) |  | event:t09_hits_events.json | -29.0 dB |
 | 196.300 | 1 | sfx | the tract tossed (flutters) | tract_toss | design | -20.3 dB |
 | 196.350 | 1 | sfx | pages flutter in flight |  | design | -19.3 dB |
-| 196.450 | 1 | sfx | thunder |  | event:t09_hits_events.json | -13.4 dB |
+| 196.450 | 1 | sfx | thunder |  | event:t09_hits_events.json | -13.3 dB |
 | 197.400 | 1 | sfx | the tract slaps face-down into the mud | tract_lands | design | -8.4 dB |
 
 ## Verification (films/flaggame/tools/fg_foley_check.py)
 
-- `sfx.wav`: 48000 Hz, 2 ch, 9552000 frames, FLOAT (exact True); peak -1.79 dBFS, RMS -29.5 dBFS, clipped 0; loop seam |x[0]-x[-1]| 0.00326 (0.06300000101327896× the 99th-pct sample step), RMS last/first second -25.7/-33.3 dBFS; freeze window 118.95–119.5 RMS -34.7 dBFS (vs -32.2 just before)
+- `sfx.wav`: 48000 Hz, 2 ch, 9552000 frames, FLOAT (exact True); peak -1.14 dBFS, RMS -27.8 dBFS, clipped 0; loop seam |x[0]-x[-1]| 0.00158 (0.02199999988079071× the 99th-pct sample step), RMS last/first second -27.9/-30.4 dBFS; freeze window 118.95–119.5 RMS -34.7 dBFS (vs -30.3 just before)
 - `ambience.wav`: 48000 Hz, 2 ch, 9552000 frames, FLOAT (exact True); peak -6.84 dBFS, RMS -27.1 dBFS, clipped 0; loop seam |x[0]-x[-1]| 0.03578 (0.3490000069141388× the 99th-pct sample step), RMS last/first second -22.7/-22.5 dBFS; freeze window 118.95–119.5 RMS -89.7 dBFS (vs -23.5 just before)
-- loop spectral difference (last 2 s vs first 2 s, 60 Hz–16 kHz): 1.22 dB mean
+- loop spectral difference (last 2 s vs first 2 s, 60 Hz–16 kHz): 1.61 dB mean
 
-Cue onsets (max |error| 12.0 ms):
+Cue onsets (max |error| 41.0 ms):
 
 | cue | t | onset | err ms |
 |---|---:|---:|---:|
@@ -263,7 +302,7 @@ Cue onsets (max |error| 12.0 ms):
 | shut_up | 76.98 | 76.979 | -1.0 |
 | flood_peak | 95.72 | 95.718 | -4.0 |
 | devil_glitch | 102.42 | 102.411 | -4.0 |
-| found_one | 108.79 | 108.786 | -4.0 |
+| found_one | 108.79 | 108.749 | -41.0 |
 | flag_on_effigy | 116.90 | 116.897 | -4.0 |
 | firmament_crack | 135.57 | 135.587 | +12.0 |
 | deluge | 137.12 | 137.114 | -4.0 |

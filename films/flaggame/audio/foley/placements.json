@@ -121,83 +121,6 @@
 "peak": 0.0631
 },
 {
-"t": 9.093,
-"start": 9.093,
-"stem": "sfx",
-"name": "the flag-bearer's steps in the mud",
-"scene": "t01",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0613
-},
-{
-"t": 9.643,
-"start": 9.643,
-"stem": "sfx",
-"name": "the flag-bearer's steps in the mud",
-"scene": "t01",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0576
-},
-{
-"t": 10.193,
-"start": 10.193,
-"stem": "sfx",
-"name": "the flag-bearer's steps in the mud",
-"scene": "t01",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0521
-},
-{
-"t": 10.743,
-"start": 10.743,
-"stem": "sfx",
-"name": "the flag-bearer's steps in the mud",
-"scene": "t01",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0449
-},
-{
-"t": 11.293,
-"start": 11.293,
-"stem": "sfx",
-"name": "the flag-bearer's steps in the mud",
-"scene": "t01",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0515
-},
-{
-"t": 11.843,
-"start": 11.843,
-"stem": "sfx",
-"name": "the flag-bearer's steps in the mud",
-"scene": "t01",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0572
-},
-{
-"t": 12.393,
-"start": 12.393,
-"stem": "sfx",
-"name": "the flag-bearer's steps in the mud",
-"scene": "t01",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.061
-},
-{
 "t": 22.117,
 "start": 21.667,
 "stem": "sfx",
@@ -206,7 +129,7 @@
 "cue": null,
 "src": "design",
 "gain": 0.18,
-"peak": 0.0849
+"peak": 0.0778
 },
 {
 "t": 22.117,
@@ -217,7 +140,7 @@
 "cue": "wrong_burst",
 "src": "design",
 "gain": 0.4,
-"peak": 0.1081
+"peak": 0.1082
 },
 {
 "t": 22.117,
@@ -250,7 +173,7 @@
 "cue": null,
 "src": "design",
 "gain": 0.1,
-"peak": 0.0785
+"peak": 0.0699
 },
 {
 "t": 25.2,
@@ -272,7 +195,7 @@
 "cue": null,
 "src": "design",
 "gain": 0.1,
-"peak": 0.0834
+"peak": 0.0835
 },
 {
 "t": 29.288,
@@ -305,7 +228,7 @@
 "cue": "anime",
 "src": "design",
 "gain": 0.06,
-"peak": 0.054
+"peak": 0.0449
 },
 {
 "t": 34.2,
@@ -338,7 +261,7 @@
 "cue": null,
 "src": "design",
 "gain": 0.08,
-"peak": 0.0628
+"peak": 0.0548
 },
 {
 "t": 43.29,
@@ -2343,171 +2266,6 @@
 "peak": 0.0148
 },
 {
-"t": 149.78,
-"start": 149.78,
-"stem": "sfx",
-"name": "the lone walker (leaves)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0449
-},
-{
-"t": 150.4,
-"start": 150.4,
-"stem": "sfx",
-"name": "the lone walker (leaves)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0477
-},
-{
-"t": 151.02,
-"start": 151.02,
-"stem": "sfx",
-"name": "the lone walker (leaves)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0467
-},
-{
-"t": 151.64,
-"start": 151.64,
-"stem": "sfx",
-"name": "the lone walker (leaves)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0465
-},
-{
-"t": 152.26,
-"start": 152.26,
-"stem": "sfx",
-"name": "the lone walker (snow)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0477
-},
-{
-"t": 152.88,
-"start": 152.88,
-"stem": "sfx",
-"name": "the lone walker (snow)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0447
-},
-{
-"t": 153.5,
-"start": 153.5,
-"stem": "sfx",
-"name": "the lone walker (snow)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0478
-},
-{
-"t": 154.12,
-"start": 154.12,
-"stem": "sfx",
-"name": "the lone walker (snow)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0463
-},
-{
-"t": 154.74,
-"start": 154.74,
-"stem": "sfx",
-"name": "the lone walker (snow)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0468
-},
-{
-"t": 155.36,
-"start": 155.36,
-"stem": "sfx",
-"name": "the lone walker (snow)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0476
-},
-{
-"t": 155.98,
-"start": 155.98,
-"stem": "sfx",
-"name": "the lone walker (mud)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0451
-},
-{
-"t": 156.6,
-"start": 156.6,
-"stem": "sfx",
-"name": "the lone walker (mud)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0479
-},
-{
-"t": 157.22,
-"start": 157.22,
-"stem": "sfx",
-"name": "the lone walker (mud)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.046
-},
-{
-"t": 157.84,
-"start": 157.84,
-"stem": "sfx",
-"name": "the lone walker (mud)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0471
-},
-{
-"t": 158.46,
-"start": 158.46,
-"stem": "sfx",
-"name": "the lone walker (mud)",
-"scene": "t07",
-"cue": null,
-"src": "design",
-"gain": 0.07,
-"peak": 0.0474
-},
-{
 "t": 158.8,
 "start": 158.8,
 "stem": "sfx",
@@ -2926,6 +2684,270 @@
 "peak": 0.3818
 },
 {
+"t": 3.05,
+"start": 2.85,
+"stem": "sfx",
+"name": "paper",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.12,
+"peak": 0.0777
+},
+{
+"t": 4.8,
+"start": 4.41,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.1628,
+"peak": 0.1033
+},
+{
+"t": 4.9167,
+"start": 4.7167,
+"stem": "sfx",
+"name": "paper",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0888,
+"peak": 0.054
+},
+{
+"t": 5.0,
+"start": 4.8,
+"stem": "sfx",
+"name": "paper",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0888,
+"peak": 0.054
+},
+{
+"t": 5.25,
+"start": 5.05,
+"stem": "sfx",
+"name": "paper",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0888,
+"peak": 0.054
+},
+{
+"t": 5.75,
+"start": 5.39,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.1485,
+"peak": 0.097
+},
+{
+"t": 5.7917,
+"start": 5.5917,
+"stem": "sfx",
+"name": "paper",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0888,
+"peak": 0.054
+},
+{
+"t": 5.7917,
+"start": 5.5917,
+"stem": "sfx",
+"name": "paper",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0888,
+"peak": 0.054
+},
+{
+"t": 5.875,
+"start": 5.675,
+"stem": "sfx",
+"name": "paper",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0888,
+"peak": 0.054
+},
+{
+"t": 6.96,
+"start": 6.74,
+"stem": "sfx",
+"name": "wing beat",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.1288,
+"peak": 0.1159
+},
+{
+"t": 7.3,
+"start": 7.3,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.037,
+"peak": 0.021
+},
+{
+"t": 9.0,
+"start": 9.0,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0292
+},
+{
+"t": 9.5,
+"start": 9.5,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0278
+},
+{
+"t": 10.0,
+"start": 10.0,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0264
+},
+{
+"t": 10.09,
+"start": 9.73,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.1485,
+"peak": 0.0952
+},
+{
+"t": 10.5,
+"start": 10.5,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0265
+},
+{
+"t": 11.0,
+"start": 11.0,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0279
+},
+{
+"t": 11.5,
+"start": 11.5,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.037,
+"peak": 0.0238
+},
+{
+"t": 11.5,
+"start": 11.5,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0293
+},
+{
+"t": 12.0,
+"start": 12.0,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0305
+},
+{
+"t": 12.5,
+"start": 12.5,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0317
+},
+{
+"t": 13.0,
+"start": 13.0,
+"stem": "sfx",
+"name": "step (bearer footsteps (mud), far)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0327
+},
+{
+"t": 15.48,
+"start": 15.48,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0338,
+"peak": 0.0164
+},
+{
+"t": 17.6,
+"start": 17.3,
+"stem": "sfx",
+"name": "panel glide",
+"scene": "t01",
+"cue": null,
+"src": "event:t01_hits_events.json",
+"gain": 0.0366,
+"peak": 0.0254
+},
+{
 "t": 18.46,
 "start": 18.16,
 "stem": "sfx",
@@ -2934,7 +2956,7 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.0483,
-"peak": 0.0324
+"peak": 0.0313
 },
 {
 "t": 18.4783,
@@ -2945,7 +2967,7 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.0366,
-"peak": 0.0234
+"peak": 0.0248
 },
 {
 "t": 23.055,
@@ -2956,7 +2978,7 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.1342,
-"peak": 0.0872
+"peak": 0.0848
 },
 {
 "t": 24.78,
@@ -2967,7 +2989,7 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.0366,
-"peak": 0.0238
+"peak": 0.024
 },
 {
 "t": 31.06,
@@ -2978,11 +3000,11 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.1635,
-"peak": 0.065
+"peak": 0.0757
 },
 {
-"t": 33.3,
-"start": 33.1,
+"t": 33.22,
+"start": 33.02,
 "stem": "sfx",
 "name": "paper",
 "scene": "t02",
@@ -3000,7 +3022,7 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.222,
-"peak": 0.1233
+"peak": 0.1462
 },
 {
 "t": 36.55,
@@ -3011,7 +3033,7 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.0346,
-"peak": 0.0241
+"peak": 0.0237
 },
 {
 "t": 36.62,
@@ -3022,7 +3044,7 @@
 "cue": null,
 "src": "event:t02_hits_events.json",
 "gain": 0.1342,
-"peak": 0.0863
+"peak": 0.0779
 },
 {
 "t": 37.1,
@@ -3034,6 +3056,369 @@
 "src": "event:t02_hits_events.json",
 "gain": 0.1537,
 "peak": 0.118
+},
+{
+"t": 43.2917,
+"start": 42.9017,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.1628,
+"peak": 0.1072
+},
+{
+"t": 43.53,
+"start": 43.53,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2476,
+"peak": 0.2216
+},
+{
+"t": 43.62,
+"start": 43.62,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2476,
+"peak": 0.2088
+},
+{
+"t": 43.71,
+"start": 43.71,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2476,
+"peak": 0.1726
+},
+{
+"t": 43.8,
+"start": 43.8,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2476,
+"peak": 0.1768
+},
+{
+"t": 43.89,
+"start": 43.89,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2476,
+"peak": 0.1794
+},
+{
+"t": 43.98,
+"start": 43.98,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2476,
+"peak": 0.2106
+},
+{
+"t": 45.67,
+"start": 45.67,
+"stem": "sfx",
+"name": "snap",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2512,
+"peak": 0.2229
+},
+{
+"t": 45.78,
+"start": 45.78,
+"stem": "sfx",
+"name": "snap",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2512,
+"peak": 0.2179
+},
+{
+"t": 45.89,
+"start": 45.89,
+"stem": "sfx",
+"name": "snap",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2512,
+"peak": 0.1963
+},
+{
+"t": 46.0,
+"start": 46.0,
+"stem": "sfx",
+"name": "snap",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2512,
+"peak": 0.1916
+},
+{
+"t": 46.11,
+"start": 46.11,
+"stem": "sfx",
+"name": "snap",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2512,
+"peak": 0.2189
+},
+{
+"t": 46.22,
+"start": 46.22,
+"stem": "sfx",
+"name": "snap",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2512,
+"peak": 0.2279
+},
+{
+"t": 48.95,
+"start": 48.95,
+"stem": "sfx",
+"name": "chime",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.054,
+"peak": 0.0858
+},
+{
+"t": 49.37,
+"start": 49.37,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0338,
+"peak": 0.0212
+},
+{
+"t": 49.4,
+"start": 48.75,
+"stem": "sfx",
+"name": "flash",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.087,
+"peak": 0.0766
+},
+{
+"t": 50.72,
+"start": 50.72,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0338,
+"peak": 0.0255
+},
+{
+"t": 52.34,
+"start": 51.95,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.1628,
+"peak": 0.1133
+},
+{
+"t": 53.4,
+"start": 53.04,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.1485,
+"peak": 0.1
+},
+{
+"t": 53.779,
+"start": 53.579,
+"stem": "sfx",
+"name": "paper",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0693,
+"peak": 0.0553
+},
+{
+"t": 54.8,
+"start": 54.8,
+"stem": "sfx",
+"name": "impact",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.222,
+"peak": 0.0952
+},
+{
+"t": 56.0,
+"start": 55.8,
+"stem": "sfx",
+"name": "paper",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0654,
+"peak": 0.0498
+},
+{
+"t": 58.25,
+"start": 57.65,
+"stem": "sfx",
+"name": "pulled from mud",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2012,
+"peak": 0.1281
+},
+{
+"t": 58.78,
+"start": 58.18,
+"stem": "sfx",
+"name": "pulled from mud",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2175,
+"peak": 0.1384
+},
+{
+"t": 58.855,
+"start": 58.255,
+"stem": "sfx",
+"name": "pulled from mud",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2175,
+"peak": 0.1384
+},
+{
+"t": 58.93,
+"start": 58.33,
+"stem": "sfx",
+"name": "pulled from mud",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2175,
+"peak": 0.1384
+},
+{
+"t": 59.839,
+"start": 59.619,
+"stem": "sfx",
+"name": "wing beat",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0976,
+"peak": 0.0878
+},
+{
+"t": 60.95,
+"start": 60.5,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.1914,
+"peak": 0.1292
+},
+{
+"t": 61.65,
+"start": 61.05,
+"stem": "sfx",
+"name": "pulled from mud",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.2175,
+"peak": 0.1488
+},
+{
+"t": 62.951,
+"start": 62.951,
+"stem": "sfx",
+"name": "explosion",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.55,
+"peak": 0.5225
+},
+{
+"t": 64.58,
+"start": 64.58,
+"stem": "sfx",
+"name": "radio squelch",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0888,
+"peak": 0.0606
+},
+{
+"t": 66.387,
+"start": 66.387,
+"stem": "sfx",
+"name": "step (Ranger shifts, boots squelch i)",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0607,
+"peak": 0.0466
+},
+{
+"t": 67.2,
+"start": 67.2,
+"stem": "sfx",
+"name": "radio squelch",
+"scene": "t03",
+"cue": null,
+"src": "event:t03_hits_events.json",
+"gain": 0.0732,
+"peak": 0.0499
 },
 {
 "t": 67.4583,
@@ -3102,6 +3487,17 @@
 "peak": 0.0428
 },
 {
+"t": 71.73,
+"start": 71.73,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t04",
+"cue": null,
+"src": "event:t04_hits_events.json",
+"gain": 0.35,
+"peak": 0.2528
+},
+{
 "t": 77.0,
 "start": 77.38,
 "stem": "sfx",
@@ -3121,7 +3517,7 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.1485,
-"peak": 0.0836
+"peak": 0.1019
 },
 {
 "t": 87.153,
@@ -3132,44 +3528,33 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0338,
-"peak": 0.0213
+"peak": 0.0217
 },
 {
-"t": 87.628,
-"start": 87.628,
+"t": 87.6263,
+"start": 87.6263,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0338,
-"peak": 0.02
+"peak": 0.0151
 },
 {
-"t": 88.103,
-"start": 88.103,
+"t": 88.0939,
+"start": 88.0939,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0338,
-"peak": 0.0212
+"peak": 0.0151
 },
 {
-"t": 88.574,
-"start": 88.574,
-"stem": "sfx",
-"name": "balloon pops (paper tick)",
-"scene": "t04",
-"cue": null,
-"src": "event:t04_hits_events.json",
-"gain": 0.0338,
-"peak": 0.023
-},
-{
-"t": 89.04,
-"start": 89.04,
+"t": 88.556,
+"start": 88.556,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
@@ -3179,19 +3564,41 @@
 "peak": 0.0223
 },
 {
-"t": 89.507,
-"start": 89.507,
+"t": 89.0128,
+"start": 89.0128,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0338,
-"peak": 0.023
+"peak": 0.0194
 },
 {
-"t": 89.97,
-"start": 89.97,
+"t": 89.4645,
+"start": 89.4645,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t04",
+"cue": null,
+"src": "event:t04_hits_events.json",
+"gain": 0.0338,
+"peak": 0.0156
+},
+{
+"t": 89.9112,
+"start": 89.9112,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t04",
+"cue": null,
+"src": "event:t04_hits_events.json",
+"gain": 0.037,
+"peak": 0.0208
+},
+{
+"t": 90.3532,
+"start": 90.3532,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
@@ -3201,59 +3608,59 @@
 "peak": 0.0209
 },
 {
-"t": 90.428,
-"start": 90.428,
+"t": 90.7905,
+"start": 90.7905,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.037,
-"peak": 0.0168
+"peak": 0.0187
 },
 {
-"t": 90.886,
-"start": 90.886,
+"t": 91.2233,
+"start": 91.2233,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.037,
-"peak": 0.0177
+"peak": 0.0182
 },
 {
-"t": 91.345,
-"start": 91.345,
+"t": 91.6517,
+"start": 91.6517,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.037,
-"peak": 0.0165
+"peak": 0.0139
 },
 {
-"t": 91.799,
-"start": 91.799,
-"stem": "sfx",
-"name": "balloon pops (paper tick)",
-"scene": "t04",
-"cue": null,
-"src": "event:t04_hits_events.json",
-"gain": 0.037,
-"peak": 0.0175
-},
-{
-"t": 92.249,
-"start": 92.249,
+"t": 92.076,
+"start": 92.076,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0403,
-"peak": 0.0237
+"peak": 0.0239
+},
+{
+"t": 92.4961,
+"start": 92.4961,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t04",
+"cue": null,
+"src": "event:t04_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0313
 },
 {
 "t": 92.6,
@@ -3264,22 +3671,55 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.222,
-"peak": 0.0994
+"peak": 0.0954
 },
 {
-"t": 92.699,
-"start": 92.699,
+"t": 92.9122,
+"start": 92.9122,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0403,
-"peak": 0.0256
+"peak": 0.0301
 },
 {
-"t": 93.145,
-"start": 93.145,
+"t": 93.3244,
+"start": 93.3244,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t04",
+"cue": null,
+"src": "event:t04_hits_events.json",
+"gain": 0.0403,
+"peak": 0.031
+},
+{
+"t": 93.7329,
+"start": 93.7329,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t04",
+"cue": null,
+"src": "event:t04_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0269
+},
+{
+"t": 94.1377,
+"start": 94.1377,
+"stem": "sfx",
+"name": "balloon pops (paper tick)",
+"scene": "t04",
+"cue": null,
+"src": "event:t04_hits_events.json",
+"gain": 0.0403,
+"peak": 0.0254
+},
+{
+"t": 94.5389,
+"start": 94.5389,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
@@ -3289,59 +3729,26 @@
 "peak": 0.0255
 },
 {
-"t": 93.59,
-"start": 93.59,
+"t": 94.9366,
+"start": 94.9366,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0403,
-"peak": 0.0249
+"peak": 0.0313
 },
 {
-"t": 94.036,
-"start": 94.036,
+"t": 95.331,
+"start": 95.331,
 "stem": "sfx",
 "name": "balloon pops (paper tick)",
 "scene": "t04",
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.0403,
-"peak": 0.0238
-},
-{
-"t": 94.478,
-"start": 94.478,
-"stem": "sfx",
-"name": "balloon pops (paper tick)",
-"scene": "t04",
-"cue": null,
-"src": "event:t04_hits_events.json",
-"gain": 0.0403,
-"peak": 0.0243
-},
-{
-"t": 94.915,
-"start": 94.915,
-"stem": "sfx",
-"name": "balloon pops (paper tick)",
-"scene": "t04",
-"cue": null,
-"src": "event:t04_hits_events.json",
-"gain": 0.0403,
-"peak": 0.0235
-},
-{
-"t": 95.353,
-"start": 95.353,
-"stem": "sfx",
-"name": "balloon pops (paper tick)",
-"scene": "t04",
-"cue": null,
-"src": "event:t04_hits_events.json",
-"gain": 0.0403,
-"peak": 0.026
+"peak": 0.0257
 },
 {
 "t": 99.523,
@@ -3396,7 +3803,7 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.2805,
-"peak": 0.2418
+"peak": 0.2889
 },
 {
 "t": 102.865,
@@ -3407,7 +3814,7 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.1625,
-"peak": 0.0718
+"peak": 0.1874
 },
 {
 "t": 103.315,
@@ -3418,7 +3825,7 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.1683,
-"peak": 0.1243
+"peak": 0.0699
 },
 {
 "t": 103.827,
@@ -3429,7 +3836,7 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.1741,
-"peak": 0.1638
+"peak": 0.1345
 },
 {
 "t": 104.89,
@@ -3440,7 +3847,7 @@
 "cue": null,
 "src": "event:t04_hits_events.json",
 "gain": 0.3,
-"peak": 0.1111
+"peak": 0.1207
 },
 {
 "t": 106.43,
@@ -3462,7 +3869,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.1199,
-"peak": 0.0785
+"peak": 0.0774
 },
 {
 "t": 109.04,
@@ -3473,7 +3880,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.2415,
-"peak": 0.1782
+"peak": 0.1231
 },
 {
 "t": 110.05,
@@ -3484,7 +3891,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.0366,
-"peak": 0.0252
+"peak": 0.0265
 },
 {
 "t": 111.3,
@@ -3495,7 +3902,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.2362,
-"peak": 0.1929
+"peak": 0.1999
 },
 {
 "t": 111.36,
@@ -3506,7 +3913,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.2362,
-"peak": 0.2068
+"peak": 0.2095
 },
 {
 "t": 111.42,
@@ -3517,7 +3924,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.2362,
-"peak": 0.2074
+"peak": 0.1852
 },
 {
 "t": 111.47,
@@ -3528,7 +3935,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.2362,
-"peak": 0.16
+"peak": 0.1753
 },
 {
 "t": 111.5,
@@ -3539,7 +3946,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.0592,
-"peak": 0.0814
+"peak": 0.0432
 },
 {
 "t": 111.52,
@@ -3550,7 +3957,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.2362,
-"peak": 0.1915
+"peak": 0.169
 },
 {
 "t": 111.84,
@@ -3561,7 +3968,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.0696,
-"peak": 0.1011
+"peak": 0.0829
 },
 {
 "t": 111.9,
@@ -3572,7 +3979,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.1914,
-"peak": 0.1264
+"peak": 0.1353
 },
 {
 "t": 113.32,
@@ -3627,7 +4034,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.1771,
-"peak": 0.1193
+"peak": 0.1139
 },
 {
 "t": 117.32,
@@ -3660,7 +4067,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.3,
-"peak": 0.0658
+"peak": 0.0604
 },
 {
 "t": 119.555,
@@ -3671,7 +4078,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.2805,
-"peak": 0.1299
+"peak": 0.1358
 },
 {
 "t": 119.655,
@@ -3682,7 +4089,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.1,
-"peak": 0.0002
+"peak": 0.0003
 },
 {
 "t": 120.155,
@@ -3693,7 +4100,7 @@
 "cue": null,
 "src": "event:t05_hits_events.json",
 "gain": 0.261,
-"peak": 0.1073
+"peak": 0.1175
 },
 {
 "t": 134.163,
@@ -3704,7 +4111,7 @@
 "cue": null,
 "src": "event:t06_hits_events.json",
 "gain": 0.1281,
-"peak": 0.0345
+"peak": 0.0549
 },
 {
 "t": 137.168,
@@ -3737,7 +4144,7 @@
 "cue": null,
 "src": "event:t06_hits_events.json",
 "gain": 0.3,
-"peak": 0.1279
+"peak": 0.1669
 },
 {
 "t": 145.14,
@@ -3748,7 +4155,7 @@
 "cue": null,
 "src": "event:t07_hits_events.json",
 "gain": 0.06,
-"peak": 0.0424
+"peak": 0.0406
 },
 {
 "t": 146.62,
@@ -3759,7 +4166,282 @@
 "cue": null,
 "src": "event:t07_hits_events.json",
 "gain": 0.06,
-"peak": 0.0395
+"peak": 0.0416
+},
+{
+"t": 148.9474,
+"start": 148.9474,
+"stem": "sfx",
+"name": "step (walker footstep (dust))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0706,
+"peak": 0.0514
+},
+{
+"t": 149.4737,
+"start": 149.4737,
+"stem": "sfx",
+"name": "step (walker footstep (dust))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 150.0,
+"start": 150.0,
+"stem": "sfx",
+"name": "step (walker footstep (dust))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 150.5263,
+"start": 150.5263,
+"stem": "sfx",
+"name": "step (walker footstep (dust))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 151.0526,
+"start": 151.0526,
+"stem": "sfx",
+"name": "step (walker footstep (dust))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 151.35,
+"start": 150.99,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.1485,
+"peak": 0.1021
+},
+{
+"t": 151.5789,
+"start": 151.5789,
+"stem": "sfx",
+"name": "step (walker footstep (forest floor))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.0602
+},
+{
+"t": 152.1053,
+"start": 152.1053,
+"stem": "sfx",
+"name": "step (walker footstep (forest floor))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.0602
+},
+{
+"t": 152.6316,
+"start": 152.6316,
+"stem": "sfx",
+"name": "step (walker footstep (forest floor))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.0602
+},
+{
+"t": 153.1579,
+"start": 153.1579,
+"stem": "sfx",
+"name": "step (walker footstep (forest floor))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.0602
+},
+{
+"t": 153.3,
+"start": 152.94,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.1485,
+"peak": 0.0972
+},
+{
+"t": 153.6842,
+"start": 153.6842,
+"stem": "sfx",
+"name": "step (walker footstep (gravel))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 154.2105,
+"start": 154.2105,
+"stem": "sfx",
+"name": "step (walker footstep (gravel))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 154.7368,
+"start": 154.7368,
+"stem": "sfx",
+"name": "step (walker footstep (gravel))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 155.02,
+"start": 154.66,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.1485,
+"peak": 0.0946
+},
+{
+"t": 155.2632,
+"start": 155.2632,
+"stem": "sfx",
+"name": "step (walker footstep (dirt))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 155.7895,
+"start": 155.7895,
+"stem": "sfx",
+"name": "step (walker footstep (dirt))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 156.3158,
+"start": 156.3158,
+"stem": "sfx",
+"name": "step (walker footstep (dirt))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 156.38,
+"start": 156.02,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.1485,
+"peak": 0.0982
+},
+{
+"t": 156.8421,
+"start": 156.8421,
+"stem": "sfx",
+"name": "step (walker footstep (snow))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 157.3684,
+"start": 157.3684,
+"stem": "sfx",
+"name": "step (walker footstep (leaves))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0783,
+"peak": 0.057
+},
+{
+"t": 157.8947,
+"start": 157.8947,
+"stem": "sfx",
+"name": "step (walker footstep (leaves))",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.0759,
+"peak": 0.0553
+},
+{
+"t": 158.3,
+"start": 158.3,
+"stem": "sfx",
+"name": "thunk",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.2817,
+"peak": 0.2165
+},
+{
+"t": 158.8,
+"start": 158.2,
+"stem": "sfx",
+"name": "pulled from mud",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.185,
+"peak": 0.1177
+},
+{
+"t": 159.22,
+"start": 159.22,
+"stem": "sfx",
+"name": "impact",
+"scene": "t07",
+"cue": null,
+"src": "event:t07_hits_events.json",
+"gain": 0.261,
+"peak": 0.0951
 },
 {
 "t": 160.05,
@@ -3770,7 +4452,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0307,
-"peak": 0.0206
+"peak": 0.0207
 },
 {
 "t": 160.066,
@@ -3781,7 +4463,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0154
+"peak": 0.0158
 },
 {
 "t": 164.403,
@@ -3792,7 +4474,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0109
+"peak": 0.0153
 },
 {
 "t": 166.6,
@@ -3803,7 +4485,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0483,
-"peak": 0.0351
+"peak": 0.0328
 },
 {
 "t": 166.6813,
@@ -3814,7 +4496,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.2939,
-"peak": 0.2193
+"peak": 0.209
 },
 {
 "t": 166.7,
@@ -3825,7 +4507,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.222,
-"peak": 0.1149
+"peak": 0.1227
 },
 {
 "t": 167.3,
@@ -3836,7 +4518,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0366,
-"peak": 0.0231
+"peak": 0.0228
 },
 {
 "t": 167.5,
@@ -3847,7 +4529,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.122,
-"peak": 0.0821
+"peak": 0.0817
 },
 {
 "t": 167.69,
@@ -3858,7 +4540,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0163
+"peak": 0.0118
 },
 {
 "t": 168.72,
@@ -3869,7 +4551,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0366,
-"peak": 0.024
+"peak": 0.0241
 },
 {
 "t": 168.992,
@@ -3880,7 +4562,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0161
+"peak": 0.0149
 },
 {
 "t": 169.34,
@@ -3913,7 +4595,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0163
+"peak": 0.0125
 },
 {
 "t": 172.863,
@@ -3924,7 +4606,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0142
+"peak": 0.0125
 },
 {
 "t": 174.866,
@@ -3935,7 +4617,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0144
+"peak": 0.0163
 },
 {
 "t": 177.04,
@@ -3946,7 +4628,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.016
+"peak": 0.0123
 },
 {
 "t": 179.138,
@@ -3957,7 +4639,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0124
+"peak": 0.0113
 },
 {
 "t": 180.01,
@@ -3968,7 +4650,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0289,
-"peak": 0.0112
+"peak": 0.016
 },
 {
 "t": 180.13,
@@ -3979,7 +4661,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.1,
-"peak": 0.077
+"peak": 0.0768
 },
 {
 "t": 180.18,
@@ -3990,7 +4672,7 @@
 "cue": null,
 "src": "event:t08_hits_events.json",
 "gain": 0.0644,
-"peak": 0.1102
+"peak": 0.1127
 },
 {
 "t": 180.73,
@@ -4012,7 +4694,7 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.037,
-"peak": 0.0199
+"peak": 0.0213
 },
 {
 "t": 183.55,
@@ -4023,7 +4705,7 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.0405,
-"peak": 0.0266
+"peak": 0.0258
 },
 {
 "t": 184.02,
@@ -4034,7 +4716,7 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.127,
-"peak": 0.0776
+"peak": 0.0774
 },
 {
 "t": 184.74,
@@ -4067,73 +4749,73 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.1914,
-"peak": 0.1274
+"peak": 0.1258
 },
 {
-"t": 186.12,
-"start": 185.76,
+"t": 186.3,
+"start": 185.94,
 "stem": "sfx",
 "name": "whoosh",
 "scene": "t09",
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.1485,
-"peak": 0.0996
+"peak": 0.1002
 },
 {
-"t": 186.85,
-"start": 186.55,
+"t": 186.7,
+"start": 186.4,
 "stem": "sfx",
 "name": "panel glide",
 "scene": "t09",
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.0366,
-"peak": 0.0243
+"peak": 0.0242
 },
 {
-"t": 187.4,
-"start": 187.4,
+"t": 187.3,
+"start": 187.3,
 "stem": "sfx",
 "name": "impact",
 "scene": "t09",
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.261,
-"peak": 0.16
+"peak": 0.1287
 },
 {
-"t": 187.95,
-"start": 187.47,
+"t": 187.9,
+"start": 187.42,
 "stem": "sfx",
 "name": "whoosh",
 "scene": "t09",
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.2057,
-"peak": 0.1415
+"peak": 0.1366
 },
 {
-"t": 190.3,
-"start": 189.91,
+"t": 189.95,
+"start": 189.56,
 "stem": "sfx",
 "name": "whoosh",
 "scene": "t09",
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.1628,
-"peak": 0.1095
+"peak": 0.1037
 },
 {
-"t": 190.9,
-"start": 190.9,
+"t": 190.85,
+"start": 190.85,
 "stem": "sfx",
 "name": "impact",
 "scene": "t09",
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.222,
-"peak": 0.0998
+"peak": 0.1245
 },
 {
 "t": 191.6,
@@ -4144,7 +4826,7 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.0405,
-"peak": 0.028
+"peak": 0.0287
 },
 {
 "t": 192.0,
@@ -4155,7 +4837,18 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.0338,
-"peak": 0.0189
+"peak": 0.0233
+},
+{
+"t": 192.1053,
+"start": 192.1053,
+"stem": "sfx",
+"name": "step (Summer step (far) on dry crack)",
+"scene": "t09",
+"cue": null,
+"src": "event:t09_hits_events.json",
+"gain": 0.0461,
+"peak": 0.0354
 },
 {
 "t": 192.6316,
@@ -4202,17 +4895,6 @@
 "peak": 0.0354
 },
 {
-"t": 194.7368,
-"start": 194.7368,
-"stem": "sfx",
-"name": "step (Summer step (near) on dry crac)",
-"scene": "t09",
-"cue": null,
-"src": "event:t09_hits_events.json",
-"gain": 0.0461,
-"peak": 0.0354
-},
-{
 "t": 194.763,
 "start": 194.763,
 "stem": "sfx",
@@ -4221,7 +4903,7 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.261,
-"peak": 0.1541
+"peak": 0.1572
 },
 {
 "t": 194.9,
@@ -4232,18 +4914,7 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.183,
-"peak": 0.089
-},
-{
-"t": 195.7895,
-"start": 195.7895,
-"stem": "sfx",
-"name": "step (Summer step (near) on dry crac)",
-"scene": "t09",
-"cue": null,
-"src": "event:t09_hits_events.json",
-"gain": 0.0461,
-"peak": 0.0354
+"peak": 0.0822
 },
 {
 "t": 196.3158,
@@ -4265,29 +4936,172 @@
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.3206,
-"peak": 0.214
+"peak": 0.2154
 },
 {
-"t": 196.78,
-"start": 196.48,
+"t": 196.8421,
+"start": 196.8421,
+"stem": "sfx",
+"name": "step (Summer step (near) on dry crac)",
+"scene": "t09",
+"cue": null,
+"src": "event:t09_hits_events.json",
+"gain": 0.0461,
+"peak": 0.0354
+},
+{
+"t": 196.92,
+"start": 196.62,
 "stem": "sfx",
 "name": "panel glide",
 "scene": "t09",
 "cue": null,
 "src": "event:t09_hits_events.json",
 "gain": 0.0522,
-"peak": 0.0348
+"peak": 0.0351
+},
+{
+"t": 197.0,
+"start": 196.61,
+"stem": "sfx",
+"name": "whoosh",
+"scene": "t09",
+"cue": null,
+"src": "event:t09_hits_events.json",
+"gain": 0.1628,
+"peak": 0.1041
+},
+{
+"t": 197.8,
+"start": 197.6,
+"stem": "sfx",
+"name": "paper",
+"scene": "t09",
+"cue": null,
+"src": "event:t09_hits_events.json",
+"gain": 0.0576,
+"peak": 0.0326
+},
+{
+"t": 0.0,
+"start": 0.0,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t01_bearer_flag.npz (r=0.958)",
+"scene": "t01",
+"cue": null,
+"src": "physics:t01_bearer_flag.npz",
+"gain": 0.5,
+"peak": 0.2364
+},
+{
+"t": 0.0,
+"start": 0.0,
+"stem": "sfx",
+"name": "PHYSICS paper <- t01_paper.npz (r=0.944)",
+"scene": "t01",
+"cue": null,
+"src": "physics:t01_paper.npz",
+"gain": 0.25,
+"peak": 0.225
+},
+{
+"t": 18.4583,
+"start": 18.4583,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t02_flag_icon.npz (r=0.982)",
+"scene": "t02",
+"cue": null,
+"src": "physics:t02_flag_icon.npz",
+"gain": 0.5,
+"peak": 0.2911
+},
+{
+"t": 18.4583,
+"start": 18.4583,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t02_flag_witness.npz (r=0.960)",
+"scene": "t02",
+"cue": null,
+"src": "physics:t02_flag_witness.npz",
+"gain": 0.5,
+"peak": 0.0564
+},
+{
+"t": 43.2917,
+"start": 43.2917,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t03_flag0.npz (r=0.984)",
+"scene": "t03",
+"cue": null,
+"src": "physics:t03_flag0.npz",
+"gain": 0.2381,
+"peak": 0.3
+},
+{
+"t": 43.2917,
+"start": 43.2917,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t03_flag1.npz (r=0.988)",
+"scene": "t03",
+"cue": null,
+"src": "physics:t03_flag1.npz",
+"gain": 0.2832,
+"peak": 0.3
+},
+{
+"t": 43.2917,
+"start": 43.2917,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t03_flag2.npz (r=0.989)",
+"scene": "t03",
+"cue": null,
+"src": "physics:t03_flag2.npz",
+"gain": 0.3235,
+"peak": 0.3
+},
+{
+"t": 43.2917,
+"start": 43.2917,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t03_flag3.npz (r=0.983)",
+"scene": "t03",
+"cue": null,
+"src": "physics:t03_flag3.npz",
+"gain": 0.289,
+"peak": 0.3
+},
+{
+"t": 43.2917,
+"start": 43.2917,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t03_flag4.npz (r=0.985)",
+"scene": "t03",
+"cue": null,
+"src": "physics:t03_flag4.npz",
+"gain": 0.3125,
+"peak": 0.3
+},
+{
+"t": 43.2917,
+"start": 43.2917,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t03_flag5.npz (r=0.990)",
+"scene": "t03",
+"cue": null,
+"src": "physics:t03_flag5.npz",
+"gain": 0.3594,
+"peak": 0.3
 },
 {
 "t": 67.4583,
 "start": 67.4583,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t04_flag_explain.npz (r=0.989)",
+"name": "PHYSICS flutter <- t04_flag_explain.npz (r=0.988)",
 "scene": "t04",
 "cue": null,
 "src": "physics:t04_flag_explain.npz",
 "gain": 0.5,
-"peak": 0.2865
+"peak": 0.2774
 },
 {
 "t": 67.4583,
@@ -4304,51 +5118,51 @@
 "t": 67.4583,
 "start": 67.4583,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t04_flag_rejected.npz (r=0.985)",
+"name": "PHYSICS flutter <- t04_flag_rejected.npz (r=0.987)",
 "scene": "t04",
 "cue": null,
 "src": "physics:t04_flag_rejected.npz",
 "gain": 0.5,
-"peak": 0.1876
+"peak": 0.1966
 },
 {
 "t": 67.4583,
 "start": 67.4583,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t04_flag_walk.npz (r=0.985)",
+"name": "PHYSICS flutter <- t04_flag_walk.npz (r=0.987)",
 "scene": "t04",
 "cue": null,
 "src": "physics:t04_flag_walk.npz",
-"gain": 0.3925,
-"peak": 0.3
+"gain": 0.5,
+"peak": 0.2697
 },
 {
 "t": 105.6667,
 "start": 105.6667,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t05_found_flag.npz (r=0.981)",
+"name": "PHYSICS flutter <- t05_found_flag.npz (r=0.971)",
 "scene": "t05",
 "cue": null,
 "src": "physics:t05_found_flag.npz",
 "gain": 0.5,
-"peak": 0.2368
+"peak": 0.2383
 },
 {
 "t": 105.6667,
 "start": 105.6667,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t05_hero_flag.npz (r=0.981)",
+"name": "PHYSICS flutter <- t05_hero_flag.npz (r=0.963)",
 "scene": "t05",
 "cue": null,
 "src": "physics:t05_hero_flag.npz",
-"gain": 0.4046,
+"gain": 0.4282,
 "peak": 0.3
 },
 {
 "t": 122.2917,
 "start": 122.2917,
 "stem": "amb",
-"name": "PHYSICS fire <- t06_fire.npz (r=0.865)",
+"name": "PHYSICS fire <- t06_fire.npz (r=0.835)",
 "scene": "t06",
 "cue": null,
 "src": "physics:t06_fire.npz",
@@ -4359,56 +5173,67 @@
 "t": 122.2917,
 "start": 122.2917,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t06_flag.npz (r=0.984)",
+"name": "PHYSICS flutter <- t06_flag.npz (r=0.985)",
 "scene": "t06",
 "cue": null,
 "src": "physics:t06_flag.npz",
-"gain": 0.3623,
+"gain": 0.4246,
+"peak": 0.3
+},
+{
+"t": 142.0417,
+"start": 142.0417,
+"stem": "sfx",
+"name": "PHYSICS flutter <- t07_soviet_flag.npz (r=0.964)",
+"scene": "t07",
+"cue": null,
+"src": "physics:t07_soviet_flag.npz",
+"gain": 0.4078,
 "peak": 0.3
 },
 {
 "t": 159.8333,
 "start": 159.8333,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t08_flag_p1.npz (r=0.966)",
+"name": "PHYSICS flutter <- t08_flag_p1.npz (r=0.970)",
 "scene": "t08",
 "cue": null,
 "src": "physics:t08_flag_p1.npz",
 "gain": 0.5,
-"peak": 0.2
+"peak": 0.2697
 },
 {
 "t": 159.8333,
 "start": 159.8333,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t08_flag_p2b.npz (r=0.983)",
+"name": "PHYSICS flutter <- t08_flag_p2b.npz (r=0.875)",
 "scene": "t08",
 "cue": null,
 "src": "physics:t08_flag_p2b.npz",
 "gain": 0.5,
-"peak": 0.0672
+"peak": 0.1332
 },
 {
 "t": 159.8333,
 "start": 159.8333,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t08_flag_p3.npz (r=0.976)",
+"name": "PHYSICS flutter <- t08_flag_p3.npz (r=0.943)",
 "scene": "t08",
 "cue": null,
 "src": "physics:t08_flag_p3.npz",
 "gain": 0.5,
-"peak": 0.1335
+"peak": 0.107
 },
 {
 "t": 159.8333,
 "start": 159.8333,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t08_flag_p8.npz (r=0.976)",
+"name": "PHYSICS flutter <- t08_flag_p8.npz (r=0.969)",
 "scene": "t08",
 "cue": null,
 "src": "physics:t08_flag_p8.npz",
 "gain": 0.5,
-"peak": 0.1079
+"peak": 0.076
 },
 {
 "t": 181.1667,
@@ -4425,55 +5250,11 @@
 "t": 181.1667,
 "start": 181.1667,
 "stem": "sfx",
-"name": "PHYSICS flutter <- t09_summerflag.npz (r=0.959)",
+"name": "PHYSICS flutter <- t09_summerflag.npz (r=0.972)",
 "scene": "t09",
 "cue": null,
 "src": "physics:t09_summerflag.npz",
 "gain": 0.5,
-"peak": 0.2157
-},
-{
-"t": 9.2,
-"start": 9.2,
-"stem": "sfx",
-"name": "flutter (fallback energy, awaiting t01 track)",
-"scene": "t01",
-"cue": null,
-"src": "fallback-physics",
-"gain": 0.5,
-"peak": 0.0481
-},
-{
-"t": 43.3,
-"start": 43.3,
-"stem": "sfx",
-"name": "flutter (fallback energy, awaiting t03 track)",
-"scene": "t03",
-"cue": null,
-"src": "fallback-physics",
-"gain": 0.3,
-"peak": 0.0114
-},
-{
-"t": 143.9,
-"start": 143.9,
-"stem": "sfx",
-"name": "flutter (fallback energy, awaiting t07 track)",
-"scene": "t07",
-"cue": null,
-"src": "fallback-physics",
-"gain": 0.3,
-"peak": 0.0422
-},
-{
-"t": 0.0,
-"start": 0.0,
-"stem": "sfx",
-"name": "paper (fallback energy, awaiting t01 paper track)",
-"scene": "t01",
-"cue": null,
-"src": "fallback-physics",
-"gain": 0.25,
-"peak": 0.225
+"peak": 0.2108
 }
 ]

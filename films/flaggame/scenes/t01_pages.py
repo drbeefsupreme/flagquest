@@ -18,7 +18,7 @@ import cairo
 import cv2
 import numpy as np
 
-from vx import Canvas, set_color, W as DW
+from vx import Canvas, set_color
 from vx import ink, comic
 from vx.flag import draw_flag
 

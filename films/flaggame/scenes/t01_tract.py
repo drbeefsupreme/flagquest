@@ -24,7 +24,6 @@ import os
 import numpy as np
 
 from vx import *
-from vx import ink, comic
 from vx.flag import Flag
 from vx.foley import export_events, export_track, screen_pan
 from vx.config import CACHE
@@ -266,7 +265,6 @@ def _page_to_world(V, px, py, k=1):
 
 
 def _geometry(st):
-    bt = st["bt"]
     VA = _leaves_at(st, 0.0)
     VB = _leaves_at(st, 4.2)
     VC = _leaves_at(st, T_SWITCH)
@@ -329,10 +327,8 @@ def _cam3d(st, T):
         eye, tgt = _lerp(eye1b, eye2, k), _lerp(tgt1, tgt2, k)
     else:
         # the dive: rise and swing over page 1, then plunge perpendicular into panel 1
-        eyeD, tgtD, upD, dD = _topdown_cam(st, 500.0, 236.0, Z_SWITCH)
-        eyeH, tgtH, upH, dH = _topdown_cam(st, 520.0, 420.0, 0.55)
+        eyeH, tgtH, upH, _ = _topdown_cam(st, 520.0, 420.0, 0.55)
         k = smootherstep(5.9, 6.45, T)
-        kd = ease_in(clamp((T - 6.35) / (T_SWITCH - 6.35)), 2.2)
         if T < 6.45:
             eye = _lerp(eye2, eyeH, k)
             tgt = _lerp(tgt2, tgtH, k)

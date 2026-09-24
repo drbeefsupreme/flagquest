@@ -5,16 +5,16 @@
   "ch": 2,
   "subtype": "FLOAT",
   "exact": true,
-  "peak_dbfs": -1.79,
-  "rms_dbfs": -29.5,
+  "peak_dbfs": -1.14,
+  "rms_dbfs": -27.8,
   "clipped": 0,
   "nan": false,
-  "loop_seam_jump": 0.00326,
-  "loop_seam_vs_p99_step": 0.06300000101327896,
-  "loop_rms_last_1s": -25.7,
-  "loop_rms_first_1s": -33.3,
+  "loop_seam_jump": 0.00158,
+  "loop_seam_vs_p99_step": 0.02199999988079071,
+  "loop_rms_last_1s": -27.9,
+  "loop_rms_first_1s": -30.4,
   "freeze_118_95_119_5_rms": -34.7,
-  "pre_freeze_118_4_118_9_rms": -32.2
+  "pre_freeze_118_4_118_9_rms": -30.3
  },
  "ambience": {
   "frames": 9552000,
@@ -33,7 +33,7 @@
   "freeze_118_95_119_5_rms": -89.7,
   "pre_freeze_118_4_118_9_rms": -23.5
  },
- "loop_spectral_diff_db": 1.22,
+ "loop_spectral_diff_db": 1.61,
  "cue_alignment": [
   {
    "cue": "wrong_burst",
@@ -62,8 +62,8 @@
   {
    "cue": "found_one",
    "t": 108.79,
-   "onset": 108.786,
-   "err_ms": -4.0
+   "onset": 108.749,
+   "err_ms": -41.0
   },
   {
    "cue": "flag_on_effigy",
@@ -108,16 +108,106 @@
    "err_ms": -4.0
   }
  ],
- "cue_alignment_max_abs_err_ms": 12.0,
+ "cue_alignment_max_abs_err_ms": 41.0,
  "physics": [
+  {
+   "file": "t01_bearer_flag.npz",
+   "scene": "t01",
+   "kind": "flag",
+   "frames": 443,
+   "t0": 0.0,
+   "energy_max": 0.8722853660583496,
+   "corr": 0.9583693363356096
+  },
+  {
+   "file": "t01_paper.npz",
+   "scene": "t01",
+   "kind": "paper",
+   "frames": 443,
+   "t0": 0.0,
+   "energy_max": 0.7162474393844604,
+   "corr": 0.9441239446553498
+  },
+  {
+   "file": "t02_flag_icon.npz",
+   "scene": "t02",
+   "kind": "flag",
+   "frames": 596,
+   "t0": 18.458333333333332,
+   "energy_max": 0.8581264019012451,
+   "corr": 0.981908221467275
+  },
+  {
+   "file": "t02_flag_witness.npz",
+   "scene": "t02",
+   "kind": "flag",
+   "frames": 596,
+   "t0": 18.458333333333332,
+   "energy_max": 0.6659426093101501,
+   "corr": 0.9603781414897129
+  },
+  {
+   "file": "t03_flag0.npz",
+   "scene": "t03",
+   "kind": "flag",
+   "frames": 580,
+   "t0": 43.291666666666664,
+   "energy_max": 1.0,
+   "corr": 0.9843414148135912
+  },
+  {
+   "file": "t03_flag1.npz",
+   "scene": "t03",
+   "kind": "flag",
+   "frames": 580,
+   "t0": 43.291666666666664,
+   "energy_max": 0.9998361468315125,
+   "corr": 0.9877330469373233
+  },
+  {
+   "file": "t03_flag2.npz",
+   "scene": "t03",
+   "kind": "flag",
+   "frames": 580,
+   "t0": 43.291666666666664,
+   "energy_max": 0.9999986886978149,
+   "corr": 0.9893606176957002
+  },
+  {
+   "file": "t03_flag3.npz",
+   "scene": "t03",
+   "kind": "flag",
+   "frames": 580,
+   "t0": 43.291666666666664,
+   "energy_max": 0.9999493956565857,
+   "corr": 0.9828914458619384
+  },
+  {
+   "file": "t03_flag4.npz",
+   "scene": "t03",
+   "kind": "flag",
+   "frames": 580,
+   "t0": 43.291666666666664,
+   "energy_max": 0.9999850988388062,
+   "corr": 0.9850416020747084
+  },
+  {
+   "file": "t03_flag5.npz",
+   "scene": "t03",
+   "kind": "flag",
+   "frames": 580,
+   "t0": 43.291666666666664,
+   "energy_max": 0.9998481869697571,
+   "corr": 0.9904257542809382
+  },
   {
    "file": "t04_flag_explain.npz",
    "scene": "t04",
    "kind": "flag",
    "frames": 917,
    "t0": 67.45833333333333,
-   "energy_max": 0.7063490748405457,
-   "corr": 0.9885438571381991
+   "energy_max": 0.709497332572937,
+   "corr": 0.9876212759207659
   },
   {
    "file": "t04_flag_flood.npz",
@@ -134,8 +224,8 @@
    "kind": "flag",
    "frames": 917,
    "t0": 67.45833333333333,
-   "energy_max": 0.6331450343132019,
-   "corr": 0.9847358003331811
+   "energy_max": 0.6480047106742859,
+   "corr": 0.9873107171532945
   },
   {
    "file": "t04_flag_walk.npz",
@@ -143,8 +233,8 @@
    "kind": "flag",
    "frames": 917,
    "t0": 67.45833333333333,
-   "energy_max": 0.899305522441864,
-   "corr": 0.9848168987015368
+   "energy_max": 0.9254932999610901,
+   "corr": 0.9867060225271089
   },
   {
    "file": "t05_found_flag.npz",
@@ -152,8 +242,8 @@
    "kind": "flag",
    "frames": 399,
    "t0": 105.66666666666667,
-   "energy_max": 0.8474037647247314,
-   "corr": 0.980523578301009
+   "energy_max": 0.8786512017250061,
+   "corr": 0.9711506704152979
   },
   {
    "file": "t05_hero_flag.npz",
@@ -161,8 +251,8 @@
    "kind": "flag",
    "frames": 399,
    "t0": 105.66666666666667,
-   "energy_max": 0.9784591197967529,
-   "corr": 0.9806058192572994
+   "energy_max": 0.9419363737106323,
+   "corr": 0.9625115238710436
   },
   {
    "file": "t06_fire.npz",
@@ -170,8 +260,8 @@
    "kind": "fire",
    "frames": 474,
    "t0": 122.29166666666667,
-   "energy_max": 1.0017009973526,
-   "corr": 0.8649626906854111
+   "energy_max": 1.0019927024841309,
+   "corr": 0.8352986383702796
   },
   {
    "file": "t06_flag.npz",
@@ -179,8 +269,17 @@
    "kind": "flag",
    "frames": 474,
    "t0": 122.29166666666667,
-   "energy_max": 0.8558286428451538,
-   "corr": 0.984234711772367
+   "energy_max": 0.7917653918266296,
+   "corr": 0.9847521663599801
+  },
+  {
+   "file": "t07_soviet_flag.npz",
+   "scene": "t07",
+   "kind": "flag",
+   "frames": 427,
+   "t0": 142.04166666666666,
+   "energy_max": 0.9585024118423462,
+   "corr": 0.9641932530998543
   },
   {
    "file": "t08_flag_p1.npz",
@@ -188,8 +287,8 @@
    "kind": "flag",
    "frames": 512,
    "t0": 159.83333333333334,
-   "energy_max": 0.7475619316101074,
-   "corr": 0.9657885046457785
+   "energy_max": 0.7290194630622864,
+   "corr": 0.9702066095967545
   },
   {
    "file": "t08_flag_p2b.npz",
@@ -197,8 +296,8 @@
    "kind": "flag",
    "frames": 512,
    "t0": 159.83333333333334,
-   "energy_max": 0.2601951062679291,
-   "corr": 0.9825401368415712
+   "energy_max": 0.2519683837890625,
+   "corr": 0.8751856427275991
   },
   {
    "file": "t08_flag_p3.npz",
@@ -206,8 +305,8 @@
    "kind": "flag",
    "frames": 512,
    "t0": 159.83333333333334,
-   "energy_max": 0.5121821165084839,
-   "corr": 0.976299706573079
+   "energy_max": 0.48821598291397095,
+   "corr": 0.942734744849783
   },
   {
    "file": "t08_flag_p8.npz",
@@ -215,8 +314,8 @@
    "kind": "flag",
    "frames": 512,
    "t0": 159.83333333333334,
-   "energy_max": 0.48828643560409546,
-   "corr": 0.9764324209691692
+   "energy_max": 0.39022019505500793,
+   "corr": 0.9685516786880973
   },
   {
    "file": "t09_p2flag.npz",
@@ -233,44 +332,8 @@
    "kind": "flag",
    "frames": 428,
    "t0": 181.16666666666666,
-   "energy_max": 0.860981822013855,
-   "corr": 0.9588460483765996
-  },
-  {
-   "file": "(fallback t01 flag)",
-   "scene": "t01",
-   "kind": "flag",
-   "frames": 86,
-   "t0": 9.2,
-   "energy_max": 0.5278267528845692,
-   "corr": 0.9821329626359225
-  },
-  {
-   "file": "(fallback t03 flag)",
-   "scene": "t03",
-   "kind": "flag",
-   "frames": 336,
-   "t0": 43.3,
-   "energy_max": 0.20097671518352028,
-   "corr": 0.9638534814222006
-  },
-  {
-   "file": "(fallback t07 flag)",
-   "scene": "t07",
-   "kind": "flag",
-   "frames": 134,
-   "t0": 143.9,
-   "energy_max": 0.6486286515653927,
-   "corr": 0.9834786793514313
-  },
-  {
-   "file": "(fallback t01 paper)",
-   "scene": "t01",
-   "kind": "paper",
-   "frames": 156,
-   "t0": 0.0,
-   "energy_max": 0.8988709040160446,
-   "corr": 0.9726026906750528
+   "energy_max": 0.8867323398590088,
+   "corr": 0.9720686540583255
   }
  ]
 }

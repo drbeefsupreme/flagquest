@@ -156,7 +156,7 @@ class Book:
             lift[0] = 1.0 if T < R0 + 0.6 else 0.0
             for k in range(4, L):
                 lift[k] = 0.3
-        off = self._relax(T, X)
+        self._relax(T, X)
         p0, p1 = self.spine(T, relax=False)
         if T >= FLIP[-1][0]:
             p0, p1 = p0 + self._off, p1 + self._off
