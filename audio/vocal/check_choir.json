@@ -1,0 +1,276 @@
+{
+ "sections": [
+  {
+   "part": "S",
+   "note": 0,
+   "word": "Flags",
+   "midi": 69,
+   "median_cents": -4.5,
+   "voiced": 1.0
+  },
+  {
+   "part": "S",
+   "note": 1,
+   "word": "be",
+   "midi": 66,
+   "median_cents": -4.7,
+   "voiced": 1.0
+  },
+  {
+   "part": "S",
+   "note": 2,
+   "word": "Flags",
+   "midi": 71,
+   "median_cents": -4.5,
+   "voiced": 1.0
+  },
+  {
+   "part": "S",
+   "note": 3,
+   "word": "are",
+   "midi": 67,
+   "median_cents": -1.8,
+   "voiced": 1.0
+  },
+  {
+   "part": "S",
+   "note": 4,
+   "word": "Flags",
+   "midi": 73,
+   "median_cents": -5.1,
+   "voiced": 1.0
+  },
+  {
+   "part": "S",
+   "note": 5,
+   "word": "will",
+   "midi": 69,
+   "median_cents": -4.0,
+   "voiced": 0.97
+  },
+  {
+   "part": "S",
+   "note": 6,
+   "word": "Flags",
+   "midi": 74,
+   "median_cents": -3.4,
+   "voiced": 1.0
+  },
+  {
+   "part": "A",
+   "note": 0,
+   "word": "Flags",
+   "midi": 66,
+   "median_cents": -1.9,
+   "voiced": 1.0
+  },
+  {
+   "part": "A",
+   "note": 1,
+   "word": "be",
+   "midi": 62,
+   "median_cents": -1.9,
+   "voiced": 0.9
+  },
+  {
+   "part": "A",
+   "note": 2,
+   "word": "Flags",
+   "midi": 67,
+   "median_cents": -1.6,
+   "voiced": 1.0
+  },
+  {
+   "part": "A",
+   "note": 3,
+   "word": "are",
+   "midi": 64,
+   "median_cents": -1.8,
+   "voiced": 0.93
+  },
+  {
+   "part": "A",
+   "note": 4,
+   "word": "Flags",
+   "midi": 64,
+   "median_cents": -1.8,
+   "voiced": 1.0
+  },
+  {
+   "part": "A",
+   "note": 5,
+   "word": "will",
+   "midi": 64,
+   "median_cents": -3.0,
+   "voiced": 0.96
+  },
+  {
+   "part": "A",
+   "note": 6,
+   "word": "Flags",
+   "midi": 69,
+   "median_cents": -1.8,
+   "voiced": 1.0
+  },
+  {
+   "part": "T",
+   "note": 0,
+   "word": "Flags",
+   "midi": 62,
+   "median_cents": -4.2,
+   "voiced": 1.0
+  },
+  {
+   "part": "T",
+   "note": 1,
+   "word": "be",
+   "midi": 57,
+   "median_cents": -5.9,
+   "voiced": 1.0
+  },
+  {
+   "part": "T",
+   "note": 2,
+   "word": "Flags",
+   "midi": 62,
+   "median_cents": -5.5,
+   "voiced": 1.0
+  },
+  {
+   "part": "T",
+   "note": 3,
+   "word": "are",
+   "midi": 59,
+   "median_cents": -4.4,
+   "voiced": 0.94
+  },
+  {
+   "part": "T",
+   "note": 4,
+   "word": "Flags",
+   "midi": 57,
+   "median_cents": -2.9,
+   "voiced": 1.0
+  },
+  {
+   "part": "T",
+   "note": 5,
+   "word": "will",
+   "midi": 61,
+   "median_cents": -5.1,
+   "voiced": 0.94
+  },
+  {
+   "part": "T",
+   "note": 6,
+   "word": "Flags",
+   "midi": 66,
+   "median_cents": -3.5,
+   "voiced": 1.0
+  },
+  {
+   "part": "B",
+   "note": 0,
+   "word": "Flags",
+   "midi": 50,
+   "median_cents": -3.8,
+   "voiced": 1.0
+  },
+  {
+   "part": "B",
+   "note": 1,
+   "word": "be",
+   "midi": 50,
+   "median_cents": -5.0,
+   "voiced": 0.97
+  },
+  {
+   "part": "B",
+   "note": 2,
+   "word": "Flags",
+   "midi": 43,
+   "median_cents": -3.0,
+   "voiced": 1.0
+  },
+  {
+   "part": "B",
+   "note": 3,
+   "word": "are",
+   "midi": 52,
+   "median_cents": -2.8,
+   "voiced": 0.94
+  },
+  {
+   "part": "B",
+   "note": 4,
+   "word": "Flags",
+   "midi": 45,
+   "median_cents": -4.6,
+   "voiced": 1.0
+  },
+  {
+   "part": "B",
+   "note": 5,
+   "word": "will",
+   "midi": 45,
+   "median_cents": -4.7,
+   "voiced": 0.9
+  },
+  {
+   "part": "B",
+   "note": 6,
+   "word": "Flags",
+   "midi": 50,
+   "median_cents": -3.0,
+   "voiced": 1.0
+  }
+ ],
+ "convergence_chord": [
+  [
+   38,
+   -3.6
+  ],
+  [
+   45,
+   -1.8
+  ],
+  [
+   50,
+   -3.0
+  ],
+  [
+   54,
+   7.6
+  ],
+  [
+   57,
+   3.4
+  ],
+  [
+   62,
+   2.8
+  ],
+  [
+   66,
+   -0.4
+  ],
+  [
+   69,
+   1.0
+  ],
+  [
+   74,
+   5.3
+  ],
+  [
+   78,
+   -18.6
+  ],
+  [
+   81,
+   2.6
+  ]
+ ],
+ "whisper": "Fly, it's free, fly, it's good, fly, it's free, fly, it's good",
+ "singers_outside_25c": 1
+}

@@ -1,0 +1,418 @@
+{
+ "R01": {
+  "pre": 0.0,
+  "start": 7.4,
+  "len": 4.154,
+  "fx": "none",
+  "pan": -0.18,
+  "caps": 2
+ },
+ "S01": {
+  "pre": 0.0,
+  "start": 11.6,
+  "len": 4.053,
+  "fx": "none",
+  "pan": 0.21,
+  "caps": 5
+ },
+ "S02": {
+  "pre": 0.0,
+  "start": 15.58,
+  "len": 2.766,
+  "fx": "none",
+  "pan": 0.21,
+  "caps": 2
+ },
+ "P01": {
+  "pre": 0.0,
+  "start": 18.74,
+  "len": 2.923,
+  "fx": "preacher",
+  "pan": 0.21,
+  "caps": 0
+ },
+ "P02": {
+  "pre": 0.0,
+  "start": 21.91,
+  "len": 1.117,
+  "fx": "preacher",
+  "pan": 0.18,
+  "caps": 2
+ },
+ "S03": {
+  "pre": 0.0,
+  "start": 23.22,
+  "len": 1.707,
+  "fx": "none",
+  "pan": -0.24,
+  "caps": 5
+ },
+ "P03": {
+  "pre": 0.0,
+  "start": 25.2,
+  "len": 2.593,
+  "fx": "preacher",
+  "pan": -0.15,
+  "caps": 4
+ },
+ "P04": {
+  "pre": 0.0,
+  "start": 27.83,
+  "len": 3.384,
+  "fx": "preacher",
+  "pan": -0.15,
+  "caps": 8
+ },
+ "D01": {
+  "pre": 0.0,
+  "start": 31.06,
+  "len": 2.228,
+  "fx": "legal",
+  "pan": 0.0,
+  "caps": 1
+ },
+ "S04": {
+  "pre": 0.0,
+  "start": 33.75,
+  "len": 2.828,
+  "fx": "none",
+  "pan": -0.06,
+  "caps": 0
+ },
+ "P05": {
+  "pre": 0.0,
+  "start": 36.75,
+  "len": 3.231,
+  "fx": "preacher",
+  "pan": 0.18,
+  "caps": 3
+ },
+ "P06": {
+  "pre": 0.0,
+  "start": 40.03,
+  "len": 3.638,
+  "fx": "preacher",
+  "pan": 0.15,
+  "caps": 1
+ },
+ "P07": {
+  "pre": 0.0,
+  "start": 44.29,
+  "len": 5.378,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 1
+ },
+ "S05": {
+  "pre": 0.0,
+  "start": 49.42,
+  "len": 1.312,
+  "fx": "none",
+  "pan": -0.33,
+  "caps": 0
+ },
+ "P08": {
+  "pre": 0.0,
+  "start": 50.77,
+  "len": 4.934,
+  "fx": "preacher",
+  "pan": -0.33,
+  "caps": 3
+ },
+ "P09": {
+  "pre": 0.0,
+  "start": 56.0,
+  "len": 5.767,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 1
+ },
+ "F01": {
+  "pre": 0.0,
+  "start": 61.65,
+  "len": 3.198,
+  "fx": "radio",
+  "pan": 0.0,
+  "caps": 3
+ },
+ "G01": {
+  "pre": 0.14,
+  "start": 64.63,
+  "len": 3.33,
+  "fx": "radio",
+  "pan": 0.21,
+  "caps": 0
+ },
+ "P10": {
+  "pre": 0.0,
+  "start": 67.75,
+  "len": 2.365,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 2
+ },
+ "M01": {
+  "pre": 0.0,
+  "start": 70.1,
+  "len": 9.815,
+  "fx": "divine",
+  "pan": 0.06,
+  "caps": 3
+ },
+ "P11": {
+  "pre": 0.0,
+  "start": 74.73,
+  "len": 2.649,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 0
+ },
+ "X01": {
+  "pre": 0.0,
+  "start": 76.98,
+  "len": 1.277,
+  "fx": "mob",
+  "pan": 0.09,
+  "caps": 0
+ },
+ "P12": {
+  "pre": 0.0,
+  "start": 78.02,
+  "len": 4.724,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 2
+ },
+ "M02": {
+  "pre": 0.0,
+  "start": 82.74,
+  "len": 14.675,
+  "fx": "divine",
+  "pan": -0.21,
+  "caps": 2
+ },
+ "M03": {
+  "pre": 0.0,
+  "start": 92.09,
+  "len": 10.319,
+  "fx": "divine",
+  "pan": 0.0,
+  "caps": 4
+ },
+ "V01": {
+  "pre": 0.7,
+  "start": 97.3,
+  "len": 8.694,
+  "fx": "demonic",
+  "pan": 0.0,
+  "caps": 0
+ },
+ "V02": {
+  "pre": 0.7,
+  "start": 102.36,
+  "len": 6.527,
+  "fx": "demonic",
+  "pan": 0.0,
+  "caps": 4
+ },
+ "P13": {
+  "pre": 0.0,
+  "start": 106.43,
+  "len": 2.306,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 6
+ },
+ "H01": {
+  "pre": 0.0,
+  "start": 108.79,
+  "len": 1.615,
+  "fx": "shout",
+  "pan": 0.0,
+  "caps": 0
+ },
+ "H02": {
+  "pre": 0.0,
+  "start": 110.11,
+  "len": 1.878,
+  "fx": "shout",
+  "pan": 0.0,
+  "caps": 2
+ },
+ "P14": {
+  "pre": 0.0,
+  "start": 111.86,
+  "len": 1.544,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 3
+ },
+ "P15": {
+  "pre": 0.0,
+  "start": 113.15,
+  "len": 5.323,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 3
+ },
+ "P16": {
+  "pre": 0.0,
+  "start": 118.35,
+  "len": 2.5,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 0
+ },
+ "P17": {
+  "pre": 0.0,
+  "start": 122.71,
+  "len": 5.035,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 5
+ },
+ "P18": {
+  "pre": 0.0,
+  "start": 127.82,
+  "len": 4.424,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 2
+ },
+ "P19": {
+  "pre": 0.0,
+  "start": 132.37,
+  "len": 4.23,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 4
+ },
+ "P20": {
+  "pre": 0.0,
+  "start": 136.5,
+  "len": 1.808,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 3
+ },
+ "P21": {
+  "pre": 0.0,
+  "start": 142.24,
+  "len": 5.519,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 5
+ },
+ "P22": {
+  "pre": 0.0,
+  "start": 149.58,
+  "len": 4.715,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 1
+ },
+ "P23": {
+  "pre": 0.0,
+  "start": 154.17,
+  "len": 4.566,
+  "fx": "preacher",
+  "pan": 0.0,
+  "caps": 0
+ },
+ "P24": {
+  "pre": 0.0,
+  "start": 160.15,
+  "len": 4.394,
+  "fx": "preacher",
+  "pan": 0.18,
+  "caps": 3
+ },
+ "P25": {
+  "pre": 0.0,
+  "start": 164.43,
+  "len": 2.898,
+  "fx": "preacher",
+  "pan": 0.12,
+  "caps": 1
+ },
+ "S06": {
+  "pre": 0.0,
+  "start": 167.81,
+  "len": 1.209,
+  "fx": "none",
+  "pan": -0.09,
+  "caps": 0
+ },
+ "P26": {
+  "pre": 0.0,
+  "start": 169.09,
+  "len": 1.542,
+  "fx": "preacher",
+  "pan": 0.15,
+  "caps": 0
+ },
+ "P27": {
+  "pre": 0.0,
+  "start": 170.67,
+  "len": 2.212,
+  "fx": "preacher",
+  "pan": 0.18,
+  "caps": 0
+ },
+ "S07": {
+  "pre": 0.0,
+  "start": 172.96,
+  "len": 2.022,
+  "fx": "none",
+  "pan": -0.12,
+  "caps": 0
+ },
+ "P28": {
+  "pre": 0.0,
+  "start": 174.97,
+  "len": 2.193,
+  "fx": "preacher",
+  "pan": 0.18,
+  "caps": 0
+ },
+ "S08": {
+  "pre": 0.0,
+  "start": 177.16,
+  "len": 1.91,
+  "fx": "none",
+  "pan": -0.12,
+  "caps": 0
+ },
+ "P29": {
+  "pre": 0.0,
+  "start": 179.14,
+  "len": 1.038,
+  "fx": "preacher",
+  "pan": 0.18,
+  "caps": 0
+ },
+ "S09": {
+  "pre": 0.0,
+  "start": 180.13,
+  "len": 0.813,
+  "fx": "none",
+  "pan": -0.12,
+  "caps": 0
+ },
+ "P30": {
+  "pre": 0.0,
+  "start": 181.56,
+  "len": 4.329,
+  "fx": "preacher",
+  "pan": 0.21,
+  "caps": 3
+ },
+ "R02": {
+  "pre": 0.0,
+  "start": 192.07,
+  "len": 4.154,
+  "fx": "none",
+  "pan": -0.27,
+  "caps": 2
+ }
+}

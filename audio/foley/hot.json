@@ -1,0 +1,24 @@
+[
+ {
+  "stem": "sfx",
+  "t": 99.8,
+  "peak": 0.968,
+  "who": [
+   "BREACH: door blown in@99.70(0.67)",
+   "breach sub@99.70(0.30)",
+   "door slab ring@99.72(0.30)",
+   "'Breach!' 3: flag butt slams the steel d@99.02(0.29)"
+  ]
+ },
+ {
+  "stem": "sfx",
+  "t": 99.7,
+  "peak": 0.965,
+  "who": [
+   "BREACH: door blown in@99.70(0.67)",
+   "breach sub@99.70(0.30)",
+   "door slab ring@99.72(0.30)",
+   "'Breach!' 3: flag butt slams the steel d@99.02(0.29)"
+  ]
+ }
+]

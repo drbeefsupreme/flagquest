@@ -1,0 +1,440 @@
+[
+ {
+  "t": 12.0,
+  "id": "flag_rotates_in",
+  "desc": "theme begins (glass A)",
+  "kind": "onset"
+ },
+ {
+  "t": 14.2,
+  "id": "flag_snap_open",
+  "desc": "theme lands on D, bloom",
+  "kind": "onset"
+ },
+ {
+  "t": 16.0,
+  "id": "title_slam",
+  "desc": "D major tutti hit",
+  "kind": "onset"
+ },
+ {
+  "t": 16.46,
+  "id": "title_letter_1",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.534,
+  "id": "title_letter_2",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.608,
+  "id": "title_letter_3",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.646,
+  "id": "title_letter_4",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.72,
+  "id": "title_letter_5",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.794,
+  "id": "title_letter_6",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.832,
+  "id": "title_letter_7",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.906,
+  "id": "title_letter_8",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 16.98,
+  "id": "title_letter_9",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 17.018,
+  "id": "title_letter_10",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 17.092,
+  "id": "title_letter_11",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 17.166,
+  "id": "title_letter_12",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 17.204,
+  "id": "title_letter_13",
+  "desc": "pluck on title letter landing",
+  "kind": "onset"
+ },
+ {
+  "t": 25.205,
+  "id": "N04_nations",
+  "desc": "Dm stab: monolith lights up",
+  "kind": "onset"
+ },
+ {
+  "t": 26.205,
+  "id": "N04_faiths",
+  "desc": "Bb stab: monolith lights up",
+  "kind": "onset"
+ },
+ {
+  "t": 26.867,
+  "id": "N04_philosophies",
+  "desc": "Gm stab: monolith lights up",
+  "kind": "onset"
+ },
+ {
+  "t": 39.2,
+  "id": "slop_crash",
+  "desc": "D-minor braam + cluster, sinks",
+  "kind": "onset"
+ },
+ {
+  "t": 47.5,
+  "id": "tv_on",
+  "desc": "fanfare (through the TV)",
+  "kind": "onset"
+ },
+ {
+  "t": 48.02,
+  "id": "tv_lock",
+  "desc": "fanfare chord as the picture locks",
+  "kind": "onset"
+ },
+ {
+  "t": 57.0,
+  "id": "J01_banned",
+  "desc": "stab on 'banned!' (fist slam)",
+  "kind": "onset"
+ },
+ {
+  "t": 60.9,
+  "id": "ka_ching",
+  "desc": "brass ta-DA button + glock",
+  "kind": "onset"
+ },
+ {
+  "t": 65.5,
+  "id": "canon_1",
+  "desc": "scroll absorbed bell",
+  "kind": "onset"
+ },
+ {
+  "t": 65.85,
+  "id": "canon_2",
+  "desc": "scroll absorbed bell",
+  "kind": "onset"
+ },
+ {
+  "t": 66.2,
+  "id": "canon_3",
+  "desc": "scroll absorbed bell",
+  "kind": "onset"
+ },
+ {
+  "t": 66.55,
+  "id": "canon_4",
+  "desc": "scroll absorbed bell",
+  "kind": "onset"
+ },
+ {
+  "t": 66.9,
+  "id": "canon_5",
+  "desc": "scroll absorbed bell",
+  "kind": "onset"
+ },
+ {
+  "t": 67.25,
+  "id": "canon_6",
+  "desc": "scroll absorbed bell",
+  "kind": "onset"
+ },
+ {
+  "t": 72.7,
+  "id": "hypermeme",
+  "desc": "reverent hush: everything cuts away",
+  "kind": "cut"
+ },
+ {
+  "t": 72.7,
+  "id": "hypermeme_glass",
+  "desc": "first glass note of the theme",
+  "kind": "onset"
+ },
+ {
+  "t": 89.4,
+  "id": "schismmancers",
+  "desc": "D-minor braam (push-in flash)",
+  "kind": "onset"
+ },
+ {
+  "t": 90.0,
+  "id": "gear_up",
+  "desc": "taiko + rimshot + low brass downbeat",
+  "kind": "onset"
+ },
+ {
+  "t": 98.4,
+  "id": "K03_breach_1",
+  "desc": "Gm stab",
+  "kind": "onset"
+ },
+ {
+  "t": 98.696,
+  "id": "K03_breach_2",
+  "desc": "A stab",
+  "kind": "onset"
+ },
+ {
+  "t": 99.021,
+  "id": "K03_breach_3",
+  "desc": "Bb stab",
+  "kind": "onset"
+ },
+ {
+  "t": 99.7,
+  "id": "breach",
+  "desc": "D major blaze, gong",
+  "kind": "onset"
+ },
+ {
+  "t": 100.6,
+  "id": "nation_fracture",
+  "desc": "D minor stinger",
+  "kind": "onset"
+ },
+ {
+  "t": 105.034,
+  "id": "X01_me",
+  "desc": "tiny anthem ta-DA on 'Me!'",
+  "kind": "onset"
+ },
+ {
+  "t": 106.958,
+  "id": "X02_one",
+  "desc": "lonely triangle + pizz",
+  "kind": "onset"
+ },
+ {
+  "t": 107.8,
+  "id": "faith_fracture",
+  "desc": "F# minor stinger + organ",
+  "kind": "onset"
+ },
+ {
+  "t": 110.681,
+  "id": "X03_heretic",
+  "desc": "organ duel stab Cm",
+  "kind": "onset"
+ },
+ {
+  "t": 111.945,
+  "id": "X04_heretic",
+  "desc": "organ duel stab F#m",
+  "kind": "onset"
+ },
+ {
+  "t": 113.797,
+  "id": "X05_amen",
+  "desc": "harmonium plagal amen",
+  "kind": "onset"
+ },
+ {
+  "t": 114.6,
+  "id": "philo_shatter",
+  "desc": "Bb minor stinger + glass shatter",
+  "kind": "onset"
+ },
+ {
+  "t": 114.6,
+  "id": "philo_burst",
+  "desc": "head bursts: glass cascade",
+  "kind": "onset"
+ },
+ {
+  "t": 120.854,
+  "id": "X06_flexatone",
+  "desc": "flexatone after 'poets!'",
+  "kind": "onset"
+ },
+ {
+  "t": 122.497,
+  "id": "X07_am",
+  "desc": "'I am' celesta echo",
+  "kind": "onset"
+ },
+ {
+  "t": 129.0,
+  "id": "egregore_wakes",
+  "desc": "low brass cluster as Egregore's screens power on",
+  "kind": "onset"
+ },
+ {
+  "t": 136.0,
+  "id": "babel_crack",
+  "desc": "cluster hit; max chaos",
+  "kind": "onset"
+ },
+ {
+  "t": 138.5,
+  "id": "silence",
+  "desc": "HARD STOP to digital zero",
+  "kind": "cut"
+ },
+ {
+  "t": 140.0,
+  "id": "harmonic_in",
+  "desc": "single high string harmonic A6",
+  "kind": "onset"
+ },
+ {
+  "t": 142.0,
+  "id": "flag_planted",
+  "desc": "soft low D (harp/timp/pizz) under the thunk",
+  "kind": "onset"
+ },
+ {
+  "t": 150.0,
+  "id": "convergence",
+  "desc": "first pluck; flood begins",
+  "kind": "onset"
+ },
+ {
+  "t": 154.5,
+  "id": "hymn",
+  "desc": "hymn downbeat (organ+strings+timpani)",
+  "kind": "onset"
+ },
+ {
+  "t": 154.5,
+  "id": "hymn_phrase_1",
+  "desc": "timpani on phrase downbeat",
+  "kind": "onset"
+ },
+ {
+  "t": 157.3571,
+  "id": "hymn_phrase_2",
+  "desc": "timpani on phrase downbeat",
+  "kind": "onset"
+ },
+ {
+  "t": 160.2143,
+  "id": "hymn_phrase_3",
+  "desc": "timpani on phrase downbeat",
+  "kind": "onset"
+ },
+ {
+  "t": 163.0714,
+  "id": "hymn_phrase_4",
+  "desc": "timpani on phrase downbeat",
+  "kind": "onset"
+ },
+ {
+  "t": 166.3,
+  "id": "gateless_gate",
+  "desc": "tutti bloom; augmented theme",
+  "kind": "onset"
+ },
+ {
+  "t": 171.815,
+  "id": "survey_completed",
+  "desc": "bVI-bVII-I lands on D ('completed')",
+  "kind": "onset"
+ },
+ {
+  "t": 175.326,
+  "id": "L04_tada",
+  "desc": "celesta ta-da",
+  "kind": "onset"
+ },
+ {
+  "t": 178.9,
+  "id": "C05_sticky",
+  "desc": "sticky strand snaps: pizz plink, droopy pizz + bassoon blup",
+  "kind": "onset"
+ },
+ {
+  "t": 181.682,
+  "id": "L05_theme_quote",
+  "desc": "celesta theme quote",
+  "kind": "onset"
+ },
+ {
+  "t": 184.22,
+  "id": "sniff",
+  "desc": "clarinet sniff-sniff",
+  "kind": "onset"
+ },
+ {
+  "t": 188.3,
+  "id": "glorious",
+  "desc": "final tutti",
+  "kind": "onset"
+ },
+ {
+  "t": 189.5,
+  "id": "end_card",
+  "desc": "IVG end-card sting",
+  "kind": "onset"
+ },
+ {
+  "t": 190.1,
+  "id": "endcard_letter_1",
+  "desc": "pluck on end-card letter",
+  "kind": "onset"
+ },
+ {
+  "t": 190.19,
+  "id": "endcard_letter_2",
+  "desc": "pluck on end-card letter",
+  "kind": "onset"
+ },
+ {
+  "t": 190.256,
+  "id": "endcard_letter_3",
+  "desc": "pluck on end-card letter",
+  "kind": "onset"
+ },
+ {
+  "t": 190.346,
+  "id": "endcard_letter_4",
+  "desc": "pluck on end-card letter",
+  "kind": "onset"
+ },
+ {
+  "t": 190.412,
+  "id": "endcard_letter_5",
+  "desc": "pluck on end-card letter",
+  "kind": "onset"
+ }
+]
