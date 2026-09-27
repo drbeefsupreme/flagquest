@@ -40,7 +40,7 @@ vx/                  shared animation engine (both films)
   ink*.py            print looks: halftone, Doré engraving, manga screentone, wet paper
   comic*.py          voice-synced lettering: balloons, captions, SFX, fonts
 scenes/ script/ docs/ timeline.json    film 1 (repo root, the default VX_FILM=unbabeling)
-films/flaggame/      film 2: scenes/ script/ docs/ tools/ ref/ timeline.json env.sh
+films/flaggame/      film 2: scenes/ script/ docs/ tools/ ref/ timeline.json
 tools/               shared build tools + film 1's audio department scripts
 assets/              lettering fonts (OFL), land mask; assets/sf2/ is downloaded, not tracked
 ref/                 Flagazine #69 reference text and contact sheet (the PDF is not tracked)
@@ -76,7 +76,7 @@ The Kokoro-82M voice model and the Whisper `small.en` model download automatical
 
 ## Building a film
 
-Voice WAVs, caches and renders are not tracked in git; the scripts regenerate them.
+Voice WAVs, caches and renders are not tracked in git. Run everything from the repo root. These are the commands the films were built with on the original machine; they have not been tested from a fresh clone.
 
 **Film 1: THE UNBABELING** (run from the repo root):
 
@@ -94,7 +94,8 @@ Output goes to `out/THE_UNBABELING{,_nosubs,_web}.mp4`. The main version has bur
 **Film 2: THE FLAG GAME?**
 
 ```sh
-source films/flaggame/env.sh                                  # activates .venv, sets VX_FILM=flaggame
+source .venv/bin/activate
+export VX_FILM=flaggame                                       # selects films/flaggame (the default is film 1)
 python -m vx.render t01 --workers 4                           # repeat for t02 ... t09, in order
 python films/flaggame/tools/fg_vocal_dialogue.py && python films/flaggame/tools/fg_vocal_crowd.py
 python films/flaggame/tools/fg_vocal_choir.py && python films/flaggame/tools/fg_music_score.py
