@@ -1,0 +1,578 @@
+[
+ {
+  "t": 0.8,
+  "id": "candle_lit",
+  "desc": "the basilica's bell (strike D3, hum D2) as the candle is lit",
+  "kind": "onset"
+ },
+ {
+  "t": 8.4,
+  "id": "tesseract",
+  "desc": "one tessera (glock+celesta A6); the Tesseract unfolds",
+  "kind": "onset"
+ },
+ {
+  "t": 14.78,
+  "id": "flag_rotates_in",
+  "desc": "bass A\u2192D (V\u2192I) + legato strings/voices swell: the first seamless sound",
+  "kind": "onset"
+ },
+ {
+  "t": 19.6,
+  "id": "title",
+  "desc": "bell + organ plenum D major + timpani: the title is set",
+  "kind": "onset"
+ },
+ {
+  "t": 26.43,
+  "id": "nationes",
+  "desc": "NATIONES: brass + timpani",
+  "kind": "onset"
+ },
+ {
+  "t": 27.43,
+  "id": "fides",
+  "desc": "FIDES: organ + choir",
+  "kind": "onset"
+ },
+ {
+  "t": 28.117,
+  "id": "philosophiae",
+  "desc": "PHILOSOPHIAE: flute/oboe/clarinet + harp",
+  "kind": "onset"
+ },
+ {
+  "t": 32.43,
+  "id": "whole_picture",
+  "desc": "tutti on 'picture': the three machines as one image",
+  "kind": "onset"
+ },
+ {
+  "t": 34.39,
+  "id": "slop_cut",
+  "desc": "the procession's cadence is cut off before 'Then came the slop.'",
+  "kind": "cut"
+ },
+ {
+  "t": 34.4,
+  "id": "slop_flip",
+  "desc": "one tessera flips into a phone: notification ding (phone speaker in the basilica)",
+  "kind": "onset"
+ },
+ {
+  "t": 36.3,
+  "id": "slop_crash",
+  "desc": "the wave: a smashed, diving organ stab + 808 + crash; the procession returns warped",
+  "kind": "onset"
+ },
+ {
+  "t": 47.0,
+  "id": "push_in",
+  "desc": "one feed fills the frame, dissolves into static",
+  "kind": "onset"
+ },
+ {
+  "t": 48.94,
+  "id": "acclamation",
+  "desc": "imperial acclamation chord as the gold resolves (brass + organ + timpani)",
+  "kind": "onset"
+ },
+ {
+  "t": 52.5,
+  "id": "edict_sign",
+  "desc": "the stylus flourish (harp gliss + violins)",
+  "kind": "onset"
+ },
+ {
+  "t": 58.0,
+  "id": "edict_seal",
+  "desc": "the seal: brass + organ + timpani + crash tutti on 'banned'",
+  "kind": "onset"
+ },
+ {
+  "t": 62.1,
+  "id": "ka_ching",
+  "desc": "comic sting: bell + glock + celesta + triangle + muted trumpets, organ A-men lands",
+  "kind": "onset"
+ },
+ {
+  "t": 62.9,
+  "id": "hypermind_wake",
+  "desc": "32' pedal D + glass: the first eye opens",
+  "kind": "onset"
+ },
+ {
+  "t": 66.03,
+  "id": "wing_1",
+  "desc": "canon 1: entry on D2",
+  "kind": "onset"
+ },
+ {
+  "t": 66.46,
+  "id": "wing_2",
+  "desc": "canon 2: entry on A2",
+  "kind": "onset"
+ },
+ {
+  "t": 66.88,
+  "id": "wing_3",
+  "desc": "canon 3: entry on E3",
+  "kind": "onset"
+ },
+ {
+  "t": 67.3,
+  "id": "wing_4",
+  "desc": "canon 4: entry on B3",
+  "kind": "onset"
+ },
+ {
+  "t": 67.76,
+  "id": "wing_5",
+  "desc": "canon 5: entry on F#4",
+  "kind": "onset"
+ },
+ {
+  "t": 68.22,
+  "id": "wing_6",
+  "desc": "canon 6: entry on C#6",
+  "kind": "onset"
+ },
+ {
+  "t": 74.2,
+  "id": "hypermeme",
+  "desc": "the wheels lock: the six canons' stack on full organ + tutti + gong + bell",
+  "kind": "onset"
+ },
+ {
+  "t": 81.2,
+  "id": "videtur",
+  "desc": "VIDETVR QVOD NON: the psaltery alone (the objection)",
+  "kind": "onset"
+ },
+ {
+  "t": 87.0,
+  "id": "sed_contra",
+  "desc": "SED CONTRA: the harp answers in contrary motion",
+  "kind": "onset"
+ },
+ {
+  "t": 89.376,
+  "id": "coherence_falls",
+  "desc": "the too-perfect synth world cracks and falls (tape drop)",
+  "kind": "onset"
+ },
+ {
+  "t": 91.526,
+  "id": "rise_glint",
+  "desc": "harp run rises to the gold glint (psaltery + glass + glock D)",
+  "kind": "onset"
+ },
+ {
+  "t": 92.8,
+  "id": "respondeo",
+  "desc": "RESPONDEO: the counterpoint closes (sixth -> octave), organ blessing chord",
+  "kind": "onset"
+ },
+ {
+  "t": 95.75,
+  "id": "m04_cut",
+  "desc": "hard cut on 'schismmancers'",
+  "kind": "cut"
+ },
+ {
+  "t": 95.75,
+  "id": "schismmancers",
+  "desc": "hard cut: taiko + organ pedal + spiccato, 7/8 (2+2+3)",
+  "kind": "onset"
+ },
+ {
+  "t": 97.125,
+  "id": "goggles",
+  "desc": "a pizzicato per goggle, rippling out from the centre",
+  "kind": "onset"
+ },
+ {
+  "t": 102.0644,
+  "id": "telescope_1",
+  "desc": "brass stab: lances telescope",
+  "kind": "onset"
+ },
+ {
+  "t": 102.2145,
+  "id": "telescope_2",
+  "desc": "brass stab: lances telescope",
+  "kind": "onset"
+ },
+ {
+  "t": 102.3682,
+  "id": "telescope_3",
+  "desc": "brass stab: lances telescope",
+  "kind": "onset"
+ },
+ {
+  "t": 102.495,
+  "id": "unfurl",
+  "desc": "the flags snap open: tremolo swell + a rising pizzicato per flag",
+  "kind": "onset"
+ },
+ {
+  "t": 105.171,
+  "id": "dead_calm",
+  "desc": "everything stops dead; a thread of high harmonic light",
+  "kind": "cut"
+ },
+ {
+  "t": 105.8,
+  "id": "breach",
+  "desc": "BREACH: tutti on a D/Eb cluster (organ, brass, strings, timpani, taiko, gong, crash)",
+  "kind": "onset"
+ },
+ {
+  "t": 106.15,
+  "id": "glow",
+  "desc": "the blaze peaks as flag-yellow light fills the frame",
+  "kind": "onset"
+ },
+ {
+  "t": 106.9,
+  "id": "nations",
+  "desc": "the canon's first voice (horn): one anthem",
+  "kind": "onset"
+ },
+ {
+  "t": 107.2572,
+  "id": "split_nations_1",
+  "desc": "every voice forks (generation 1)",
+  "kind": "onset"
+ },
+ {
+  "t": 107.7286,
+  "id": "split_nations_2",
+  "desc": "every voice forks (generation 2)",
+  "kind": "onset"
+ },
+ {
+  "t": 108.1406,
+  "id": "split_nations_3",
+  "desc": "every voice forks (generation 3)",
+  "kind": "onset"
+ },
+ {
+  "t": 108.4295,
+  "id": "split_nations_4",
+  "desc": "every voice forks (generation 4)",
+  "kind": "onset"
+ },
+ {
+  "t": 113.7,
+  "id": "dive_D4",
+  "desc": "the dive into one tessera: all voices converge, cut",
+  "kind": "onset"
+ },
+ {
+  "t": 113.7,
+  "id": "faiths",
+  "desc": "one organ voice: the chorale that will split into churches of one",
+  "kind": "onset"
+ },
+ {
+  "t": 115.62,
+  "id": "anathema_1",
+  "desc": "ANATHEMA: dissonant organ stab",
+  "kind": "onset"
+ },
+ {
+  "t": 116.72,
+  "id": "anathema_2",
+  "desc": "ANATHEMA: dissonant organ stab",
+  "kind": "onset"
+ },
+ {
+  "t": 119.26,
+  "id": "own_pope",
+  "desc": "a papal fanfare of one, in the wrong key (Eb)",
+  "kind": "onset"
+ },
+ {
+  "t": 120.0,
+  "id": "dive_A4",
+  "desc": "the dive into one tessera: all voices converge, cut",
+  "kind": "onset"
+ },
+ {
+  "t": 120.0,
+  "id": "philosophies",
+  "desc": "a flute alone; voices drift apart in quarter tones",
+  "kind": "onset"
+ },
+ {
+  "t": 128.6,
+  "id": "endless",
+  "desc": "'May it schism endlessly': quadtree forks to dust",
+  "kind": "onset"
+ },
+ {
+  "t": 128.9,
+  "id": "quadtree_1",
+  "desc": "every voice splits into four",
+  "kind": "onset"
+ },
+ {
+  "t": 129.22,
+  "id": "quadtree_2",
+  "desc": "every voice splits into four",
+  "kind": "onset"
+ },
+ {
+  "t": 129.45,
+  "id": "quadtree_3",
+  "desc": "every voice splits into four",
+  "kind": "onset"
+ },
+ {
+  "t": 129.65,
+  "id": "quadtree_4",
+  "desc": "every voice splits into four",
+  "kind": "onset"
+ },
+ {
+  "t": 132.25,
+  "id": "tier_1",
+  "desc": "tier 1: organ pipe D2",
+  "kind": "onset"
+ },
+ {
+  "t": 132.52,
+  "id": "tier_2",
+  "desc": "tier 2: organ pipe G#2",
+  "kind": "onset"
+ },
+ {
+  "t": 132.79,
+  "id": "tier_3",
+  "desc": "tier 3: organ pipe C#3",
+  "kind": "onset"
+ },
+ {
+  "t": 133.06,
+  "id": "tier_4",
+  "desc": "tier 4: organ pipe G3",
+  "kind": "onset"
+ },
+ {
+  "t": 133.33,
+  "id": "tier_5",
+  "desc": "tier 5: organ pipe C4",
+  "kind": "onset"
+ },
+ {
+  "t": 133.6,
+  "id": "tier_6",
+  "desc": "tier 6: organ pipe F#4",
+  "kind": "onset"
+ },
+ {
+  "t": 133.87,
+  "id": "tier_7",
+  "desc": "tier 7: organ pipe B4",
+  "kind": "onset"
+ },
+ {
+  "t": 134.0,
+  "id": "egregore",
+  "desc": "Egregore: a reversed A-men sucked in, tritone pedal, gong, choir cluster",
+  "kind": "onset"
+ },
+ {
+  "t": 141.8,
+  "id": "collapse",
+  "desc": "the organ's wind fails: every pipe sags; the avalanche of struck notes",
+  "kind": "onset"
+ },
+ {
+  "t": 143.4669,
+  "id": "tower_impact",
+  "desc": "the tower's top hits the floor: timpani + gong + a sagging 32' D",
+  "kind": "onset"
+ },
+ {
+  "t": 144.5469,
+  "id": "last_tile",
+  "desc": "the very last tessera lands, alone (one high D)",
+  "kind": "onset"
+ },
+ {
+  "t": 145.0,
+  "id": "silence",
+  "desc": "HARD STOP: digital silence 145.0\u2013146.5",
+  "kind": "cut"
+ },
+ {
+  "t": 146.85,
+  "id": "one_tone",
+  "desc": "from nothing: one voice holds one tone (D3)",
+  "kind": "onset"
+ },
+ {
+  "t": 149.0,
+  "id": "flag_planted",
+  "desc": "a second voice (D2), the 16' pedal and a low harp D as the Flag is planted",
+  "kind": "onset"
+ },
+ {
+  "t": 154.212,
+  "id": "flag_bell",
+  "desc": "the candle's bell, far away, on 'Flag'",
+  "kind": "onset"
+ },
+ {
+  "t": 155.0,
+  "id": "tiles_rise",
+  "desc": "the fallen tesserae rise as reversed notes",
+  "kind": "onset"
+ },
+ {
+  "t": 159.0,
+  "id": "convergence",
+  "desc": "everything lands on one chord: D major (organ, strings, harp, voices)",
+  "kind": "onset"
+ },
+ {
+  "t": 163.0,
+  "id": "hymn_cantor",
+  "desc": "organ ison D (16'+8') under the cantor",
+  "kind": "onset"
+ },
+ {
+  "t": 168.7,
+  "id": "hymn_phrase_1",
+  "desc": "organum phrase downbeat (organ doubles the choir)",
+  "kind": "onset"
+ },
+ {
+  "t": 171.5571,
+  "id": "hymn_phrase_2",
+  "desc": "organum phrase downbeat (organ doubles the choir)",
+  "kind": "onset"
+ },
+ {
+  "t": 174.4143,
+  "id": "hymn_phrase_3",
+  "desc": "organum phrase downbeat (organ doubles the choir)",
+  "kind": "onset"
+ },
+ {
+  "t": 177.2714,
+  "id": "hymn_phrase_4",
+  "desc": "organum phrase downbeat (organ doubles the choir)",
+  "kind": "onset"
+ },
+ {
+  "t": 180.438,
+  "id": "gateless_gate",
+  "desc": "the organ chord breaks into drifting tesserae; one sung D remains",
+  "kind": "onset"
+ },
+ {
+  "t": 183.425,
+  "id": "flags_remain",
+  "desc": "the floating Flags flare: harp + glass D major",
+  "kind": "onset"
+ },
+ {
+  "t": 184.9,
+  "id": "survey_done",
+  "desc": "bVII (C major) opens under 'And the Survey...'",
+  "kind": "onset"
+ },
+ {
+  "t": 185.816,
+  "id": "completed",
+  "desc": "bVII-I lands on 'completed'",
+  "kind": "onset"
+ },
+ {
+  "t": 187.458,
+  "id": "flash",
+  "desc": "white-gold swell peaks into the flash",
+  "kind": "onset"
+ },
+ {
+  "t": 190.4,
+  "id": "sticky",
+  "desc": "the organist lets go, one pipe (A5) keeps sounding: the sticky cipher",
+  "kind": "cut"
+ },
+ {
+  "t": 191.0833,
+  "id": "sticky_1",
+  "desc": "sticky gag: touch: the cloth meets his sleeve",
+  "kind": "onset"
+ },
+ {
+  "t": 192.239,
+  "id": "sticky_3",
+  "desc": "sticky gag: stretch: he lifts his arm, the cloth com",
+  "kind": "onset"
+ },
+ {
+  "t": 192.584,
+  "id": "sticky_4",
+  "desc": "sticky gag: shake: the cloth jiggles on the sleeve, ",
+  "kind": "onset"
+ },
+ {
+  "t": 192.874,
+  "id": "sticky_5",
+  "desc": "sticky gag: shake: the cloth jiggles on the sleeve, ",
+  "kind": "onset"
+ },
+ {
+  "t": 193.164,
+  "id": "sticky_6",
+  "desc": "sticky gag: shake: the cloth jiggles on the sleeve, ",
+  "kind": "onset"
+ },
+ {
+  "t": 193.489,
+  "id": "sticky_7",
+  "desc": "sticky gag: the pole will not leave Lutie's hand: sh",
+  "kind": "onset"
+ },
+ {
+  "t": 196.332,
+  "id": "one_flag",
+  "desc": "the psaltery completes the hymn line from the stuck A",
+  "kind": "onset"
+ },
+ {
+  "t": 202.9,
+  "id": "glorious",
+  "desc": "GLORIOUS!: full organ + bells (peal) + brass + timpani",
+  "kind": "onset"
+ },
+ {
+  "t": 204.6,
+  "id": "explicit",
+  "desc": "the ison returns under the cantor's EXPLICIT",
+  "kind": "onset"
+ },
+ {
+  "t": 207.6,
+  "id": "gratias",
+  "desc": "plagal A-men under Vexillo gratias (organ doubles the choir)",
+  "kind": "onset"
+ },
+ {
+  "t": 209.5,
+  "id": "end_card",
+  "desc": "the basilica's bell, once, over the held A-men (end card)",
+  "kind": "onset"
+ },
+ {
+  "t": 211.72,
+  "id": "cipher_off",
+  "desc": "alone in the black, the stuck pipe finally sighs out with the sticky Flag",
+  "kind": "cut"
+ }
+]

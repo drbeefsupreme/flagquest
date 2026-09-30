@@ -1,0 +1,26 @@
+{
+ "dialogue": {
+  "ok_format": true,
+  "frames": 10176000,
+  "lufs": -20.8,
+  "peak_dbfs": -1.0,
+  "silence_145_146_5_peak": 0.0,
+  "nan": false
+ },
+ "crowd": {
+  "ok_format": true,
+  "frames": 10176000,
+  "lufs": -24.5,
+  "peak_dbfs": -6.3,
+  "silence_145_146_5_peak": 0.0,
+  "nan": false
+ },
+ "choir": {
+  "ok_format": true,
+  "frames": 10176000,
+  "lufs": -18.8,
+  "peak_dbfs": -2.0,
+  "silence_145_146_5_peak": 0.0,
+  "nan": false
+ }
+}

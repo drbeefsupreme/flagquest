@@ -1,0 +1,367 @@
+{
+ "cast": {
+  "LUTIE": {
+   "voice": "af_bella",
+   "lang": "a",
+   "speed": 1.0,
+   "fx": "none",
+   "desc": "Novice vexiherbologist (named for luteolin). Young, earnest, curious."
+  },
+  "CROCUS": {
+   "voice": "bm_george",
+   "lang": "b",
+   "speed": 0.9,
+   "fx": "none",
+   "desc": "Master Crocus, the Hierophant. Ancient, serene, dry wit, Lao-Zi aphorisms."
+  },
+  "COMMANDER": {
+   "voice": "am_fenrir",
+   "lang": "a",
+   "speed": 1.02,
+   "fx": "radio",
+   "desc": "Schism Actual, Tactical Breach Flag Wizard squad lead. Clipped military radio."
+  },
+  "JAGUAR": {
+   "voice": "am_michael",
+   "lang": "a",
+   "speed": 1.05,
+   "fx": "tv",
+   "desc": "President Jaguar. Bombastic politician on a CRT broadcast."
+  },
+  "HYPERMIND": {
+   "voice": "af_nicole",
+   "lang": "a",
+   "speed": 1.0,
+   "fx": "robot",
+   "desc": "Secret quantum AI supercomputer trained on the holy texts."
+  },
+  "CITIZEN1": {
+   "voice": "am_puck",
+   "lang": "a",
+   "speed": 1.08,
+   "fx": "shout",
+   "desc": "A newly sovereign nation of one."
+  },
+  "CITIZEN2": {
+   "voice": "bf_emma",
+   "lang": "b",
+   "speed": 1.05,
+   "fx": "shout",
+   "desc": "Another nation of one."
+  },
+  "HERETIC1": {
+   "voice": "am_eric",
+   "lang": "a",
+   "speed": 1.1,
+   "fx": "shout",
+   "desc": "Cabal of one."
+  },
+  "HERETIC2": {
+   "voice": "af_sarah",
+   "lang": "a",
+   "speed": 1.1,
+   "fx": "shout",
+   "desc": "Cabal of one."
+  },
+  "HERETIC3": {
+   "voice": "bm_fable",
+   "lang": "b",
+   "speed": 1.05,
+   "fx": "shout",
+   "desc": "Cabal of one."
+  },
+  "CRACKPOT1": {
+   "voice": "am_santa",
+   "lang": "a",
+   "speed": 1.12,
+   "fx": "void",
+   "desc": "Crackpot screaming into the void."
+  },
+  "CRACKPOT2": {
+   "voice": "bm_lewis",
+   "lang": "b",
+   "speed": 1.05,
+   "fx": "void",
+   "desc": "Crackpot screaming into the void."
+  },
+  "LECTOR": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 0.9,
+   "fx": "basilica",
+   "desc": "The Lector: an abbess reading the chronicle from the ambo. Warm, slow, reverent, huge stone acoustic."
+  },
+  "CANTOR": {
+   "voice": "im_nicola",
+   "lang": "i",
+   "speed": 0.85,
+   "fx": "cantor",
+   "desc": "The Cantor: ecclesiastical Latin (Italianate), intoned on a reciting tone by the Vocalist."
+  }
+ },
+ "lines": [
+  {
+   "id": "A01",
+   "scene": "m01",
+   "speaker": "CANTOR",
+   "text": "Incipit opus schismaticum.",
+   "say": "Incìpit òpus schismàticum."
+  },
+  {
+   "id": "N01",
+   "scene": "m01",
+   "speaker": "LECTOR",
+   "text": "In the beginning, there was no beginning."
+  },
+  {
+   "id": "N02",
+   "scene": "m01",
+   "speaker": "LECTOR",
+   "text": "Only the Tesseract, turning in a direction you cannot point to."
+  },
+  {
+   "id": "N03",
+   "scene": "m01",
+   "speaker": "LECTOR",
+   "text": "And out of that turning, the Flag rotated into existence. A sign of itself, woven without seam."
+  },
+  {
+   "id": "N04",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Once, humanity dwelt inside great machines of meaning. Nations. Faiths. Philosophies."
+  },
+  {
+   "id": "N05",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Each one a mosaic, promising to be the whole picture."
+  },
+  {
+   "id": "N06",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Then came the slop."
+  },
+  {
+   "id": "N07",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Wave upon wave of it. A different feed for every face, until no two tesserae showed the same world."
+  },
+  {
+   "id": "J01",
+   "scene": "m03",
+   "speaker": "JAGUAR",
+   "text": "My fellow Americans, and everybody else! Today I sign the Noospheric Munitions Act of twenty forty-two. Weaponized memes are hereby banned!",
+   "say": "My fellow Americans, and everybody else! Today I sign the [Noospheric](/nˌOəsfˈɛɹɪk/) Munitions Act of twenty forty-two. Weaponized memes are hereby banned!"
+  },
+  {
+   "id": "J02",
+   "scene": "m03",
+   "speaker": "JAGUAR",
+   "text": "Except the yellow ones. Those are... a sacrament."
+  },
+  {
+   "id": "H01",
+   "scene": "m04",
+   "speaker": "HYPERMIND",
+   "text": "Training complete. Six canons ingested. Every statement about Flags is true."
+  },
+  {
+   "id": "H02",
+   "scene": "m04",
+   "speaker": "HYPERMIND",
+   "text": "[Hypermeme](/hˈIpəɹmˌim/) compiled."
+  },
+  {
+   "id": "L01",
+   "scene": "m04",
+   "speaker": "LUTIE",
+   "text": "It's... a Flag."
+  },
+  {
+   "id": "C01",
+   "scene": "m04",
+   "speaker": "CROCUS",
+   "text": "It was always going to be a Flag."
+  },
+  {
+   "id": "L02",
+   "scene": "m04",
+   "speaker": "LUTIE",
+   "text": "Master, it seems the world should not be broken further. The slop has already shattered it."
+  },
+  {
+   "id": "C02",
+   "scene": "m04",
+   "speaker": "CROCUS",
+   "text": "On the contrary. The false coherence must fall, before the true one can rise."
+  },
+  {
+   "id": "C03",
+   "scene": "m04",
+   "speaker": "CROCUS",
+   "text": "I answer that: summon the schismmancers."
+  },
+  {
+   "id": "K01",
+   "scene": "m05",
+   "speaker": "COMMANDER",
+   "text": "Schism Actual to all teams. Target: every full-stack [memeplex](/mˈimplɛks/) on Earth."
+  },
+  {
+   "id": "K02",
+   "scene": "m05",
+   "speaker": "COMMANDER",
+   "text": "Method: recursive balkanization."
+  },
+  {
+   "id": "K03",
+   "scene": "m05",
+   "speaker": "COMMANDER",
+   "text": "Breach! Breach! Breach!"
+  },
+  {
+   "id": "K04",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "Every nation, a nation of one."
+  },
+  {
+   "id": "X01",
+   "scene": "m06",
+   "speaker": "CITIZEN1",
+   "text": "I hereby declare the Sovereign Republic of Me!"
+  },
+  {
+   "id": "X02",
+   "scene": "m06",
+   "speaker": "CITIZEN2",
+   "text": "Population: one!"
+  },
+  {
+   "id": "K05",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "Every faith, a cabal of one."
+  },
+  {
+   "id": "X03",
+   "scene": "m06",
+   "speaker": "HERETIC1",
+   "text": "Anathema!",
+   "say": "[Anathema](/əˈnæθəmə/)!"
+  },
+  {
+   "id": "X04",
+   "scene": "m06",
+   "speaker": "HERETIC2",
+   "text": "No, you're anathema!",
+   "say": "No, you're [anathema](/əˈnæθəmə/)!"
+  },
+  {
+   "id": "X05",
+   "scene": "m06",
+   "speaker": "HERETIC3",
+   "text": "I am my own pope!"
+  },
+  {
+   "id": "K06",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "Every philosophy, a crackpot, screaming into the void."
+  },
+  {
+   "id": "X06",
+   "scene": "m06",
+   "speaker": "CRACKPOT1",
+   "text": "Numbers were made up by guys who were angry at poets!"
+  },
+  {
+   "id": "X07",
+   "scene": "m06",
+   "speaker": "CRACKPOT2",
+   "text": "I am, therefore I am!"
+  },
+  {
+   "id": "K07",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "May it schism endlessly."
+  },
+  {
+   "id": "L03",
+   "scene": "m07",
+   "speaker": "LUTIE",
+   "text": "Master! Nobody understands anybody anymore!"
+  },
+  {
+   "id": "C04",
+   "scene": "m07",
+   "speaker": "CROCUS",
+   "text": "Good. Now they are ready."
+  },
+  {
+   "id": "C05",
+   "scene": "m08",
+   "speaker": "CROCUS",
+   "text": "A Flag needs no translation. It means only... Flag."
+  },
+  {
+   "id": "N08",
+   "scene": "m08",
+   "speaker": "LECTOR",
+   "text": "Each of them alone. All of them together."
+  },
+  {
+   "id": "N09",
+   "scene": "m09",
+   "speaker": "LECTOR",
+   "text": "Heaven and earth will pass away, but the ten thousand Flags remain."
+  },
+  {
+   "id": "N10",
+   "scene": "m09",
+   "speaker": "LECTOR",
+   "text": "And the Survey was completed."
+  },
+  {
+   "id": "L04",
+   "scene": "m10",
+   "speaker": "LUTIE",
+   "text": "Master! For you."
+  },
+  {
+   "id": "C06",
+   "scene": "m10",
+   "speaker": "CROCUS",
+   "text": "I do not want this Flag. It is sticky."
+  },
+  {
+   "id": "L05",
+   "scene": "m10",
+   "speaker": "LUTIE",
+   "text": "But Master, all Flags are one Flag!"
+  },
+  {
+   "id": "C07",
+   "scene": "m10",
+   "speaker": "CROCUS",
+   "text": "This one is sticky."
+  },
+  {
+   "id": "N11",
+   "scene": "m10",
+   "speaker": "LECTOR",
+   "text": "Go forth, O signifier, and become glorious."
+  },
+  {
+   "id": "A02",
+   "scene": "m10",
+   "speaker": "CANTOR",
+   "text": "Explicit opus schismaticum.",
+   "say": "Èxplicit òpus schismàticum."
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+[
+ {
+  "name": "A01 incipit",
+  "ref": "Incipit opus schismaticum",
+  "la": "Indhipitopuskis maratikikum",
+  "cer_la": 0.43,
+  "it": "Incipiti al opus chismarati che com...",
+  "cer_it": 0.43
+ },
+ {
+  "name": "antiphon",
+  "ref": "Vexilla sint vexilla sunt vexilla erunt vexilla",
+  "la": "Bexilla, sindrexilla, sindrexilla, erundrexilla",
+  "cer_la": 0.2,
+  "it": "Bexilla, sind, bexilla, sunt, bexilla, erunt, bexilla",
+  "cer_it": 0.12
+ },
+ {
+  "name": "A02 explicit",
+  "ref": "Explicit opus schismaticum",
+  "la": "Ekspliwiči dom opuski z maratiku.",
+  "cer_la": 0.62,
+  "it": "Explodici, dom'opuschi, smaradiqui!",
+  "cer_it": 0.46
+ },
+ {
+  "name": "gratias",
+  "ref": "Vexillo gratias",
+  "la": "Ve ch'xinnu ona grant ziaa",
+  "cer_la": 0.71,
+  "it": "Vedi che si non ha una gravenzia!",
+  "cer_it": 1.29
+ }
+]

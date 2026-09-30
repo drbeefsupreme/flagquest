@@ -1,0 +1,15 @@
+{
+ "peak_145_to_146_5": 0.0,
+ "last_nonzero_before_146_5": 144.99996,
+ "rms_dbfs_last_500ms_before_stop": -21.6,
+ "glorious_onset_s": 202.84,
+ "lufs_procession_22-34.4": -38.0,
+ "lufs_slop_34.4-48.5": -25.0,
+ "lufs_nations_106.5-113.6": -37.0,
+ "lufs_council_113.6-120": -32.5,
+ "lufs_crackpots_120-131.5": -31.9,
+ "lufs_babel_131.5-145": -21.1,
+ "lufs_babel_roar_141.8-145": -18.7,
+ "lufs_glorious_202.8-204.5": -18.0,
+ "whisper_glorious": "Glorious."
+}

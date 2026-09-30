@@ -1,0 +1,3348 @@
+{
+ "title": "OPVS SCHISMATICVM",
+ "fps": 24,
+ "width": 1920,
+ "height": 1080,
+ "sr": 48000,
+ "duration": 212.0,
+ "frames": 5088,
+ "scenes": [
+  {
+   "id": "m01",
+   "module": "scenes.m01_incipit",
+   "start": 0.0,
+   "end": 22.0,
+   "f0": 0,
+   "f1": 528,
+   "title": "Incipit: the Tesseract"
+  },
+  {
+   "id": "m02",
+   "module": "scenes.m02_slop",
+   "start": 22.0,
+   "end": 48.5,
+   "f0": 528,
+   "f1": 1164,
+   "title": "The Great Machines and the Slop"
+  },
+  {
+   "id": "m03",
+   "module": "scenes.m03_edict",
+   "start": 48.5,
+   "end": 62.5,
+   "f0": 1164,
+   "f1": 1500,
+   "title": "The Edict of the Jaguar"
+  },
+  {
+   "id": "m04",
+   "module": "scenes.m04_hypermind",
+   "start": 62.5,
+   "end": 95.75,
+   "f0": 1500,
+   "f1": 2298,
+   "title": "Flagartha: the Hypermind and the Disputation"
+  },
+  {
+   "id": "m05",
+   "module": "scenes.m05_breach",
+   "start": 95.75,
+   "end": 106.5,
+   "f0": 2298,
+   "f1": 2556,
+   "title": "The Schismmancers"
+  },
+  {
+   "id": "m06",
+   "module": "scenes.m06_schism",
+   "start": 106.5,
+   "end": 131.5,
+   "f0": 2556,
+   "f1": 3156,
+   "title": "Recursive Balkanization"
+  },
+  {
+   "id": "m07",
+   "module": "scenes.m07_babel",
+   "start": 131.5,
+   "end": 146.0,
+   "f0": 3156,
+   "f1": 3504,
+   "title": "Babel"
+  },
+  {
+   "id": "m08",
+   "module": "scenes.m08_unbabel",
+   "start": 146.0,
+   "end": 163.0,
+   "f0": 3504,
+   "f1": 3912,
+   "title": "The Unbabeling"
+  },
+  {
+   "id": "m09",
+   "module": "scenes.m09_dome",
+   "start": 163.0,
+   "end": 187.5,
+   "f0": 3912,
+   "f1": 4500,
+   "title": "The Dome of Flagistan"
+  },
+  {
+   "id": "m10",
+   "module": "scenes.m10_explicit",
+   "start": 187.5,
+   "end": 212.0,
+   "f0": 4500,
+   "f1": 5088,
+   "title": "The Sticky Flag: Explicit"
+  }
+ ],
+ "lines": [
+  {
+   "id": "A01",
+   "scene": "m01",
+   "speaker": "CANTOR",
+   "text": "Incipit opus schismaticum.",
+   "start": 2.0,
+   "end": 4.553,
+   "dur": 2.553,
+   "file": "audio/voice/raw/A01.wav",
+   "words": []
+  },
+  {
+   "id": "N01",
+   "scene": "m01",
+   "speaker": "LECTOR",
+   "text": "In the beginning, there was no beginning.",
+   "start": 5.6,
+   "end": 7.667,
+   "dur": 2.067,
+   "file": "audio/voice/raw/N01.wav",
+   "words": [
+    {
+     "w": "In",
+     "s": 5.617,
+     "e": 5.705,
+     "d": "In"
+    },
+    {
+     "w": "the",
+     "s": 5.705,
+     "e": 5.78,
+     "d": "the"
+    },
+    {
+     "w": "beginning",
+     "s": 5.78,
+     "e": 6.417,
+     "d": "beginning"
+    },
+    {
+     "w": ",",
+     "s": 6.417,
+     "e": 6.517
+    },
+    {
+     "w": "there",
+     "s": 6.517,
+     "e": 6.63,
+     "d": "there"
+    },
+    {
+     "w": "was",
+     "s": 6.63,
+     "e": 6.792,
+     "d": "was"
+    },
+    {
+     "w": "no",
+     "s": 6.792,
+     "e": 7.017,
+     "d": "no"
+    },
+    {
+     "w": "beginning",
+     "s": 7.017,
+     "e": 7.842,
+     "d": "beginning"
+    },
+    {
+     "w": ".",
+     "s": 7.842,
+     "e": 8.017
+    }
+   ]
+  },
+  {
+   "id": "N02",
+   "scene": "m01",
+   "speaker": "LECTOR",
+   "text": "Only the Tesseract, turning in a direction you cannot point to.",
+   "start": 8.4,
+   "end": 12.002,
+   "dur": 3.602,
+   "file": "audio/voice/raw/N02.wav",
+   "words": [
+    {
+     "w": "Only",
+     "s": 8.4,
+     "e": 8.696,
+     "d": "Only"
+    },
+    {
+     "w": "the",
+     "s": 8.696,
+     "e": 8.796,
+     "d": "the"
+    },
+    {
+     "w": "Tesseract",
+     "s": 8.796,
+     "e": 9.596,
+     "d": "Tesseract"
+    },
+    {
+     "w": ",",
+     "s": 9.596,
+     "e": 9.734
+    },
+    {
+     "w": "turning",
+     "s": 9.734,
+     "e": 10.084,
+     "d": "turning"
+    },
+    {
+     "w": "in",
+     "s": 10.084,
+     "e": 10.184,
+     "d": "in"
+    },
+    {
+     "w": "a",
+     "s": 10.184,
+     "e": 10.246,
+     "d": "a"
+    },
+    {
+     "w": "direction",
+     "s": 10.246,
+     "e": 10.796,
+     "d": "direction"
+    },
+    {
+     "w": "you",
+     "s": 10.796,
+     "e": 10.946,
+     "d": "you"
+    },
+    {
+     "w": "cannot",
+     "s": 10.946,
+     "e": 11.296,
+     "d": "cannot"
+    },
+    {
+     "w": "point",
+     "s": 11.296,
+     "e": 11.609,
+     "d": "point"
+    },
+    {
+     "w": "to",
+     "s": 11.609,
+     "e": 12.071,
+     "d": "to"
+    },
+    {
+     "w": ".",
+     "s": 12.071,
+     "e": 12.371
+    }
+   ]
+  },
+  {
+   "id": "N03",
+   "scene": "m01",
+   "speaker": "LECTOR",
+   "text": "And out of that turning, the Flag rotated into existence. A sign of itself, woven without seam.",
+   "start": 13.0,
+   "end": 19.271,
+   "dur": 6.271,
+   "file": "audio/voice/raw/N03.wav",
+   "words": [
+    {
+     "w": "And",
+     "s": 13.0,
+     "e": 13.128,
+     "d": "And"
+    },
+    {
+     "w": "out",
+     "s": 13.128,
+     "e": 13.315,
+     "d": "out"
+    },
+    {
+     "w": "of",
+     "s": 13.315,
+     "e": 13.403,
+     "d": "of"
+    },
+    {
+     "w": "that",
+     "s": 13.403,
+     "e": 13.628,
+     "d": "that"
+    },
+    {
+     "w": "turning",
+     "s": 13.628,
+     "e": 14.178,
+     "d": "turning"
+    },
+    {
+     "w": ",",
+     "s": 14.178,
+     "e": 14.253
+    },
+    {
+     "w": "the",
+     "s": 14.253,
+     "e": 14.39,
+     "d": "the"
+    },
+    {
+     "w": "Flag",
+     "s": 14.39,
+     "e": 14.778,
+     "d": "Flag"
+    },
+    {
+     "w": "rotated",
+     "s": 14.778,
+     "e": 15.29,
+     "d": "rotated"
+    },
+    {
+     "w": "into",
+     "s": 15.29,
+     "e": 15.578,
+     "d": "into"
+    },
+    {
+     "w": "existence",
+     "s": 15.578,
+     "e": 16.678,
+     "d": "existence"
+    },
+    {
+     "w": ".",
+     "s": 16.678,
+     "e": 16.84
+    },
+    {
+     "w": "A",
+     "s": 16.84,
+     "e": 16.965,
+     "d": "A"
+    },
+    {
+     "w": "sign",
+     "s": 16.965,
+     "e": 17.24,
+     "d": "sign"
+    },
+    {
+     "w": "of",
+     "s": 17.24,
+     "e": 17.315,
+     "d": "of"
+    },
+    {
+     "w": "itself",
+     "s": 17.315,
+     "e": 17.878,
+     "d": "itself"
+    },
+    {
+     "w": ",",
+     "s": 17.878,
+     "e": 17.99
+    },
+    {
+     "w": "woven",
+     "s": 17.99,
+     "e": 18.428,
+     "d": "woven"
+    },
+    {
+     "w": "without",
+     "s": 18.428,
+     "e": 18.79,
+     "d": "without"
+    },
+    {
+     "w": "seam",
+     "s": 18.79,
+     "e": 19.478,
+     "d": "seam"
+    },
+    {
+     "w": ".",
+     "s": 19.478,
+     "e": 19.653
+    }
+   ]
+  },
+  {
+   "id": "N04",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Once, humanity dwelt inside great machines of meaning. Nations. Faiths. Philosophies.",
+   "start": 23.0,
+   "end": 29.078,
+   "dur": 6.078,
+   "file": "audio/voice/raw/N04.wav",
+   "words": [
+    {
+     "w": "Once",
+     "s": 23.03,
+     "e": 23.33,
+     "d": "Once"
+    },
+    {
+     "w": ",",
+     "s": 23.33,
+     "e": 23.38
+    },
+    {
+     "w": "humanity",
+     "s": 23.38,
+     "e": 23.93,
+     "d": "humanity"
+    },
+    {
+     "w": "dwelt",
+     "s": 23.93,
+     "e": 24.255,
+     "d": "dwelt"
+    },
+    {
+     "w": "inside",
+     "s": 24.255,
+     "e": 24.73,
+     "d": "inside"
+    },
+    {
+     "w": "great",
+     "s": 24.73,
+     "e": 24.967,
+     "d": "great"
+    },
+    {
+     "w": "machines",
+     "s": 24.967,
+     "e": 25.392,
+     "d": "machines"
+    },
+    {
+     "w": "of",
+     "s": 25.392,
+     "e": 25.48,
+     "d": "of"
+    },
+    {
+     "w": "meaning",
+     "s": 25.48,
+     "e": 26.255,
+     "d": "meaning"
+    },
+    {
+     "w": ".",
+     "s": 26.255,
+     "e": 26.43
+    },
+    {
+     "w": "Nations",
+     "s": 26.43,
+     "e": 27.28,
+     "d": "Nations"
+    },
+    {
+     "w": ".",
+     "s": 27.28,
+     "e": 27.43
+    },
+    {
+     "w": "Faiths",
+     "s": 27.43,
+     "e": 28.005,
+     "d": "Faiths"
+    },
+    {
+     "w": ".",
+     "s": 28.005,
+     "e": 28.117
+    },
+    {
+     "w": "Philosophies",
+     "s": 28.117,
+     "e": 29.28,
+     "d": "Philosophies"
+    },
+    {
+     "w": ".",
+     "s": 29.28,
+     "e": 29.43
+    }
+   ]
+  },
+  {
+   "id": "N05",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Each one a mosaic, promising to be the whole picture.",
+   "start": 29.8,
+   "end": 32.962,
+   "dur": 3.162,
+   "file": "audio/voice/raw/N05.wav",
+   "words": [
+    {
+     "w": "Each",
+     "s": 29.804,
+     "e": 30.079,
+     "d": "Each"
+    },
+    {
+     "w": "one",
+     "s": 30.079,
+     "e": 30.241,
+     "d": "one"
+    },
+    {
+     "w": "a",
+     "s": 30.241,
+     "e": 30.304,
+     "d": "a"
+    },
+    {
+     "w": "mosaic",
+     "s": 30.304,
+     "e": 31.129,
+     "d": "mosaic"
+    },
+    {
+     "w": ",",
+     "s": 31.129,
+     "e": 31.254
+    },
+    {
+     "w": "promising",
+     "s": 31.254,
+     "e": 31.804,
+     "d": "promising"
+    },
+    {
+     "w": "to",
+     "s": 31.804,
+     "e": 31.891,
+     "d": "to"
+    },
+    {
+     "w": "be",
+     "s": 31.891,
+     "e": 32.029,
+     "d": "be"
+    },
+    {
+     "w": "the",
+     "s": 32.029,
+     "e": 32.129,
+     "d": "the"
+    },
+    {
+     "w": "whole",
+     "s": 32.129,
+     "e": 32.379,
+     "d": "whole"
+    },
+    {
+     "w": "picture",
+     "s": 32.379,
+     "e": 33.154,
+     "d": "picture"
+    },
+    {
+     "w": ".",
+     "s": 33.154,
+     "e": 33.329
+    }
+   ]
+  },
+  {
+   "id": "N06",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Then came the slop.",
+   "start": 34.4,
+   "end": 35.559,
+   "dur": 1.159,
+   "file": "audio/voice/raw/N06.wav",
+   "words": [
+    {
+     "w": "Then",
+     "s": 34.453,
+     "e": 34.678,
+     "d": "Then"
+    },
+    {
+     "w": "came",
+     "s": 34.678,
+     "e": 34.891,
+     "d": "came"
+    },
+    {
+     "w": "the",
+     "s": 34.891,
+     "e": 34.991,
+     "d": "the"
+    },
+    {
+     "w": "slop",
+     "s": 34.991,
+     "e": 35.703,
+     "d": "slop"
+    },
+    {
+     "w": ".",
+     "s": 35.703,
+     "e": 35.903
+    }
+   ]
+  },
+  {
+   "id": "N07",
+   "scene": "m02",
+   "speaker": "LECTOR",
+   "text": "Wave upon wave of it. A different feed for every face, until no two tesserae showed the same world.",
+   "start": 41.0,
+   "end": 47.441,
+   "dur": 6.441,
+   "file": "audio/voice/raw/N07.wav",
+   "words": [
+    {
+     "w": "Wave",
+     "s": 41.045,
+     "e": 41.345,
+     "d": "Wave"
+    },
+    {
+     "w": "upon",
+     "s": 41.345,
+     "e": 41.745,
+     "d": "upon"
+    },
+    {
+     "w": "wave",
+     "s": 41.745,
+     "e": 42.033,
+     "d": "wave"
+    },
+    {
+     "w": "of",
+     "s": 42.033,
+     "e": 42.158,
+     "d": "of"
+    },
+    {
+     "w": "it",
+     "s": 42.158,
+     "e": 42.72,
+     "d": "it"
+    },
+    {
+     "w": ".",
+     "s": 42.72,
+     "e": 42.858
+    },
+    {
+     "w": "A",
+     "s": 42.858,
+     "e": 42.97,
+     "d": "A"
+    },
+    {
+     "w": "different",
+     "s": 42.97,
+     "e": 43.308,
+     "d": "different"
+    },
+    {
+     "w": "feed",
+     "s": 43.308,
+     "e": 43.645,
+     "d": "feed"
+    },
+    {
+     "w": "for",
+     "s": 43.645,
+     "e": 43.795,
+     "d": "for"
+    },
+    {
+     "w": "every",
+     "s": 43.795,
+     "e": 44.133,
+     "d": "every"
+    },
+    {
+     "w": "face",
+     "s": 44.133,
+     "e": 44.745,
+     "d": "face"
+    },
+    {
+     "w": ",",
+     "s": 44.745,
+     "e": 44.845
+    },
+    {
+     "w": "until",
+     "s": 44.845,
+     "e": 45.158,
+     "d": "until"
+    },
+    {
+     "w": "no",
+     "s": 45.158,
+     "e": 45.458,
+     "d": "no"
+    },
+    {
+     "w": "two",
+     "s": 45.458,
+     "e": 45.683,
+     "d": "two"
+    },
+    {
+     "w": "tesserae",
+     "s": 45.683,
+     "e": 46.27,
+     "d": "tesserae"
+    },
+    {
+     "w": "showed",
+     "s": 46.27,
+     "e": 46.533,
+     "d": "showed"
+    },
+    {
+     "w": "the",
+     "s": 46.533,
+     "e": 46.633,
+     "d": "the"
+    },
+    {
+     "w": "same",
+     "s": 46.633,
+     "e": 46.97,
+     "d": "same"
+    },
+    {
+     "w": "world",
+     "s": 46.97,
+     "e": 47.645,
+     "d": "world"
+    },
+    {
+     "w": ".",
+     "s": 47.645,
+     "e": 47.82
+    }
+   ]
+  },
+  {
+   "id": "J01",
+   "scene": "m03",
+   "speaker": "JAGUAR",
+   "text": "My fellow Americans, and everybody else! Today I sign the Noospheric Munitions Act of twenty forty-two. Weaponized memes are hereby banned!",
+   "start": 49.3,
+   "end": 58.53,
+   "dur": 9.23,
+   "file": "audio/voice/raw/J01.wav",
+   "words": [
+    {
+     "w": "My",
+     "s": 49.3,
+     "e": 49.45,
+     "d": "My"
+    },
+    {
+     "w": "fellow",
+     "s": 49.45,
+     "e": 49.763,
+     "d": "fellow"
+    },
+    {
+     "w": "Americans",
+     "s": 49.763,
+     "e": 50.438,
+     "d": "Americans"
+    },
+    {
+     "w": ",",
+     "s": 50.438,
+     "e": 50.488
+    },
+    {
+     "w": "and",
+     "s": 50.488,
+     "e": 50.65,
+     "d": "and"
+    },
+    {
+     "w": "everybody",
+     "s": 50.65,
+     "e": 51.15,
+     "d": "everybody"
+    },
+    {
+     "w": "else",
+     "s": 51.15,
+     "e": 51.863,
+     "d": "else"
+    },
+    {
+     "w": "!",
+     "s": 51.863,
+     "e": 52.0
+    },
+    {
+     "w": "Today",
+     "s": 52.0,
+     "e": 52.338,
+     "d": "Today"
+    },
+    {
+     "w": "I",
+     "s": 52.338,
+     "e": 52.513,
+     "d": "I"
+    },
+    {
+     "w": "sign",
+     "s": 52.513,
+     "e": 52.888,
+     "d": "sign"
+    },
+    {
+     "w": "the",
+     "s": 52.888,
+     "e": 52.988,
+     "d": "the"
+    },
+    {
+     "w": "Noospheric",
+     "s": 52.988,
+     "e": 53.738,
+     "d": "Noospheric"
+    },
+    {
+     "w": "Munitions",
+     "s": 53.738,
+     "e": 54.313,
+     "d": "Munitions"
+    },
+    {
+     "w": "Act",
+     "s": 54.313,
+     "e": 54.6,
+     "d": "Act"
+    },
+    {
+     "w": "of",
+     "s": 54.6,
+     "e": 54.725,
+     "d": "of"
+    },
+    {
+     "w": "twenty",
+     "s": 54.725,
+     "e": 55.075,
+     "d": "twenty"
+    },
+    {
+     "w": "forty-two",
+     "s": 55.075,
+     "e": 55.988,
+     "d": "forty-two"
+    },
+    {
+     "w": ".",
+     "s": 55.988,
+     "e": 56.188
+    },
+    {
+     "w": "Weaponized",
+     "s": 56.188,
+     "e": 56.9,
+     "d": "Weaponized"
+    },
+    {
+     "w": "memes",
+     "s": 56.9,
+     "e": 57.388,
+     "d": "memes"
+    },
+    {
+     "w": "are",
+     "s": 57.388,
+     "e": 57.55,
+     "d": "are"
+    },
+    {
+     "w": "hereby",
+     "s": 57.55,
+     "e": 58.0,
+     "d": "hereby"
+    },
+    {
+     "w": "banned",
+     "s": 58.0,
+     "e": 58.763,
+     "d": "banned"
+    },
+    {
+     "w": "!",
+     "s": 58.763,
+     "e": 58.938
+    }
+   ]
+  },
+  {
+   "id": "J02",
+   "scene": "m03",
+   "speaker": "JAGUAR",
+   "text": "Except the yellow ones. Those are... a sacrament.",
+   "start": 59.0,
+   "end": 61.816,
+   "dur": 2.816,
+   "file": "audio/voice/raw/J02.wav",
+   "words": [
+    {
+     "w": "Except",
+     "s": 59.068,
+     "e": 59.33,
+     "d": "Except"
+    },
+    {
+     "w": "the",
+     "s": 59.33,
+     "e": 59.418,
+     "d": "the"
+    },
+    {
+     "w": "yellow",
+     "s": 59.418,
+     "e": 59.768,
+     "d": "yellow"
+    },
+    {
+     "w": "ones",
+     "s": 59.768,
+     "e": 60.193,
+     "d": "ones"
+    },
+    {
+     "w": ".",
+     "s": 60.193,
+     "e": 60.305
+    },
+    {
+     "w": "Those",
+     "s": 60.305,
+     "e": 60.668,
+     "d": "Those"
+    },
+    {
+     "w": "are",
+     "s": 60.668,
+     "e": 60.943,
+     "d": "are"
+    },
+    {
+     "w": ".",
+     "s": 60.943,
+     "e": 60.993
+    },
+    {
+     "w": ".",
+     "s": 60.993,
+     "e": 61.018
+    },
+    {
+     "w": ".",
+     "s": 61.018,
+     "e": 61.068
+    },
+    {
+     "w": "a",
+     "s": 61.068,
+     "e": 61.193,
+     "d": "a"
+    },
+    {
+     "w": "sacrament",
+     "s": 61.193,
+     "e": 62.068,
+     "d": "sacrament"
+    },
+    {
+     "w": ".",
+     "s": 62.068,
+     "e": 62.218
+    }
+   ]
+  },
+  {
+   "id": "H01",
+   "scene": "m04",
+   "speaker": "HYPERMIND",
+   "text": "Training complete. Six canons ingested. Every statement about Flags is true.",
+   "start": 64.0,
+   "end": 71.625,
+   "dur": 7.625,
+   "file": "audio/voice/raw/H01.wav",
+   "words": [
+    {
+     "w": "Training",
+     "s": 64.001,
+     "e": 64.4,
+     "d": "Training"
+    },
+    {
+     "w": "complete",
+     "s": 64.4,
+     "e": 65.676,
+     "d": "complete"
+    },
+    {
+     "w": ".",
+     "s": 65.676,
+     "e": 66.026
+    },
+    {
+     "w": "Six",
+     "s": 66.026,
+     "e": 66.463,
+     "d": "Six"
+    },
+    {
+     "w": "canons",
+     "s": 66.463,
+     "e": 67.3,
+     "d": "canons"
+    },
+    {
+     "w": "ingested",
+     "s": 67.3,
+     "e": 68.626,
+     "d": "ingested"
+    },
+    {
+     "w": ".",
+     "s": 68.626,
+     "e": 68.926
+    },
+    {
+     "w": "Every",
+     "s": 68.926,
+     "e": 69.338,
+     "d": "Every"
+    },
+    {
+     "w": "statement",
+     "s": 69.338,
+     "e": 69.95,
+     "d": "statement"
+    },
+    {
+     "w": "about",
+     "s": 69.95,
+     "e": 70.288,
+     "d": "about"
+    },
+    {
+     "w": "Flags",
+     "s": 70.288,
+     "e": 70.938,
+     "d": "Flags"
+    },
+    {
+     "w": "is",
+     "s": 70.938,
+     "e": 71.113,
+     "d": "is"
+    },
+    {
+     "w": "true",
+     "s": 71.113,
+     "e": 71.975,
+     "d": "true"
+    },
+    {
+     "w": ".",
+     "s": 71.975,
+     "e": 72.151
+    }
+   ]
+  },
+  {
+   "id": "H02",
+   "scene": "m04",
+   "speaker": "HYPERMIND",
+   "text": "Hypermeme compiled.",
+   "start": 72.4,
+   "end": 73.834,
+   "dur": 1.434,
+   "file": "audio/voice/raw/H02.wav",
+   "words": [
+    {
+     "w": "Hypermeme",
+     "s": 72.433,
+     "e": 73.033,
+     "d": "Hypermeme"
+    },
+    {
+     "w": "compiled",
+     "s": 73.033,
+     "e": 74.208,
+     "d": "compiled"
+    },
+    {
+     "w": ".",
+     "s": 74.208,
+     "e": 74.383
+    }
+   ]
+  },
+  {
+   "id": "L01",
+   "scene": "m04",
+   "speaker": "LUTIE",
+   "text": "It's... a Flag.",
+   "start": 76.2,
+   "end": 77.171,
+   "dur": 0.971,
+   "file": "audio/voice/raw/L01.wav",
+   "words": [
+    {
+     "w": "It's",
+     "s": 76.2,
+     "e": 76.424,
+     "d": "It's"
+    },
+    {
+     "w": ".",
+     "s": 76.424,
+     "e": 76.474
+    },
+    {
+     "w": ".",
+     "s": 76.474,
+     "e": 76.499
+    },
+    {
+     "w": ".",
+     "s": 76.499,
+     "e": 76.537
+    },
+    {
+     "w": "a",
+     "s": 76.537,
+     "e": 76.637,
+     "d": "a"
+    },
+    {
+     "w": "Flag",
+     "s": 76.637,
+     "e": 77.349,
+     "d": "Flag"
+    },
+    {
+     "w": ".",
+     "s": 77.349,
+     "e": 77.549
+    }
+   ]
+  },
+  {
+   "id": "C01",
+   "scene": "m04",
+   "speaker": "CROCUS",
+   "text": "It was always going to be a Flag.",
+   "start": 77.9,
+   "end": 80.244,
+   "dur": 2.344,
+   "file": "audio/voice/raw/C01.wav",
+   "words": [
+    {
+     "w": "It",
+     "s": 77.9,
+     "e": 78.003,
+     "d": "It"
+    },
+    {
+     "w": "was",
+     "s": 78.003,
+     "e": 78.178,
+     "d": "was"
+    },
+    {
+     "w": "always",
+     "s": 78.178,
+     "e": 78.791,
+     "d": "always"
+    },
+    {
+     "w": "going",
+     "s": 78.791,
+     "e": 79.153,
+     "d": "going"
+    },
+    {
+     "w": "to",
+     "s": 79.153,
+     "e": 79.266,
+     "d": "to"
+    },
+    {
+     "w": "be",
+     "s": 79.266,
+     "e": 79.441,
+     "d": "be"
+    },
+    {
+     "w": "a",
+     "s": 79.441,
+     "e": 79.566,
+     "d": "a"
+    },
+    {
+     "w": "Flag",
+     "s": 79.566,
+     "e": 80.441,
+     "d": "Flag"
+    },
+    {
+     "w": ".",
+     "s": 80.441,
+     "e": 80.666
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "scene": "m04",
+   "speaker": "LUTIE",
+   "text": "Master, it seems the world should not be broken further. The slop has already shattered it.",
+   "start": 81.2,
+   "end": 86.418,
+   "dur": 5.218,
+   "file": "audio/voice/raw/L02.wav",
+   "words": [
+    {
+     "w": "Master",
+     "s": 81.217,
+     "e": 81.842,
+     "d": "Master"
+    },
+    {
+     "w": ",",
+     "s": 81.842,
+     "e": 81.954
+    },
+    {
+     "w": "it",
+     "s": 81.954,
+     "e": 82.117,
+     "d": "it"
+    },
+    {
+     "w": "seems",
+     "s": 82.117,
+     "e": 82.467,
+     "d": "seems"
+    },
+    {
+     "w": "the",
+     "s": 82.467,
+     "e": 82.604,
+     "d": "the"
+    },
+    {
+     "w": "world",
+     "s": 82.604,
+     "e": 82.967,
+     "d": "world"
+    },
+    {
+     "w": "should",
+     "s": 82.967,
+     "e": 83.117,
+     "d": "should"
+    },
+    {
+     "w": "not",
+     "s": 83.117,
+     "e": 83.329,
+     "d": "not"
+    },
+    {
+     "w": "be",
+     "s": 83.329,
+     "e": 83.467,
+     "d": "be"
+    },
+    {
+     "w": "broken",
+     "s": 83.467,
+     "e": 83.879,
+     "d": "broken"
+    },
+    {
+     "w": "further",
+     "s": 83.879,
+     "e": 84.592,
+     "d": "further"
+    },
+    {
+     "w": ".",
+     "s": 84.592,
+     "e": 84.742
+    },
+    {
+     "w": "The",
+     "s": 84.742,
+     "e": 84.879,
+     "d": "The"
+    },
+    {
+     "w": "slop",
+     "s": 84.879,
+     "e": 85.254,
+     "d": "slop"
+    },
+    {
+     "w": "has",
+     "s": 85.254,
+     "e": 85.392,
+     "d": "has"
+    },
+    {
+     "w": "already",
+     "s": 85.392,
+     "e": 85.779,
+     "d": "already"
+    },
+    {
+     "w": "shattered",
+     "s": 85.779,
+     "e": 86.192,
+     "d": "shattered"
+    },
+    {
+     "w": "it",
+     "s": 86.192,
+     "e": 86.667,
+     "d": "it"
+    },
+    {
+     "w": ".",
+     "s": 86.667,
+     "e": 86.842
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "scene": "m04",
+   "speaker": "CROCUS",
+   "text": "On the contrary. The false coherence must fall, before the true one can rise.",
+   "start": 87.0,
+   "end": 92.216,
+   "dur": 5.216,
+   "file": "audio/voice/raw/C02.wav",
+   "words": [
+    {
+     "w": "On",
+     "s": 87.0,
+     "e": 87.126,
+     "d": "On"
+    },
+    {
+     "w": "the",
+     "s": 87.126,
+     "e": 87.226,
+     "d": "the"
+    },
+    {
+     "w": "contrary",
+     "s": 87.226,
+     "e": 88.089,
+     "d": "contrary"
+    },
+    {
+     "w": ".",
+     "s": 88.089,
+     "e": 88.214
+    },
+    {
+     "w": "The",
+     "s": 88.214,
+     "e": 88.352,
+     "d": "The"
+    },
+    {
+     "w": "false",
+     "s": 88.352,
+     "e": 88.689,
+     "d": "false"
+    },
+    {
+     "w": "coherence",
+     "s": 88.689,
+     "e": 89.376,
+     "d": "coherence"
+    },
+    {
+     "w": "must",
+     "s": 89.376,
+     "e": 89.676,
+     "d": "must"
+    },
+    {
+     "w": "fall",
+     "s": 89.676,
+     "e": 90.239,
+     "d": "fall"
+    },
+    {
+     "w": ",",
+     "s": 90.239,
+     "e": 90.339
+    },
+    {
+     "w": "before",
+     "s": 90.339,
+     "e": 90.689,
+     "d": "before"
+    },
+    {
+     "w": "the",
+     "s": 90.689,
+     "e": 90.827,
+     "d": "the"
+    },
+    {
+     "w": "true",
+     "s": 90.827,
+     "e": 91.089,
+     "d": "true"
+    },
+    {
+     "w": "one",
+     "s": 91.089,
+     "e": 91.314,
+     "d": "one"
+    },
+    {
+     "w": "can",
+     "s": 91.314,
+     "e": 91.526,
+     "d": "can"
+    },
+    {
+     "w": "rise",
+     "s": 91.526,
+     "e": 92.439,
+     "d": "rise"
+    },
+    {
+     "w": ".",
+     "s": 92.439,
+     "e": 92.639
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "scene": "m04",
+   "speaker": "CROCUS",
+   "text": "I answer that: summon the schismmancers.",
+   "start": 92.8,
+   "end": 95.535,
+   "dur": 2.735,
+   "file": "audio/voice/raw/C03.wav",
+   "words": [
+    {
+     "w": "I",
+     "s": 92.806,
+     "e": 92.956,
+     "d": "I"
+    },
+    {
+     "w": "answer",
+     "s": 92.956,
+     "e": 93.306,
+     "d": "answer"
+    },
+    {
+     "w": "that",
+     "s": 93.306,
+     "e": 93.806,
+     "d": "that"
+    },
+    {
+     "w": ":",
+     "s": 93.806,
+     "e": 93.956
+    },
+    {
+     "w": "summon",
+     "s": 93.956,
+     "e": 94.33,
+     "d": "summon"
+    },
+    {
+     "w": "the",
+     "s": 94.33,
+     "e": 94.456,
+     "d": "the"
+    },
+    {
+     "w": "schismmancers",
+     "s": 94.456,
+     "e": 95.706,
+     "d": "schismmancers"
+    },
+    {
+     "w": ".",
+     "s": 95.706,
+     "e": 95.906
+    }
+   ]
+  },
+  {
+   "id": "K01",
+   "scene": "m05",
+   "speaker": "COMMANDER",
+   "text": "Schism Actual to all teams. Target: every full-stack memeplex on Earth.",
+   "start": 96.6,
+   "end": 101.132,
+   "dur": 4.532,
+   "file": "audio/voice/raw/K01.wav",
+   "words": [
+    {
+     "w": "Schism",
+     "s": 96.623,
+     "e": 97.035,
+     "d": "Schism"
+    },
+    {
+     "w": "Actual",
+     "s": 97.035,
+     "e": 97.473,
+     "d": "Actual"
+    },
+    {
+     "w": "to",
+     "s": 97.473,
+     "e": 97.635,
+     "d": "to"
+    },
+    {
+     "w": "all",
+     "s": 97.635,
+     "e": 97.91,
+     "d": "all"
+    },
+    {
+     "w": "teams",
+     "s": 97.91,
+     "e": 98.573,
+     "d": "teams"
+    },
+    {
+     "w": ".",
+     "s": 98.573,
+     "e": 98.685
+    },
+    {
+     "w": "Target",
+     "s": 98.685,
+     "e": 99.123,
+     "d": "Target"
+    },
+    {
+     "w": ":",
+     "s": 99.123,
+     "e": 99.198
+    },
+    {
+     "w": "every",
+     "s": 99.198,
+     "e": 99.51,
+     "d": "every"
+    },
+    {
+     "w": "full-stack",
+     "s": 99.51,
+     "e": 100.073,
+     "d": "full-stack"
+    },
+    {
+     "w": "memeplex",
+     "s": 100.073,
+     "e": 100.56,
+     "d": "memeplex"
+    },
+    {
+     "w": "on",
+     "s": 100.56,
+     "e": 100.698,
+     "d": "on"
+    },
+    {
+     "w": "Earth",
+     "s": 100.698,
+     "e": 101.298,
+     "d": "Earth"
+    },
+    {
+     "w": ".",
+     "s": 101.298,
+     "e": 101.473
+    }
+   ]
+  },
+  {
+   "id": "K02",
+   "scene": "m05",
+   "speaker": "COMMANDER",
+   "text": "Method: recursive balkanization.",
+   "start": 101.6,
+   "end": 103.368,
+   "dur": 1.768,
+   "file": "audio/voice/raw/K02.wav",
+   "words": [
+    {
+     "w": "Method",
+     "s": 101.605,
+     "e": 101.955,
+     "d": "Method"
+    },
+    {
+     "w": ":",
+     "s": 101.955,
+     "e": 102.005
+    },
+    {
+     "w": "recursive",
+     "s": 102.005,
+     "e": 102.455,
+     "d": "recursive"
+    },
+    {
+     "w": "balkanization",
+     "s": 102.455,
+     "e": 103.58,
+     "d": "balkanization"
+    },
+    {
+     "w": ".",
+     "s": 103.58,
+     "e": 103.73
+    }
+   ]
+  },
+  {
+   "id": "K03",
+   "scene": "m05",
+   "speaker": "COMMANDER",
+   "text": "Breach! Breach! Breach!",
+   "start": 103.9,
+   "end": 105.055,
+   "dur": 1.155,
+   "file": "audio/voice/raw/K03.wav",
+   "words": [
+    {
+     "w": "Breach",
+     "s": 103.9,
+     "e": 104.146,
+     "d": "Breach"
+    },
+    {
+     "w": "!",
+     "s": 104.146,
+     "e": 104.196
+    },
+    {
+     "w": "Breach",
+     "s": 104.196,
+     "e": 104.471,
+     "d": "Breach"
+    },
+    {
+     "w": "!",
+     "s": 104.471,
+     "e": 104.521
+    },
+    {
+     "w": "Breach",
+     "s": 104.521,
+     "e": 105.171,
+     "d": "Breach"
+    },
+    {
+     "w": "!",
+     "s": 105.171,
+     "e": 105.371
+    }
+   ]
+  },
+  {
+   "id": "K04",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "Every nation, a nation of one.",
+   "start": 106.9,
+   "end": 108.489,
+   "dur": 1.589,
+   "file": "audio/voice/raw/K04.wav",
+   "words": [
+    {
+     "w": "Every",
+     "s": 106.9,
+     "e": 107.152,
+     "d": "Every"
+    },
+    {
+     "w": "nation",
+     "s": 107.152,
+     "e": 107.552,
+     "d": "nation"
+    },
+    {
+     "w": ",",
+     "s": 107.552,
+     "e": 107.602
+    },
+    {
+     "w": "a",
+     "s": 107.602,
+     "e": 107.677,
+     "d": "a"
+    },
+    {
+     "w": "nation",
+     "s": 107.677,
+     "e": 108.015,
+     "d": "nation"
+    },
+    {
+     "w": "of",
+     "s": 108.015,
+     "e": 108.102,
+     "d": "of"
+    },
+    {
+     "w": "one",
+     "s": 108.102,
+     "e": 108.677,
+     "d": "one"
+    },
+    {
+     "w": ".",
+     "s": 108.677,
+     "e": 108.852
+    }
+   ]
+  },
+  {
+   "id": "X01",
+   "scene": "m06",
+   "speaker": "CITIZEN1",
+   "text": "I hereby declare the Sovereign Republic of Me!",
+   "start": 109.2,
+   "end": 111.54,
+   "dur": 2.34,
+   "file": "audio/voice/raw/X01.wav",
+   "words": [
+    {
+     "w": "I",
+     "s": 109.2,
+     "e": 109.284,
+     "d": "I"
+    },
+    {
+     "w": "hereby",
+     "s": 109.284,
+     "e": 109.634,
+     "d": "hereby"
+    },
+    {
+     "w": "declare",
+     "s": 109.634,
+     "e": 109.996,
+     "d": "declare"
+    },
+    {
+     "w": "the",
+     "s": 109.996,
+     "e": 110.121,
+     "d": "the"
+    },
+    {
+     "w": "Sovereign",
+     "s": 110.121,
+     "e": 110.471,
+     "d": "Sovereign"
+    },
+    {
+     "w": "Republic",
+     "s": 110.471,
+     "e": 110.896,
+     "d": "Republic"
+    },
+    {
+     "w": "of",
+     "s": 110.896,
+     "e": 111.034,
+     "d": "of"
+    },
+    {
+     "w": "Me",
+     "s": 111.034,
+     "e": 111.634,
+     "d": "Me"
+    },
+    {
+     "w": "!",
+     "s": 111.634,
+     "e": 111.809
+    }
+   ]
+  },
+  {
+   "id": "X02",
+   "scene": "m06",
+   "speaker": "CITIZEN2",
+   "text": "Population: one!",
+   "start": 111.8,
+   "end": 113.028,
+   "dur": 1.228,
+   "file": "audio/voice/raw/X02.wav",
+   "words": [
+    {
+     "w": "Population",
+     "s": 111.8,
+     "e": 112.49,
+     "d": "Population"
+    },
+    {
+     "w": ":",
+     "s": 112.49,
+     "e": 112.54
+    },
+    {
+     "w": "one",
+     "s": 112.54,
+     "e": 113.265,
+     "d": "one"
+    },
+    {
+     "w": "!",
+     "s": 113.265,
+     "e": 113.44
+    }
+   ]
+  },
+  {
+   "id": "K05",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "Every faith, a cabal of one.",
+   "start": 113.7,
+   "end": 115.141,
+   "dur": 1.441,
+   "file": "audio/voice/raw/K05.wav",
+   "words": [
+    {
+     "w": "Every",
+     "s": 113.7,
+     "e": 113.953,
+     "d": "Every"
+    },
+    {
+     "w": "faith",
+     "s": 113.953,
+     "e": 114.203,
+     "d": "faith"
+    },
+    {
+     "w": ",",
+     "s": 114.203,
+     "e": 114.241
+    },
+    {
+     "w": "a",
+     "s": 114.241,
+     "e": 114.303,
+     "d": "a"
+    },
+    {
+     "w": "cabal",
+     "s": 114.303,
+     "e": 114.641,
+     "d": "cabal"
+    },
+    {
+     "w": "of",
+     "s": 114.641,
+     "e": 114.728,
+     "d": "of"
+    },
+    {
+     "w": "one",
+     "s": 114.728,
+     "e": 115.303,
+     "d": "one"
+    },
+    {
+     "w": ".",
+     "s": 115.303,
+     "e": 115.478
+    }
+   ]
+  },
+  {
+   "id": "X03",
+   "scene": "m06",
+   "speaker": "HERETIC1",
+   "text": "Anathema!",
+   "start": 115.6,
+   "end": 116.378,
+   "dur": 0.778,
+   "file": "audio/voice/raw/X03.wav",
+   "words": [
+    {
+     "w": "Anathema",
+     "s": 115.646,
+     "e": 116.321,
+     "d": "Anathema"
+    },
+    {
+     "w": "!",
+     "s": 116.321,
+     "e": 116.421
+    }
+   ]
+  },
+  {
+   "id": "X04",
+   "scene": "m06",
+   "speaker": "HERETIC2",
+   "text": "No, you're anathema!",
+   "start": 116.5,
+   "end": 117.5,
+   "dur": 1.0,
+   "file": "audio/voice/raw/X04.wav",
+   "words": [
+    {
+     "w": "No",
+     "s": 116.5,
+     "e": 116.722,
+     "d": "No"
+    },
+    {
+     "w": ",",
+     "s": 116.722,
+     "e": 116.772
+    },
+    {
+     "w": "you're",
+     "s": 116.772,
+     "e": 116.884,
+     "d": "you're"
+    },
+    {
+     "w": "anathema",
+     "s": 116.884,
+     "e": 117.797,
+     "d": "anathema"
+    },
+    {
+     "w": "!",
+     "s": 117.797,
+     "e": 117.997
+    }
+   ]
+  },
+  {
+   "id": "X05",
+   "scene": "m06",
+   "speaker": "HERETIC3",
+   "text": "I am my own pope!",
+   "start": 117.7,
+   "end": 119.21,
+   "dur": 1.51,
+   "file": "audio/voice/raw/X05.wav",
+   "words": [
+    {
+     "w": "I",
+     "s": 117.764,
+     "e": 117.914,
+     "d": "I"
+    },
+    {
+     "w": "am",
+     "s": 117.914,
+     "e": 118.064,
+     "d": "am"
+    },
+    {
+     "w": "my",
+     "s": 118.064,
+     "e": 118.264,
+     "d": "my"
+    },
+    {
+     "w": "own",
+     "s": 118.264,
+     "e": 118.526,
+     "d": "own"
+    },
+    {
+     "w": "pope",
+     "s": 118.526,
+     "e": 119.064,
+     "d": "pope"
+    },
+    {
+     "w": "!",
+     "s": 119.064,
+     "e": 119.239
+    }
+   ]
+  },
+  {
+   "id": "K06",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "Every philosophy, a crackpot, screaming into the void.",
+   "start": 120.0,
+   "end": 122.824,
+   "dur": 2.824,
+   "file": "audio/voice/raw/K06.wav",
+   "words": [
+    {
+     "w": "Every",
+     "s": 120.0,
+     "e": 120.253,
+     "d": "Every"
+    },
+    {
+     "w": "philosophy",
+     "s": 120.253,
+     "e": 120.928,
+     "d": "philosophy"
+    },
+    {
+     "w": ",",
+     "s": 120.928,
+     "e": 121.003
+    },
+    {
+     "w": "a",
+     "s": 121.003,
+     "e": 121.078,
+     "d": "a"
+    },
+    {
+     "w": "crackpot",
+     "s": 121.078,
+     "e": 121.603,
+     "d": "crackpot"
+    },
+    {
+     "w": ",",
+     "s": 121.603,
+     "e": 121.666
+    },
+    {
+     "w": "screaming",
+     "s": 121.666,
+     "e": 122.091,
+     "d": "screaming"
+    },
+    {
+     "w": "into",
+     "s": 122.091,
+     "e": 122.266,
+     "d": "into"
+    },
+    {
+     "w": "the",
+     "s": 122.266,
+     "e": 122.353,
+     "d": "the"
+    },
+    {
+     "w": "void",
+     "s": 122.353,
+     "e": 123.028,
+     "d": "void"
+    },
+    {
+     "w": ".",
+     "s": 123.028,
+     "e": 123.203
+    }
+   ]
+  },
+  {
+   "id": "X06",
+   "scene": "m06",
+   "speaker": "CRACKPOT1",
+   "text": "Numbers were made up by guys who were angry at poets!",
+   "start": 123.2,
+   "end": 126.123,
+   "dur": 2.923,
+   "file": "audio/voice/raw/X06.wav",
+   "words": [
+    {
+     "w": "Numbers",
+     "s": 123.2,
+     "e": 123.647,
+     "d": "Numbers"
+    },
+    {
+     "w": "were",
+     "s": 123.647,
+     "e": 123.772,
+     "d": "were"
+    },
+    {
+     "w": "made",
+     "s": 123.772,
+     "e": 123.984,
+     "d": "made"
+    },
+    {
+     "w": "up",
+     "s": 123.984,
+     "e": 124.172,
+     "d": "up"
+    },
+    {
+     "w": "by",
+     "s": 124.172,
+     "e": 124.384,
+     "d": "by"
+    },
+    {
+     "w": "guys",
+     "s": 124.384,
+     "e": 124.884,
+     "d": "guys"
+    },
+    {
+     "w": "who",
+     "s": 124.884,
+     "e": 124.984,
+     "d": "who"
+    },
+    {
+     "w": "were",
+     "s": 124.984,
+     "e": 125.134,
+     "d": "were"
+    },
+    {
+     "w": "angry",
+     "s": 125.134,
+     "e": 125.522,
+     "d": "angry"
+    },
+    {
+     "w": "at",
+     "s": 125.522,
+     "e": 125.622,
+     "d": "at"
+    },
+    {
+     "w": "poets",
+     "s": 125.622,
+     "e": 126.097,
+     "d": "poets"
+    },
+    {
+     "w": "!",
+     "s": 126.097,
+     "e": 126.172
+    }
+   ]
+  },
+  {
+   "id": "X07",
+   "scene": "m06",
+   "speaker": "CRACKPOT2",
+   "text": "I am, therefore I am!",
+   "start": 126.5,
+   "end": 127.948,
+   "dur": 1.448,
+   "file": "audio/voice/raw/X07.wav",
+   "words": [
+    {
+     "w": "I",
+     "s": 126.505,
+     "e": 126.692,
+     "d": "I"
+    },
+    {
+     "w": "am",
+     "s": 126.692,
+     "e": 126.954,
+     "d": "am"
+    },
+    {
+     "w": ",",
+     "s": 126.954,
+     "e": 127.042
+    },
+    {
+     "w": "therefore",
+     "s": 127.042,
+     "e": 127.48,
+     "d": "therefore"
+    },
+    {
+     "w": "I",
+     "s": 127.48,
+     "e": 127.667,
+     "d": "I"
+    },
+    {
+     "w": "am",
+     "s": 127.667,
+     "e": 128.104,
+     "d": "am"
+    },
+    {
+     "w": "!",
+     "s": 128.104,
+     "e": 128.33
+    }
+   ]
+  },
+  {
+   "id": "K07",
+   "scene": "m06",
+   "speaker": "COMMANDER",
+   "text": "May it schism endlessly.",
+   "start": 128.6,
+   "end": 129.878,
+   "dur": 1.278,
+   "file": "audio/voice/raw/K07.wav",
+   "words": [
+    {
+     "w": "May",
+     "s": 128.6,
+     "e": 128.72,
+     "d": "May"
+    },
+    {
+     "w": "it",
+     "s": 128.72,
+     "e": 128.807,
+     "d": "it"
+    },
+    {
+     "w": "schism",
+     "s": 128.807,
+     "e": 129.207,
+     "d": "schism"
+    },
+    {
+     "w": "endlessly",
+     "s": 129.207,
+     "e": 130.032,
+     "d": "endlessly"
+    },
+    {
+     "w": ".",
+     "s": 130.032,
+     "e": 130.207
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "scene": "m07",
+   "speaker": "LUTIE",
+   "text": "Master! Nobody understands anybody anymore!",
+   "start": 136.0,
+   "end": 138.779,
+   "dur": 2.779,
+   "file": "audio/voice/raw/L03.wav",
+   "words": [
+    {
+     "w": "Master",
+     "s": 136.026,
+     "e": 136.701,
+     "d": "Master"
+    },
+    {
+     "w": "!",
+     "s": 136.701,
+     "e": 136.839
+    },
+    {
+     "w": "Nobody",
+     "s": 136.839,
+     "e": 137.214,
+     "d": "Nobody"
+    },
+    {
+     "w": "understands",
+     "s": 137.214,
+     "e": 137.776,
+     "d": "understands"
+    },
+    {
+     "w": "anybody",
+     "s": 137.776,
+     "e": 138.214,
+     "d": "anybody"
+    },
+    {
+     "w": "anymore",
+     "s": 138.214,
+     "e": 139.051,
+     "d": "anymore"
+    },
+    {
+     "w": "!",
+     "s": 139.051,
+     "e": 139.251
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "scene": "m07",
+   "speaker": "CROCUS",
+   "text": "Good. Now they are ready.",
+   "start": 139.4,
+   "end": 141.319,
+   "dur": 1.919,
+   "file": "audio/voice/raw/C04.wav",
+   "words": [
+    {
+     "w": "Good",
+     "s": 139.4,
+     "e": 139.799,
+     "d": "Good"
+    },
+    {
+     "w": ".",
+     "s": 139.799,
+     "e": 139.911
+    },
+    {
+     "w": "Now",
+     "s": 139.911,
+     "e": 140.299,
+     "d": "Now"
+    },
+    {
+     "w": "they",
+     "s": 140.299,
+     "e": 140.561,
+     "d": "they"
+    },
+    {
+     "w": "are",
+     "s": 140.561,
+     "e": 140.724,
+     "d": "are"
+    },
+    {
+     "w": "ready",
+     "s": 140.724,
+     "e": 141.499,
+     "d": "ready"
+    },
+    {
+     "w": ".",
+     "s": 141.499,
+     "e": 141.724
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "scene": "m08",
+   "speaker": "CROCUS",
+   "text": "A Flag needs no translation. It means only... Flag.",
+   "start": 150.6,
+   "end": 154.871,
+   "dur": 4.271,
+   "file": "audio/voice/raw/C05.wav",
+   "words": [
+    {
+     "w": "A",
+     "s": 150.624,
+     "e": 150.724,
+     "d": "A"
+    },
+    {
+     "w": "Flag",
+     "s": 150.724,
+     "e": 151.149,
+     "d": "Flag"
+    },
+    {
+     "w": "needs",
+     "s": 151.149,
+     "e": 151.487,
+     "d": "needs"
+    },
+    {
+     "w": "no",
+     "s": 151.487,
+     "e": 151.774,
+     "d": "no"
+    },
+    {
+     "w": "translation",
+     "s": 151.774,
+     "e": 152.799,
+     "d": "translation"
+    },
+    {
+     "w": ".",
+     "s": 152.799,
+     "e": 152.899
+    },
+    {
+     "w": "It",
+     "s": 152.899,
+     "e": 153.049,
+     "d": "It"
+    },
+    {
+     "w": "means",
+     "s": 153.049,
+     "e": 153.387,
+     "d": "means"
+    },
+    {
+     "w": "only",
+     "s": 153.387,
+     "e": 154.024,
+     "d": "only"
+    },
+    {
+     "w": ".",
+     "s": 154.024,
+     "e": 154.124
+    },
+    {
+     "w": ".",
+     "s": 154.124,
+     "e": 154.149
+    },
+    {
+     "w": ".",
+     "s": 154.149,
+     "e": 154.212
+    },
+    {
+     "w": "Flag",
+     "s": 154.212,
+     "e": 155.024,
+     "d": "Flag"
+    },
+    {
+     "w": ".",
+     "s": 155.024,
+     "e": 155.274
+    }
+   ]
+  },
+  {
+   "id": "N08",
+   "scene": "m08",
+   "speaker": "LECTOR",
+   "text": "Each of them alone. All of them together.",
+   "start": 156.5,
+   "end": 158.876,
+   "dur": 2.376,
+   "file": "audio/voice/raw/N08.wav",
+   "words": [
+    {
+     "w": "Each",
+     "s": 156.505,
+     "e": 156.742,
+     "d": "Each"
+    },
+    {
+     "w": "of",
+     "s": 156.742,
+     "e": 156.817,
+     "d": "of"
+    },
+    {
+     "w": "them",
+     "s": 156.817,
+     "e": 157.005,
+     "d": "them"
+    },
+    {
+     "w": "alone",
+     "s": 157.005,
+     "e": 157.63,
+     "d": "alone"
+    },
+    {
+     "w": ".",
+     "s": 157.63,
+     "e": 157.792
+    },
+    {
+     "w": "All",
+     "s": 157.792,
+     "e": 158.017,
+     "d": "All"
+    },
+    {
+     "w": "of",
+     "s": 158.017,
+     "e": 158.092,
+     "d": "of"
+    },
+    {
+     "w": "them",
+     "s": 158.092,
+     "e": 158.28,
+     "d": "them"
+    },
+    {
+     "w": "together",
+     "s": 158.28,
+     "e": 159.005,
+     "d": "together"
+    },
+    {
+     "w": ".",
+     "s": 159.005,
+     "e": 159.205
+    }
+   ]
+  },
+  {
+   "id": "N09",
+   "scene": "m09",
+   "speaker": "LECTOR",
+   "text": "Heaven and earth will pass away, but the ten thousand Flags remain.",
+   "start": 180.4,
+   "end": 184.454,
+   "dur": 4.054,
+   "file": "audio/voice/raw/N09.wav",
+   "words": [
+    {
+     "w": "Heaven",
+     "s": 180.438,
+     "e": 180.788,
+     "d": "Heaven"
+    },
+    {
+     "w": "and",
+     "s": 180.788,
+     "e": 180.913,
+     "d": "and"
+    },
+    {
+     "w": "earth",
+     "s": 180.913,
+     "e": 181.2,
+     "d": "earth"
+    },
+    {
+     "w": "will",
+     "s": 181.2,
+     "e": 181.338,
+     "d": "will"
+    },
+    {
+     "w": "pass",
+     "s": 181.338,
+     "e": 181.663,
+     "d": "pass"
+    },
+    {
+     "w": "away",
+     "s": 181.663,
+     "e": 182.313,
+     "d": "away"
+    },
+    {
+     "w": ",",
+     "s": 182.313,
+     "e": 182.438
+    },
+    {
+     "w": "but",
+     "s": 182.438,
+     "e": 182.575,
+     "d": "but"
+    },
+    {
+     "w": "the",
+     "s": 182.575,
+     "e": 182.7,
+     "d": "the"
+    },
+    {
+     "w": "ten",
+     "s": 182.7,
+     "e": 182.988,
+     "d": "ten"
+    },
+    {
+     "w": "thousand",
+     "s": 182.988,
+     "e": 183.425,
+     "d": "thousand"
+    },
+    {
+     "w": "Flags",
+     "s": 183.425,
+     "e": 183.888,
+     "d": "Flags"
+    },
+    {
+     "w": "remain",
+     "s": 183.888,
+     "e": 184.663,
+     "d": "remain"
+    },
+    {
+     "w": ".",
+     "s": 184.663,
+     "e": 184.838
+    }
+   ]
+  },
+  {
+   "id": "N10",
+   "scene": "m09",
+   "speaker": "LECTOR",
+   "text": "And the Survey was completed.",
+   "start": 184.9,
+   "end": 186.553,
+   "dur": 1.653,
+   "file": "audio/voice/raw/N10.wav",
+   "words": [
+    {
+     "w": "And",
+     "s": 184.9,
+     "e": 185.028,
+     "d": "And"
+    },
+    {
+     "w": "the",
+     "s": 185.028,
+     "e": 185.128,
+     "d": "the"
+    },
+    {
+     "w": "Survey",
+     "s": 185.128,
+     "e": 185.641,
+     "d": "Survey"
+    },
+    {
+     "w": "was",
+     "s": 185.641,
+     "e": 185.816,
+     "d": "was"
+    },
+    {
+     "w": "completed",
+     "s": 185.816,
+     "e": 186.716,
+     "d": "completed"
+    },
+    {
+     "w": ".",
+     "s": 186.716,
+     "e": 186.891
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "scene": "m10",
+   "speaker": "LUTIE",
+   "text": "Master! For you.",
+   "start": 188.5,
+   "end": 189.647,
+   "dur": 1.147,
+   "file": "audio/voice/raw/L04.wav",
+   "words": [
+    {
+     "w": "Master",
+     "s": 188.541,
+     "e": 189.091,
+     "d": "Master"
+    },
+    {
+     "w": "!",
+     "s": 189.091,
+     "e": 189.191
+    },
+    {
+     "w": "For",
+     "s": 189.191,
+     "e": 189.341,
+     "d": "For"
+    },
+    {
+     "w": "you",
+     "s": 189.341,
+     "e": 189.816,
+     "d": "you"
+    },
+    {
+     "w": ".",
+     "s": 189.816,
+     "e": 190.066
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "scene": "m10",
+   "speaker": "CROCUS",
+   "text": "I do not want this Flag. It is sticky.",
+   "start": 190.4,
+   "end": 193.243,
+   "dur": 2.843,
+   "file": "audio/voice/raw/C06.wav",
+   "words": [
+    {
+     "w": "I",
+     "s": 190.414,
+     "e": 190.514,
+     "d": "I"
+    },
+    {
+     "w": "do",
+     "s": 190.514,
+     "e": 190.651,
+     "d": "do"
+    },
+    {
+     "w": "not",
+     "s": 190.651,
+     "e": 190.864,
+     "d": "not"
+    },
+    {
+     "w": "want",
+     "s": 190.864,
+     "e": 191.139,
+     "d": "want"
+    },
+    {
+     "w": "this",
+     "s": 191.139,
+     "e": 191.401,
+     "d": "this"
+    },
+    {
+     "w": "Flag",
+     "s": 191.401,
+     "e": 192.039,
+     "d": "Flag"
+    },
+    {
+     "w": ".",
+     "s": 192.039,
+     "e": 192.139
+    },
+    {
+     "w": "It",
+     "s": 192.139,
+     "e": 192.314,
+     "d": "It"
+    },
+    {
+     "w": "is",
+     "s": 192.314,
+     "e": 192.464,
+     "d": "is"
+    },
+    {
+     "w": "sticky",
+     "s": 192.464,
+     "e": 193.389,
+     "d": "sticky"
+    },
+    {
+     "w": ".",
+     "s": 193.389,
+     "e": 193.589
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "scene": "m10",
+   "speaker": "LUTIE",
+   "text": "But Master, all Flags are one Flag!",
+   "start": 193.9,
+   "end": 196.232,
+   "dur": 2.332,
+   "file": "audio/voice/raw/L05.wav",
+   "words": [
+    {
+     "w": "But",
+     "s": 193.9,
+     "e": 193.995,
+     "d": "But"
+    },
+    {
+     "w": "Master",
+     "s": 193.995,
+     "e": 194.67,
+     "d": "Master"
+    },
+    {
+     "w": ",",
+     "s": 194.67,
+     "e": 194.795
+    },
+    {
+     "w": "all",
+     "s": 194.795,
+     "e": 195.008,
+     "d": "all"
+    },
+    {
+     "w": "Flags",
+     "s": 195.008,
+     "e": 195.382,
+     "d": "Flags"
+    },
+    {
+     "w": "are",
+     "s": 195.382,
+     "e": 195.47,
+     "d": "are"
+    },
+    {
+     "w": "one",
+     "s": 195.47,
+     "e": 195.708,
+     "d": "one"
+    },
+    {
+     "w": "Flag",
+     "s": 195.708,
+     "e": 196.47,
+     "d": "Flag"
+    },
+    {
+     "w": "!",
+     "s": 196.47,
+     "e": 196.67
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "scene": "m10",
+   "speaker": "CROCUS",
+   "text": "This one is sticky.",
+   "start": 197.0,
+   "end": 198.572,
+   "dur": 1.572,
+   "file": "audio/voice/raw/C07.wav",
+   "words": [
+    {
+     "w": "This",
+     "s": 197.026,
+     "e": 197.251,
+     "d": "This"
+    },
+    {
+     "w": "one",
+     "s": 197.251,
+     "e": 197.526,
+     "d": "one"
+    },
+    {
+     "w": "is",
+     "s": 197.526,
+     "e": 197.751,
+     "d": "is"
+    },
+    {
+     "w": "sticky",
+     "s": 197.751,
+     "e": 198.676,
+     "d": "sticky"
+    },
+    {
+     "w": ".",
+     "s": 198.676,
+     "e": 198.901
+    }
+   ]
+  },
+  {
+   "id": "N11",
+   "scene": "m10",
+   "speaker": "LECTOR",
+   "text": "Go forth, O signifier, and become glorious.",
+   "start": 199.6,
+   "end": 202.38,
+   "dur": 2.78,
+   "file": "audio/voice/raw/N11.wav",
+   "words": [
+    {
+     "w": "Go",
+     "s": 199.623,
+     "e": 199.86,
+     "d": "Go"
+    },
+    {
+     "w": "forth",
+     "s": 199.86,
+     "e": 200.298,
+     "d": "forth"
+    },
+    {
+     "w": ",",
+     "s": 200.298,
+     "e": 200.373
+    },
+    {
+     "w": "O",
+     "s": 200.373,
+     "e": 200.56,
+     "d": "O"
+    },
+    {
+     "w": "signifier",
+     "s": 200.56,
+     "e": 201.223,
+     "d": "signifier"
+    },
+    {
+     "w": ",",
+     "s": 201.223,
+     "e": 201.26
+    },
+    {
+     "w": "and",
+     "s": 201.26,
+     "e": 201.36,
+     "d": "and"
+    },
+    {
+     "w": "become",
+     "s": 201.36,
+     "e": 201.673,
+     "d": "become"
+    },
+    {
+     "w": "glorious",
+     "s": 201.673,
+     "e": 202.573,
+     "d": "glorious"
+    },
+    {
+     "w": ".",
+     "s": 202.573,
+     "e": 202.748
+    }
+   ]
+  },
+  {
+   "id": "A02",
+   "scene": "m10",
+   "speaker": "CANTOR",
+   "text": "Explicit opus schismaticum.",
+   "start": 204.6,
+   "end": 207.152,
+   "dur": 2.552,
+   "file": "audio/voice/raw/A02.wav",
+   "words": []
+  }
+ ],
+ "cast": {
+  "LUTIE": {
+   "voice": "af_bella",
+   "lang": "a",
+   "speed": 1.0,
+   "fx": "none",
+   "desc": "Novice vexiherbologist (named for luteolin). Young, earnest, curious."
+  },
+  "CROCUS": {
+   "voice": "bm_george",
+   "lang": "b",
+   "speed": 0.9,
+   "fx": "none",
+   "desc": "Master Crocus, the Hierophant. Ancient, serene, dry wit, Lao-Zi aphorisms."
+  },
+  "COMMANDER": {
+   "voice": "am_fenrir",
+   "lang": "a",
+   "speed": 1.02,
+   "fx": "radio",
+   "desc": "Schism Actual, Tactical Breach Flag Wizard squad lead. Clipped military radio."
+  },
+  "JAGUAR": {
+   "voice": "am_michael",
+   "lang": "a",
+   "speed": 1.05,
+   "fx": "tv",
+   "desc": "President Jaguar. Bombastic politician on a CRT broadcast."
+  },
+  "HYPERMIND": {
+   "voice": "af_nicole",
+   "lang": "a",
+   "speed": 1.0,
+   "fx": "robot",
+   "desc": "Secret quantum AI supercomputer trained on the holy texts."
+  },
+  "CITIZEN1": {
+   "voice": "am_puck",
+   "lang": "a",
+   "speed": 1.08,
+   "fx": "shout",
+   "desc": "A newly sovereign nation of one."
+  },
+  "CITIZEN2": {
+   "voice": "bf_emma",
+   "lang": "b",
+   "speed": 1.05,
+   "fx": "shout",
+   "desc": "Another nation of one."
+  },
+  "HERETIC1": {
+   "voice": "am_eric",
+   "lang": "a",
+   "speed": 1.1,
+   "fx": "shout",
+   "desc": "Cabal of one."
+  },
+  "HERETIC2": {
+   "voice": "af_sarah",
+   "lang": "a",
+   "speed": 1.1,
+   "fx": "shout",
+   "desc": "Cabal of one."
+  },
+  "HERETIC3": {
+   "voice": "bm_fable",
+   "lang": "b",
+   "speed": 1.05,
+   "fx": "shout",
+   "desc": "Cabal of one."
+  },
+  "CRACKPOT1": {
+   "voice": "am_santa",
+   "lang": "a",
+   "speed": 1.12,
+   "fx": "void",
+   "desc": "Crackpot screaming into the void."
+  },
+  "CRACKPOT2": {
+   "voice": "bm_lewis",
+   "lang": "b",
+   "speed": 1.05,
+   "fx": "void",
+   "desc": "Crackpot screaming into the void."
+  },
+  "LECTOR": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 0.9,
+   "fx": "basilica",
+   "desc": "The Lector: an abbess reading the chronicle from the ambo. Warm, slow, reverent, huge stone acoustic."
+  },
+  "CANTOR": {
+   "voice": "im_nicola",
+   "lang": "i",
+   "speed": 0.85,
+   "fx": "cantor",
+   "desc": "The Cantor: ecclesiastical Latin (Italianate), intoned on a reciting tone by the Vocalist."
+  }
+ },
+ "cues": [
+  {
+   "t": 0.0,
+   "id": "film_start",
+   "desc": "Black. A single candle is struck (0.8) in a dark basilica."
+  },
+  {
+   "t": 0.8,
+   "id": "candle_lit",
+   "desc": "Match strike + candle flame: the first gold tesserae glint out of the dark."
+  },
+  {
+   "t": 2.0,
+   "id": "incipit",
+   "desc": "Cantor intones INCIPIT OPVS SCHISMATICVM; the words set themselves in gold tesserae."
+  },
+  {
+   "t": 8.4,
+   "id": "tesseract",
+   "desc": "The Tesseract appears in the starry lapis vault, turning in the 4th direction."
+  },
+  {
+   "t": 14.8,
+   "id": "flag_rotates_in",
+   "desc": "word 'rotated': the Flag rotates into existence out of the Tesseract - whole, not made of tiles."
+  },
+  {
+   "t": 19.6,
+   "id": "title",
+   "desc": "Title OPVS SCHISMATICVM set in the gold band."
+  },
+  {
+   "t": 23.0,
+   "id": "machines",
+   "desc": "The three great machines of meaning (Nations, Faiths, Philosophies) as one vast mosaic of humanity."
+  },
+  {
+   "t": 34.4,
+   "id": "slop",
+   "desc": "'Then came the slop.'"
+  },
+  {
+   "t": 36.3,
+   "id": "slop_crash",
+   "desc": "The first wave of slop hits the mosaic: tesserae turn into glowing screens."
+  },
+  {
+   "t": 41.0,
+   "id": "slop_waves",
+   "desc": "Wave upon wave; every tessera shows its own feed; the picture dissolves into noise."
+  },
+  {
+   "t": 49.3,
+   "id": "edict",
+   "desc": "President Jaguar enthroned as a Byzantine emperor (San Vitale procession)."
+  },
+  {
+   "t": 52.5,
+   "id": "edict_sign",
+   "desc": "word 'sign': he signs the Noospheric Munitions Act with a golden stylus."
+  },
+  {
+   "t": 58.0,
+   "id": "edict_seal",
+   "desc": "word 'banned': the imperial seal slams onto the edict."
+  },
+  {
+   "t": 62.1,
+   "id": "ka_ching",
+   "desc": "'a sacrament': a gold solidus drops into his paw. Ka-ching."
+  },
+  {
+   "t": 62.9,
+   "id": "hypermind_wake",
+   "desc": "Flagartha: the Hypermind (ophanim polycandelon) wakes, wheels begin to turn."
+  },
+  {
+   "t": 74.2,
+   "id": "hypermeme",
+   "desc": "'Hypermeme compiled.' The wheels lock; out of the centre descends ... a plain Flag."
+  },
+  {
+   "t": 81.2,
+   "id": "videtur",
+   "desc": "Disputation titulus: VIDETVR QVOD NON (Lutie's objection)."
+  },
+  {
+   "t": 87.0,
+   "id": "sed_contra",
+   "desc": "SED CONTRA (Crocus)."
+  },
+  {
+   "t": 92.8,
+   "id": "respondeo",
+   "desc": "RESPONDEO DICENDVM (Crocus): summon the schismmancers."
+  },
+  {
+   "t": 95.75,
+   "id": "schismmancers",
+   "desc": "Hard cut on 'schismmancers'."
+  },
+  {
+   "t": 103.9,
+   "id": "breach_call",
+   "desc": "'Breach! Breach! Breach!'"
+  },
+  {
+   "t": 105.8,
+   "id": "breach",
+   "desc": "The wall of the mosaic is breached: tesserae blast inward; flag-yellow light floods the frame by 106.5."
+  },
+  {
+   "t": 106.9,
+   "id": "nations",
+   "desc": "Every nation, a nation of one: the mappa mundi splits recursively."
+  },
+  {
+   "t": 113.7,
+   "id": "faiths",
+   "desc": "Every faith, a cabal of one: the congregation splits into churches of one (antipopes)."
+  },
+  {
+   "t": 120.0,
+   "id": "philosophies",
+   "desc": "Every philosophy, a crackpot: the philosophers' mosaic drifts apart on floating tesserae."
+  },
+  {
+   "t": 128.6,
+   "id": "endless",
+   "desc": "'May it schism endlessly': every tessera splits into four, recursively, to dust."
+  },
+  {
+   "t": 131.5,
+   "id": "babel_rise",
+   "desc": "The Tower of Babel rises out of the dust of tesserae; multilingual cacophony builds."
+  },
+  {
+   "t": 134.0,
+   "id": "egregore",
+   "desc": "Lord Egregore: a faceless anti-Pantocrator of static fills the dome above Babel."
+  },
+  {
+   "t": 141.8,
+   "id": "collapse",
+   "desc": "The tower and then the whole mosaic fall off the wall: an avalanche of tesserae."
+  },
+  {
+   "t": 145.0,
+   "id": "silence",
+   "desc": "SACRED SILENCE (145.0-146.5). Bare plaster: only the red sinopia underdrawing remains."
+  },
+  {
+   "t": 149.0,
+   "id": "flag_planted",
+   "desc": "Crocus plants the one whole Flag on the bare wall. Thud."
+  },
+  {
+   "t": 155.0,
+   "id": "tiles_rise",
+   "desc": "The fallen tesserae rise and set themselves again: each one alone, all of them together."
+  },
+  {
+   "t": 159.0,
+   "id": "convergence",
+   "desc": "The babble converges into one chord."
+  },
+  {
+   "t": 163.0,
+   "id": "hymn_cantor",
+   "desc": "Cantor (solo plainchant, Latin): Vexilla sint. Vexilla sunt. Vexilla erunt. Vexilla."
+  },
+  {
+   "t": 168.7,
+   "id": "hymn",
+   "desc": "Full choir (English organum, 84 BPM, 16 beats): Flags be. Flags are. Flags will. Flags."
+  },
+  {
+   "t": 180.1,
+   "id": "hymn_end",
+   "desc": "Hymn ends; the dome of Flagistan hangs in full glory."
+  },
+  {
+   "t": 180.4,
+   "id": "gateless_gate",
+   "desc": "'Heaven and earth will pass away, but the ten thousand Flags remain.'"
+  },
+  {
+   "t": 184.9,
+   "id": "survey_done",
+   "desc": "'And the Survey was completed.'"
+  },
+  {
+   "t": 188.5,
+   "id": "sticky_offer",
+   "desc": "Lutie offers Crocus a Flag."
+  },
+  {
+   "t": 190.4,
+   "id": "sticky",
+   "desc": "'I do not want this Flag. It is sticky.'"
+  },
+  {
+   "t": 202.9,
+   "id": "glorious",
+   "desc": "Everyone: 'Glorious!' (the Signifier's salute)."
+  },
+  {
+   "t": 204.6,
+   "id": "explicit",
+   "desc": "Cantor: EXPLICIT OPVS SCHISMATICVM."
+  },
+  {
+   "t": 207.6,
+   "id": "gratias",
+   "desc": "Choir response (sung): Vexillo gratias."
+  },
+  {
+   "t": 209.5,
+   "id": "end_card",
+   "desc": "Donor inscription / end card."
+  },
+  {
+   "t": 212.0,
+   "id": "film_end",
+   "desc": "End. Black."
+  }
+ ],
+ "hymn": {
+  "start": 163.0,
+  "choir_start": 168.7,
+  "end": 180.1,
+  "bpm": 84,
+  "key": "D dorian / D major",
+  "cantor": "Vexilla sint. Vexilla sunt. Vexilla erunt. Vexilla.",
+  "choir": "Flags be. Flags are. Flags will. Flags.",
+  "desc": "Antiphonal: solo cantor intones the Latin (free plainchant rhythm, mode I, 163.0-168.7), then the full choir answers in English organum (16 beats at 84 BPM, 168.7-180.1)."
+ },
+ "gratias": {
+  "start": 207.6,
+  "end": 209.6,
+  "text": "Vexillo gratias.",
+  "desc": "Sung response to the Cantor's Explicit (like Deo gratias): plagal cadence, full choir."
+ },
+ "glorious": {
+  "t": 202.9,
+  "text": "Glorious!",
+  "desc": "The whole congregation shouts the Signifier's salute."
+ }
+}

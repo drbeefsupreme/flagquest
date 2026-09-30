@@ -1,0 +1,35 @@
+[
+ {
+  "stem": "sfx",
+  "t": 143.8,
+  "peak_db": 0.7,
+  "who": [
+   "THE AVALANCHE: 59973 tesserae land, bounce, skid@141.80(-2.2dB)",
+   "the floor's roar under the landing mass@141.60(-3.1dB)",
+   "the pour: tesserae streaming down the wall face @141.60(-8.3dB)",
+   "the setting bed tears off the plaster (detachmen@141.60(-8.7dB)"
+  ]
+ },
+ {
+  "stem": "sfx",
+  "t": 143.6,
+  "peak_db": -0.2,
+  "who": [
+   "THE AVALANCHE: 59973 tesserae land, bounce, skid@141.80(-2.2dB)",
+   "the floor's roar under the landing mass@141.60(-3.1dB)",
+   "the pour: tesserae streaming down the wall face @141.60(-8.3dB)",
+   "the setting bed tears off the plaster (detachmen@141.60(-8.7dB)"
+  ]
+ },
+ {
+  "stem": "sfx",
+  "t": 143.7,
+  "peak_db": -0.5,
+  "who": [
+   "THE AVALANCHE: 59973 tesserae land, bounce, skid@141.80(-2.2dB)",
+   "the floor's roar under the landing mass@141.60(-3.1dB)",
+   "the pour: tesserae streaming down the wall face @141.60(-8.3dB)",
+   "the setting bed tears off the plaster (detachmen@141.60(-8.7dB)"
+  ]
+ }
+]

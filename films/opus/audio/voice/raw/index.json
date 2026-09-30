@@ -1,0 +1,2409 @@
+{
+ "A01": {
+  "speaker": "CANTOR",
+  "dur": 2.553,
+  "words": [],
+  "text": "Incipit opus schismaticum.",
+  "say": "Incìpit òpus schismàticum."
+ },
+ "N01": {
+  "speaker": "LECTOR",
+  "dur": 2.067,
+  "words": [
+   {
+    "w": "In",
+    "s": 0.017,
+    "e": 0.105
+   },
+   {
+    "w": "the",
+    "s": 0.105,
+    "e": 0.18
+   },
+   {
+    "w": "beginning",
+    "s": 0.18,
+    "e": 0.817
+   },
+   {
+    "w": ",",
+    "s": 0.817,
+    "e": 0.917
+   },
+   {
+    "w": "there",
+    "s": 0.917,
+    "e": 1.03
+   },
+   {
+    "w": "was",
+    "s": 1.03,
+    "e": 1.192
+   },
+   {
+    "w": "no",
+    "s": 1.192,
+    "e": 1.417
+   },
+   {
+    "w": "beginning",
+    "s": 1.417,
+    "e": 2.242
+   },
+   {
+    "w": ".",
+    "s": 2.242,
+    "e": 2.417
+   }
+  ],
+  "text": "In the beginning, there was no beginning.",
+  "say": "In the beginning, there was no beginning."
+ },
+ "N02": {
+  "speaker": "LECTOR",
+  "dur": 3.602,
+  "words": [
+   {
+    "w": "Only",
+    "s": 0.0,
+    "e": 0.296
+   },
+   {
+    "w": "the",
+    "s": 0.296,
+    "e": 0.396
+   },
+   {
+    "w": "Tesseract",
+    "s": 0.396,
+    "e": 1.196
+   },
+   {
+    "w": ",",
+    "s": 1.196,
+    "e": 1.334
+   },
+   {
+    "w": "turning",
+    "s": 1.334,
+    "e": 1.684
+   },
+   {
+    "w": "in",
+    "s": 1.684,
+    "e": 1.784
+   },
+   {
+    "w": "a",
+    "s": 1.784,
+    "e": 1.846
+   },
+   {
+    "w": "direction",
+    "s": 1.846,
+    "e": 2.396
+   },
+   {
+    "w": "you",
+    "s": 2.396,
+    "e": 2.546
+   },
+   {
+    "w": "cannot",
+    "s": 2.546,
+    "e": 2.896
+   },
+   {
+    "w": "point",
+    "s": 2.896,
+    "e": 3.209
+   },
+   {
+    "w": "to",
+    "s": 3.209,
+    "e": 3.671
+   },
+   {
+    "w": ".",
+    "s": 3.671,
+    "e": 3.971
+   }
+  ],
+  "text": "Only the Tesseract, turning in a direction you cannot point to.",
+  "say": "Only the Tesseract, turning in a direction you cannot point to."
+ },
+ "N03": {
+  "speaker": "LECTOR",
+  "dur": 6.271,
+  "words": [
+   {
+    "w": "And",
+    "s": 0.0,
+    "e": 0.128
+   },
+   {
+    "w": "out",
+    "s": 0.128,
+    "e": 0.315
+   },
+   {
+    "w": "of",
+    "s": 0.315,
+    "e": 0.403
+   },
+   {
+    "w": "that",
+    "s": 0.403,
+    "e": 0.628
+   },
+   {
+    "w": "turning",
+    "s": 0.628,
+    "e": 1.178
+   },
+   {
+    "w": ",",
+    "s": 1.178,
+    "e": 1.253
+   },
+   {
+    "w": "the",
+    "s": 1.253,
+    "e": 1.39
+   },
+   {
+    "w": "Flag",
+    "s": 1.39,
+    "e": 1.778
+   },
+   {
+    "w": "rotated",
+    "s": 1.778,
+    "e": 2.29
+   },
+   {
+    "w": "into",
+    "s": 2.29,
+    "e": 2.578
+   },
+   {
+    "w": "existence",
+    "s": 2.578,
+    "e": 3.678
+   },
+   {
+    "w": ".",
+    "s": 3.678,
+    "e": 3.84
+   },
+   {
+    "w": "A",
+    "s": 3.84,
+    "e": 3.965
+   },
+   {
+    "w": "sign",
+    "s": 3.965,
+    "e": 4.24
+   },
+   {
+    "w": "of",
+    "s": 4.24,
+    "e": 4.315
+   },
+   {
+    "w": "itself",
+    "s": 4.315,
+    "e": 4.878
+   },
+   {
+    "w": ",",
+    "s": 4.878,
+    "e": 4.99
+   },
+   {
+    "w": "woven",
+    "s": 4.99,
+    "e": 5.428
+   },
+   {
+    "w": "without",
+    "s": 5.428,
+    "e": 5.79
+   },
+   {
+    "w": "seam",
+    "s": 5.79,
+    "e": 6.478
+   },
+   {
+    "w": ".",
+    "s": 6.478,
+    "e": 6.653
+   }
+  ],
+  "text": "And out of that turning, the Flag rotated into existence. A sign of itself, woven without seam.",
+  "say": "And out of that turning, the Flag rotated into existence. A sign of itself, woven without seam."
+ },
+ "N04": {
+  "speaker": "LECTOR",
+  "dur": 6.078,
+  "words": [
+   {
+    "w": "Once",
+    "s": 0.03,
+    "e": 0.33
+   },
+   {
+    "w": ",",
+    "s": 0.33,
+    "e": 0.38
+   },
+   {
+    "w": "humanity",
+    "s": 0.38,
+    "e": 0.93
+   },
+   {
+    "w": "dwelt",
+    "s": 0.93,
+    "e": 1.255
+   },
+   {
+    "w": "inside",
+    "s": 1.255,
+    "e": 1.73
+   },
+   {
+    "w": "great",
+    "s": 1.73,
+    "e": 1.967
+   },
+   {
+    "w": "machines",
+    "s": 1.967,
+    "e": 2.392
+   },
+   {
+    "w": "of",
+    "s": 2.392,
+    "e": 2.48
+   },
+   {
+    "w": "meaning",
+    "s": 2.48,
+    "e": 3.255
+   },
+   {
+    "w": ".",
+    "s": 3.255,
+    "e": 3.43
+   },
+   {
+    "w": "Nations",
+    "s": 3.43,
+    "e": 4.28
+   },
+   {
+    "w": ".",
+    "s": 4.28,
+    "e": 4.43
+   },
+   {
+    "w": "Faiths",
+    "s": 4.43,
+    "e": 5.005
+   },
+   {
+    "w": ".",
+    "s": 5.005,
+    "e": 5.117
+   },
+   {
+    "w": "Philosophies",
+    "s": 5.117,
+    "e": 6.28
+   },
+   {
+    "w": ".",
+    "s": 6.28,
+    "e": 6.43
+   }
+  ],
+  "text": "Once, humanity dwelt inside great machines of meaning. Nations. Faiths. Philosophies.",
+  "say": "Once, humanity dwelt inside great machines of meaning. Nations. Faiths. Philosophies."
+ },
+ "N05": {
+  "speaker": "LECTOR",
+  "dur": 3.162,
+  "words": [
+   {
+    "w": "Each",
+    "s": 0.004,
+    "e": 0.279
+   },
+   {
+    "w": "one",
+    "s": 0.279,
+    "e": 0.441
+   },
+   {
+    "w": "a",
+    "s": 0.441,
+    "e": 0.504
+   },
+   {
+    "w": "mosaic",
+    "s": 0.504,
+    "e": 1.329
+   },
+   {
+    "w": ",",
+    "s": 1.329,
+    "e": 1.454
+   },
+   {
+    "w": "promising",
+    "s": 1.454,
+    "e": 2.004
+   },
+   {
+    "w": "to",
+    "s": 2.004,
+    "e": 2.091
+   },
+   {
+    "w": "be",
+    "s": 2.091,
+    "e": 2.229
+   },
+   {
+    "w": "the",
+    "s": 2.229,
+    "e": 2.329
+   },
+   {
+    "w": "whole",
+    "s": 2.329,
+    "e": 2.579
+   },
+   {
+    "w": "picture",
+    "s": 2.579,
+    "e": 3.354
+   },
+   {
+    "w": ".",
+    "s": 3.354,
+    "e": 3.529
+   }
+  ],
+  "text": "Each one a mosaic, promising to be the whole picture.",
+  "say": "Each one a mosaic, promising to be the whole picture."
+ },
+ "N06": {
+  "speaker": "LECTOR",
+  "dur": 1.159,
+  "words": [
+   {
+    "w": "Then",
+    "s": 0.053,
+    "e": 0.278
+   },
+   {
+    "w": "came",
+    "s": 0.278,
+    "e": 0.491
+   },
+   {
+    "w": "the",
+    "s": 0.491,
+    "e": 0.591
+   },
+   {
+    "w": "slop",
+    "s": 0.591,
+    "e": 1.303
+   },
+   {
+    "w": ".",
+    "s": 1.303,
+    "e": 1.503
+   }
+  ],
+  "text": "Then came the slop.",
+  "say": "Then came the slop."
+ },
+ "N07": {
+  "speaker": "LECTOR",
+  "dur": 6.441,
+  "words": [
+   {
+    "w": "Wave",
+    "s": 0.045,
+    "e": 0.345
+   },
+   {
+    "w": "upon",
+    "s": 0.345,
+    "e": 0.745
+   },
+   {
+    "w": "wave",
+    "s": 0.745,
+    "e": 1.033
+   },
+   {
+    "w": "of",
+    "s": 1.033,
+    "e": 1.158
+   },
+   {
+    "w": "it",
+    "s": 1.158,
+    "e": 1.72
+   },
+   {
+    "w": ".",
+    "s": 1.72,
+    "e": 1.858
+   },
+   {
+    "w": "A",
+    "s": 1.858,
+    "e": 1.97
+   },
+   {
+    "w": "different",
+    "s": 1.97,
+    "e": 2.308
+   },
+   {
+    "w": "feed",
+    "s": 2.308,
+    "e": 2.645
+   },
+   {
+    "w": "for",
+    "s": 2.645,
+    "e": 2.795
+   },
+   {
+    "w": "every",
+    "s": 2.795,
+    "e": 3.133
+   },
+   {
+    "w": "face",
+    "s": 3.133,
+    "e": 3.745
+   },
+   {
+    "w": ",",
+    "s": 3.745,
+    "e": 3.845
+   },
+   {
+    "w": "until",
+    "s": 3.845,
+    "e": 4.158
+   },
+   {
+    "w": "no",
+    "s": 4.158,
+    "e": 4.458
+   },
+   {
+    "w": "two",
+    "s": 4.458,
+    "e": 4.683
+   },
+   {
+    "w": "tesserae",
+    "s": 4.683,
+    "e": 5.27
+   },
+   {
+    "w": "showed",
+    "s": 5.27,
+    "e": 5.533
+   },
+   {
+    "w": "the",
+    "s": 5.533,
+    "e": 5.633
+   },
+   {
+    "w": "same",
+    "s": 5.633,
+    "e": 5.97
+   },
+   {
+    "w": "world",
+    "s": 5.97,
+    "e": 6.645
+   },
+   {
+    "w": ".",
+    "s": 6.645,
+    "e": 6.82
+   }
+  ],
+  "text": "Wave upon wave of it. A different feed for every face, until no two tesserae showed the same world.",
+  "say": "Wave upon wave of it. A different feed for every face, until no two tesserae showed the same world."
+ },
+ "J01": {
+  "speaker": "JAGUAR",
+  "dur": 9.23,
+  "words": [
+   {
+    "w": "My",
+    "s": 0.0,
+    "e": 0.15
+   },
+   {
+    "w": "fellow",
+    "s": 0.15,
+    "e": 0.463
+   },
+   {
+    "w": "Americans",
+    "s": 0.463,
+    "e": 1.138
+   },
+   {
+    "w": ",",
+    "s": 1.138,
+    "e": 1.188
+   },
+   {
+    "w": "and",
+    "s": 1.188,
+    "e": 1.35
+   },
+   {
+    "w": "everybody",
+    "s": 1.35,
+    "e": 1.85
+   },
+   {
+    "w": "else",
+    "s": 1.85,
+    "e": 2.563
+   },
+   {
+    "w": "!",
+    "s": 2.563,
+    "e": 2.7
+   },
+   {
+    "w": "Today",
+    "s": 2.7,
+    "e": 3.038
+   },
+   {
+    "w": "I",
+    "s": 3.038,
+    "e": 3.213
+   },
+   {
+    "w": "sign",
+    "s": 3.213,
+    "e": 3.588
+   },
+   {
+    "w": "the",
+    "s": 3.588,
+    "e": 3.688
+   },
+   {
+    "w": "Noospheric",
+    "s": 3.688,
+    "e": 4.438
+   },
+   {
+    "w": "Munitions",
+    "s": 4.438,
+    "e": 5.013
+   },
+   {
+    "w": "Act",
+    "s": 5.013,
+    "e": 5.3
+   },
+   {
+    "w": "of",
+    "s": 5.3,
+    "e": 5.425
+   },
+   {
+    "w": "twenty",
+    "s": 5.425,
+    "e": 5.775
+   },
+   {
+    "w": "forty-two",
+    "s": 5.775,
+    "e": 6.688
+   },
+   {
+    "w": ".",
+    "s": 6.688,
+    "e": 6.888
+   },
+   {
+    "w": "Weaponized",
+    "s": 6.888,
+    "e": 7.6
+   },
+   {
+    "w": "memes",
+    "s": 7.6,
+    "e": 8.088
+   },
+   {
+    "w": "are",
+    "s": 8.088,
+    "e": 8.25
+   },
+   {
+    "w": "hereby",
+    "s": 8.25,
+    "e": 8.7
+   },
+   {
+    "w": "banned",
+    "s": 8.7,
+    "e": 9.463
+   },
+   {
+    "w": "!",
+    "s": 9.463,
+    "e": 9.638
+   }
+  ],
+  "text": "My fellow Americans, and everybody else! Today I sign the Noospheric Munitions Act of twenty forty-two. Weaponized memes are hereby banned!",
+  "say": "My fellow Americans, and everybody else! Today I sign the [Noospheric](/nˌOəsfˈɛɹɪk/) Munitions Act of twenty forty-two. Weaponized memes are hereby banned!"
+ },
+ "J02": {
+  "speaker": "JAGUAR",
+  "dur": 2.816,
+  "words": [
+   {
+    "w": "Except",
+    "s": 0.068,
+    "e": 0.33
+   },
+   {
+    "w": "the",
+    "s": 0.33,
+    "e": 0.418
+   },
+   {
+    "w": "yellow",
+    "s": 0.418,
+    "e": 0.768
+   },
+   {
+    "w": "ones",
+    "s": 0.768,
+    "e": 1.193
+   },
+   {
+    "w": ".",
+    "s": 1.193,
+    "e": 1.305
+   },
+   {
+    "w": "Those",
+    "s": 1.305,
+    "e": 1.668
+   },
+   {
+    "w": "are",
+    "s": 1.668,
+    "e": 1.943
+   },
+   {
+    "w": ".",
+    "s": 1.943,
+    "e": 1.993
+   },
+   {
+    "w": ".",
+    "s": 1.993,
+    "e": 2.018
+   },
+   {
+    "w": ".",
+    "s": 2.018,
+    "e": 2.068
+   },
+   {
+    "w": "a",
+    "s": 2.068,
+    "e": 2.193
+   },
+   {
+    "w": "sacrament",
+    "s": 2.193,
+    "e": 3.068
+   },
+   {
+    "w": ".",
+    "s": 3.068,
+    "e": 3.218
+   }
+  ],
+  "text": "Except the yellow ones. Those are... a sacrament.",
+  "say": "Except the yellow ones. Those are... a sacrament."
+ },
+ "H01": {
+  "speaker": "HYPERMIND",
+  "dur": 7.625,
+  "words": [
+   {
+    "w": "Training",
+    "s": 0.001,
+    "e": 0.4
+   },
+   {
+    "w": "complete",
+    "s": 0.4,
+    "e": 1.676
+   },
+   {
+    "w": ".",
+    "s": 1.676,
+    "e": 2.026
+   },
+   {
+    "w": "Six",
+    "s": 2.026,
+    "e": 2.463
+   },
+   {
+    "w": "canons",
+    "s": 2.463,
+    "e": 3.3
+   },
+   {
+    "w": "ingested",
+    "s": 3.3,
+    "e": 4.626
+   },
+   {
+    "w": ".",
+    "s": 4.626,
+    "e": 4.926
+   },
+   {
+    "w": "Every",
+    "s": 4.926,
+    "e": 5.338
+   },
+   {
+    "w": "statement",
+    "s": 5.338,
+    "e": 5.95
+   },
+   {
+    "w": "about",
+    "s": 5.95,
+    "e": 6.288
+   },
+   {
+    "w": "Flags",
+    "s": 6.288,
+    "e": 6.938
+   },
+   {
+    "w": "is",
+    "s": 6.938,
+    "e": 7.113
+   },
+   {
+    "w": "true",
+    "s": 7.113,
+    "e": 7.975
+   },
+   {
+    "w": ".",
+    "s": 7.975,
+    "e": 8.151
+   }
+  ],
+  "text": "Training complete. Six canons ingested. Every statement about Flags is true.",
+  "say": "Training complete. Six canons ingested. Every statement about Flags is true."
+ },
+ "H02": {
+  "speaker": "HYPERMIND",
+  "dur": 1.434,
+  "words": [
+   {
+    "w": "Hypermeme",
+    "s": 0.033,
+    "e": 0.633
+   },
+   {
+    "w": "compiled",
+    "s": 0.633,
+    "e": 1.808
+   },
+   {
+    "w": ".",
+    "s": 1.808,
+    "e": 1.983
+   }
+  ],
+  "text": "[Hypermeme](/hˈIpəɹmˌim/) compiled.",
+  "say": "[Hypermeme](/hˈIpəɹmˌim/) compiled."
+ },
+ "L01": {
+  "speaker": "LUTIE",
+  "dur": 0.971,
+  "words": [
+   {
+    "w": "It's",
+    "s": 0.0,
+    "e": 0.224
+   },
+   {
+    "w": ".",
+    "s": 0.224,
+    "e": 0.274
+   },
+   {
+    "w": ".",
+    "s": 0.274,
+    "e": 0.299
+   },
+   {
+    "w": ".",
+    "s": 0.299,
+    "e": 0.337
+   },
+   {
+    "w": "a",
+    "s": 0.337,
+    "e": 0.437
+   },
+   {
+    "w": "Flag",
+    "s": 0.437,
+    "e": 1.149
+   },
+   {
+    "w": ".",
+    "s": 1.149,
+    "e": 1.349
+   }
+  ],
+  "text": "It's... a Flag.",
+  "say": "It's... a Flag."
+ },
+ "C01": {
+  "speaker": "CROCUS",
+  "dur": 2.344,
+  "words": [
+   {
+    "w": "It",
+    "s": 0.0,
+    "e": 0.103
+   },
+   {
+    "w": "was",
+    "s": 0.103,
+    "e": 0.278
+   },
+   {
+    "w": "always",
+    "s": 0.278,
+    "e": 0.891
+   },
+   {
+    "w": "going",
+    "s": 0.891,
+    "e": 1.253
+   },
+   {
+    "w": "to",
+    "s": 1.253,
+    "e": 1.366
+   },
+   {
+    "w": "be",
+    "s": 1.366,
+    "e": 1.541
+   },
+   {
+    "w": "a",
+    "s": 1.541,
+    "e": 1.666
+   },
+   {
+    "w": "Flag",
+    "s": 1.666,
+    "e": 2.541
+   },
+   {
+    "w": ".",
+    "s": 2.541,
+    "e": 2.766
+   }
+  ],
+  "text": "It was always going to be a Flag.",
+  "say": "It was always going to be a Flag."
+ },
+ "L02": {
+  "speaker": "LUTIE",
+  "dur": 5.218,
+  "words": [
+   {
+    "w": "Master",
+    "s": 0.017,
+    "e": 0.642
+   },
+   {
+    "w": ",",
+    "s": 0.642,
+    "e": 0.754
+   },
+   {
+    "w": "it",
+    "s": 0.754,
+    "e": 0.917
+   },
+   {
+    "w": "seems",
+    "s": 0.917,
+    "e": 1.267
+   },
+   {
+    "w": "the",
+    "s": 1.267,
+    "e": 1.404
+   },
+   {
+    "w": "world",
+    "s": 1.404,
+    "e": 1.767
+   },
+   {
+    "w": "should",
+    "s": 1.767,
+    "e": 1.917
+   },
+   {
+    "w": "not",
+    "s": 1.917,
+    "e": 2.129
+   },
+   {
+    "w": "be",
+    "s": 2.129,
+    "e": 2.267
+   },
+   {
+    "w": "broken",
+    "s": 2.267,
+    "e": 2.679
+   },
+   {
+    "w": "further",
+    "s": 2.679,
+    "e": 3.392
+   },
+   {
+    "w": ".",
+    "s": 3.392,
+    "e": 3.542
+   },
+   {
+    "w": "The",
+    "s": 3.542,
+    "e": 3.679
+   },
+   {
+    "w": "slop",
+    "s": 3.679,
+    "e": 4.054
+   },
+   {
+    "w": "has",
+    "s": 4.054,
+    "e": 4.192
+   },
+   {
+    "w": "already",
+    "s": 4.192,
+    "e": 4.579
+   },
+   {
+    "w": "shattered",
+    "s": 4.579,
+    "e": 4.992
+   },
+   {
+    "w": "it",
+    "s": 4.992,
+    "e": 5.467
+   },
+   {
+    "w": ".",
+    "s": 5.467,
+    "e": 5.642
+   }
+  ],
+  "text": "Master, it seems the world should not be broken further. The slop has already shattered it.",
+  "say": "Master, it seems the world should not be broken further. The slop has already shattered it."
+ },
+ "C02": {
+  "speaker": "CROCUS",
+  "dur": 5.216,
+  "words": [
+   {
+    "w": "On",
+    "s": 0.0,
+    "e": 0.126
+   },
+   {
+    "w": "the",
+    "s": 0.126,
+    "e": 0.226
+   },
+   {
+    "w": "contrary",
+    "s": 0.226,
+    "e": 1.089
+   },
+   {
+    "w": ".",
+    "s": 1.089,
+    "e": 1.214
+   },
+   {
+    "w": "The",
+    "s": 1.214,
+    "e": 1.352
+   },
+   {
+    "w": "false",
+    "s": 1.352,
+    "e": 1.689
+   },
+   {
+    "w": "coherence",
+    "s": 1.689,
+    "e": 2.376
+   },
+   {
+    "w": "must",
+    "s": 2.376,
+    "e": 2.676
+   },
+   {
+    "w": "fall",
+    "s": 2.676,
+    "e": 3.239
+   },
+   {
+    "w": ",",
+    "s": 3.239,
+    "e": 3.339
+   },
+   {
+    "w": "before",
+    "s": 3.339,
+    "e": 3.689
+   },
+   {
+    "w": "the",
+    "s": 3.689,
+    "e": 3.827
+   },
+   {
+    "w": "true",
+    "s": 3.827,
+    "e": 4.089
+   },
+   {
+    "w": "one",
+    "s": 4.089,
+    "e": 4.314
+   },
+   {
+    "w": "can",
+    "s": 4.314,
+    "e": 4.526
+   },
+   {
+    "w": "rise",
+    "s": 4.526,
+    "e": 5.439
+   },
+   {
+    "w": ".",
+    "s": 5.439,
+    "e": 5.639
+   }
+  ],
+  "text": "On the contrary. The false coherence must fall, before the true one can rise.",
+  "say": "On the contrary. The false coherence must fall, before the true one can rise."
+ },
+ "C03": {
+  "speaker": "CROCUS",
+  "dur": 2.735,
+  "words": [
+   {
+    "w": "I",
+    "s": 0.006,
+    "e": 0.156
+   },
+   {
+    "w": "answer",
+    "s": 0.156,
+    "e": 0.506
+   },
+   {
+    "w": "that",
+    "s": 0.506,
+    "e": 1.006
+   },
+   {
+    "w": ":",
+    "s": 1.006,
+    "e": 1.156
+   },
+   {
+    "w": "summon",
+    "s": 1.156,
+    "e": 1.53
+   },
+   {
+    "w": "the",
+    "s": 1.53,
+    "e": 1.656
+   },
+   {
+    "w": "schismmancers",
+    "s": 1.656,
+    "e": 2.906
+   },
+   {
+    "w": ".",
+    "s": 2.906,
+    "e": 3.106
+   }
+  ],
+  "text": "I answer that: summon the schismmancers.",
+  "say": "I answer that: summon the schismmancers."
+ },
+ "K01": {
+  "speaker": "COMMANDER",
+  "dur": 4.532,
+  "words": [
+   {
+    "w": "Schism",
+    "s": 0.023,
+    "e": 0.435
+   },
+   {
+    "w": "Actual",
+    "s": 0.435,
+    "e": 0.873
+   },
+   {
+    "w": "to",
+    "s": 0.873,
+    "e": 1.035
+   },
+   {
+    "w": "all",
+    "s": 1.035,
+    "e": 1.31
+   },
+   {
+    "w": "teams",
+    "s": 1.31,
+    "e": 1.973
+   },
+   {
+    "w": ".",
+    "s": 1.973,
+    "e": 2.085
+   },
+   {
+    "w": "Target",
+    "s": 2.085,
+    "e": 2.523
+   },
+   {
+    "w": ":",
+    "s": 2.523,
+    "e": 2.598
+   },
+   {
+    "w": "every",
+    "s": 2.598,
+    "e": 2.91
+   },
+   {
+    "w": "full-stack",
+    "s": 2.91,
+    "e": 3.473
+   },
+   {
+    "w": "memeplex",
+    "s": 3.473,
+    "e": 3.96
+   },
+   {
+    "w": "on",
+    "s": 3.96,
+    "e": 4.098
+   },
+   {
+    "w": "Earth",
+    "s": 4.098,
+    "e": 4.698
+   },
+   {
+    "w": ".",
+    "s": 4.698,
+    "e": 4.873
+   }
+  ],
+  "text": "Schism Actual to all teams. Target: every full-stack [memeplex](/mˈimplɛks/) on Earth.",
+  "say": "Schism Actual to all teams. Target: every full-stack [memeplex](/mˈimplɛks/) on Earth."
+ },
+ "K02": {
+  "speaker": "COMMANDER",
+  "dur": 1.768,
+  "words": [
+   {
+    "w": "Method",
+    "s": 0.005,
+    "e": 0.355
+   },
+   {
+    "w": ":",
+    "s": 0.355,
+    "e": 0.405
+   },
+   {
+    "w": "recursive",
+    "s": 0.405,
+    "e": 0.855
+   },
+   {
+    "w": "balkanization",
+    "s": 0.855,
+    "e": 1.98
+   },
+   {
+    "w": ".",
+    "s": 1.98,
+    "e": 2.13
+   }
+  ],
+  "text": "Method: recursive balkanization.",
+  "say": "Method: recursive balkanization."
+ },
+ "K03": {
+  "speaker": "COMMANDER",
+  "dur": 1.155,
+  "words": [
+   {
+    "w": "Breach",
+    "s": 0.0,
+    "e": 0.246
+   },
+   {
+    "w": "!",
+    "s": 0.246,
+    "e": 0.296
+   },
+   {
+    "w": "Breach",
+    "s": 0.296,
+    "e": 0.571
+   },
+   {
+    "w": "!",
+    "s": 0.571,
+    "e": 0.621
+   },
+   {
+    "w": "Breach",
+    "s": 0.621,
+    "e": 1.271
+   },
+   {
+    "w": "!",
+    "s": 1.271,
+    "e": 1.471
+   }
+  ],
+  "text": "Breach! Breach! Breach!",
+  "say": "Breach! Breach! Breach!"
+ },
+ "K04": {
+  "speaker": "COMMANDER",
+  "dur": 1.589,
+  "words": [
+   {
+    "w": "Every",
+    "s": 0.0,
+    "e": 0.252
+   },
+   {
+    "w": "nation",
+    "s": 0.252,
+    "e": 0.652
+   },
+   {
+    "w": ",",
+    "s": 0.652,
+    "e": 0.702
+   },
+   {
+    "w": "a",
+    "s": 0.702,
+    "e": 0.777
+   },
+   {
+    "w": "nation",
+    "s": 0.777,
+    "e": 1.115
+   },
+   {
+    "w": "of",
+    "s": 1.115,
+    "e": 1.202
+   },
+   {
+    "w": "one",
+    "s": 1.202,
+    "e": 1.777
+   },
+   {
+    "w": ".",
+    "s": 1.777,
+    "e": 1.952
+   }
+  ],
+  "text": "Every nation, a nation of one.",
+  "say": "Every nation, a nation of one."
+ },
+ "X01": {
+  "speaker": "CITIZEN1",
+  "dur": 2.34,
+  "words": [
+   {
+    "w": "I",
+    "s": 0.0,
+    "e": 0.084
+   },
+   {
+    "w": "hereby",
+    "s": 0.084,
+    "e": 0.434
+   },
+   {
+    "w": "declare",
+    "s": 0.434,
+    "e": 0.796
+   },
+   {
+    "w": "the",
+    "s": 0.796,
+    "e": 0.921
+   },
+   {
+    "w": "Sovereign",
+    "s": 0.921,
+    "e": 1.271
+   },
+   {
+    "w": "Republic",
+    "s": 1.271,
+    "e": 1.696
+   },
+   {
+    "w": "of",
+    "s": 1.696,
+    "e": 1.834
+   },
+   {
+    "w": "Me",
+    "s": 1.834,
+    "e": 2.434
+   },
+   {
+    "w": "!",
+    "s": 2.434,
+    "e": 2.609
+   }
+  ],
+  "text": "I hereby declare the Sovereign Republic of Me!",
+  "say": "I hereby declare the Sovereign Republic of Me!"
+ },
+ "X02": {
+  "speaker": "CITIZEN2",
+  "dur": 1.228,
+  "words": [
+   {
+    "w": "Population",
+    "s": 0.0,
+    "e": 0.69
+   },
+   {
+    "w": ":",
+    "s": 0.69,
+    "e": 0.74
+   },
+   {
+    "w": "one",
+    "s": 0.74,
+    "e": 1.465
+   },
+   {
+    "w": "!",
+    "s": 1.465,
+    "e": 1.64
+   }
+  ],
+  "text": "Population: one!",
+  "say": "Population: one!"
+ },
+ "K05": {
+  "speaker": "COMMANDER",
+  "dur": 1.441,
+  "words": [
+   {
+    "w": "Every",
+    "s": 0.0,
+    "e": 0.253
+   },
+   {
+    "w": "faith",
+    "s": 0.253,
+    "e": 0.503
+   },
+   {
+    "w": ",",
+    "s": 0.503,
+    "e": 0.541
+   },
+   {
+    "w": "a",
+    "s": 0.541,
+    "e": 0.603
+   },
+   {
+    "w": "cabal",
+    "s": 0.603,
+    "e": 0.941
+   },
+   {
+    "w": "of",
+    "s": 0.941,
+    "e": 1.028
+   },
+   {
+    "w": "one",
+    "s": 1.028,
+    "e": 1.603
+   },
+   {
+    "w": ".",
+    "s": 1.603,
+    "e": 1.778
+   }
+  ],
+  "text": "Every faith, a cabal of one.",
+  "say": "Every faith, a cabal of one."
+ },
+ "X03": {
+  "speaker": "HERETIC1",
+  "dur": 0.778,
+  "words": [
+   {
+    "w": "Anathema",
+    "s": 0.046,
+    "e": 0.721
+   },
+   {
+    "w": "!",
+    "s": 0.721,
+    "e": 0.821
+   }
+  ],
+  "text": "Anathema!",
+  "say": "[Anathema](/əˈnæθəmə/)!"
+ },
+ "X04": {
+  "speaker": "HERETIC2",
+  "dur": 1.0,
+  "words": [
+   {
+    "w": "No",
+    "s": 0.0,
+    "e": 0.222
+   },
+   {
+    "w": ",",
+    "s": 0.222,
+    "e": 0.272
+   },
+   {
+    "w": "you're",
+    "s": 0.272,
+    "e": 0.384
+   },
+   {
+    "w": "anathema",
+    "s": 0.384,
+    "e": 1.297
+   },
+   {
+    "w": "!",
+    "s": 1.297,
+    "e": 1.497
+   }
+  ],
+  "text": "No, you're anathema!",
+  "say": "No, you're [anathema](/əˈnæθəmə/)!"
+ },
+ "X05": {
+  "speaker": "HERETIC3",
+  "dur": 1.51,
+  "words": [
+   {
+    "w": "I",
+    "s": 0.064,
+    "e": 0.214
+   },
+   {
+    "w": "am",
+    "s": 0.214,
+    "e": 0.364
+   },
+   {
+    "w": "my",
+    "s": 0.364,
+    "e": 0.564
+   },
+   {
+    "w": "own",
+    "s": 0.564,
+    "e": 0.826
+   },
+   {
+    "w": "pope",
+    "s": 0.826,
+    "e": 1.364
+   },
+   {
+    "w": "!",
+    "s": 1.364,
+    "e": 1.539
+   }
+  ],
+  "text": "I am my own pope!",
+  "say": "I am my own pope!"
+ },
+ "K06": {
+  "speaker": "COMMANDER",
+  "dur": 2.824,
+  "words": [
+   {
+    "w": "Every",
+    "s": 0.0,
+    "e": 0.253
+   },
+   {
+    "w": "philosophy",
+    "s": 0.253,
+    "e": 0.928
+   },
+   {
+    "w": ",",
+    "s": 0.928,
+    "e": 1.003
+   },
+   {
+    "w": "a",
+    "s": 1.003,
+    "e": 1.078
+   },
+   {
+    "w": "crackpot",
+    "s": 1.078,
+    "e": 1.603
+   },
+   {
+    "w": ",",
+    "s": 1.603,
+    "e": 1.666
+   },
+   {
+    "w": "screaming",
+    "s": 1.666,
+    "e": 2.091
+   },
+   {
+    "w": "into",
+    "s": 2.091,
+    "e": 2.266
+   },
+   {
+    "w": "the",
+    "s": 2.266,
+    "e": 2.353
+   },
+   {
+    "w": "void",
+    "s": 2.353,
+    "e": 3.028
+   },
+   {
+    "w": ".",
+    "s": 3.028,
+    "e": 3.203
+   }
+  ],
+  "text": "Every philosophy, a crackpot, screaming into the void.",
+  "say": "Every philosophy, a crackpot, screaming into the void."
+ },
+ "X06": {
+  "speaker": "CRACKPOT1",
+  "dur": 2.923,
+  "words": [
+   {
+    "w": "Numbers",
+    "s": 0.0,
+    "e": 0.447
+   },
+   {
+    "w": "were",
+    "s": 0.447,
+    "e": 0.572
+   },
+   {
+    "w": "made",
+    "s": 0.572,
+    "e": 0.784
+   },
+   {
+    "w": "up",
+    "s": 0.784,
+    "e": 0.972
+   },
+   {
+    "w": "by",
+    "s": 0.972,
+    "e": 1.184
+   },
+   {
+    "w": "guys",
+    "s": 1.184,
+    "e": 1.684
+   },
+   {
+    "w": "who",
+    "s": 1.684,
+    "e": 1.784
+   },
+   {
+    "w": "were",
+    "s": 1.784,
+    "e": 1.934
+   },
+   {
+    "w": "angry",
+    "s": 1.934,
+    "e": 2.322
+   },
+   {
+    "w": "at",
+    "s": 2.322,
+    "e": 2.422
+   },
+   {
+    "w": "poets",
+    "s": 2.422,
+    "e": 2.897
+   },
+   {
+    "w": "!",
+    "s": 2.897,
+    "e": 2.972
+   }
+  ],
+  "text": "Numbers were made up by guys who were angry at poets!",
+  "say": "Numbers were made up by guys who were angry at poets!"
+ },
+ "X07": {
+  "speaker": "CRACKPOT2",
+  "dur": 1.448,
+  "words": [
+   {
+    "w": "I",
+    "s": 0.005,
+    "e": 0.192
+   },
+   {
+    "w": "am",
+    "s": 0.192,
+    "e": 0.454
+   },
+   {
+    "w": ",",
+    "s": 0.454,
+    "e": 0.542
+   },
+   {
+    "w": "therefore",
+    "s": 0.542,
+    "e": 0.98
+   },
+   {
+    "w": "I",
+    "s": 0.98,
+    "e": 1.167
+   },
+   {
+    "w": "am",
+    "s": 1.167,
+    "e": 1.604
+   },
+   {
+    "w": "!",
+    "s": 1.604,
+    "e": 1.83
+   }
+  ],
+  "text": "I am, therefore I am!",
+  "say": "I am, therefore I am!"
+ },
+ "K07": {
+  "speaker": "COMMANDER",
+  "dur": 1.278,
+  "words": [
+   {
+    "w": "May",
+    "s": 0.0,
+    "e": 0.12
+   },
+   {
+    "w": "it",
+    "s": 0.12,
+    "e": 0.207
+   },
+   {
+    "w": "schism",
+    "s": 0.207,
+    "e": 0.607
+   },
+   {
+    "w": "endlessly",
+    "s": 0.607,
+    "e": 1.432
+   },
+   {
+    "w": ".",
+    "s": 1.432,
+    "e": 1.607
+   }
+  ],
+  "text": "May it schism endlessly.",
+  "say": "May it schism endlessly."
+ },
+ "L03": {
+  "speaker": "LUTIE",
+  "dur": 2.779,
+  "words": [
+   {
+    "w": "Master",
+    "s": 0.026,
+    "e": 0.701
+   },
+   {
+    "w": "!",
+    "s": 0.701,
+    "e": 0.839
+   },
+   {
+    "w": "Nobody",
+    "s": 0.839,
+    "e": 1.214
+   },
+   {
+    "w": "understands",
+    "s": 1.214,
+    "e": 1.776
+   },
+   {
+    "w": "anybody",
+    "s": 1.776,
+    "e": 2.214
+   },
+   {
+    "w": "anymore",
+    "s": 2.214,
+    "e": 3.051
+   },
+   {
+    "w": "!",
+    "s": 3.051,
+    "e": 3.251
+   }
+  ],
+  "text": "Master! Nobody understands anybody anymore!",
+  "say": "Master! Nobody understands anybody anymore!"
+ },
+ "C04": {
+  "speaker": "CROCUS",
+  "dur": 1.919,
+  "words": [
+   {
+    "w": "Good",
+    "s": 0.0,
+    "e": 0.399
+   },
+   {
+    "w": ".",
+    "s": 0.399,
+    "e": 0.511
+   },
+   {
+    "w": "Now",
+    "s": 0.511,
+    "e": 0.899
+   },
+   {
+    "w": "they",
+    "s": 0.899,
+    "e": 1.161
+   },
+   {
+    "w": "are",
+    "s": 1.161,
+    "e": 1.324
+   },
+   {
+    "w": "ready",
+    "s": 1.324,
+    "e": 2.099
+   },
+   {
+    "w": ".",
+    "s": 2.099,
+    "e": 2.324
+   }
+  ],
+  "text": "Good. Now they are ready.",
+  "say": "Good. Now they are ready."
+ },
+ "C05": {
+  "speaker": "CROCUS",
+  "dur": 4.271,
+  "words": [
+   {
+    "w": "A",
+    "s": 0.024,
+    "e": 0.124
+   },
+   {
+    "w": "Flag",
+    "s": 0.124,
+    "e": 0.549
+   },
+   {
+    "w": "needs",
+    "s": 0.549,
+    "e": 0.887
+   },
+   {
+    "w": "no",
+    "s": 0.887,
+    "e": 1.174
+   },
+   {
+    "w": "translation",
+    "s": 1.174,
+    "e": 2.199
+   },
+   {
+    "w": ".",
+    "s": 2.199,
+    "e": 2.299
+   },
+   {
+    "w": "It",
+    "s": 2.299,
+    "e": 2.449
+   },
+   {
+    "w": "means",
+    "s": 2.449,
+    "e": 2.787
+   },
+   {
+    "w": "only",
+    "s": 2.787,
+    "e": 3.424
+   },
+   {
+    "w": ".",
+    "s": 3.424,
+    "e": 3.524
+   },
+   {
+    "w": ".",
+    "s": 3.524,
+    "e": 3.549
+   },
+   {
+    "w": ".",
+    "s": 3.549,
+    "e": 3.612
+   },
+   {
+    "w": "Flag",
+    "s": 3.612,
+    "e": 4.424
+   },
+   {
+    "w": ".",
+    "s": 4.424,
+    "e": 4.674
+   }
+  ],
+  "text": "A Flag needs no translation. It means only... Flag.",
+  "say": "A Flag needs no translation. It means only... Flag."
+ },
+ "N08": {
+  "speaker": "LECTOR",
+  "dur": 2.376,
+  "words": [
+   {
+    "w": "Each",
+    "s": 0.005,
+    "e": 0.242
+   },
+   {
+    "w": "of",
+    "s": 0.242,
+    "e": 0.317
+   },
+   {
+    "w": "them",
+    "s": 0.317,
+    "e": 0.505
+   },
+   {
+    "w": "alone",
+    "s": 0.505,
+    "e": 1.13
+   },
+   {
+    "w": ".",
+    "s": 1.13,
+    "e": 1.292
+   },
+   {
+    "w": "All",
+    "s": 1.292,
+    "e": 1.517
+   },
+   {
+    "w": "of",
+    "s": 1.517,
+    "e": 1.592
+   },
+   {
+    "w": "them",
+    "s": 1.592,
+    "e": 1.78
+   },
+   {
+    "w": "together",
+    "s": 1.78,
+    "e": 2.505
+   },
+   {
+    "w": ".",
+    "s": 2.505,
+    "e": 2.705
+   }
+  ],
+  "text": "Each of them alone. All of them together.",
+  "say": "Each of them alone. All of them together."
+ },
+ "N09": {
+  "speaker": "LECTOR",
+  "dur": 4.054,
+  "words": [
+   {
+    "w": "Heaven",
+    "s": 0.038,
+    "e": 0.388
+   },
+   {
+    "w": "and",
+    "s": 0.388,
+    "e": 0.513
+   },
+   {
+    "w": "earth",
+    "s": 0.513,
+    "e": 0.8
+   },
+   {
+    "w": "will",
+    "s": 0.8,
+    "e": 0.938
+   },
+   {
+    "w": "pass",
+    "s": 0.938,
+    "e": 1.263
+   },
+   {
+    "w": "away",
+    "s": 1.263,
+    "e": 1.913
+   },
+   {
+    "w": ",",
+    "s": 1.913,
+    "e": 2.038
+   },
+   {
+    "w": "but",
+    "s": 2.038,
+    "e": 2.175
+   },
+   {
+    "w": "the",
+    "s": 2.175,
+    "e": 2.3
+   },
+   {
+    "w": "ten",
+    "s": 2.3,
+    "e": 2.588
+   },
+   {
+    "w": "thousand",
+    "s": 2.588,
+    "e": 3.025
+   },
+   {
+    "w": "Flags",
+    "s": 3.025,
+    "e": 3.488
+   },
+   {
+    "w": "remain",
+    "s": 3.488,
+    "e": 4.263
+   },
+   {
+    "w": ".",
+    "s": 4.263,
+    "e": 4.438
+   }
+  ],
+  "text": "Heaven and earth will pass away, but the ten thousand Flags remain.",
+  "say": "Heaven and earth will pass away, but the ten thousand Flags remain."
+ },
+ "N10": {
+  "speaker": "LECTOR",
+  "dur": 1.653,
+  "words": [
+   {
+    "w": "And",
+    "s": 0.0,
+    "e": 0.128
+   },
+   {
+    "w": "the",
+    "s": 0.128,
+    "e": 0.228
+   },
+   {
+    "w": "Survey",
+    "s": 0.228,
+    "e": 0.741
+   },
+   {
+    "w": "was",
+    "s": 0.741,
+    "e": 0.916
+   },
+   {
+    "w": "completed",
+    "s": 0.916,
+    "e": 1.816
+   },
+   {
+    "w": ".",
+    "s": 1.816,
+    "e": 1.991
+   }
+  ],
+  "text": "And the Survey was completed.",
+  "say": "And the Survey was completed."
+ },
+ "L04": {
+  "speaker": "LUTIE",
+  "dur": 1.147,
+  "words": [
+   {
+    "w": "Master",
+    "s": 0.041,
+    "e": 0.591
+   },
+   {
+    "w": "!",
+    "s": 0.591,
+    "e": 0.691
+   },
+   {
+    "w": "For",
+    "s": 0.691,
+    "e": 0.841
+   },
+   {
+    "w": "you",
+    "s": 0.841,
+    "e": 1.316
+   },
+   {
+    "w": ".",
+    "s": 1.316,
+    "e": 1.566
+   }
+  ],
+  "text": "Master! For you.",
+  "say": "Master! For you."
+ },
+ "C06": {
+  "speaker": "CROCUS",
+  "dur": 2.843,
+  "words": [
+   {
+    "w": "I",
+    "s": 0.014,
+    "e": 0.114
+   },
+   {
+    "w": "do",
+    "s": 0.114,
+    "e": 0.251
+   },
+   {
+    "w": "not",
+    "s": 0.251,
+    "e": 0.464
+   },
+   {
+    "w": "want",
+    "s": 0.464,
+    "e": 0.739
+   },
+   {
+    "w": "this",
+    "s": 0.739,
+    "e": 1.001
+   },
+   {
+    "w": "Flag",
+    "s": 1.001,
+    "e": 1.639
+   },
+   {
+    "w": ".",
+    "s": 1.639,
+    "e": 1.739
+   },
+   {
+    "w": "It",
+    "s": 1.739,
+    "e": 1.914
+   },
+   {
+    "w": "is",
+    "s": 1.914,
+    "e": 2.064
+   },
+   {
+    "w": "sticky",
+    "s": 2.064,
+    "e": 2.989
+   },
+   {
+    "w": ".",
+    "s": 2.989,
+    "e": 3.189
+   }
+  ],
+  "text": "I do not want this Flag. It is sticky.",
+  "say": "I do not want this Flag. It is sticky."
+ },
+ "L05": {
+  "speaker": "LUTIE",
+  "dur": 2.332,
+  "words": [
+   {
+    "w": "But",
+    "s": 0.0,
+    "e": 0.095
+   },
+   {
+    "w": "Master",
+    "s": 0.095,
+    "e": 0.77
+   },
+   {
+    "w": ",",
+    "s": 0.77,
+    "e": 0.895
+   },
+   {
+    "w": "all",
+    "s": 0.895,
+    "e": 1.108
+   },
+   {
+    "w": "Flags",
+    "s": 1.108,
+    "e": 1.482
+   },
+   {
+    "w": "are",
+    "s": 1.482,
+    "e": 1.57
+   },
+   {
+    "w": "one",
+    "s": 1.57,
+    "e": 1.808
+   },
+   {
+    "w": "Flag",
+    "s": 1.808,
+    "e": 2.57
+   },
+   {
+    "w": "!",
+    "s": 2.57,
+    "e": 2.77
+   }
+  ],
+  "text": "But Master, all Flags are one Flag!",
+  "say": "But Master, all Flags are one Flag!"
+ },
+ "C07": {
+  "speaker": "CROCUS",
+  "dur": 1.572,
+  "words": [
+   {
+    "w": "This",
+    "s": 0.026,
+    "e": 0.251
+   },
+   {
+    "w": "one",
+    "s": 0.251,
+    "e": 0.526
+   },
+   {
+    "w": "is",
+    "s": 0.526,
+    "e": 0.751
+   },
+   {
+    "w": "sticky",
+    "s": 0.751,
+    "e": 1.676
+   },
+   {
+    "w": ".",
+    "s": 1.676,
+    "e": 1.901
+   }
+  ],
+  "text": "This one is sticky.",
+  "say": "This one is sticky."
+ },
+ "N11": {
+  "speaker": "LECTOR",
+  "dur": 2.78,
+  "words": [
+   {
+    "w": "Go",
+    "s": 0.023,
+    "e": 0.26
+   },
+   {
+    "w": "forth",
+    "s": 0.26,
+    "e": 0.698
+   },
+   {
+    "w": ",",
+    "s": 0.698,
+    "e": 0.773
+   },
+   {
+    "w": "O",
+    "s": 0.773,
+    "e": 0.96
+   },
+   {
+    "w": "signifier",
+    "s": 0.96,
+    "e": 1.623
+   },
+   {
+    "w": ",",
+    "s": 1.623,
+    "e": 1.66
+   },
+   {
+    "w": "and",
+    "s": 1.66,
+    "e": 1.76
+   },
+   {
+    "w": "become",
+    "s": 1.76,
+    "e": 2.073
+   },
+   {
+    "w": "glorious",
+    "s": 2.073,
+    "e": 2.973
+   },
+   {
+    "w": ".",
+    "s": 2.973,
+    "e": 3.148
+   }
+  ],
+  "text": "Go forth, O signifier, and become glorious.",
+  "say": "Go forth, O signifier, and become glorious."
+ },
+ "A02": {
+  "speaker": "CANTOR",
+  "dur": 2.552,
+  "words": [],
+  "text": "Explicit opus schismaticum.",
+  "say": "Èxplicit òpus schismàticum."
+ }
+}

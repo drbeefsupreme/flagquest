@@ -691,11 +691,12 @@ def draw_flag(ctx, x, y, pole=420, t=0.0, wind=1.0, side=1, ang=0.0, seed=0, alp
     xx, yx, xy, yy, _, _ = ctx.get_matrix()
     ds = math.sqrt(abs(xx * yy - xy * yx))
     if CLOTH_W * pole * ds < 12.0 and glow <= 0.0:
+        # THE ONE RULE: a popping flag grows geometrically (scale + pole length) and is always fully opaque
         _draw_tiny(ctx, x, y, float(pole), float(t), float(wind), side, float(ang), seed,
-                   alpha * (min(1.0, pop * 12.0) if pop < 1.0 else 1.0), cloth_w, cloth_h, float(pop), float(lean),
+                   alpha, cloth_w, cloth_h, float(pop), float(lean),
                    light, ds)
         return
-    a = alpha * (min(1.0, pop * 12.0) if pop < 1.0 else 1.0)
+    a = alpha
     if CLOTH_W * pole * ds < 150:
         # small/medium: the batch kernel (Gouraud on the bank mesh, AA, pole included)
         draw_flag_field(ctx, x, y, pole, t, seed, wind, side, ang, pop, alpha, light, glow, None, False, lean,
@@ -757,8 +758,7 @@ def draw_flag_field(ctx, xs, ys, pole, t, seeds=None, wind=1.0, side=1, ang=0.0,
         ang += lean * (0.7 * np.sin(2 * np.pi * (tt * 0.33 + ph)) + 0.3 * np.sin(2 * np.pi * (tt * 0.71 + 2 * ph)))
     sc = np.where(pop < 1.0, _ease_back_v(pop), 1.0)
     Lp = pole * np.where(pop < 1.0, np.clip(pop * 1.6, 0.0, 1.0), 1.0)
-    alpha *= np.where(pop < 1.0, np.clip(pop * 12.0, 0.0, 1.0), 1.0)
-    alpha[pop <= 0.0] = 0.0
+    alpha[pop <= 0.0] = 0.0          # not yet there; otherwise opaque at any pop (growth is geometric)
     s = pole * sc
     M = np.array(tuple(ctx.get_matrix()), np.float64)
     xx, yx, xy, yy, x0, y0 = M

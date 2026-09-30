@@ -1,0 +1,5867 @@
+{
+ "design": [
+  {
+   "t": 0.7000000000000001,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "candle_strike",
+   "desc": "match scrape"
+  },
+  {
+   "t": 0.8,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "candle_strike",
+   "desc": "match flares (strike)"
+  },
+  {
+   "t": 0.8,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "strike",
+   "desc": "the strike: candle ignition"
+  },
+  {
+   "t": 1.08,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "candle",
+   "desc": "candle wick catches; steady flame flicker from here (to 22.0)"
+  },
+  {
+   "t": 1.956141859496403,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter I sets (to 2.06)"
+  },
+  {
+   "t": 1.956141859496403,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter I"
+  },
+  {
+   "t": 2.061697694448544,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter N sets (to 2.17)"
+  },
+  {
+   "t": 2.061697694448544,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter N"
+  },
+  {
+   "t": 2.211029063435606,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter C sets (to 2.31)"
+  },
+  {
+   "t": 2.211029063435606,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter C"
+  },
+  {
+   "t": 2.3106623948362803,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter I sets (to 2.42)"
+  },
+  {
+   "t": 2.3106623948362803,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter I"
+  },
+  {
+   "t": 2.4548196346866624,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter P sets (to 2.54)"
+  },
+  {
+   "t": 2.4548196346866624,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter P"
+  },
+  {
+   "t": 2.5375890951569926,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter I sets (to 2.61)"
+  },
+  {
+   "t": 2.5375890951569926,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter I"
+  },
+  {
+   "t": 2.6062400403395314,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter T sets (to 2.69)"
+  },
+  {
+   "t": 2.6062400403395314,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter T"
+  },
+  {
+   "t": 2.7110280970876954,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter \u00b7 sets (to 2.71)"
+  },
+  {
+   "t": 2.7110280970876954,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter \u00b7"
+  },
+  {
+   "t": 2.7254085469873335,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter O sets (to 2.94)"
+  },
+  {
+   "t": 2.7254085469873335,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter O"
+  },
+  {
+   "t": 2.9757835845262384,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter P sets (to 3.05)"
+  },
+  {
+   "t": 2.9757835845262384,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter P"
+  },
+  {
+   "t": 3.0499093283418204,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter V sets (to 3.13)"
+  },
+  {
+   "t": 3.0499093283418204,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter V"
+  },
+  {
+   "t": 3.1213908462903497,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter S sets (to 3.19)"
+  },
+  {
+   "t": 3.1213908462903497,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter S"
+  },
+  {
+   "t": 3.2185097812795918,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter \u00b7 sets (to 3.22)"
+  },
+  {
+   "t": 3.2185097812795918,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter \u00b7"
+  },
+  {
+   "t": 3.228518976903954,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter S sets (to 3.28)"
+  },
+  {
+   "t": 3.228518976903954,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter S"
+  },
+  {
+   "t": 3.2705195711449964,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter C sets (to 3.32)"
+  },
+  {
+   "t": 3.2705195711449964,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter C"
+  },
+  {
+   "t": 3.313408974014024,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter H sets (to 3.36)"
+  },
+  {
+   "t": 3.313408974014024,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter H"
+  },
+  {
+   "t": 3.3569149742906754,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter I sets (to 3.40)"
+  },
+  {
+   "t": 3.3569149742906754,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter I"
+  },
+  {
+   "t": 3.3984940849879104,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter S sets (to 3.44)"
+  },
+  {
+   "t": 3.3984940849879104,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter S"
+  },
+  {
+   "t": 3.485643188905048,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter M sets (to 3.64)"
+  },
+  {
+   "t": 3.485643188905048,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter M"
+  },
+  {
+   "t": 3.6366629689769683,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter A sets (to 3.78)"
+  },
+  {
+   "t": 3.6366629689769683,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter A"
+  },
+  {
+   "t": 3.879527523595335,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter T sets (to 3.99)"
+  },
+  {
+   "t": 3.879527523595335,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter T"
+  },
+  {
+   "t": 3.989328253090024,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter I sets (to 4.09)"
+  },
+  {
+   "t": 3.989328253090024,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter I"
+  },
+  {
+   "t": 4.127406644009666,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter C sets (to 4.23)"
+  },
+  {
+   "t": 4.127406644009666,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter C"
+  },
+  {
+   "t": 4.225131770212166,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter V sets (to 4.33)"
+  },
+  {
+   "t": 4.225131770212166,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter V"
+  },
+  {
+   "t": 4.330550556001742,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "INCIPIT letter M sets (to 4.43)"
+  },
+  {
+   "t": 4.330550556001742,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "INCIPIT letter M"
+  },
+  {
+   "t": 8.4,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tesseract",
+   "desc": "one gold tessera flashes at the zenith; unfolds square->cube->tesseract (to 9.6)"
+  },
+  {
+   "t": 8.450000000000001,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "star_shadow",
+   "desc": "ripple: every star in the vault collapses into a tiny square (its shadow) (to 9.0)"
+  },
+  {
+   "t": 10.7666666666666,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "inside_out",
+   "desc": "inner cube passes through the outer (4D inside-out)"
+  },
+  {
+   "t": 11.495833333333225,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "turn",
+   "desc": "quarter turn 1 completes (aligned)"
+  },
+  {
+   "t": 12.22499999999985,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "inside_out",
+   "desc": "inner cube passes through the outer (4D inside-out)"
+  },
+  {
+   "t": 12.94374999999981,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "turn",
+   "desc": "quarter turn 2 completes (aligned)"
+  },
+  {
+   "t": 13.558333333333108,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "inside_out",
+   "desc": "inner cube passes through the outer (4D inside-out)"
+  },
+  {
+   "t": 13.964583333333085,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "turn",
+   "desc": "quarter turn 3 completes (aligned)"
+  },
+  {
+   "t": 14.2979166666664,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "inside_out",
+   "desc": "inner cube passes through the outer (4D inside-out)"
+  },
+  {
+   "t": 14.610416666666382,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "turn",
+   "desc": "quarter turn 4 completes (aligned)"
+  },
+  {
+   "t": 14.78,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "emerge",
+   "desc": "the Flag's first cloth frame"
+  },
+  {
+   "t": 14.78,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "the Flag rotates into existence and unfurls (to 15.4)"
+  },
+  {
+   "t": 14.799999999999999,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "shatter",
+   "desc": "the tesseract's tiles scatter outward and circle the Flag (to 19.3)"
+  },
+  {
+   "t": 19.6,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "title",
+   "desc": "the title sets (to 20.4)"
+  },
+  {
+   "t": 19.603139345610995,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter O lands (to 19.73)"
+  },
+  {
+   "t": 19.603139345610995,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter O"
+  },
+  {
+   "t": 19.623530509531854,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter P lands (to 19.75)"
+  },
+  {
+   "t": 19.623530509531854,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter P"
+  },
+  {
+   "t": 19.64294110185123,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter V lands (to 19.77)"
+  },
+  {
+   "t": 19.64294110185123,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter V"
+  },
+  {
+   "t": 19.67009085552687,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter S lands (to 19.79)"
+  },
+  {
+   "t": 19.67009085552687,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter S"
+  },
+  {
+   "t": 19.710952842992004,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter S lands (to 19.83)"
+  },
+  {
+   "t": 19.710952842992004,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter S"
+  },
+  {
+   "t": 19.727199989148467,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter C lands (to 19.85)"
+  },
+  {
+   "t": 19.727199989148467,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter C"
+  },
+  {
+   "t": 19.751493860571134,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter H lands (to 19.88)"
+  },
+  {
+   "t": 19.751493860571134,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter H"
+  },
+  {
+   "t": 19.78044472894067,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter I lands (to 19.90)"
+  },
+  {
+   "t": 19.78044472894067,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter I"
+  },
+  {
+   "t": 19.79981397432803,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter S lands (to 19.92)"
+  },
+  {
+   "t": 19.79981397432803,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter S"
+  },
+  {
+   "t": 19.816279622888743,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter M lands (to 19.94)"
+  },
+  {
+   "t": 19.816279622888743,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter M"
+  },
+  {
+   "t": 19.833220993312068,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter A lands (to 19.96)"
+  },
+  {
+   "t": 19.833220993312068,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter A"
+  },
+  {
+   "t": 19.85465837497894,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter T lands (to 19.98)"
+  },
+  {
+   "t": 19.85465837497894,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter T"
+  },
+  {
+   "t": 19.87644319493013,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter I lands (to 20.00)"
+  },
+  {
+   "t": 19.87644319493013,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter I"
+  },
+  {
+   "t": 19.90113666148381,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter C lands (to 20.02)"
+  },
+  {
+   "t": 19.90113666148381,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter C"
+  },
+  {
+   "t": 19.92569519013138,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter V lands (to 20.04)"
+  },
+  {
+   "t": 19.92569519013138,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter V"
+  },
+  {
+   "t": 19.947116663555875,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "title letter M lands (to 20.07)"
+  },
+  {
+   "t": 19.947116663555875,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "set",
+   "desc": "title letter M"
+  },
+  {
+   "t": 20.06,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "the white gloss sets, small (to 20.4)"
+  },
+  {
+   "t": 21.0,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "camera",
+   "desc": "tilt down (to 22.0)"
+  },
+  {
+   "t": 26.43,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "machine",
+   "desc": "nations: the crowned walled city wakes, its gatehouse gear train clunks into motion"
+  },
+  {
+   "t": 26.48,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "gears",
+   "desc": "gilded cogs turning (to 37.54), grinding to a halt as the slop wave reaches them at 36.64"
+  },
+  {
+   "t": 27.43,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "machine",
+   "desc": "faiths: the domed temple wakes, dome turns, saints process to the door"
+  },
+  {
+   "t": 27.48,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "gears",
+   "desc": "gilded cogs turning (to 37.55), grinding to a halt as the slop wave reaches them at 36.65"
+  },
+  {
+   "t": 28.117,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "machine",
+   "desc": "philosophies: the philosophers' globe spins, cogs turn in the tree"
+  },
+  {
+   "t": 28.167,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "gears",
+   "desc": "gilded cogs turning (to 37.64), grinding to a halt as the slop wave reaches them at 36.74"
+  },
+  {
+   "t": 34.4,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "tile_flip",
+   "desc": "ONE tessera (the pupil of the colossal eye) flips into a glowing pastel phone screen"
+  },
+  {
+   "t": 36.3,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "flip_wave",
+   "desc": "crash wave from the left eye: split-flap flips sweep the wall (to 37.90)"
+  },
+  {
+   "t": 41.045,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "flip_wave",
+   "desc": "second wave from the top-left: split-flap flips sweep the wall (to 42.65)"
+  },
+  {
+   "t": 41.745,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "flip_wave",
+   "desc": "third wave from the lower right: split-flap flips sweep the wall (to 43.34)"
+  },
+  {
+   "t": 44.845,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "noise",
+   "desc": "every tile independent: the picture dissolves into noise (to 46.97)"
+  },
+  {
+   "t": 47.0,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "static",
+   "desc": "dive into one slop tessera; its feed melts into full-frame pastel static (to 48.5)"
+  },
+  {
+   "t": 48.5,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "flip_wave",
+   "desc": "the pastel static crystallises into tesserae; they flip, tile by tile from the Jaguar's eyes outward, into glass and gold (to 50.25)"
+  },
+  {
+   "t": 48.64,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "resolve",
+   "desc": "first tiles flip: the Jaguar's two eyes stare out of the static; the visible frame is gold by ~49.4, the whole wall by 50.25 (to 50.25)"
+  },
+  {
+   "t": 50.25,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "resolve",
+   "desc": "the last tesserae of the wall set (resolve end)"
+  },
+  {
+   "t": 50.738,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "titulus HIC IMPERATOR IAGVAR LEGEM SANCIT sets letter by letter, left to right (to 51.91)"
+  },
+  {
+   "t": 52.5,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "stylus",
+   "desc": "the golden nib touches the purple codex: a flourishing signature in gold (to 54.35)"
+  },
+  {
+   "t": 52.5,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "stroke",
+   "desc": "signature flourish (to 54.35)"
+  },
+  {
+   "t": 52.5,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "stylus",
+   "desc": "pen stroke (to 52.69)"
+  },
+  {
+   "t": 52.69185469644186,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "stylus",
+   "desc": "pen stroke (to 53.15)"
+  },
+  {
+   "t": 53.15145034359154,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "stylus",
+   "desc": "pen stroke (to 53.35)"
+  },
+  {
+   "t": 53.347569784625996,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "stylus",
+   "desc": "pen stroke (to 53.84)"
+  },
+  {
+   "t": 53.84371437515253,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "stylus",
+   "desc": "pen stroke (to 54.35)"
+  },
+  {
+   "t": 54.775,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "numeral M of MMXLII sets in gold"
+  },
+  {
+   "t": 54.9976,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "numeral M of MMXLII sets in gold"
+  },
+  {
+   "t": 55.2202,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "numeral X of MMXLII sets in gold"
+  },
+  {
+   "t": 55.4428,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "numeral L of MMXLII sets in gold"
+  },
+  {
+   "t": 55.6654,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "numeral I of MMXLII sets in gold"
+  },
+  {
+   "t": 55.888,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "numeral I of MMXLII sets in gold"
+  },
+  {
+   "t": 58.0,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "seal",
+   "desc": "the gold seal SLAMS onto the edict (chrysobull, paw-print impression)"
+  },
+  {
+   "t": 58.01,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "tiles_jump",
+   "desc": "shock ring: every tessera on the wall jumps and resettles; 14 pop out and fall (to 58.90)"
+  },
+  {
+   "t": 59.018,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "rustle",
+   "desc": "the Emperor leans OUT of the wall toward us (stone slab grinding, cloth), leaving his halo (to 59.72)"
+  },
+  {
+   "t": 60.185,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "an ochre Vexillian sleeve reaches in from the lower left with a gold solidus (to 60.73)"
+  },
+  {
+   "t": 60.983,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "coin_drop",
+   "desc": "the solidus drops into his open paw"
+  },
+  {
+   "t": 60.983,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "coin",
+   "desc": "coin lands in the paw"
+  },
+  {
+   "t": 61.003,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "crack",
+   "desc": "a hairline crack runs through the halo"
+  },
+  {
+   "t": 61.032999999999994,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "the sleeve withdraws"
+  },
+  {
+   "t": 61.088,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "he elevates the coin like the Host; the camera pushes into it (to 61.81)"
+  },
+  {
+   "t": 61.433,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "click",
+   "desc": "he winks"
+  },
+  {
+   "t": 62.1,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "ka_ching",
+   "desc": "the solidus glints: a four-point star flares; the world drains to one gold point (to 62.45)"
+  },
+  {
+   "t": 62.1,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "flare",
+   "desc": "glint flare -> gold point (hand-off to m04)"
+  },
+  {
+   "t": 62.9,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "the great eye opens where m03's gold point was"
+  },
+  {
+   "t": 63.51515553593636,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 0 half-opens"
+  },
+  {
+   "t": 63.62615984201432,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 1 half-opens"
+  },
+  {
+   "t": 63.638122156858444,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 3 half-opens"
+  },
+  {
+   "t": 63.65494437456131,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 2 half-opens"
+  },
+  {
+   "t": 63.682038437128064,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 4 half-opens"
+  },
+  {
+   "t": 63.79075400352478,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 6 half-opens"
+  },
+  {
+   "t": 63.80550652742386,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 5 half-opens"
+  },
+  {
+   "t": 63.899015059471125,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 2 eye 7 half-opens"
+  },
+  {
+   "t": 64.10519987463951,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 1 half-opens"
+  },
+  {
+   "t": 64.14739011526108,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 0 half-opens"
+  },
+  {
+   "t": 64.21586960792541,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 2 half-opens"
+  },
+  {
+   "t": 64.25,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wing_unfold",
+   "desc": "wing up_r unfolds (to 65.65)"
+  },
+  {
+   "t": 64.2747051036358,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 3 half-opens"
+  },
+  {
+   "t": 64.3,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wing_unfold",
+   "desc": "wing up_l unfolds (to 65.70)"
+  },
+  {
+   "t": 64.31674607276916,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 4 half-opens"
+  },
+  {
+   "t": 64.34753476381302,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 5 half-opens"
+  },
+  {
+   "t": 64.38384807825088,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 6 half-opens"
+  },
+  {
+   "t": 64.44365689992904,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 7 half-opens"
+  },
+  {
+   "t": 64.47623736023903,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 8 half-opens"
+  },
+  {
+   "t": 64.48426398515701,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 9 half-opens"
+  },
+  {
+   "t": 64.53975847363472,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 1 eye 10 half-opens"
+  },
+  {
+   "t": 64.57,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wing_unfold",
+   "desc": "wing mid_r unfolds (to 65.97)"
+  },
+  {
+   "t": 64.59072563052177,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 0 half-opens"
+  },
+  {
+   "t": 64.61977039694786,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 1 half-opens"
+  },
+  {
+   "t": 64.61999999999999,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wing_unfold",
+   "desc": "wing mid_l unfolds (to 66.02)"
+  },
+  {
+   "t": 64.65100294589996,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 2 half-opens"
+  },
+  {
+   "t": 64.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 65.20)"
+  },
+  {
+   "t": 64.7011736547947,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 3 half-opens"
+  },
+  {
+   "t": 64.7482326734066,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 4 half-opens"
+  },
+  {
+   "t": 64.84651735544205,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 6 half-opens"
+  },
+  {
+   "t": 64.85373018980026,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 5 half-opens"
+  },
+  {
+   "t": 64.89,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wing_unfold",
+   "desc": "wing lo_r unfolds (to 66.29)"
+  },
+  {
+   "t": 64.92118956685066,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 7 half-opens"
+  },
+  {
+   "t": 64.94,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wing_unfold",
+   "desc": "wing lo_l unfolds (to 66.34)"
+  },
+  {
+   "t": 64.94302456140518,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 8 half-opens"
+  },
+  {
+   "t": 64.98241551399231,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 9 half-opens"
+  },
+  {
+   "t": 65.01683044433594,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 10 half-opens"
+  },
+  {
+   "t": 65.1412417781353,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 11 half-opens"
+  },
+  {
+   "t": 65.14861597657205,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 12 half-opens"
+  },
+  {
+   "t": 65.18728243470191,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "ring 0 eye 13 half-opens"
+  },
+  {
+   "t": 65.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 65.70)"
+  },
+  {
+   "t": 65.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 66.20)"
+  },
+  {
+   "t": 66.03,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "ignite",
+   "desc": "CANON I: wing up_l ignites root->tip (to 66.45)"
+  },
+  {
+   "t": 66.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 66.70)"
+  },
+  {
+   "t": 66.46,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "ignite",
+   "desc": "CANON II: wing up_r ignites root->tip (to 66.88)"
+  },
+  {
+   "t": 66.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 67.20)"
+  },
+  {
+   "t": 66.88,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "ignite",
+   "desc": "CANON III: wing mid_l ignites root->tip (to 67.30)"
+  },
+  {
+   "t": 67.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 67.70)"
+  },
+  {
+   "t": 67.3,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "ignite",
+   "desc": "CANON IV: wing mid_r ignites root->tip (to 67.72)"
+  },
+  {
+   "t": 67.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 68.20)"
+  },
+  {
+   "t": 67.76,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "ignite",
+   "desc": "CANON V: wing lo_l ignites root->tip (to 68.18)"
+  },
+  {
+   "t": 68.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 68.70)"
+  },
+  {
+   "t": 68.22,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "ignite",
+   "desc": "CANON VI: wing lo_r ignites root->tip (to 68.64)"
+  },
+  {
+   "t": 68.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 69.20)"
+  },
+  {
+   "t": 68.93,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "all ring eyes open fully in a wave (to 70.4)"
+  },
+  {
+   "t": 69.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 69.70)"
+  },
+  {
+   "t": 69.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 70.20)"
+  },
+  {
+   "t": 70.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 70.70)"
+  },
+  {
+   "t": 70.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 71.20)"
+  },
+  {
+   "t": 71.11,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "'true': every eye turns to the camera"
+  },
+  {
+   "t": 71.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 71.70)"
+  },
+  {
+   "t": 71.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 72.20)"
+  },
+  {
+   "t": 72.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 72.70)"
+  },
+  {
+   "t": 72.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 73.20)"
+  },
+  {
+   "t": 73.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 73.70)"
+  },
+  {
+   "t": 73.7,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "wheels",
+   "desc": "the wheels turn (to 74.20)"
+  },
+  {
+   "t": 74.15,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "portal",
+   "desc": "the great pupil opens into light"
+  },
+  {
+   "t": 74.2,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "lock",
+   "desc": "the wheels LOCK face-on with a boom; a shock ring of glints runs across the gold"
+  },
+  {
+   "t": 74.22,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "all eyes blink at the lock"
+  },
+  {
+   "t": 74.45,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "descend",
+   "desc": "the Flag materialises out of the pupil and descends (to 76.35)"
+  },
+  {
+   "t": 80.55,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "eye",
+   "desc": "all eyes blink in unison (deadpan)"
+  },
+  {
+   "t": 80.98,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "flip_wave",
+   "desc": "videtur: the whole wall re-sets around the Flag in a split-flap wave (to 81.85)"
+  },
+  {
+   "t": 81.25,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "titulus VIDETVR sets itself letter by letter (to 81.89)"
+  },
+  {
+   "t": 81.68,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "titulus QVOD NON sets itself letter by letter (to 82.32)"
+  },
+  {
+   "t": 84.742,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "titulus PRAETEREA sets itself letter by letter (to 85.34)"
+  },
+  {
+   "t": 87.0,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "titulus SED sets itself letter by letter (to 87.42)"
+  },
+  {
+   "t": 87.26,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "titulus CONTRA sets itself letter by letter (to 87.84)"
+  },
+  {
+   "t": 89.376,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.42215384615385,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.4683076923077,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.51446153846155,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.56061538461539,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.60676923076923,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.65292307692309,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.676,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "fall",
+   "desc": "the smiling slop-world falls away tile by tile (to 90.98)"
+  },
+  {
+   "t": 89.69907692307693,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.74523076923077,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.79138461538462,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.83753846153847,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.88369230769231,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.92984615384616,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 89.976,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 90.02215384615386,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "crack",
+   "desc": "the too-perfect smiling slop-world cracks like a phone screen (1 tesserae)"
+  },
+  {
+   "t": 90.19519588892912,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (5 tesserae)"
+  },
+  {
+   "t": 90.23000662913938,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (20 tesserae)"
+  },
+  {
+   "t": 90.27290071611158,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (51 tesserae)"
+  },
+  {
+   "t": 90.31403217663093,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (73 tesserae)"
+  },
+  {
+   "t": 90.35547677584891,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (126 tesserae)"
+  },
+  {
+   "t": 90.39774387719253,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (165 tesserae)"
+  },
+  {
+   "t": 90.43897097785417,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (182 tesserae)"
+  },
+  {
+   "t": 90.4778347890354,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (230 tesserae)"
+  },
+  {
+   "t": 90.52169574791866,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (223 tesserae)"
+  },
+  {
+   "t": 90.56352773024228,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (243 tesserae)"
+  },
+  {
+   "t": 90.60438149262397,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (301 tesserae)"
+  },
+  {
+   "t": 90.647117798846,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (449 tesserae)"
+  },
+  {
+   "t": 90.68851837101248,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (628 tesserae)"
+  },
+  {
+   "t": 90.72980878102574,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (845 tesserae)"
+  },
+  {
+   "t": 90.77114002568817,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (1054 tesserae)"
+  },
+  {
+   "t": 90.8121010434384,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (990 tesserae)"
+  },
+  {
+   "t": 90.85322940620027,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (790 tesserae)"
+  },
+  {
+   "t": 90.89493941373146,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (563 tesserae)"
+  },
+  {
+   "t": 90.93663622885953,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (489 tesserae)"
+  },
+  {
+   "t": 90.97861986770758,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (357 tesserae)"
+  },
+  {
+   "t": 91.0197424910996,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (282 tesserae)"
+  },
+  {
+   "t": 91.06044673914847,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (217 tesserae)"
+  },
+  {
+   "t": 91.10342000482406,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (137 tesserae)"
+  },
+  {
+   "t": 91.14236472571541,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tiles",
+   "desc": "fallen slop tiles hit the floor (75 tesserae)"
+  },
+  {
+   "t": 91.526,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "glint",
+   "desc": "'rise': the true world in gold catches the light"
+  },
+  {
+   "t": 92.8,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "titulus RESPONDEO DICENDVM sets itself letter by letter (to 93.79)"
+  },
+  {
+   "t": 93.706,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "rustle",
+   "desc": "Crocus raises the Byzantine blessing hand (to 94.16)"
+  },
+  {
+   "t": 95.75,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "cut",
+   "desc": "hard cut onto the frieze of warrior saints"
+  },
+  {
+   "t": 97.015,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles_ripple",
+   "desc": "goggle ripple from the centre outward (to 98.51)"
+  },
+  {
+   "t": 97.125,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 5 (to 97.52)"
+  },
+  {
+   "t": 97.86500000000001,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 4 (to 98.26)"
+  },
+  {
+   "t": 97.86500000000001,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 6 (to 98.26)"
+  },
+  {
+   "t": 98.025,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 3 (to 98.42)"
+  },
+  {
+   "t": 98.025,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 7 (to 98.42)"
+  },
+  {
+   "t": 98.185,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 2 (to 98.58)"
+  },
+  {
+   "t": 98.185,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 8 (to 98.58)"
+  },
+  {
+   "t": 98.345,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 1 (to 98.73)"
+  },
+  {
+   "t": 98.345,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 9 (to 98.73)"
+  },
+  {
+   "t": 98.50500000000001,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 0 (to 98.90)"
+  },
+  {
+   "t": 98.50500000000001,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "goggles",
+   "desc": "NVG mount snaps down + tube whine, saint 10 (to 98.90)"
+  },
+  {
+   "t": 98.785,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "nvg_flare",
+   "desc": "all NVG eyes flare on 'Target'"
+  },
+  {
+   "t": 101.605,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "armour",
+   "desc": "eleven lamellar cuirasses: the lances swing into a fan (to 101.95)"
+  },
+  {
+   "t": 102.06439466381073,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 2"
+  },
+  {
+   "t": 102.06629070162772,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 6"
+  },
+  {
+   "t": 102.06706161499022,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 0"
+  },
+  {
+   "t": 102.06741284704208,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 1"
+  },
+  {
+   "t": 102.06897285914421,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 8"
+  },
+  {
+   "t": 102.06900947523117,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 5"
+  },
+  {
+   "t": 102.0704155421257,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 10"
+  },
+  {
+   "t": 102.07063532876968,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 3"
+  },
+  {
+   "t": 102.07168162703513,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 7"
+  },
+  {
+   "t": 102.07169141602516,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 9"
+  },
+  {
+   "t": 102.07497528171538,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 1/3 locks (clack), pole 4"
+  },
+  {
+   "t": 102.21449920487403,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 6"
+  },
+  {
+   "t": 102.21465099430084,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 0"
+  },
+  {
+   "t": 102.21521728229523,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 5"
+  },
+  {
+   "t": 102.21525566148757,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 4"
+  },
+  {
+   "t": 102.21574756360053,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 9"
+  },
+  {
+   "t": 102.21781499457359,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 10"
+  },
+  {
+   "t": 102.2180626168251,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 1"
+  },
+  {
+   "t": 102.2188126475811,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 3"
+  },
+  {
+   "t": 102.22046421098709,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 8"
+  },
+  {
+   "t": 102.22049360156059,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 2"
+  },
+  {
+   "t": 102.22319536495209,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 2/3 locks (clack), pole 7"
+  },
+  {
+   "t": 102.3681587729454,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 1"
+  },
+  {
+   "t": 102.36962017059327,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 2"
+  },
+  {
+   "t": 102.3704500939846,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 6"
+  },
+  {
+   "t": 102.37165501594544,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 3"
+  },
+  {
+   "t": 102.37200122189522,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 0"
+  },
+  {
+   "t": 102.37225907015801,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 10"
+  },
+  {
+   "t": 102.37338810563087,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 8"
+  },
+  {
+   "t": 102.37385574626923,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 7"
+  },
+  {
+   "t": 102.37407530403136,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 4"
+  },
+  {
+   "t": 102.37492900753021,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 5"
+  },
+  {
+   "t": 102.37520588231087,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "telescope",
+   "desc": "telescoping section 3/3 locks (clack), pole 9"
+  },
+  {
+   "t": 102.495,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 5 unrolls and snaps open (to 102.84)"
+  },
+  {
+   "t": 102.57,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 4 unrolls and snaps open (to 102.92)"
+  },
+  {
+   "t": 102.57,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 6 unrolls and snaps open (to 102.92)"
+  },
+  {
+   "t": 102.645,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 3 unrolls and snaps open (to 103.00)"
+  },
+  {
+   "t": 102.645,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 7 unrolls and snaps open (to 103.00)"
+  },
+  {
+   "t": 102.72,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 2 unrolls and snaps open (to 103.07)"
+  },
+  {
+   "t": 102.72,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 8 unrolls and snaps open (to 103.07)"
+  },
+  {
+   "t": 102.795,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 1 unrolls and snaps open (to 103.14)"
+  },
+  {
+   "t": 102.795,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 9 unrolls and snaps open (to 103.14)"
+  },
+  {
+   "t": 102.87,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 0 unrolls and snaps open (to 103.22)"
+  },
+  {
+   "t": 102.87,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "flag 10 unrolls and snaps open (to 103.22)"
+  },
+  {
+   "t": 103.9,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "punch_in",
+   "desc": "hard punch-in 1/3"
+  },
+  {
+   "t": 103.92,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "step",
+   "desc": "'Breach!' 1: eleven armoured saints stamp forward as one + lamellar rattle"
+  },
+  {
+   "t": 104.196,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "punch_in",
+   "desc": "hard punch-in 2/3"
+  },
+  {
+   "t": 104.216,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "step",
+   "desc": "'Breach!' 2: eleven armoured saints stamp forward as one + lamellar rattle"
+  },
+  {
+   "t": 104.521,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "punch_in",
+   "desc": "hard punch-in 3/3"
+  },
+  {
+   "t": 104.521,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "charge",
+   "desc": "the charge: armour, boots, cloaks (to 105.80)"
+  },
+  {
+   "t": 104.541,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "step",
+   "desc": "'Breach!' 3: eleven armoured saints stamp forward as one + lamellar rattle"
+  },
+  {
+   "t": 105.171,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "calm",
+   "desc": "dead calm: flags fall limp; light leaks through every mortar joint, the wall creaks and ticks (to 105.80)"
+  },
+  {
+   "t": 105.55,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "inhale",
+   "desc": "pre-blast suck-back (to 105.80)"
+  },
+  {
+   "t": 105.8,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "breach",
+   "desc": "BREACH: the mosaic wall blasts toward camera"
+  },
+  {
+   "t": 105.8,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "tile_storm",
+   "desc": "tens of thousands of glass and gold tesserae fly at and past the camera (to 106.50)"
+  },
+  {
+   "t": 105.85,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "flags_whoosh",
+   "desc": "eleven flags fly over the camera (to 106.40)"
+  },
+  {
+   "t": 106.14999999999999,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "glow",
+   "desc": "flag-yellow light floods the frame (flat by 106.50)"
+  },
+  {
+   "t": 106.9,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=1 nations: the T of the world (three continents) crack (light in the joints)"
+  },
+  {
+   "t": 106.97,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=1 the pieces jolt apart and drift like islands (to 109.57)"
+  },
+  {
+   "t": 107.18720294121009,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=2 nations: every national border crack (light in the joints)"
+  },
+  {
+   "t": 107.25720294121008,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=2 the pieces jolt apart and drift like islands (to 109.86)"
+  },
+  {
+   "t": 107.65859321199885,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=3 nations: provinces crack (light in the joints)"
+  },
+  {
+   "t": 107.72859321199884,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=3 the pieces jolt apart and drift like islands (to 110.33)"
+  },
+  {
+   "t": 108.07058456172237,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=4 nations: counties crack (light in the joints)"
+  },
+  {
+   "t": 108.14058456172236,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=4 the pieces jolt apart and drift like islands (to 110.74)"
+  },
+  {
+   "t": 108.35954121507406,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=5 nations: kingdoms of one crack (light in the joints)"
+  },
+  {
+   "t": 108.42954121507405,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=5 the pieces jolt apart and drift like islands (to 111.03)"
+  },
+  {
+   "t": 108.58061785021451,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "27 kingdoms of one set themselves (crowns glint) (to 108.69)"
+  },
+  {
+   "t": 108.6963013967951,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "27 kingdoms of one set themselves (crowns glint) (to 108.74)"
+  },
+  {
+   "t": 108.74019657637058,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "27 kingdoms of one set themselves (crowns glint) (to 108.78)"
+  },
+  {
+   "t": 108.77707519209176,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "27 kingdoms of one set themselves (crowns glint) (to 108.81)"
+  },
+  {
+   "t": 108.81613437175751,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "27 kingdoms of one set themselves (crowns glint) (to 108.86)"
+  },
+  {
+   "t": 108.86637005590293,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "27 kingdoms of one set themselves (crowns glint) (to 108.92)"
+  },
+  {
+   "t": 108.91576232438564,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "27 kingdoms of one set themselves (crowns glint) (to 108.98)"
+  },
+  {
+   "t": 108.97949932754041,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "26 kingdoms of one set themselves (crowns glint) (to 109.07)"
+  },
+  {
+   "t": 113.08,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "dive",
+   "desc": "the camera plunges into one gold tessera of CITIZEN2's crown (to 113.7)"
+  },
+  {
+   "t": 113.08,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "dive",
+   "desc": "into the crown tessera (to 113.7)"
+  },
+  {
+   "t": 113.92,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=1 faiths: the one church splits (East/West)"
+  },
+  {
+   "t": 114.27,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=2 faiths: the one church splits (cabals)"
+  },
+  {
+   "t": 114.69,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=3 faiths: the one church splits (ones)"
+  },
+  {
+   "t": 115.0,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 9"
+  },
+  {
+   "t": 115.04,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 3"
+  },
+  {
+   "t": 115.08,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 2"
+  },
+  {
+   "t": 115.12,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 8"
+  },
+  {
+   "t": 115.16,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 10"
+  },
+  {
+   "t": 115.2,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 1"
+  },
+  {
+   "t": 115.24,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 4"
+  },
+  {
+   "t": 115.28,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 7"
+  },
+  {
+   "t": 115.32,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 11"
+  },
+  {
+   "t": 115.36,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 0"
+  },
+  {
+   "t": 115.4,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 5"
+  },
+  {
+   "t": 115.44,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 6"
+  },
+  {
+   "t": 115.48,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "an icon of one sets itself (dome, columns, tiny altar), saint 12"
+  },
+  {
+   "t": 115.62,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "ANATHEMA SIT: a titulus of tesserae flies left->right (to 116.36)"
+  },
+  {
+   "t": 115.62,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "anathema",
+   "desc": "ANATHEMA SIT launched (to 116.36)"
+  },
+  {
+   "t": 116.38,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "halo_split",
+   "desc": "HERETIC2's halo cracks in two"
+  },
+  {
+   "t": 116.72,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "ANATHEMA SIT: a titulus of tesserae flies right->left (to 117.86)"
+  },
+  {
+   "t": 116.72,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "anathema",
+   "desc": "ANATHEMA SIT launched (to 117.86)"
+  },
+  {
+   "t": 117.88,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "halo_split",
+   "desc": "HERETIC1's halo cracks in two"
+  },
+  {
+   "t": 118.55,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "HERETIC3 crowns himself pope: the tiara lands"
+  },
+  {
+   "t": 118.65636363636364,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 11"
+  },
+  {
+   "t": 118.7181818181818,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 3"
+  },
+  {
+   "t": 118.7181818181818,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 4"
+  },
+  {
+   "t": 118.73272727272727,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 12"
+  },
+  {
+   "t": 118.79454545454544,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 2"
+  },
+  {
+   "t": 118.79454545454544,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 5"
+  },
+  {
+   "t": 118.80909090909091,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 7"
+  },
+  {
+   "t": 118.87090909090908,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 1"
+  },
+  {
+   "t": 118.88545454545455,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 6"
+  },
+  {
+   "t": 118.94727272727272,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "a tiara pops onto saint 0"
+  },
+  {
+   "t": 119.28,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "dive",
+   "desc": "the camera plunges into the knob of the pope's tiara (to 120.0)"
+  },
+  {
+   "t": 119.28,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "dive",
+   "desc": "into the tiara tessera (to 120.0)"
+  },
+  {
+   "t": 121.03,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=1 philosophies: the floor of the Academy breaks into rocks"
+  },
+  {
+   "t": 121.08,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "float",
+   "desc": "the rocks float apart into the void (to 123.60)"
+  },
+  {
+   "t": 121.1,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "float",
+   "desc": "the gold dissolves into drifting tesserae (to 124.90)"
+  },
+  {
+   "t": 125.66,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "crack",
+   "desc": "level=2 philosophies: CRACKPOT1's rock splits again at 'poets'"
+  },
+  {
+   "t": 128.3,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "dive",
+   "desc": "reverse: out of the tiara tessera (to 128.68)"
+  },
+  {
+   "t": 128.3,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "dive",
+   "desc": "reverse flight out through the recursion (to 129.12)"
+  },
+  {
+   "t": 128.68,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "dive",
+   "desc": "reverse: out of the crown tessera (to 129.12)"
+  },
+  {
+   "t": 128.9,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "split",
+   "desc": "level=1 endless: every tessera in frame splits into four"
+  },
+  {
+   "t": 128.9,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=endless level=1"
+  },
+  {
+   "t": 129.22,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "split",
+   "desc": "level=2 endless: every tessera in frame splits into four"
+  },
+  {
+   "t": 129.22,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=endless level=2"
+  },
+  {
+   "t": 129.45,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "split",
+   "desc": "level=3 endless: every tessera in frame splits into four"
+  },
+  {
+   "t": 129.45,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=endless level=3"
+  },
+  {
+   "t": 129.55,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "swirl",
+   "desc": "glittering dust swirling counter-clockwise, rising (to 131.5)"
+  },
+  {
+   "t": 129.65,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "split",
+   "desc": "level=4 endless: every tessera in frame splits into four"
+  },
+  {
+   "t": 129.65,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=endless level=4"
+  },
+  {
+   "t": 129.82,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "split",
+   "desc": "level=5 endless: every tessera in frame splits into four"
+  },
+  {
+   "t": 129.82,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=endless level=5"
+  },
+  {
+   "t": 132.25,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "tier 1 of the tower sets itself (the spiral of dust lands)"
+  },
+  {
+   "t": 132.52,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "tier 2 of the tower sets itself (the spiral of dust lands)"
+  },
+  {
+   "t": 132.79,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "tier 3 of the tower sets itself (the spiral of dust lands)"
+  },
+  {
+   "t": 133.06,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "tier 4 of the tower sets itself (the spiral of dust lands)"
+  },
+  {
+   "t": 133.33,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "tier 5 of the tower sets itself (the spiral of dust lands)"
+  },
+  {
+   "t": 133.6,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "tier 6 of the tower sets itself (the spiral of dust lands)"
+  },
+  {
+   "t": 133.87,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "tier 7 of the tower sets itself (the spiral of dust lands)"
+  },
+  {
+   "t": 134.0,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "egregore",
+   "desc": "Lord Egregore sets himself in the conch: the static face flares on"
+  },
+  {
+   "t": 134.05,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tier",
+   "desc": "the unfinished crown + crane set"
+  },
+  {
+   "t": 135.4,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "egregore_lit",
+   "desc": "all billboards and the loading-wheel halo lit (to 141.8)"
+  },
+  {
+   "t": 141.8,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "topple",
+   "desc": "the tower cracks above tier 3 and its top hinges over to the right (to 142.5)"
+  },
+  {
+   "t": 141.8,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "avalanche",
+   "desc": "the whole mosaic begins to fall off the wall (start)"
+  },
+  {
+   "t": 141.82,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "static_drain",
+   "desc": "Egregore's static drains away top-down, billboards collapse to a line (to 142.65)"
+  },
+  {
+   "t": 143.46689726753985,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "tower_impact",
+   "desc": "the tower's top hits the floor"
+  },
+  {
+   "t": 144.5468593588861,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "last_tile",
+   "desc": "the very last tessera lands, alone"
+  },
+  {
+   "t": 144.8598845866279,
+   "scene": "m07",
+   "file": "m07_sfx_events.json",
+   "kind": "avalanche_end",
+   "desc": "the last tessera settles (end; silence from 145.0)"
+  },
+  {
+   "t": 146.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "wind",
+   "desc": "faint breath of wind; the candle flame bends (to 146.5)"
+  },
+  {
+   "t": 146.62,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "step",
+   "desc": "heap: Crocus climbs the fallen tesserae, the Flag's pole taps like a crozier"
+  },
+  {
+   "t": 146.87,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "step",
+   "desc": "heap: Lutie's lighter steps"
+  },
+  {
+   "t": 147.17555555555555,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "step",
+   "desc": "heap: Crocus climbs the fallen tesserae, the Flag's pole taps like a crozier"
+  },
+  {
+   "t": 147.32454545454547,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "step",
+   "desc": "heap: Lutie's lighter steps"
+  },
+  {
+   "t": 147.7311111111111,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "step",
+   "desc": "heap: Crocus climbs the fallen tesserae, the Flag's pole taps like a crozier"
+  },
+  {
+   "t": 147.77909090909094,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "step",
+   "desc": "heap: Lutie's lighter steps"
+  },
+  {
+   "t": 148.2336363636364,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "step",
+   "desc": "heap: Lutie's lighter steps"
+  },
+  {
+   "t": 148.25,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "Crocus raises the furled Flag overhead"
+  },
+  {
+   "t": 149.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "plant",
+   "desc": "THE PLANTING: the pole's foot drives into the heap - thud, tiles jump"
+  },
+  {
+   "t": 149.02,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "scatter",
+   "desc": "tesserae scatter down the slope (to 149.6)"
+  },
+  {
+   "t": 149.3,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "unfurl",
+   "desc": "the cloth unrolls from the pole and opens in the wind (to 149.85)"
+  },
+  {
+   "t": 153.4,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "tremble",
+   "desc": "the heaps tremble and chatter, growing (to 155.0)"
+  },
+  {
+   "t": 155.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "rise",
+   "desc": "tiles_rise: the fallen tesserae leave the floor (reversed avalanche)"
+  },
+  {
+   "t": 156.0392512345314,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.0581917893259,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.07658951866,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.09498235445272,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.11336303089794,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.13204315511803,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.15026208243873,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.16880927041956,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.18722178170555,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.20576973262587,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.22385707077225,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.24216350367195,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.26092954798747,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.27918641366458,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.29777847798246,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.31039018505498,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "10% of the new picture set"
+  },
+  {
+   "t": 156.31611901665988,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.3346935274099,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.35297608864934,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.37143410212116,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.3895599389076,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.40841055625364,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.42668219792216,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.4448624001051,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.46351878975568,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.4817227086268,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.5004364260247,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.518928247251,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.53730389902466,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.55554332438268,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.5740726190492,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.5923510854495,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.6108689658265,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.62945112981294,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.64779582889454,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.66610654140774,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.67014304995536,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "20% of the new picture set"
+  },
+  {
+   "t": 156.6844309808706,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.7031264115635,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.72155861026363,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.73949455857274,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.75793774240896,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.77659381615487,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.79503118853822,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.81354788874324,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.83149310557468,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.8501255997231,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.8684887106795,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.8873145146119,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.90567929449833,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.92372671541415,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.94254659464485,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.96102540417724,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.97933600344155,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 156.99773286850828,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "alone",
+   "desc": "'alone': the niches complete one by one, each Flag pops open"
+  },
+  {
+   "t": 157.01604822422328,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.0344431434807,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "30% of the new picture set"
+  },
+  {
+   "t": 157.0345534684156,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.05283479583892,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.0713910556467,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.08959631562234,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.10818371289653,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.12683503615227,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.14505379657996,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.16339459155733,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.18209309188944,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.20030093870665,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.21894130066823,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.23734851310127,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.25578672591007,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.27405341443261,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.29220563819533,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.31091047450116,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.32931955852007,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.34740158589264,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.36611588145556,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.3841549100374,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.4030344415966,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.407098977503,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "40% of the new picture set"
+  },
+  {
+   "t": 157.42094446188523,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.43942313432694,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.45828979128285,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.4767589567837,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.49505581121696,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.5136143956059,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.5318227431021,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.55008600435758,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.56884542063662,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.58703244159096,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.6054570108966,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.6239654439374,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.64221291592247,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.66094813271573,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.67925638951752,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.697502621726,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.71563312555614,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.73418063540208,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.75300067556532,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.77148543364123,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.78977456331253,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "flag_pop",
+   "desc": "a niche is complete: its Flag springs open"
+  },
+  {
+   "t": 157.85,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "together",
+   "desc": "'All ... together': the gold wave rolls out of the Flag's foot (to 159.0)"
+  },
+  {
+   "t": 158.09091211961874,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "50% of the new picture set"
+  },
+  {
+   "t": 158.4568965982099,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "60% of the new picture set"
+  },
+  {
+   "t": 158.64443168217238,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "70% of the new picture set"
+  },
+  {
+   "t": 158.73092802480193,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "80% of the new picture set"
+  },
+  {
+   "t": 158.80372779801016,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "90% of the new picture set"
+  },
+  {
+   "t": 159.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "convergence",
+   "desc": "the last tiles land in one wave: the picture is complete"
+  },
+  {
+   "t": 159.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "complete",
+   "desc": "complete"
+  },
+  {
+   "t": 159.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "land",
+   "desc": "100% of the new picture set"
+  },
+  {
+   "t": 162.0,
+   "scene": "m08",
+   "file": "m08_sfx_events.json",
+   "kind": "camera",
+   "desc": "tilt up (to 163.0): whip into the dome"
+  },
+  {
+   "t": 163.4,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "rays",
+   "desc": "gold rays descend from the oculus to the eight peoples (to 165.50)"
+  },
+  {
+   "t": 165.81,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 0 lights up (glass catches the light)"
+  },
+  {
+   "t": 165.961875,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 3 lights up (glass catches the light)"
+  },
+  {
+   "t": 166.11375,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 6 lights up (glass catches the light)"
+  },
+  {
+   "t": 166.265625,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 1 lights up (glass catches the light)"
+  },
+  {
+   "t": 166.41750000000002,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 4 lights up (glass catches the light)"
+  },
+  {
+   "t": 166.569375,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 7 lights up (glass catches the light)"
+  },
+  {
+   "t": 166.72125,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 2 lights up (glass catches the light)"
+  },
+  {
+   "t": 166.87312500000002,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "chime",
+   "desc": "drum window 5 lights up (glass catches the light)"
+  },
+  {
+   "t": 167.35,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "swell",
+   "desc": "the oculus swells with light (to 168.78)"
+  },
+  {
+   "t": 168.7,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "shimmer",
+   "desc": "'Flags be.' the dome opens into the infinite hyperbolic tiling (to 171.45)"
+  },
+  {
+   "t": 168.7,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 168.79999999999998,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "raise",
+   "desc": "every people raises its Flag: poles slide up and telescope (to 170.7)"
+  },
+  {
+   "t": 169.4142857142857,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 170.1285714285714,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 170.84285714285713,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 171.55714285714285,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 171.55714285714285,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "glide",
+   "desc": "'Flags are.' Moebius glide one tile over (to 174.41)"
+  },
+  {
+   "t": 172.27142857142857,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 172.98571428571427,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 173.7,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 174.4142857142857,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 174.4142857142857,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "glide",
+   "desc": "'Flags will.' loxodromic glide two tiles on, turning (to 177.27)"
+  },
+  {
+   "t": 175.1285714285714,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 175.84285714285713,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 176.55714285714285,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 177.27142857142857,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 177.27142857142857,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "bloom",
+   "desc": "'Flags.' the tiling spins, triple rings of light to infinity (to 180.10)"
+  },
+  {
+   "t": 177.98571428571427,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 178.7,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 179.4142857142857,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "a ring of light races out to the circle at infinity; lamps, oculi and Flags ignite"
+  },
+  {
+   "t": 180.438,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "dissolve",
+   "desc": "heaven dissolves: the dome's tesserae let go from the oculus outward and drift down (to 184.9)"
+  },
+  {
+   "t": 180.913,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "dissolve",
+   "desc": "earth dissolves: arches, pendentives, drum fall inward from the frame edges (to 182.31)"
+  },
+  {
+   "t": 187.0,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "flash",
+   "desc": "white-gold flood to full flag_glow (to 187.458), peak at the cut to m10"
+  },
+  {
+   "t": 188.541,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "offer",
+   "desc": "Lutie offers the small Flag"
+  },
+  {
+   "t": 191.08333333333334,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "sticky",
+   "desc": "touch: the cloth meets his sleeve"
+  },
+  {
+   "t": 191.13333333333335,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "cling",
+   "desc": "cling: the cloth glues itself to Crocus's sleeve (it never lets go)"
+  },
+  {
+   "t": 192.239,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "sticky",
+   "desc": "stretch: he lifts his arm, the cloth comes with it"
+  },
+  {
+   "t": 192.584,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "sticky",
+   "desc": "shake: the cloth jiggles on the sleeve, still stuck"
+  },
+  {
+   "t": 192.874,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "sticky",
+   "desc": "shake: the cloth jiggles on the sleeve, still stuck"
+  },
+  {
+   "t": 193.16400000000002,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "sticky",
+   "desc": "shake: the cloth jiggles on the sleeve, still stuck"
+  },
+  {
+   "t": 193.489,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "cling",
+   "desc": "the pole will not leave Lutie's hand: she lets go and shakes it (to 193.90)"
+  },
+  {
+   "t": 198.736,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "twinkle",
+   "desc": "deadpan: a gold tessera twinkles"
+  },
+  {
+   "t": 198.93599999999998,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "twinkle",
+   "desc": "deadpan: a gold tessera twinkles"
+  },
+  {
+   "t": 199.136,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "twinkle",
+   "desc": "deadpan: a gold tessera twinkles"
+  },
+  {
+   "t": 199.33599999999998,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "twinkle",
+   "desc": "deadpan: a gold tessera twinkles"
+  },
+  {
+   "t": 199.536,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "twinkle",
+   "desc": "deadpan: a gold tessera twinkles"
+  },
+  {
+   "t": 202.9,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "raise",
+   "desc": "Glorious: every figure raises a Flag at once (121 real Flags pop, tiles flip; to 203.5)"
+  },
+  {
+   "t": 202.92000000000002,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 202.97000000000003,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.02,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.07000000000002,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.12,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.17000000000002,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.22000000000003,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.27,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.32000000000002,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 203.37,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "flag_whoosh",
+   "desc": "crowd of Flags springing open"
+  },
+  {
+   "t": 204.62966003508495,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.67050644015922,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.69628778038253,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.71950501057822,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.7371282574981,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.7608080114899,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.7828467749393,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.8191233195113,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 204.99321136843278,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.03470412838004,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.05811335002343,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.08429335337084,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.10324128207193,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.12227547120227,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.14812915155156,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.177661156645,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.22902837149732,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.2572395710515,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.28632163736074,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.3156241480477,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.33665363054226,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.3542473404556,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.37387705609282,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.3896583531411,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.41898409756527,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.46104190599337,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.56186548324038,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.5881275884936,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.61566051364653,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.64064904073126,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.6657737431247,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.69258939541916,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.75435010938733,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.8002439690939,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.8271639403435,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.84947700384254,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.86704708799155,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.8828592579163,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.89497641852984,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.91172451322538,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.92840269211155,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.95358043989722,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 205.97483315130185,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.00877888288676,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.07906247508032,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.11851634654067,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.13286628366754,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.14954998781388,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.1675484468489,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.1806545498193,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.19329039318492,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.20447201830098,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.21562644095545,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.2298514868894,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.24534876897894,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.25423046685847,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.26437456641577,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.27376345025502,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.28417777182423,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.29087246767432,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.29951530513662,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.3097158901213,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.31568874316912,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.3232121982976,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.33184115108094,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.34049296893488,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.35196304332206,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.35967132659573,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.36795882323125,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.3802147416791,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.38961248747185,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.40269135542243,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.4120947648299,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.4327989734214,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.64875648487464,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.70749439643734,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.73546969523662,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.7670485398402,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.79744080787114,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.85175581393582,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.9286119505353,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.96207204810068,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 206.9830189527308,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.00420137036537,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.01781001613892,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.03146020066836,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.0402228775836,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.05347006274783,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.06510515703667,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.07854281631307,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.09682384372056,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.11125207152202,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.13683499988522,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.16320545339605,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "EXPLICIT: a letter tessera sets itself"
+  },
+  {
+   "t": 207.63923759704224,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.6571448632181,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.67665350069217,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.6903931698102,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.703160824893,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.7187868147491,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.73233373263201,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.74502774938875,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.76099156982906,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.77468107223092,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.79200115911556,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.8062193196033,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.82232938598347,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.83460597342776,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.85058395446126,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.86897425646356,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.8937285945695,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 207.94037360864797,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.00184371410415,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.02875155887722,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.04854553059388,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.06409849514748,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.0786576257199,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.09096775982445,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.10626401252247,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.12239446886295,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.1380748634481,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.15292585972693,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.17088042808953,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.1861651020406,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.20442216224603,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.2218952322888,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.24059302639816,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.25432425984403,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.2679949285477,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.2785981055305,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.29047203190822,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.30131979517122,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.31384299119026,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.32450144160777,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.3377369000301,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.34769531501712,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.35570238152332,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.36627148753058,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.37684568408264,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.3914474451004,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.40526386129133,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.41873136967732,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.4325607540844,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.44768280631388,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.46158820180466,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.47811841340032,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.49986067648223,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.52263497354232,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.65862133310148,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.68569127216244,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.7078609176904,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.7212598686494,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.7341437717876,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.7460296384117,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.75883171715594,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.77071766787057,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.7871258807315,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.80802923778577,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 208.83702997977383,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.00855454466537,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.03759204232568,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.05462482313445,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.07119810012503,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.0846200269769,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.09806071550236,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.11237007379287,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.1277196253935,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.14302671356435,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.15959410129602,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.17975065691942,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.20106734908433,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.22755681946472,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.2464853096895,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.26401746365863,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.27622882137746,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.2898576761187,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.3020775638762,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.31273508478458,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.3240129777866,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.33445656567977,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.3494656554919,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.36179003852865,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.37688695970408,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.3981065995517,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 209.4308727195831,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "donor inscription: a letter tessera sets itself"
+  },
+  {
+   "t": 210.45,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "snuff",
+   "desc": "the candle is snuffed"
+  },
+  {
+   "t": 210.53,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "lights_out",
+   "desc": "the tesserae go dark tile by tile from the band outward (to 211.88)"
+  }
+ ],
+ "generic": [
+  {
+   "t": 8.78,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "square extrudes into a cube (to 9.22)"
+  },
+  {
+   "t": 9.08,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "cube splits into the tesseract (to 9.58)"
+  },
+  {
+   "t": 14.45,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "the tesseract flattens into our plane (to 14.78)"
+  },
+  {
+   "t": 36.3,
+   "scene": "m02",
+   "file": "m02_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "camera whips back out of the eye as the slop wave hits (to 38.2)"
+  },
+  {
+   "t": 48.949999999999996,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "rustle",
+   "desc": "paw on heart"
+  },
+  {
+   "t": 56.238,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "he twirls the stylus-sceptre a full turn (to 57.14)"
+  },
+  {
+   "t": 57.138000000000005,
+   "scene": "m03",
+   "file": "m03_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "he raises it seal-end down above the page (to 57.89)"
+  },
+  {
+   "t": 95.4,
+   "scene": "m04",
+   "file": "m04_sfx_events.json",
+   "kind": "flash",
+   "desc": "gold flash into the hard cut (to 95.75)"
+  },
+  {
+   "t": 106.97,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=nations level=1"
+  },
+  {
+   "t": 107.05,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tinkle",
+   "desc": "level=1 loose tesserae torn out, tumbling (to 108.07)"
+  },
+  {
+   "t": 107.25720294121008,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=nations level=2"
+  },
+  {
+   "t": 107.33720294121008,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tinkle",
+   "desc": "level=2 loose tesserae torn out, tumbling (to 108.36)"
+  },
+  {
+   "t": 107.72859321199884,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=nations level=3"
+  },
+  {
+   "t": 108.14058456172236,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=nations level=4"
+  },
+  {
+   "t": 108.42954121507405,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=nations level=5"
+  },
+  {
+   "t": 113.97,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=1 faiths: halves / cabals / ones slide apart (to 114.67)"
+  },
+  {
+   "t": 113.97,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=faiths level=1"
+  },
+  {
+   "t": 114.32,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=2 faiths: halves / cabals / ones slide apart (to 115.02)"
+  },
+  {
+   "t": 114.32,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=faiths level=2"
+  },
+  {
+   "t": 114.74,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "drift",
+   "desc": "level=3 faiths: halves / cabals / ones slide apart (to 115.44)"
+  },
+  {
+   "t": 114.74,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=faiths level=3"
+  },
+  {
+   "t": 115.0,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "fall",
+   "desc": "the ragged pieces of the one mosaic crumble away (to 116.25)"
+  },
+  {
+   "t": 116.36,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "shatter",
+   "desc": "the letters shatter against the halo"
+  },
+  {
+   "t": 116.36,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=faiths halo"
+  },
+  {
+   "t": 117.86,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "shatter",
+   "desc": "the letters shatter against the halo"
+  },
+  {
+   "t": 117.86,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=faiths halo"
+  },
+  {
+   "t": 121.08,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=philo level=1 floor"
+  },
+  {
+   "t": 125.66,
+   "scene": "m06",
+   "file": "m06_splits_events.json",
+   "kind": "split",
+   "desc": "section=philo level=2"
+  },
+  {
+   "t": 126.64,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "SVM: letters of tesserae set themselves in the void"
+  },
+  {
+   "t": 126.99000000000001,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "ERGO: letters of tesserae set themselves in the void"
+  },
+  {
+   "t": 127.62,
+   "scene": "m06",
+   "file": "m06_sfx_events.json",
+   "kind": "tile_set",
+   "desc": "SVM: letters of tesserae set themselves in the void"
+  },
+  {
+   "t": 163.0,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "whip-tilt lands straight up into the dome (to 163.35), a soft stone settle"
+  },
+  {
+   "t": 165.5,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "glow",
+   "desc": "the light reaches the peoples: the eight Flags beside them brighten"
+  },
+  {
+   "t": 183.425,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "glow",
+   "desc": "'...the ten thousand FLAGS remain': the floating flags flare"
+  },
+  {
+   "t": 185.816,
+   "scene": "m09",
+   "file": "m09_sfx_events.json",
+   "kind": "ring",
+   "desc": "'completed': a ring of light passes through the floating flags"
+  },
+  {
+   "t": 199.6,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "the camera pulls back through the arch into the nave (to 202.9)"
+  },
+  {
+   "t": 209.89999999999998,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "whoosh",
+   "desc": "the brass snuffer comes down"
+  },
+  {
+   "t": 211.08,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "lower",
+   "desc": "in the dark every Flag is lowered at once, except the sticky one (to 211.46)"
+  },
+  {
+   "t": 211.74,
+   "scene": "m10",
+   "file": "m10_sfx_events.json",
+   "kind": "sticky",
+   "desc": "the sticky Flag lingers alone after the others are lowered, then pops out (gone 211.90)"
+  }
+ ],
+ "skipped": [
+  {
+   "t": 4.85,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "camera",
+   "desc": "tilt up into the dome (to 8.30); rings of stars start turning ~5.6"
+  },
+  {
+   "t": 18.79,
+   "scene": "m01",
+   "file": "m01_sfx_events.json",
+   "kind": "hold",
+   "desc": "'woven without seam': hold on the cloth"
+  },
+  {
+   "t": 96.53999999999999,
+   "scene": "m05",
+   "file": "m05_sfx_events.json",
+   "kind": "radio",
+   "desc": "radio key-up / squelch: Schism Actual"
+  }
+ ]
+}

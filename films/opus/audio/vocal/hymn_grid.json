@@ -1,0 +1,501 @@
+{
+ "tuning": "A4=440 Hz, 12-TET",
+ "final": "D",
+ "mode": "I (D dorian) -> D major",
+ "note": "t = vowel onset (the beat); consonants start ~40-90 ms earlier. Written by op_vocal_score.py.",
+ "cantor_incipit": [
+  {
+   "t": 2.02,
+   "dur": 0.18,
+   "midi": 50,
+   "syl": "In"
+  },
+  {
+   "t": 2.27,
+   "dur": 0.17,
+   "midi": 53,
+   "syl": "ci"
+  },
+  {
+   "t": 2.52,
+   "dur": 0.19,
+   "midi": 55,
+   "syl": "pit"
+  },
+  {
+   "t": 2.79,
+   "dur": 0.18,
+   "midi": 57,
+   "syl": "o"
+  },
+  {
+   "t": 3.03,
+   "dur": 0.16,
+   "midi": 57,
+   "syl": "pus"
+  },
+  {
+   "t": 3.29,
+   "dur": 0.18,
+   "midi": 57,
+   "syl": "schis"
+  },
+  {
+   "t": 3.55,
+   "dur": 0.36,
+   "midi": 57,
+   "syl": "ma"
+  },
+  {
+   "t": 3.96,
+   "dur": 0.18,
+   "midi": 55,
+   "syl": "ti"
+  },
+  {
+   "t": 4.2,
+   "dur": 0.14,
+   "midi": 53,
+   "syl": "cum"
+  },
+  {
+   "t": 4.34,
+   "dur": 0.14,
+   "midi": 52,
+   "syl": "cum"
+  },
+  {
+   "t": 4.48,
+   "dur": 0.26,
+   "midi": 50,
+   "syl": "cum"
+  }
+ ],
+ "cantor": [
+  {
+   "t": 163.0,
+   "dur": 0.16,
+   "midi": 50,
+   "syl": "Ve"
+  },
+  {
+   "t": 163.24,
+   "dur": 0.12,
+   "midi": 53,
+   "syl": "xil"
+  },
+  {
+   "t": 163.36,
+   "dur": 0.14,
+   "midi": 55,
+   "syl": "xil"
+  },
+  {
+   "t": 163.58,
+   "dur": 0.18,
+   "midi": 57,
+   "syl": "la"
+  },
+  {
+   "t": 163.84,
+   "dur": 0.34,
+   "midi": 57,
+   "syl": "sint"
+  },
+  {
+   "t": 164.36,
+   "dur": 0.16,
+   "midi": 57,
+   "syl": "Ve"
+  },
+  {
+   "t": 164.6,
+   "dur": 0.12,
+   "midi": 58,
+   "syl": "xil"
+  },
+  {
+   "t": 164.72,
+   "dur": 0.14,
+   "midi": 57,
+   "syl": "xil"
+  },
+  {
+   "t": 164.94,
+   "dur": 0.18,
+   "midi": 55,
+   "syl": "la"
+  },
+  {
+   "t": 165.2,
+   "dur": 0.34,
+   "midi": 53,
+   "syl": "sunt"
+  },
+  {
+   "t": 165.72,
+   "dur": 0.16,
+   "midi": 53,
+   "syl": "Ve"
+  },
+  {
+   "t": 165.96,
+   "dur": 0.16,
+   "midi": 57,
+   "syl": "xil"
+  },
+  {
+   "t": 166.22,
+   "dur": 0.16,
+   "midi": 60,
+   "syl": "la"
+  },
+  {
+   "t": 166.46,
+   "dur": 0.12,
+   "midi": 60,
+   "syl": "e"
+  },
+  {
+   "t": 166.58,
+   "dur": 0.14,
+   "midi": 58,
+   "syl": "e"
+  },
+  {
+   "t": 166.8,
+   "dur": 0.32,
+   "midi": 57,
+   "syl": "runt"
+  },
+  {
+   "t": 167.3,
+   "dur": 0.16,
+   "midi": 57,
+   "syl": "Ve"
+  },
+  {
+   "t": 167.54,
+   "dur": 0.11,
+   "midi": 53,
+   "syl": "xil"
+  },
+  {
+   "t": 167.65,
+   "dur": 0.11,
+   "midi": 55,
+   "syl": "xil"
+  },
+  {
+   "t": 167.76,
+   "dur": 0.11,
+   "midi": 53,
+   "syl": "xil"
+  },
+  {
+   "t": 167.87,
+   "dur": 0.13,
+   "midi": 52,
+   "syl": "xil"
+  },
+  {
+   "t": 168.08,
+   "dur": 0.62,
+   "midi": 50,
+   "syl": "la"
+  }
+ ],
+ "cantor_phrases": [
+  {
+   "t": 163.0,
+   "end": 164.18,
+   "text": "Ve xil la sint"
+  },
+  {
+   "t": 164.36,
+   "end": 165.54,
+   "text": "Ve xil la sunt"
+  },
+  {
+   "t": 165.72,
+   "end": 167.12,
+   "text": "Ve xil la e runt"
+  },
+  {
+   "t": 167.3,
+   "end": 168.7,
+   "text": "Ve xil la"
+  }
+ ],
+ "explicit": [
+  {
+   "t": 204.62,
+   "dur": 0.16,
+   "midi": 50,
+   "syl": "Ex"
+  },
+  {
+   "t": 204.96,
+   "dur": 0.14,
+   "midi": 53,
+   "syl": "pli"
+  },
+  {
+   "t": 205.2,
+   "dur": 0.19,
+   "midi": 55,
+   "syl": "cit"
+  },
+  {
+   "t": 205.47,
+   "dur": 0.18,
+   "midi": 57,
+   "syl": "o"
+  },
+  {
+   "t": 205.71,
+   "dur": 0.16,
+   "midi": 57,
+   "syl": "pus"
+  },
+  {
+   "t": 205.97,
+   "dur": 0.18,
+   "midi": 57,
+   "syl": "schis"
+  },
+  {
+   "t": 206.23,
+   "dur": 0.36,
+   "midi": 57,
+   "syl": "ma"
+  },
+  {
+   "t": 206.64,
+   "dur": 0.18,
+   "midi": 55,
+   "syl": "ti"
+  },
+  {
+   "t": 206.88,
+   "dur": 0.14,
+   "midi": 53,
+   "syl": "cum"
+  },
+  {
+   "t": 207.02,
+   "dur": 0.14,
+   "midi": 52,
+   "syl": "cum"
+  },
+  {
+   "t": 207.16,
+   "dur": 0.28,
+   "midi": 50,
+   "syl": "cum"
+  }
+ ],
+ "choir": [
+  {
+   "t": 168.7,
+   "beat": 0,
+   "beats": 2,
+   "word": "Flags",
+   "satb": [
+    69,
+    62,
+    57,
+    50
+   ],
+   "divisi": []
+  },
+  {
+   "t": 170.1286,
+   "beat": 2,
+   "beats": 2,
+   "word": "be",
+   "satb": [
+    67,
+    60,
+    55,
+    48
+   ],
+   "divisi": []
+  },
+  {
+   "t": 171.5571,
+   "beat": 4,
+   "beats": 2,
+   "word": "Flags",
+   "satb": [
+    69,
+    65,
+    60,
+    50
+   ],
+   "divisi": []
+  },
+  {
+   "t": 172.9857,
+   "beat": 6,
+   "beats": 2,
+   "word": "are",
+   "satb": [
+    72,
+    67,
+    62,
+    50
+   ],
+   "divisi": []
+  },
+  {
+   "t": 174.4143,
+   "beat": 8,
+   "beats": 2,
+   "word": "Flags",
+   "satb": [
+    71,
+    67,
+    62,
+    43
+   ],
+   "divisi": []
+  },
+  {
+   "t": 175.8429,
+   "beat": 10,
+   "beats": 2,
+   "word": "will",
+   "satb": [
+    73,
+    64,
+    57,
+    45
+   ],
+   "divisi": []
+  },
+  {
+   "t": 177.2714,
+   "beat": 12,
+   "beats": 4,
+   "word": "Flags",
+   "satb": [
+    74,
+    66,
+    57,
+    50
+   ],
+   "divisi": [
+    69,
+    38
+   ]
+  }
+ ],
+ "hymn": {
+  "start": 168.7,
+  "bpm": 84.0,
+  "beat_s": 0.714286,
+  "beats": 16,
+  "end": 180.1286,
+  "phrase_starts": [
+   168.7,
+   171.5571,
+   174.4143,
+   177.2714
+  ]
+ },
+ "convergence": {
+  "t": 159.0,
+  "midis": [
+   38,
+   45,
+   50,
+   57,
+   62,
+   66,
+   69,
+   74
+  ],
+  "ison": [
+   38,
+   50
+  ],
+  "ison_span": [
+   161.5,
+   168.6
+  ],
+  "desc": "babble lands on the D major chord at 159.0, thins to the ison D2+D3 161.5-163.0, ison held under the cantor until 168.6"
+ },
+ "gratias": [
+  {
+   "t": 207.6,
+   "dur": 0.26,
+   "syl": "Ve",
+   "satb": [
+    69,
+    66,
+    62,
+    50
+   ]
+  },
+  {
+   "t": 207.92,
+   "dur": 0.22,
+   "syl": "xil",
+   "satb": [
+    69,
+    66,
+    62,
+    50
+   ]
+  },
+  {
+   "t": 208.22,
+   "dur": 0.3,
+   "syl": "lo",
+   "satb": [
+    69,
+    66,
+    62,
+    50
+   ]
+  },
+  {
+   "t": 208.6,
+   "dur": 0.28,
+   "syl": "gra",
+   "satb": [
+    71,
+    67,
+    62,
+    43
+   ]
+  },
+  {
+   "t": 208.94,
+   "dur": 0.2,
+   "syl": "ti",
+   "satb": [
+    71,
+    67,
+    62,
+    43
+   ]
+  },
+  {
+   "t": 209.18,
+   "dur": 0.62,
+   "syl": "as",
+   "satb": [
+    69,
+    66,
+    62,
+    50
+   ]
+  }
+ ],
+ "gratias_divisi_final": [
+  38,
+  57
+ ]
+}

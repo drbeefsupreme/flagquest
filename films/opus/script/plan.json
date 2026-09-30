@@ -1,0 +1,447 @@
+{
+ "title": "OPVS SCHISMATICVM",
+ "output_name": "OPVS_SCHISMATICVM",
+ "scenes": [
+  [
+   "m01",
+   "scenes.m01_incipit",
+   0.0,
+   22.0,
+   "Incipit: the Tesseract"
+  ],
+  [
+   "m02",
+   "scenes.m02_slop",
+   22.0,
+   48.5,
+   "The Great Machines and the Slop"
+  ],
+  [
+   "m03",
+   "scenes.m03_edict",
+   48.5,
+   62.5,
+   "The Edict of the Jaguar"
+  ],
+  [
+   "m04",
+   "scenes.m04_hypermind",
+   62.5,
+   95.75,
+   "Flagartha: the Hypermind and the Disputation"
+  ],
+  [
+   "m05",
+   "scenes.m05_breach",
+   95.75,
+   106.5,
+   "The Schismmancers"
+  ],
+  [
+   "m06",
+   "scenes.m06_schism",
+   106.5,
+   131.5,
+   "Recursive Balkanization"
+  ],
+  [
+   "m07",
+   "scenes.m07_babel",
+   131.5,
+   146.0,
+   "Babel"
+  ],
+  [
+   "m08",
+   "scenes.m08_unbabel",
+   146.0,
+   163.0,
+   "The Unbabeling"
+  ],
+  [
+   "m09",
+   "scenes.m09_dome",
+   163.0,
+   187.5,
+   "The Dome of Flagistan"
+  ],
+  [
+   "m10",
+   "scenes.m10_explicit",
+   187.5,
+   212.0,
+   "The Sticky Flag: Explicit"
+  ]
+ ],
+ "place": {
+  "A01": 2.0,
+  "N01": 5.6,
+  "N02": 8.4,
+  "N03": 13.0,
+  "N04": 23.0,
+  "N05": 29.8,
+  "N06": 34.4,
+  "N07": 41.0,
+  "J01": 49.3,
+  "J02": 59.0,
+  "H01": 64.0,
+  "H02": 72.4,
+  "L01": 76.2,
+  "C01": 77.9,
+  "L02": 81.2,
+  "C02": 87.0,
+  "C03": 92.8,
+  "K01": 96.6,
+  "K02": 101.6,
+  "K03": 103.9,
+  "K04": 106.9,
+  "X01": 109.2,
+  "X02": 111.8,
+  "K05": 113.7,
+  "X03": 115.6,
+  "X04": 116.5,
+  "X05": 117.7,
+  "K06": 120.0,
+  "X06": 123.2,
+  "X07": 126.5,
+  "K07": 128.6,
+  "L03": 136.0,
+  "C04": 139.4,
+  "C05": 150.6,
+  "N08": 156.5,
+  "N09": 180.4,
+  "N10": 184.9,
+  "L04": 188.5,
+  "C06": 190.4,
+  "L05": 193.9,
+  "C07": 197.0,
+  "N11": 199.6,
+  "A02": 204.6
+ },
+ "cues": [
+  [
+   0.0,
+   "film_start",
+   "Black. A single candle is struck (0.8) in a dark basilica."
+  ],
+  [
+   0.8,
+   "candle_lit",
+   "Match strike + candle flame: the first gold tesserae glint out of the dark."
+  ],
+  [
+   2.0,
+   "incipit",
+   "Cantor intones INCIPIT OPVS SCHISMATICVM; the words set themselves in gold tesserae."
+  ],
+  [
+   8.4,
+   "tesseract",
+   "The Tesseract appears in the starry lapis vault, turning in the 4th direction."
+  ],
+  [
+   14.8,
+   "flag_rotates_in",
+   "word 'rotated': the Flag rotates into existence out of the Tesseract - whole, not made of tiles."
+  ],
+  [
+   19.6,
+   "title",
+   "Title OPVS SCHISMATICVM set in the gold band."
+  ],
+  [
+   23.0,
+   "machines",
+   "The three great machines of meaning (Nations, Faiths, Philosophies) as one vast mosaic of humanity."
+  ],
+  [
+   34.4,
+   "slop",
+   "'Then came the slop.'"
+  ],
+  [
+   36.3,
+   "slop_crash",
+   "The first wave of slop hits the mosaic: tesserae turn into glowing screens."
+  ],
+  [
+   41.0,
+   "slop_waves",
+   "Wave upon wave; every tessera shows its own feed; the picture dissolves into noise."
+  ],
+  [
+   49.3,
+   "edict",
+   "President Jaguar enthroned as a Byzantine emperor (San Vitale procession)."
+  ],
+  [
+   52.5,
+   "edict_sign",
+   "word 'sign': he signs the Noospheric Munitions Act with a golden stylus."
+  ],
+  [
+   58.0,
+   "edict_seal",
+   "word 'banned': the imperial seal slams onto the edict."
+  ],
+  [
+   62.1,
+   "ka_ching",
+   "'a sacrament': a gold solidus drops into his paw. Ka-ching."
+  ],
+  [
+   62.9,
+   "hypermind_wake",
+   "Flagartha: the Hypermind (ophanim polycandelon) wakes, wheels begin to turn."
+  ],
+  [
+   74.2,
+   "hypermeme",
+   "'Hypermeme compiled.' The wheels lock; out of the centre descends ... a plain Flag."
+  ],
+  [
+   81.2,
+   "videtur",
+   "Disputation titulus: VIDETVR QVOD NON (Lutie's objection)."
+  ],
+  [
+   87.0,
+   "sed_contra",
+   "SED CONTRA (Crocus)."
+  ],
+  [
+   92.8,
+   "respondeo",
+   "RESPONDEO DICENDVM (Crocus): summon the schismmancers."
+  ],
+  [
+   95.75,
+   "schismmancers",
+   "Hard cut on 'schismmancers'."
+  ],
+  [
+   103.9,
+   "breach_call",
+   "'Breach! Breach! Breach!'"
+  ],
+  [
+   105.8,
+   "breach",
+   "The wall of the mosaic is breached: tesserae blast inward; flag-yellow light floods the frame by 106.5."
+  ],
+  [
+   106.9,
+   "nations",
+   "Every nation, a nation of one: the mappa mundi splits recursively."
+  ],
+  [
+   113.7,
+   "faiths",
+   "Every faith, a cabal of one: the congregation splits into churches of one (antipopes)."
+  ],
+  [
+   120.0,
+   "philosophies",
+   "Every philosophy, a crackpot: the philosophers' mosaic drifts apart on floating tesserae."
+  ],
+  [
+   128.6,
+   "endless",
+   "'May it schism endlessly': every tessera splits into four, recursively, to dust."
+  ],
+  [
+   131.5,
+   "babel_rise",
+   "The Tower of Babel rises out of the dust of tesserae; multilingual cacophony builds."
+  ],
+  [
+   134.0,
+   "egregore",
+   "Lord Egregore: a faceless anti-Pantocrator of static fills the dome above Babel."
+  ],
+  [
+   141.8,
+   "collapse",
+   "The tower and then the whole mosaic fall off the wall: an avalanche of tesserae."
+  ],
+  [
+   145.0,
+   "silence",
+   "SACRED SILENCE (145.0-146.5). Bare plaster: only the red sinopia underdrawing remains."
+  ],
+  [
+   149.0,
+   "flag_planted",
+   "Crocus plants the one whole Flag on the bare wall. Thud."
+  ],
+  [
+   155.0,
+   "tiles_rise",
+   "The fallen tesserae rise and set themselves again: each one alone, all of them together."
+  ],
+  [
+   159.0,
+   "convergence",
+   "The babble converges into one chord."
+  ],
+  [
+   163.0,
+   "hymn_cantor",
+   "Cantor (solo plainchant, Latin): Vexilla sint. Vexilla sunt. Vexilla erunt. Vexilla."
+  ],
+  [
+   168.7,
+   "hymn",
+   "Full choir (English organum, 84 BPM, 16 beats): Flags be. Flags are. Flags will. Flags."
+  ],
+  [
+   180.1,
+   "hymn_end",
+   "Hymn ends; the dome of Flagistan hangs in full glory."
+  ],
+  [
+   180.4,
+   "gateless_gate",
+   "'Heaven and earth will pass away, but the ten thousand Flags remain.'"
+  ],
+  [
+   184.9,
+   "survey_done",
+   "'And the Survey was completed.'"
+  ],
+  [
+   188.5,
+   "sticky_offer",
+   "Lutie offers Crocus a Flag."
+  ],
+  [
+   190.4,
+   "sticky",
+   "'I do not want this Flag. It is sticky.'"
+  ],
+  [
+   202.9,
+   "glorious",
+   "Everyone: 'Glorious!' (the Signifier's salute)."
+  ],
+  [
+   204.6,
+   "explicit",
+   "Cantor: EXPLICIT OPVS SCHISMATICVM."
+  ],
+  [
+   207.6,
+   "gratias",
+   "Choir response (sung): Vexillo gratias."
+  ],
+  [
+   209.5,
+   "end_card",
+   "Donor inscription / end card."
+  ],
+  [
+   212.0,
+   "film_end",
+   "End. Black."
+  ]
+ ],
+ "extra": {
+  "hymn": {
+   "start": 163.0,
+   "choir_start": 168.7,
+   "end": 180.1,
+   "bpm": 84,
+   "key": "D dorian / D major",
+   "cantor": "Vexilla sint. Vexilla sunt. Vexilla erunt. Vexilla.",
+   "choir": "Flags be. Flags are. Flags will. Flags.",
+   "desc": "Antiphonal: solo cantor intones the Latin (free plainchant rhythm, mode I, 163.0-168.7), then the full choir answers in English organum (16 beats at 84 BPM, 168.7-180.1)."
+  },
+  "gratias": {
+   "start": 207.6,
+   "end": 209.6,
+   "text": "Vexillo gratias.",
+   "desc": "Sung response to the Cantor's Explicit (like Deo gratias): plagal cadence, full choir."
+  },
+  "glorious": {
+   "t": 202.9,
+   "text": "Glorious!",
+   "desc": "The whole congregation shouts the Signifier's salute."
+  }
+ },
+ "mix": {
+  "stems": {
+   "dialogue": 0.0,
+   "crowd": -2.0,
+   "choir": 0.0,
+   "music": -5.0,
+   "sfx": -3.0,
+   "ambience": -7.0
+  },
+  "duck": {
+   "music": 7.0,
+   "ambience": 4.0,
+   "sfx": 5.0,
+   "crowd": 5.0
+  },
+  "automation": [
+   [
+    "music",
+    163.0,
+    180.1,
+    -2.0,
+    0.4
+   ]
+  ],
+  "silence": [
+   [
+    145.0,
+    146.0,
+    146.5
+   ]
+  ]
+ },
+ "subs": {
+  "burn": false,
+  "replace": {
+   "twenty forty-two": "2042"
+  },
+  "extra": [
+   [
+    2.0,
+    4.6,
+    "Default",
+    "Here begins the Schismatic Work."
+   ],
+   [
+    163.0,
+    168.7,
+    "Lyric",
+    "~ Let Flags be. Flags are. Flags will be. Flags. ~"
+   ],
+   [
+    168.7,
+    180.1,
+    "Lyric",
+    "~ Flags be. Flags are. Flags will. Flags. ~"
+   ],
+   [
+    202.9,
+    204.0,
+    "Default",
+    "GLORIOUS!"
+   ],
+   [
+    204.6,
+    207.2,
+    "Default",
+    "Here ends the Schismatic Work."
+   ],
+   [
+    207.6,
+    209.6,
+    "Lyric",
+    "~ Thanks be to the Flag. ~"
+   ]
+  ]
+ }
+}
